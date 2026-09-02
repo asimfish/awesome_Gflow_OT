@@ -1,0 +1,47 @@
+{
+  "issue_count": 7,
+  "issues": [
+    {
+      "page": 1,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 1: paragraph still in English (31 words, 0 CJK chars) at x=307.1, y=421.7: regularizer is added, as this allows for efficient compu"
+    },
+    {
+      "page": 14,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 14: paragraph still in English (49 words, 0 CJK chars) at x=55.1, y=69.4: The Appendix is structured as follows: In Appendix A we "
+    },
+    {
+      "page": 17,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 17: paragraph still in English (5 words, 0 CJK chars) at x=55.4, y=538.2: Now let X = [0, 1]2, and denote by [[n]]2"
+    },
+    {
+      "page": 17,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 17: paragraph still in English (10 words, 0 CJK chars) at x=132.8, y=553.8: , for k, j = 0, ..., n −1. We can then show that (P2([0,"
+    },
+    {
+      "page": 17,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 17: paragraph still in English (5 words, 0 CJK chars) at x=55.4, y=576.1: Proposition A.13. The metric space (P2([0, 1]2), W2) is "
+    },
+    {
+      "page": 17,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 17: paragraph still in English (7 words, 0 CJK chars) at x=177.9, y=595.0: n ), W2) such that for all µ, ν ∈P2([0, 1]) it holds tha"
+    },
+    {
+      "page": 24,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 24: block set at 8.12pt but the original at this position is 9.86pt (ratio 0.82 vs page median 0.92) at x=55.7, y=310.5: 推论4. 设为函数的复合，其中每个函数均具有定理3 中的形式。设。则"
+    }
+  ]
+}

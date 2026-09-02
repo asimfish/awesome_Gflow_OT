@@ -1,0 +1,30 @@
+{
+  "id": "O01",
+  "arxiv": "2505.06589",
+  "title": "Optimal Transport for Machine Learners",
+  "authors": [
+    "Gabriel Peyre"
+  ],
+  "venue": "lecture notes (arXiv preprint, v3 2026-08-08)",
+  "venue_type": "lecture-notes",
+  "year": 2025,
+  "code_url": "https://github.com/gpeyre/ot4ml",
+  "one_line_en": "A 16-chapter graduate course on optimal transport for machine learning; for GFlowNet readers the essential parts are the graph Beckmann form of W1 (Sec. 6.5), Kantorovich duality and c-transforms (Ch. 5), the path-space Schrodinger reduction (Sec. 14.3), the coupling polytope (Sec. 3.1), and Sinkhorn as alternating Bregman projections (Sec. 9.1).",
+  "one_line_zh": "Peyré 的 16 章 OT 讲义；对 GFlowNet 读者真正必读的是 §6.5（W1 的图 Beckmann 形式：边流 + 顶点守恒）、第 5 章（对偶与 c-变换）、§14.3（路径空间到端点耦合的约简）、§3.1（耦合多面体）与 §9.1（Sinkhorn = 交替 Bregman 投影），合计约 40 页。",
+  "tags": [
+    "optimal-transport",
+    "lecture-notes",
+    "kantorovich-duality",
+    "beckmann-flow",
+    "graph-ot",
+    "min-cost-flow",
+    "sinkhorn",
+    "entropic-regularization",
+    "bregman-projection",
+    "benamou-brenier",
+    "schrodinger-bridge",
+    "wasserstein-gradient-flow",
+    "prerequisite"
+  ],
+  "priority": "P0"
+}

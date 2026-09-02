@@ -1,0 +1,19 @@
+{
+  "id": "T02",
+  "arxiv": "2111.09266",
+  "title": "GFlowNet Foundations",
+  "authors": ["Yoshua Bengio", "Salem Lahlou", "Tristan Deleu", "Edward J. Hu", "Mo Tiwari", "Emmanuel Bengio"],
+  "venue": "JMLR 24(210):1-55, 2023",
+  "venue_type": "journal",
+  "year": 2023,
+  "code_url": null,
+  "one_line_en": "Recasts GFlowNet flows as measures on the set of complete trajectories, so state and edge flows are measures of trajectory sets and flow conservation becomes a corollary (Prop. 8) rather than an axiom; proves the Markovian-flow characterization (Prop. 16), three equivalent parametrizations (Prop. 18), the detailed balance criterion (Prop. 21), and uniqueness of the Markovian representative of each edge-flow equivalence class (Prop. 23); adds conditional/state-conditional flows for free-energy, entropy and mutual-information estimation.",
+  "one_line_zh": "把 GFlowNet 的流重铸为完整轨迹集合上的测度，于是状态流/边流是可测集的测度、流守恒成为推论（Prop. 8）而非公设；证明 Markovian flow 的刻画（Prop. 16）、三种等价参数化（Prop. 18）、detailed balance 判据（Prop. 21）以及每个边流等价类中 Markovian 代表元的唯一性（Prop. 23）；并引入条件流与状态条件流用于自由能、熵与互信息估计。",
+  "tags": ["gflownet-theory", "markovian-flow", "detailed-balance", "internal-flow-degrees-of-freedom", "backward-policy-free-choice", "conditional-gflownet", "free-energy-marginalization", "entropy-mutual-information", "cycles-via-time-stamps", "OT-entry-point"],
+  "priority": "P0",
+  "verification": {
+    "checked_on": "2026-09-02",
+    "sources": ["local PDF papers/2111.09266.pdf (arXiv v5, 2026-01-24, 76 pages; header self-prints 'JMLR 24 (2023) 1-76', Submitted 4/22 Revised 5/23 Published 6/23)", "JMLR official page jmlr.org/papers/v24/22-0364.html: '24(210):1-55, 2023'"],
+    "note": "Version mismatch matters. The local arXiv v5 is an expanded text relative to the published JMLR paper (76 vs 55 pages); the v5 abstract additionally lists Pareto-frontier sampling, connections to reward-maximizing policies and stochastic-environment extensions, and Remark 44 appears only in v5. All proposition numbers in report T02 follow the local v5 PDF. Journal paper, no code released. OT relevance: Prop. 18(3) parametrizes exactly the freedom left after fixing R, and Sec. 2.6 already names 'prefer shorter paths' as a legitimate P_B design choice."
+  }
+}

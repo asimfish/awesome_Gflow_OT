@@ -1,0 +1,65 @@
+\usepackage{xeCJK}
+\setCJKmainfont[BoldFont=Hiragino Sans GB W6]{Hiragino Sans GB W3}
+\setCJKsansfont[BoldFont=Hiragino Sans GB W6]{Hiragino Sans GB W3}
+\setCJKmonofont{Hiragino Sans GB W3}
+\xeCJKsetup{CJKmath=true}
+\usepackage{newunicodechar}
+\newfontfamily\symfont{STIX Two Math}
+\newunicodechar{→}{{\symfont →}}
+\newunicodechar{←}{{\symfont ←}}
+\newunicodechar{⇔}{{\symfont ⇔}}
+\newunicodechar{⇒}{{\symfont ⇒}}
+\newunicodechar{≡}{{\symfont ≡}}
+\newunicodechar{≤}{{\symfont ≤}}
+\newunicodechar{≥}{{\symfont ≥}}
+\newunicodechar{≠}{{\symfont ≠}}
+\newunicodechar{∈}{{\symfont ∈}}
+\newunicodechar{∞}{{\symfont ∞}}
+\newunicodechar{≈}{{\symfont ≈}}
+\newunicodechar{∑}{{\symfont ∑}}
+\newunicodechar{√}{{\symfont √}}
+\newunicodechar{⊂}{{\symfont ⊂}}
+\newunicodechar{∝}{{\symfont ∝}}
+\newunicodechar{↔}{{\symfont ↔}}
+\newunicodechar{⁶}{{\symfont ⁶}}
+\newunicodechar{⁴}{{\symfont ⁴}}
+\newunicodechar{²}{{\symfont ²}}
+\newunicodechar{⇐}{{\symfont ⇐}}
+\newunicodechar{−}{{\symfont −}}
+\newunicodechar{≫}{{\symfont ≫}}
+\newunicodechar{⋆}{{\symfont ⋆}}
+\newunicodechar{†}{{\symfont †}}
+\newunicodechar{⟹}{{\symfont ⟹}}
+\newunicodechar{⟺}{{\symfont ⟺}}
+\newunicodechar{①}{{\symfont ①}}
+\newunicodechar{②}{{\symfont ②}}
+\newunicodechar{③}{{\symfont ③}}
+\newunicodechar{④}{{\symfont ④}}
+\newunicodechar{⑤}{{\symfont ⑤}}
+\newunicodechar{⑥}{{\symfont ⑥}}
+\newunicodechar{✅}{{\symfont ✓}}
+\newunicodechar{✓}{{\symfont ✓}}
+\newunicodechar{✗}{{\symfont ✗}}
+\newunicodechar{★}{{\symfont ★}}
+\newunicodechar{·}{{\symfont ·}}
+\usepackage{booktabs,longtable,array,multirow}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage{sectsty}
+\usepackage{stmaryrd}
+\sectionfont{\color{brand}}
+\definecolor{brand}{HTML}{0B5FA5}
+\definecolor{accent}{HTML}{C0392B}
+\definecolor{rule}{HTML}{D0D7DE}
+\AtBeginDocument{\hypersetup{colorlinks=true,linkcolor=brand,urlcolor=brand,citecolor=brand}}
+\pagestyle{fancy}\fancyhf{}
+\fancyhead[L]{\small\color{gray}awesome\_Gflow\_OT}
+\fancyhead[R]{\small\color{gray}GFlowNet × 最优传输}
+\fancyfoot[C]{\small\thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+\setlength{\emergencystretch}{3em}
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{etoolbox}
+\AtBeginEnvironment{quote}{\small\color{black!75}}
+\LTleft=0pt \LTright=0pt
+\setlength{\LTpre}{6pt} \setlength{\LTpost}{6pt}

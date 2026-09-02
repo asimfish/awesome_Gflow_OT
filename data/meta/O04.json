@@ -1,0 +1,14 @@
+{
+  "id": "O04",
+  "arxiv": "2409.09347",
+  "title": "Schrodinger Bridge Flow for Unpaired Data Translation",
+  "authors": ["Valentin De Bortoli", "Iryna Korshunova", "Andriy Mnih", "Arnaud Doucet"],
+  "venue": "NeurIPS 2024 (Spotlight)",
+  "venue_type": "main",
+  "year": 2024,
+  "code_url": null,
+  "one_line_en": "Defines a flow of path measures whose unique fixed point is the Schrodinger Bridge, discretises it with a stepsize alpha to obtain alpha-IMF (alpha=1 recovers IMF/DSBM), and implements it as alpha-DSBM: an online, single-network, single-loss version of DSBM that needs no inner minimisation per iteration.",
+  "one_line_zh": "把 DSBM 的「交替解两个投影子问题」改写成路径测度上的一条流，其唯一不动点即 Schrodinger 桥；用步长 alpha 离散得到 alpha-IMF（alpha=1 退化为原 IMF），并给出对任意 alpha in (0,1] 的收敛定理。参数化实现 alpha-DSBM 只用一个网络、一套损失、在线微调，不再需要缓存样本与交替优化。",
+  "tags": ["schrodinger-bridge", "entropic-OT", "dynamic-OT", "iterative-markovian-fitting", "markov-projection", "reciprocal-projection", "bridge-matching", "DSBM", "unpaired-translation", "functional-gradient", "ot-side"],
+  "priority": "P1"
+}

@@ -1,0 +1,19 @@
+{
+  "id": "C01",
+  "arxiv": "2506.12025",
+  "title": "Unsupervised Learning for Optimal Transport plan prediction between unbalanced graphs",
+  "authors": ["Sonia Mazelet", "Remi Flamary", "Bertrand Thirion"],
+  "venue": "NeurIPS 2025 (Main Conference Track)",
+  "venue_type": "main",
+  "year": 2025,
+  "code_url": "https://github.com/smazelet/ULOT",
+  "one_line_en": "ULOT amortizes FUGW optimal transport between two explicit graphs with a cross-attention GNN conditioned on the (alpha, rho) tradeoff hyperparameters, predicting unbalanced plans in O(n1*n2) time, up to 100x faster than classical solvers and usable as a solver warm start.",
+  "one_line_zh": "ULOT 用条件于 FUGW 超参 (alpha, rho) 的交叉注意力 GNN，无监督地摊销预测两张显式图之间的不平衡 OT plan，推理复杂度 O(n1*n2)，比经典求解器快至多 100 倍，并可作为求解器的热启动。",
+  "tags": ["graph-ot", "unbalanced-ot", "fused-gromov-wasserstein", "amortized-optimization", "conditional-model", "cross-attention-gnn", "warm-start", "fmri-brain-alignment", "competitor-of-O08"],
+  "priority": "P1",
+  "verification": {
+    "checked_on": "2026-09-02",
+    "sources": ["arXiv API (v3 2025-07-08, no journal_ref)", "NeurIPS proceedings page: Advances in NeurIPS 38 Main Conference Track, DOI 10.52202/085713-3146", "dblp: venue=NeurIPS year=2025 type=Conference and Workshop Papers"],
+    "note": "PDF first page still says 'Preprint. Under review.' (arXiv v3 snapshot predates acceptance); main-conference status confirmed by proceedings and dblp. Code URL github.com/SoniaMaz8/ULOT returns HTTP 301 redirecting to smazelet/ULOT."
+  }
+}

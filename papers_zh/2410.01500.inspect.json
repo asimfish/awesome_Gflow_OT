@@ -1,0 +1,65 @@
+{
+  "issue_count": 10,
+  "issues": [
+    {
+      "page": 20,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 20: paragraph still in English (3 words, 0 CJK chars) at x=108.0, y=579.9: Moreover, for any t ∈[0, τ], Λt = M ∗"
+    },
+    {
+      "page": 25,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 25: paragraph still in English (5 words, 0 CJK chars) at x=108.0, y=202.4: the generator of M ∗is AM ∗"
+    },
+    {
+      "page": 27,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 27: block set at 7.17pt but the original at this position is 9.96pt (ratio 0.72 vs page median 0.92) at x=146.9, y=387.3: ^{dM} 的支撑集上的拉东-尼科迪姆导数为"
+    },
+    {
+      "page": 27,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 27: paragraph still in English (6 words, 0 CJK chars) at x=108.0, y=454.7: As Π0 = M0, it is sufficient to show"
+    },
+    {
+      "page": 28,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 28: block set at 8.27pt but the original at this position is 9.96pt (ratio 0.83 vs page median 0.92) at x=308.9, y=85.1: 根据条件期望的塔性质。由引理B.7 和命题B.6，我们"
+    },
+    {
+      "page": 31,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 31: block set at 8.27pt but the original at this position is 9.96pt (ratio 0.83 vs page median 0.92) at x=108.8, y=204.3: ∈V^{′}. 的匹配代价。类似地，总边匹配代价为"
+    },
+    {
+      "page": 36,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 36: paragraph still in English (13 words, 0 CJK chars) at x=135.4, y=101.1: • Negative Log-Likelihood (NLL): Evaluates the quality o"
+    },
+    {
+      "page": 36,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 36: paragraph still in English (39 words, 0 CJK chars) at x=143.9, y=112.2: suring the cost of transforming one graph into another b"
+    },
+    {
+      "page": 36,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 36: paragraph still in English (29 words, 0 CJK chars) at x=143.9, y=240.7: of the target and generated molecules for the properties"
+    },
+    {
+      "page": 36,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 36: paragraph still in English (12 words, 0 CJK chars) at x=135.4, y=343.0: • Fr´echet ChemNet Distance (FCD): Calculates the simila"
+    }
+  ]
+}

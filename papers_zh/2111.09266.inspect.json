@@ -1,0 +1,83 @@
+{
+  "issue_count": 13,
+  "issues": [
+    {
+      "page": 6,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 6: paragraph still in English (34 words, 0 CJK chars) at x=90.0, y=465.4: Definition 2 Given a DAG G = (S, A), the parent set of a"
+    },
+    {
+      "page": 7,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 7: paragraph still in English (46 words, 0 CJK chars) at x=90.0, y=651.3: ˆPF , and a backward probability functionˆPB both consis"
+    },
+    {
+      "page": 11,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 11: block set at 9.04pt but the original at this position is 10.91pt (ratio 0.83 vs page median 0.92) at x=248.9, y=478.1: s∈S^{f} 上的一个良定义分布，即对于所有"
+    },
+    {
+      "page": 12,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 12: paragraph still in English (3 words, 0 CJK chars) at x=102.9, y=442.3: 1. F is a Markovian flow"
+    },
+    {
+      "page": 21,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 21: paragraph still in English (21 words, 0 CJK chars) at x=90.0, y=655.8: Definition 22 Let G = (S, A) be a pointed DAG, and F1, F"
+    },
+    {
+      "page": 21,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Source prose remained verbatim at x=225.3, y=677.1: and"
+    },
+    {
+      "page": 26,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 26: paragraph still in English (10 words, 0 CJK chars) at x=106.4, y=496.2: • G = (S, A) is a pointed DAG with initial state s0 and "
+    },
+    {
+      "page": 29,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 29: paragraph still in English (21 words, 0 CJK chars) at x=90.0, y=207.2: (41)Malkin et al. (2022) prove that LTB is a flow-matchi"
+    },
+    {
+      "page": 35,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 35: paragraph still in English (27 words, 0 CJK chars) at x=90.0, y=141.5: Proposition 32 Given a state-conditional flow network (G"
+    },
+    {
+      "page": 35,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 35: paragraph still in English (12 words, 0 CJK chars) at x=90.0, y=226.2: where F(s) is the free energy associated to the energy f"
+    },
+    {
+      "page": 41,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 41: block set at 9.04pt but the original at this position is 10.91pt (ratio 0.83 vs page median 0.92) at x=197.9, y=418.6: 的所有超集构成的集合。给定集合流网络，从中抽取任意元素"
+    },
+    {
+      "page": 59,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 59: block set at 8.15pt but the original at this position is 10.91pt (ratio 0.75 vs page median 0.92) at x=90.8, y=584.7: 对于任意。直观上，表示直接通过出现次数的梯度"
+    },
+    {
+      "page": 63,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 63: block set at 8.54pt but the original at this position is 10.91pt (ratio 0.78 vs page median 0.92) at x=210.7, y=314.8: ,H)为一个条件生成流网络。条件流匹配损失是任意满足以下条件的函数"
+    }
+  ]
+}

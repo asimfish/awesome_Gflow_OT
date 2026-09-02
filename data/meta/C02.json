@@ -1,0 +1,19 @@
+{
+  "id": "C02",
+  "arxiv": "2602.04675",
+  "title": "Generalized Schrodinger Bridge on Graphs",
+  "authors": ["Panagiotis Theodoropoulos", "Juno Nam", "Evangelos Theodorou", "Jaemoo Choi"],
+  "venue": "ICML 2026 (PMLR 306); dblp as of 2026-09 lists CoRR entry only",
+  "venue_type": "main",
+  "year": 2026,
+  "code_url": null,
+  "one_line_en": "GSBoG lifts the generalized Schrodinger bridge to controlled CTMCs on a fixed sparse graph, deriving a discrete Hopf-Cole system whose optimal jump rate is u*(y,x) = r(y,x)exp(V(x)-V(y)), and learns it with a discrete gIPF loss plus a temporal-difference term that prevents the state cost from cancelling out.",
+  "one_line_zh": "GSBoG 把广义 Schrodinger 桥搬到固定稀疏图上的受控 CTMC，导出离散 Hopf-Cole 系统并给出最优跳转率 u*(y,x) = r(y,x)exp(V(x)-V(y))，用离散 gIPF 损失加一个 TD 项训练，后者防止 running cost 在 IPF 求和中被抵消。",
+  "tags": ["graph-ot", "schrodinger-bridge", "entropic-regularization", "ctmc", "executable-policy", "hopf-cole", "iterative-proportional-fitting", "temporal-difference", "mean-field-cost", "congestion-aware-routing", "closest-competitor-of-O08"],
+  "priority": "P1",
+  "verification": {
+    "checked_on": "2026-09-02",
+    "sources": ["arXiv API (v1 2026-02-04, v2 2026-06-10, no journal_ref, no comment)", "PDF footer: Proceedings of the 43rd ICML, Seoul, PMLR 306, 2026 (camera-ready format)", "Jaemoo Choi homepage 2026-04: '7 papers are accepted to ICML' listing GSBoG", "Georgia Tech Research Conference Spotlight 2026", "dblp: only CoRR 2026 entry as of 2026-09"],
+    "note": "Task prior said '2026-02 arXiv preprint only'; upgraded to ICML 2026 main conference on three independent sources, but PMLR volume 306 not yet indexed on dblp. Recheck after PMLR 306 publication. No code repository referenced anywhere in the paper."
+  }
+}

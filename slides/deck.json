@@ -1,0 +1,179 @@
+{
+  "title": "GFlowNet × 最优传输：从流守恒到 Kantorovich 计划",
+  "subtitle": "awesome_Gflow_OT 汇总汇报",
+  "footer": "awesome_Gflow_OT · 2026-09 · github.com/asimfish/awesome_Gflow_OT",
+  "slides": [
+    {"type": "title", "kicker": "awesome_Gflow_OT · 2026-09", "title": "GFlowNet × 最优传输",
+     "subtitle": "从流守恒到 Kantorovich 计划：18 篇论文、两条趋势线、一个可开工的课题",
+     "note": "18 篇深度解读 · 17 篇保版式中译 · 2 份趋势扫描（199 篇 arXiv）· 中英汇总报告 91 / 120 页"},
+
+    {"type": "bullets", "kicker": "一页结论", "title": "这份汇报只想说清五件事", "items": [
+      "**GFlowNet 的内部流从来不唯一**：奖励只钉住终止边，非终止边上的 \\(P_B\\) 自由（T02 Prop. 18）；有环时再加一个环空间（T19 Prop. 5）",
+      "**最小总流是一个合法的选择原则**，因为 \\(\\sum_s F(s)=Z\\,\\mathbb E[n_\\tau]\\)（T36）：总流最小 = 期望轨迹最短",
+      "**固定源分布后，最小总流 = 图最短路代价下的 Kantorovich OT**（O08 Thm. 3.2），对偶势 + 互补松弛给出证书（Thm. 3.3）",
+      "**等价是经典的（Beckmann / 最小费用流），接口是新的**：输出不是耦合矩阵，而是能在 \\(20!\\) 规模隐式图上执行的局部策略",
+      "**该做什么**：[hl]balance 残差 → OT 误差界 + 对偶势证书[/hl]。撞车风险最低，OT 侧配件刚好齐了；摊销与熵正则两条路已经拥挤"
+    ]},
+
+    {"type": "section", "num": "01", "title": "问题", "subtitle": "内部流为什么不唯一，为什么这是一个最优传输问题"},
+
+    {"type": "formula", "kicker": "GFlowNet 的两条约束", "title": "奖励只钉住边界",
+     "latex": "\\[\\sum_{u}F(u\\to s)=\\sum_{v}F(s\\to v),\\qquad F(x\\to s_f)=R(x)\\quad\\Longrightarrow\\quad P_T(x)=\\frac{R(x)}{Z}\\]",
+     "items": [
+       "两条约束都是线性的（T02 Prop. 19 / Eq. (22)）：可行集是一个多面体",
+       "奖励只出现在终止边上，它固定的是多面体的**边界**",
+       "T02 Prop. 18 第 3 条：Markovian flow 由终止流与非终止边上的 \\(P_B\\) 唯一确定——**选一个 \\(P_B\\) 就是选一个内部流**",
+       "原文对「选哪个」只有一句（§2.6）：可以偏好更短的路径"
+     ]},
+
+    {"type": "two-col", "kicker": "有环之后", "title": "自由度更大，也更危险", "cols": [
+      {"head": "T19 · AAAI 2024", "items": [
+        "R-流集合 = 一个无环流 + 环空间 \\(H^1_+(G)\\)（Prop. 5）",
+        "比值型损失（FM/DB/TB）把质量无限堆进环：flow explosion（Thm. 3）",
+        "差值型损失稳定（Thm. 4）",
+        "总流与期望长度只有不等式（Thm. 2）"]},
+      {"head": "T36 · ICML 2025", "items": [
+        "以 \\(P_B\\) 为第一性对象，流 = 期望访问次数 × 终止流（Prop. 3.7 一一对应）",
+        "不等式收紧为等式 \\(\\sum_s F(s)=Z\\,\\mathbb E[n_\\tau]\\)",
+        "写出「最小总流」约束优化 Eq. (11)；近似解法 DB + 状态流正则",
+        "最小值落在多面体边界，超出自身正性假设，只能 \\(\\lambda\\) 正则逼近"]}
+    ], "note": "易误读：T19「极限流无环」≠「解唯一」。DAG 上环空间为零时 R-流照样不唯一；真正选出一个点的是 T36 的线性目标。"},
+
+    {"type": "timeline", "kicker": "主线逻辑链", "title": "每一环缺什么、下一环补什么", "steps": [
+      {"id": "T02", "what": "流守恒 ⇒ \\(P_T\\propto R\\)；\\(P_B\\) 自由", "gap": "缺：选哪个内部流"},
+      {"id": "T19", "what": "有环流理论；环空间；flow explosion", "gap": "缺：总流 vs 长度只有 ≤"},
+      {"id": "T36", "what": "\\(\\sum F(s)=Z\\,\\mathbb E[n_\\tau]\\)；最小流优化", "gap": "缺：最小流是什么"},
+      {"id": "O07", "what": "期望长度最小 ⇔ 只走最短路（Thm. 3.4）", "gap": "缺：单源、质量怎么分"},
+      {"id": "O08", "what": "固定源分布 ⇒ Kantorovich OT（Thm. 3.2）", "gap": "缺：训练与 LP 之间无界"}
+    ], "note": "转折点是 T36 的等式：一个流空间上的线性泛函（总流）和一个行为学量（期望步数）被钉在一起，此后 O07/O08 是线性规划课的两道习题。"},
+
+    {"type": "section", "num": "02", "title": "核心定理", "subtitle": "O08 · Your GFlowNet Secretly Learns an Optimal Transport Plan · ICML 2026 SPIGM Workshop（非主会）"},
+
+    {"type": "formula", "kicker": "O08 Theorem 3.2", "title": "最小总流 = Kantorovich 最优传输",
+     "latex": "\\[\\min_{\\mathcal F\\ge0}\\ \\sum_{e\\in E^\\circ}\\mathcal F(e)\\ \\ \\text{s.t.}\\ \\operatorname{div}\\mathcal F=L-R\\quad=\\quad\\min_{\\Pi\\in\\Gamma(L,R)}\\ \\sum_{u,x}d_G(u,x)\\,\\Pi(u,x)\\]",
+     "items": [
+       "四步证明：双线性 DB 约束 → 消策略成 LP（App. A.1）→ 约简成 divergence 约束（Eq. (10)→(11)）→ 两侧夹逼",
+       "\\(\\le\\)：取最优耦合 \\(\\Pi^\\star\\)，沿每对 \\((u,x)\\) 的一条最短路铺流，可行且代价相等",
+       "\\(\\ge\\)：取最优流 \\(\\mathcal F^\\star\\)，由它诱导策略与轨迹分布，端点分布 \\(\\Pi^\\star_{u,x}=\\sum_{\\tau:u\\rightsquigarrow x}\\mathbb P^\\star(\\tau)\\) 是可行耦合",
+       "Thm. 3.3（对偶）：\\(\\pi^\\star_x=d(x)\\)，互补松弛 \\(\\mathcal F^\\star(s\\to s')(\\pi^\\star_{s'}-1-\\pi^\\star_s)=0\\)——最优流只走最短路子图"
+     ]},
+
+    {"type": "table", "kicker": "O08 Table 1 · Hypergrid（数字照抄原文）", "title": "学到的策略同时满足边缘与 OT 最优代价",
+     "header": ["源分布 L", "H", "TV（学到）", "TV*（完美采样器）", "E|τ|（学到）", "OT*"],
+     "rows": [
+       ["Ball", "10", "0.024", "0.024", "3.990", "3.997"],
+       ["Ball", "15", "0.036", "0.033", "6.325", "6.303"],
+       ["Ball", "20", "0.037", "0.040", "8.326", "8.325"],
+       ["Moon", "10", "0.022", "0.024", "4.352", "4.351"],
+       ["Moon", "15", "0.023", "0.033", "6.907", "6.868"],
+       ["Moon", "20", "0.032", "0.040", "9.001", "9.059"]
+     ], "note": "Figure 1：H=10 Moon 上精确 LP 解的边流与 Kantorovich 最优耦合的 transport cost 都是 4.351——同一个数，一边是边流、一边是耦合。排列 S_20（Table 2）无 OT* 参考，只有边缘诊断。"},
+
+    {"type": "cards", "kicker": "O08 的八条前提", "title": "Theorem 3.2 在什么条件下成立", "cards": [
+      {"head": "图结构", "text": "有限有向图，**允许有环**（无环分层图上路径等长，最小流退化为常数）；\\(s_0\\) 只出到 \\(U\\)，\\(s_f\\) 只从 \\(\\mathcal X\\) 入；全对可达"},
+      {"head": "边缘与代价", "text": "两个边缘都归一化：\\(\\sum L=\\sum R=1\\)，\\(Z\\) 已知；代价是**单位边长**的最短路跳数，带权图不在覆盖范围"},
+      {"head": "吸收性", "text": "反向链是吸收链 / \\(\\mathbb E[n_\\tau]<\\infty\\)（T36 Lemma 3.4；O07 Assumption 3.1）；正文未重述但 Eq. (3) 良定义依赖它"},
+      {"head": "精确 vs 训练", "text": "定理是关于 **LP 最优解** 的；神经训练用软罚 \\(\\lambda\\)（Eq. (20)），训练完的模型是否 OT 最优靠数值接近程度支撑，不由定理保证"}
+    ], "note": "适用范围一句话：状态空间无法枚举、代价矩阵无法构造、但局部合法动作明确且允许回退的组合图上的均衡 OT。不适合显式小图（network simplex 更快更准且自带证书）。"},
+
+    {"type": "two-col", "kicker": "新意到底在哪", "title": "等价是经典的，接口是新的", "cols": [
+      {"head": "不是新的", "items": [
+        "图上最短路代价的 OT ≡ 最小费用流 ≡ 离散 Beckmann（Beckmann 1952；O02 Essid & Solomon 2018；O01 Prop. 6.23 / 14.9）",
+        "流分解定理、最优流无环、LP 顶点解稀疏（O01 Prop. 3.8）",
+        "「对偶势 = 最短路距离」是最小费用流对偶的教科书结论"]},
+      {"head": "新的", "items": [
+        "解是只依赖当前状态的局部策略 \\(P_F(s'\\mid s)\\)，不是 \\(|U|\\times|\\mathcal X|\\) 矩阵",
+        "可在无法枚举、无法构造代价矩阵的组合图上执行（\\(S_{20}\\)，\\(2.4\\times10^{18}\\) 状态）",
+        "GFlowNet 的现成训练基础设施（T36 代码、gfnx / torchgfn）直接复用",
+        "[bad]代价[/bad]：为了成为 LP，放弃了「只需未归一化奖励」这一招牌能力"]}
+    ]},
+
+    {"type": "section", "num": "03", "title": "OT 侧", "subtitle": "先修（O01、O02）与相邻工作（O03–O06）：哪些是等价，哪些只是类比"},
+
+    {"type": "table", "kicker": "从 O01（Peyré 讲义）提炼", "title": "OT 概念 ↔ GFlowNet 概念",
+     "header": ["OT", "GFlowNet", "关系", "出处"],
+     "rows": [
+       ["边流 \\(m_e\\)，目标 \\(\\sum_e\\ell_e|m_e|\\)", "边流 \\(F(s\\to t)\\)，总流", "[ok]严格等价[/ok]", "O01 Prop. 6.23；O02 Eq. (1)⇔(3)"],
+       ["守恒律 \\(\\operatorname{div}_G m=r\\)", "flow matching", "[ok]严格等价[/ok]", "O01 Prop. 6.23"],
+       ["代价 = 图最短路", "轨迹长度 / 期望步数", "条件等价（路径作用 = 边长和）", "O01 Prop. 14.9"],
+       ["边缘约束", "奖励匹配 + 第一步边流 = L", "条件等价（\\(Z=1\\)）", "O08 Assumption 3.1"],
+       ["互补松弛", "最优流只在紧边为正", "[ok]严格[/ok]（LP 形式）", "O01 Prop. 5.3；O08 Thm. 3.3"],
+       ["对偶势 \\(f_i\\)", "状态流 \\(\\log F(s)\\)", "类比（不等式 vs 等式）", "O01 Def. 5.1"],
+       ["熵正则 \\(\\varepsilon\\mathrm{KL}\\)", "路径熵", "类比（端点熵 vs 路径熵）", "O01 Def. 8.2"],
+       ["Schrödinger 桥参考律", "固定的 \\(P_B\\)", "条件等价", "O01 Prop. 14.11；O04 投影同构"],
+       ["Benamou–Brenier / JKO", "训练动力学", "[bad]仅氛围类比[/bad]", "O01 Thm. 14.5"]
+     ], "note": "易误读：单源 DAG 上「学到 OT 计划」是空话——\\(\\mathcal U(\\delta_{s_0},\\beta)\\) 是单点集（O01 Remark 3.2）。"},
+
+    {"type": "cards", "kicker": "相邻工作", "title": "四篇神经 OT / SB：谁威胁、谁互补", "cards": [
+      {"head": "O05 UNOT · ICML 2025 · [bad]威胁最大[/bad]", "text": "跨数据集/跨分辨率摊销熵 OT 对偶势，非训练集相对误差 1.3–2.8%（Table 4，Meta OT 11–31%）。它摊销的势正是 O08 Thm. 3.3 的 \\(\\pi_x\\) 连续版；移植到图最短路代价是周末量级。GFN 剩下的生态位：换图即换代价、状态空间存不下代价矩阵"},
+      {"head": "O04 α-DSBM · NeurIPS 2024 Spotlight · [ok]互补最大[/ok]", "text": "\\(\\mathrm{proj}_{\\mathcal R}/\\mathrm{proj}_{\\mathcal M}\\) 与「固定 \\(P_B\\)」/「由边流反解 \\(P_F\\)」逐条同构；Eq. (26) + Lemma D.2 是「图上 SB = 熵正则 min-flow GFN」的现成证明模板。易误读：\\(\\alpha\\) 是耦合空间插值系数，不是学习率"},
+      {"head": "O03 GeONet · UAI 2024", "text": "神经算子学 Wasserstein 测地线，连续分布 + 动态 OT；与 GFN–OT 的互补点是连续 geodesic 而非离散构造路径"},
+      {"head": "O06 · AISTATS 2025", "text": "用连续正规化流的速度场解高维 OT。名字里的 flow neural network **不是 GFlowNet**"}
+    ]},
+
+    {"type": "section", "num": "04", "title": "竞争格局", "subtitle": "三篇主会竞品 vs 两篇 Workshop 本方论文"},
+
+    {"type": "table", "kicker": "COMPETITOR_MATRIX（发表状态四路核实）", "title": "五篇的身份牌与分界线",
+     "header": ["", "O08 GFN-OT", "O07 GFN-SP", "C01 ULOT", "C02 GSBoG", "C03 DDSBM"],
+     "rows": [
+       ["发表", "[bad]ICML 2026 Workshop[/bad]", "[bad]ICML 2026 Workshop[/bad]", "NeurIPS 2025 主会", "**ICML 2026 主会**", "ICLR 2025 主会"],
+       ["图是什么", "场所（隐式）", "场所（隐式）", "对象（显式）", "场所（显式）", "对象"],
+       ["cost / 正则", "线性最短路，\\(\\varepsilon=0\\)", "最短路", "二次 FUGW", "KL 到参考 CTMC，\\(\\varepsilon>0\\)", "KL，\\(\\varepsilon>0\\)"],
+       ["输出", "**policy**", "policy", "plan 矩阵", "policy", "生成模型"],
+       ["可摊销", "否", "否", "**是**", "否", "否"],
+       ["误差保证", "**LP 对偶 + 互补松弛**", "Thm. 3.4", "零定理", "无误差界", "IMF 收敛无速率"],
+       ["最大规模", "\\(S_{20}\\)", "3×3×3 Rubik", "\\(n\\le10^4\\)", "**\\(10^6\\) 节点**", "ZINC250K"],
+       ["代码", "未见", "开源", "开源", "**未公开**", "开源"]
+     ], "note": "GSBoG 与 O08 同象限、卖点句几乎逐字相同（可执行策略而非静态耦合），却在主会且规模高四个数量级。反制点只有三个：隐式图、不定时域、误差证书。"},
+
+    {"type": "section", "num": "05", "title": "2025–2026 趋势", "subtitle": "arXiv 系统扫描：GFlowNet 侧 106 篇 · OT 侧 93 篇（2025-01 → 2026-09）"},
+
+    {"type": "two-col", "kicker": "趋势判断（每条 ≥2 篇支撑）", "title": "两侧同时成熟，却没有人接线", "cols": [
+      {"head": "GFlowNet 侧", "items": [
+        "非无环理论进主会（T36、Ergodic GF），三个应用出口（最短路、OT、MCMC 终止）全停 Workshop",
+        "**误差证书成为竞争点**：Stable GFlowNets 的 loss→TV 界、Evaluation Balance 把残差当评估器",
+        "训练目标进入「族」时代：\\(f\\)-TB（ICML 2026）、\\(\\alpha\\)-GFN、Hybrid-Balance（NeurIPS 2025）",
+        "策略梯度回流：PPO for GFN、自然梯度、RTB ≡ Trust-PCL",
+        "\\(Z\\) 的两种命运：LLM 场景里被消灭或被重用；O08 里根本不出现"]},
+      {"head": "最优传输侧", "items": [
+        "**图上 OT 的理论重心在「势」**：对偶预测加速最小费用流（AAAI 2026）、Sinkhorn 势统计率（Belomestny）、QOT 的 PL 不等式",
+        "离散 SB 完成闭环：有解析解基准 + 收敛率，新进入者无定义问题的红利",
+        "摊销 OT 拥挤度继续上升（切片势摊销、min-sliced 计划）",
+        "二次正则是唯一未被占满的方向；「非唯一时选哪个」有独立文献（熵选择原理）"]}
+    ]},
+
+    {"type": "table", "kicker": "四个候选课题", "title": "窗口状态与最终评级",
+     "header": ["课题", "评级", "依据"],
+     "rows": [
+       ["**① Balance 残差 → OT 误差界 + 对偶势证书**", "[ok]做[/ok]", "GFN 侧有 loss→TV 界；OT 侧误差理论全在势上；O08 Thm. 3.3 的互补松弛给逐边证书；**没有一篇把近似可行流的残差映射到 cost gap**"],
+       ["② 条件 GFN 摊销一族图上 OT", "[bad]不做[/bad]（降为对照）", "UNOT、ULOT、切片势摊销、min-sliced 四篇以上；唯一护城河是隐式图，但「一族隐式图」怎么定义没人说清"],
+       ["③ 熵正则 GFN–OT / 图上 SB", "[bad]不做[/bad]（作①的 ε>0 推广）", "GSBoG 占同象限主会位；Sampling Decisions 已把 GFN 流函数写成单侧 Schrödinger 传输；离散 SB 有基准与收敛率"],
+       ["④ GFN proposal + 经典 OT 修正", "改形态", "已被「对偶预测 → ε-relaxation」具体化（AAAI 2026）；可作①的应用：把学到的状态流当对偶预测喂经典求解器"]
+     ], "note": "如果只做一件事，做①；②③④作为①的基线或推广出现，而不是独立论文。"},
+
+    {"type": "two-col", "kicker": "可立即开工", "title": "决定性实验", "cols": [
+      {"head": "环境 · 方法 · 基线", "items": [
+        "Hypergrid \\(H\\in\\{10,15,20\\}\\)（精确 LP / network simplex 可得）→ \\(S_n\\) Cayley 图 \\(n\\in\\{4,8\\}\\)（精确）→ \\(n=20\\)（只报证书）→ 带权变体",
+        "方法：min-flow GFN（T36 代码）× {DB 正则, PPO 训练器, \\(f\\)-TB 损失}",
+        "基线：network simplex、Sinkhorn（含解析解基准校验）、UNOT 移植版、GSBoG 复现/α-DSBM 离散化替身"]},
+      {"head": "指标 · 判据", "items": [
+        "边缘：终止分布 TV、源边缘违反量；代价：\\(\\mathbb E|\\tau|\\) vs OT*、\\(\\|\\Pi_\\theta-\\Pi^\\star\\|_1\\)",
+        "**证书**：由状态流构造对偶可行 \\(\\pi\\)，报 primal–dual gap；核心图：x = balance 残差，y = cost gap",
+        "预期：显式小图精确求解器全面占优；隐式图上 GFN 是唯一能给证书的方法",
+        "[bad]失败判据[/bad]：\\(n=20\\) 上 gap 与残差 Spearman < 0.5 → 只认证边缘误差；带权变体证书失效 → 单位边长假设是本质的"]}
+    ]},
+
+    {"type": "section", "num": "06", "title": "仓库与方法论", "subtitle": "awesome_Gflow_OT：数据驱动的 README、可复现的报告与翻译流水线"},
+
+    {"type": "cards", "kicker": "交付物", "title": "仓库里有什么", "cards": [
+      {"head": "18 篇深度解读", "text": "严格 8 节模板；每个定理、数字带原文出处；末尾「编者注」记录自主决定的歧义。竞品矩阵、两份趋势扫描、INSIGHTS 综合"},
+      {"head": "17 篇保版式中译 PDF", "text": "SuperTranslate：公式/图表/引用冻结，正文按原坐标回填；每篇附对象级 QA（inspect.json）。O01 讲义因 API 余额未译"},
+      {"head": "汇总报告 中/英", "text": "由 `scripts/build_report.py` 从解读报告拼装，pandoc + xelatex 编译：中文 91 页、英文 120 页（DeepSeek/Gemini 分块翻译，LaTeX 与引用逐字保留）"},
+      {"head": "数据驱动 README", "text": "`data/meta/*.json` 一篇一卡 → `src/generator.py` 生成中英 README（awesome-ml4co 模式）；2026 增补自 `candidates_*.csv`"}
+    ], "note": "发表状态纪律：主会 / 期刊 / Workshop / 预印本分开标，Workshop 绝不写成主会；arXiv comment 滞后时以 OpenReview / dblp / proceedings 为准。"},
+
+    {"type": "quote", "kicker": "结语", "title": "一句话带走",
+     "text": "GFlowNet 唯一不可替代的产出是**校准的多样解分布**；在 OT 这条线上，它唯一不可替代的位置是**无法枚举、无法构造代价矩阵的组合图**。在这个位置上给出**带证书**的传输策略，是目前没人占的那个空位。",
+     "source": "awesome_Gflow_OT · reports/INSIGHTS.md · 2026-09"}
+  ]
+}

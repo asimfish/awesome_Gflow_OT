@@ -1,0 +1,31 @@
+{
+  "id": "T10",
+  "arxiv": "2305.07170",
+  "title": "Towards Understanding and Improving GFlowNet Training",
+  "authors": [
+    "Max W. Shen",
+    "Emmanuel Bengio",
+    "Ehsan Hajiramezanali",
+    "Andreas Loukas",
+    "Kyunghyun Cho",
+    "Tommaso Biancalani"
+  ],
+  "venue": "ICML 2023",
+  "venue_type": "main",
+  "year": 2023,
+  "code_url": "https://github.com/maxwshen/gflownet",
+  "one_line_en": "On enumerable biochemical benchmarks GFlowNets systematically underfit the target distribution by oversampling low-reward objects; the paper grounds flow quality in generalization and proposes prioritized replay, relative edge flow parametrization, and guided trajectory balance to control credit assignment.",
+  "one_line_zh": "在可枚举的生化基准上，GFlowNet 会系统性欠拟合目标分布、长期超采样低奖励对象；本文把「流的好坏」定义为泛化能力，并用优先回放、相对边流参数化与引导式轨迹平衡来显式控制信用分配。",
+  "tags": [
+    "gflownet",
+    "evaluation",
+    "underfitting",
+    "flow-underdetermination",
+    "credit-assignment",
+    "guided-trajectory-balance",
+    "prioritized-replay",
+    "mdp-design",
+    "anderson-darling"
+  ],
+  "priority": "P1"
+}

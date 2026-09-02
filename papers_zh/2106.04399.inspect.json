@@ -1,0 +1,47 @@
+{
+  "issue_count": 7,
+  "issues": [
+    {
+      "page": 3,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 3: block set at 8.36pt but the original at this position is 10.06pt (ratio 0.83 vs page median 0.92) at x=247.3, y=638.9: s 可达的所有状态的奖励之和。考虑一个策略"
+    },
+    {
+      "page": 9,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 9: paragraph still in English (3 words, 0 CJK chars) at x=114.6, y=516.2: # of modes with R > 7.5"
+    },
+    {
+      "page": 14,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 14: block set at 8.36pt but the original at this position is 10.06pt (ratio 0.83 vs page median 0.92) at x=247.3, y=250.4: s 可达的所有状态的奖励之和。考虑一个策略"
+    },
+    {
+      "page": 14,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 14: paragraph still in English (4 words, 0 CJK chars) at x=107.3, y=339.3: (b) If C is bijective, then π(s) ="
+    },
+    {
+      "page": 22,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 22: paragraph still in English (3 words, 0 CJK chars) at x=114.6, y=332.6: # of modes with R > 7"
+    },
+    {
+      "page": 22,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 22: paragraph still in English (3 words, 0 CJK chars) at x=310.3, y=332.6: # of modes with R > 8"
+    },
+    {
+      "page": 22,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 22: paragraph still in English (3 words, 0 CJK chars) at x=114.6, y=517.6: # of modes with R > 7.5"
+    }
+  ]
+}

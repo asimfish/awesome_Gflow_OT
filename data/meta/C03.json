@@ -1,0 +1,19 @@
+{
+  "id": "C03",
+  "arxiv": "2410.01500",
+  "title": "Discrete Diffusion Schrodinger Bridge Matching for Graph Transformation",
+  "authors": ["Jun Hyeong Kim", "Seonghwan Kim", "Seokhyun Moon", "Hyeongwoo Kim", "Jeheon Woo", "Woo Youn Kim"],
+  "venue": "ICLR 2025 (Poster)",
+  "venue_type": "main",
+  "year": 2025,
+  "code_url": "https://github.com/junhkim1226/DDSBM",
+  "one_line_en": "DDSBM extends Iterative Markovian Fitting to CTMCs on finite state spaces with a proof of monotone convergence to the Schrodinger bridge, and shows that with node/edge-independent reference dynamics the induced entropic-OT cost is proportional to the graph edit distance, applied to molecular optimization on ZINC250K and Polymer.",
+  "one_line_zh": "DDSBM 把 Iterative Markovian Fitting 推广到有限状态空间的 CTMC 并证明其单调收敛到 Schrodinger 桥，指出当参考动力学取节点/边独立跳变时对应的熵正则 OT cost 正比于图编辑距离，应用于 ZINC250K 与 Polymer 上的分子优化。",
+  "tags": ["discrete-schrodinger-bridge", "iterative-markovian-fitting", "ctmc", "entropic-ot", "graph-edit-distance", "graph-transformation", "molecular-optimization", "convergence-theorem", "quadratic-assignment-problem"],
+  "priority": "P2",
+  "verification": {
+    "checked_on": "2026-09-02",
+    "sources": ["arXiv API (v1 2024-10-02, v2 2025-02-28, comment: 'Accepted to ICLR 2025')", "OpenReview forum tQyh0gnfqW: 'ICLR 2025 Poster'", "iclr.cc virtual poster 28054", "dblp: venue=ICLR year=2025 type=Conference and Workshop Papers"],
+    "note": "Poster at the main conference track, not a workshop. Section numbering differs between arXiv v1 and v2; reports cite the v2 (ICLR camera-ready) numbering used in the local PDF."
+  }
+}

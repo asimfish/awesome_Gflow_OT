@@ -1,0 +1,23 @@
+{
+  "issue_count": 3,
+  "issues": [
+    {
+      "page": 14,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 14: paragraph still in English (4 words, 0 CJK chars) at x=155.7, y=327.6: R(x)πxsubject toπs0 = 0,πs′ −πs ≤1∀(s →s′) with s′ ̸= sf"
+    },
+    {
+      "page": 15,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 15: paragraph still in English (17 words, 0 CJK chars) at x=55.4, y=372.6: Next, take any edge s →s′ with s′ ̸= sf. By definition o"
+    },
+    {
+      "page": 15,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 15: paragraph still in English (22 words, 0 CJK chars) at x=55.1, y=417.1: Appending the edge s →s′ gives a path from s0 to s′ of l"
+    }
+  ]
+}

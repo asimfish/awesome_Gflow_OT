@@ -1,0 +1,2334 @@
+[
+ {
+  "arxiv": "2608.23849",
+  "title": "FlowNeg: GFlowNet-Guided Diverse Hard Negative Sampling for Knowledge Graph Embedding",
+  "authors": [
+   "Ibne Farabi Shihab",
+   "Naoshin Anzum Hridi",
+   "Joyanta Jyoti Mondal"
+  ],
+  "published": "2026-08-24",
+  "updated": "2026-08-24",
+  "comment": "20 pages, 1 figure",
+  "journal_ref": "",
+  "primary": "cs.LG",
+  "abstract": "Negative sampling determines whether a knowledge graph embedding (KGE) model learns from informative counterexamples or wastes updates on implausible corruptions. Uniform negatives are diverse but easy, whereas hard-negative miners concentrate on few entities and collide more with held-out positives. We introduce FlowNeg, a context-conditioned hierarchical generative flow network that amortizes reward-proportional sampling without normalizing a composite reward over the entity set: given a positive triple and corruption side, it selects a type, then an entity. Its terminal reward combines bounded model-based hardness with a training-only structural score for held-out-positive collision, over a relation-specific type-compatible support. We derive the reward, specialize standard trajectory balance, and bound multiplicatively how residual imbalance perturbs terminal and mode probability. Across a descriptive five-seed grid of five architectures and five benchmarks, FlowNeg has higher mean MRR than EMU and than IF-NS in 24 of 25 cells ($+0.0172$ and $+0.0160$ on average). A separate 15-seed FB15k-237/RotatE control fixing negative count, diagnostic budget, and compute gives FlowNeg $0.359\\pm0.001$ MRR against $0.346\\pm0.002$ for EMU, with near-uniform fixed-partition diversity, high gradient informativeness, and low collision. The evidence supports mode-covering negative generation without treating structural similarity as an open-world truth oracle.",
+  "hit_queries": [
+   "all:GFlowNet",
+   "all:GFlowNets",
+   "all:\"generative flow network\"",
+   "all:\"generative flow networks\""
+  ]
+ },
+ {
+  "arxiv": "2608.11396",
+  "title": "Generative Learning for Quantum Measurement Design",
+  "authors": [
+   "Jun Dai",
+   "Olivier Nahman-Lévesque",
+   "Guillaume Rabusseau",
+   "Hong-Ye Hu",
+   "Cunlu Zhou"
+  ],
+  "published": "2026-08-11",
+  "updated": "2026-08-11",
+  "comment": "",
+  "journal_ref": "",
+  "primary": "quant-ph",
+  "abstract": "Extracting quantum information from a quantum state is a fundamental task of quantum computation, often requiring the estimation of many non-commuting observables under a finite measurement budget. For both near-term and early fault-tolerant settings, the measurement protocol must balance statistical efficiency against implementation resources such as circuit depth, connectivity, and entangling-gate count. Many existing strategies focus on two extremes: hardware-friendly product measurements with high sampling cost, and fully commuting measurements with deep circuits. Here we recast resource-constrained measurement design as a generative learning problem. We introduce FlowMeas, which uses a generative flow network to directly sample finite ensembles of shallow Clifford measurement circuits subject to a prescribed shot budget and hardware constraints. At zero entangling depth, FlowMeas learns qubit-wise commuting measurement schedules and already matches or improves leading product-measurement methods on nearly all molecular benchmarks. Allowing one or two entangling gate layers yields further reductions in energy estimation error of up to $27\\%$ relative to the strongest state-independent product-measurement baseline. The learned policy can also be reused across related Hamiltonians, substantially accelerating retraining along a molecular potential-energy surface. We further obtain results for molecular Hamiltonians with up to 20 qubits and apply the framework to a compactly encoded 54-qubit interacting fermionic model, extending the demonstrated scale beyond prior molecular benchmarks. These results establish generative learning as a flexible and unified framework for quantum measurement design under practical resource constraints.",
+  "hit_queries": [
+   "all:\"generative flow network\"",
+   "all:\"generative flow networks\""
+  ]
+ },
+ {
+  "arxiv": "2608.10171",
+  "title": "Generating Attacks for LLMs with GFlowNets",
+  "authors": [
+   "Berkay Ozcam",
+   "Irem Onen",
+   "Mehmet Fatih Amasyali",
+   "Emin Islam Tatli"
+  ],
+  "published": "2026-08-10",
+  "updated": "2026-08-10",
+  "comment": "",
+  "journal_ref": "",
+  "primary": "cs.AI",
+  "abstract": "The rapid advancement of Large Language Models (LLMs) has facilitated their ubiquitous integration into various domains, leading to widespread adoption. However, this escalating trend has introduced significant security vulnerabilities, necessitating the identification and mitigation of flaws arising from malicious exploitation. Red teaming assessments, conducted to evaluate model robustness through diverse adversarial inputs, are essential for exposing security risks and implementing countermeasures. Currently, red teaming is performed either manually by experts or automatically using predefined attack datasets. Nevertheless, manual testing remains time-consuming, while existing automated methods suffer from limited creativity due to their inherent dependency on fixed datasets. In this study, we propose an automated, human-independent, and adaptive approach leveraging GFlowNets to identify LLM vulnerabilities by utilizing one large language model to test another. Within this framework, an attacker model is trained against a specified victim model to perform automated red teaming and provide a quantitative robustness score. This research aims to generate more effective adversarial attacks in English compared to existing benchmarks and, as a novel contribution to the literature, introduces a model capable of generating attack inputs in the Turkish language.",
+  "hit_queries": [
+   "all:GFlowNet",
+   "all:GFlowNets"
+  ]
+ },
+ {
+  "arxiv": "2608.05422",
+  "title": "IFlowNets: Extending Generative Samplers to Learn Strategies in Incomplete Information Games",
+  "authors": [
+   "Conor M. Artman",
+   "Nicholas Di",
+   "Scott Perkins"
+  ],
+  "published": "2026-08-05",
+  "updated": "2026-08-05",
+  "comment": "Accepted at the NeurIPS 2025 Workshop on Dynamics at the Frontiers of Optimization, Sampling, and Games",
+  "journal_ref": "",
+  "primary": "cs.LG",
+  "abstract": "While many algorithms blend reinforcement learning (RL) with counterfactual regret (CFR) methods to leverage tradeoffs in computational speed and performance, there are fewer investigations into generative sampling frameworks in game theoretic applications in incomplete information games. We extend a generative flow network framework, Adversarial Flow Networks (AFlowNets), to incomplete information games, called Information Flow Networks (IFNs). We prove that previously established constraints for generative flow networks in complete information games are inadmissible for obtaining valid densities (corresponding to player strategies) and a valid training objective. We show that our proposed generalization, IFlowNets, alleviates this issue and strictly generalizes AFlowNets. In preliminary results for three standard game environments, IFlowNets perform comparably to or better than Outcome Sampling Monte Carlo Counterfactual Regret (OSMCCFR) and standard RL-based methods in performance and speed.",
+  "hit_queries": [
+   "all:\"generative flow network\"",
+   "all:\"generative flow networks\""
+  ]
+ },
+ {
+  "arxiv": "2608.05314",
+  "title": "Machine learning for sample-based quantum diagonalization: generative configuration recovery and the classical-simulability frontier",
+  "authors": [
+   "Nicolás Bonilla Vargas"
+  ],
+  "published": "2026-08-05",
+  "updated": "2026-08-05",
+  "comment": "30 pages, 10 figures. Review. Code and a reproducible notebook: https://github.com/nicolasbonilla/ml-for-sqd-review",
+  "journal_ref": "",
+  "primary": "quant-ph",
+  "abstract": "Sample-based quantum diagonalization (SQD), equivalently quantum-selected configuration interaction (QSCI), has in two years become a pragmatic centre of gravity of pre-fault-tolerant quantum chemistry: a quantum processor samples electronic configurations, and the many-electron Hamiltonian is diagonalized classically in the resulting determinant subspace. Its accuracy is set entirely by which configurations enter that subspace, a selection problem for machine learning made acute by a coupon-collector bottleneck. We critically review the ecosystem of generative and learned selectors, organizing it by the object each method generates and the importance signal it exploits, and expose one conspicuous gap: a reward-proportional generative-flow-network proposer built for tail discovery. We then confront the field's central question -- whether the quantum sampler beats classical selected configuration interaction -- and report a carefully scoped negative: across published same-active-space comparisons, strong classical selected CI matches or beats the quantum-sampled subspace, and the flagship single-layer circuits now admit polynomial-time classical energy estimation. We distil a benchmarking standard and turn the negative into a regime map, then test it with FCI-exact experiments that confirm one prediction and refute another: the cheap prior's rank correlation with the exact weights declines with multireference character (a usable coordinate), but a controlled single-molecule noise sweep shows the one generative advantage we find, robustness to valid-shot starvation, to be generic rather than the multireference-specific effect a confounded contrast first suggested. Finally, we flag learning from quantum experiments, whose classical sample-complexity lower bound is an unconditional theorem, as the one adjacent frontier where a quantum advantage is provable but not yet bridged to chemistry.",
+  "hit_queries": [
+   "all:\"generative flow network\"",
+   "all:\"generative flow networks\"",
+   "all:\"flow network\" AND all:sampler AND all:reward"
+  ]
+ },
+ {
+  "arxiv": "2608.03967",
+  "title": "Information-Geometric Forward Policy Training in GFlowNets",
+  "authors": [
+   "Yordan Raykov",
+   "Rodrigo Veiga"
+  ],
+  "published": "2026-08-04",
+  "updated": "2026-08-04",
+  "comment": "13 pages + appendix",
+  "journal_ref": "",
+  "primary": "stat.ML",
+  "abstract": "Generative Flow Networks (GFlowNets) have emerged as a flexible framework for amortised inference over discrete and mixed discrete-continuous objects, requiring only an unnormalised target density specified through a reward. In this work, we formulate forward-policy training in GFlowNets through the information geometry of the induced trajectory sampler. Treating the forward policy as an induced trajectory sampler, we show that its intrinsic first-order geometry is given by the Fisher-Rao metric of the trajectory family, and that the associated natural gradient provides the canonical local update whenever the corresponding Fisher information is computable or accurately approximable. We derive an exact decomposition of the trajectory Fisher into per-step conditional second moments, which clarifies when temporal score interactions vanish and when dense couplings remain under shared parameterisation. This leads to three computational regimes: settings with tractable exact Fisher information, settings where Monte Carlo estimators of the expected Fisher are sufficient, and structure-exploitable settings in which target locality or factorisation yields accurate approximations of the Fisher expectation. In the latter case, graphical-model tools such as exact marginalisation, separator methods, and belief propagation provide principled surrogates for natural-gradient updates. The resulting framework turns target structure into optimisation geometry and yields a tractable route to structure-aware forward-policy training in GFlowNets. We illustrate the framework empirically through examples comparing convergence and exploration behaviour under Riemannian and Euclidean optimisation.",
+  "hit_queries": [
+   "all:GFlowNet",
+   "all:GFlowNets",
+   "all:\"generative flow network\"",
+   "all:\"generative flow networks\"",
+   "all:\"flow network\" AND all:sampler AND all:reward"
+  ]
+ },
+ {
+  "arxiv": "2608.01789",
+  "title": "Towards Autonomous Formulaic Alpha Discovery: An Evolutionary Computation Perspective",
+  "authors": [
+   "Xinwei Yu",
+   "Yiyang Fu",
+   "Mingcheng Fan",
+   "Enqi Li",
+   "Yilin Gao",
+   "Shugong Xu"
+  ],
+  "published": "2026-08-03",
+  "updated": "2026-08-03",
+  "comment": "",
+  "journal_ref": "",
+  "primary": "cs.NE",
+  "abstract": "Automated formulaic alpha discovery aims to generate predictive and interpretable trading signals from large symbolic factor spaces. Its effectiveness is constrained by noisy fitness estimates, market nonstationarity, costly backtesting, semantic redundancy, and conflicting practical objectives. Existing studies employ diverse techniques, including genetic programming (GP), evolutionary algorithms (EAs), reinforcement learning (RL), generative flow networks (GFlowNets), Monte Carlo tree search (MCTS), large language models (LLMs), and agentic workflows, but generally examine them as separate algorithmic families. This article introduces, for the first time, a unified evolutionary computation (EC) perspective on automated formulaic alpha discovery, formulating it as a noisy, dynamic, and multiobjective symbolic evolutionary optimization problem. A six-component analytical framework is developed to characterize existing methods through representation, variation, fitness evaluation, selection, memory, and adaptation. Furthermore, an eight-dimensional, autonomy-oriented evaluation framework is proposed, covering search efficiency, fitness reliability, residual alpha quality, economic diversity, tradability, evolutionary autonomy, robustness to nonstationarity, and reproducibility. Together, these frameworks provide a systematic foundation for unifying heterogeneous approaches, diagnosing component-level limitations, and guiding the development of reliable, adaptive, interpretable, and reproducible autonomous alpha discovery systems.",
+  "hit_queries": [
+   "all:GFlowNet",
+   "all:GFlowNets",
+   "all:\"generative flow network\"",
+   "all:\"generative flow networks\""
+  ]
+ },
+ {
+  "arxiv": "2608.01303",
+  "title": "AlphaG-OPD: Reliability-Gated Sibling Counterfactuals for On-Policy Distillation in Symbolic Alpha Factor Discovery",
+  "authors": [
+   "Yaoyu Su"
+  ],
+  "published": "2026-08-02",
+  "updated": "2026-08-02",
+  "comment": "12 pages, 3 figures, 5 tables",
+  "journal_ref": "",
+  "primary": "cs.LG",
+  "abstract": "Symbolic alpha factor discovery can score a completed expression, but it provides no direct label for the structural decisions that produced it. Generative flow networks (GFlowNets) preserve a diverse, reward-proportional distribution over complete expressions, yet their trajectory-level objective does not compare unchosen sibling actions at an intermediate state. We introduce AlphaG-OPD, a structural on-policy distillation framework that turns terminal factor evaluations into local action guidance. Its design separates three decisions. Component I determines where to teach by exposing grammar-valid siblings at partial abstract-syntax-tree (AST) states visited by the current forward policy. Component II determines what is reliable enough to teach: it evaluates three supported siblings under four shared suffixes and admits a KL-bounded target only when their matched comparisons exhibit sufficient winner agreement and a positive empirical lower confidence bound (LCB). Component III determines how strongly and for how long to teach by consolidating accepted targets through bounded replay, score-indexed expiry, and forward-gradient balancing, without additional factor evaluations. Terminal reward, Trajectory Balance, the backward policy, grammar, and factor-pool rules remain unchanged. An equal-physical-score four-arm ablation tests paired teaching, reliability gating, and consolidation. Across China's CSI300, CSI500, and CSI1000 and the U.S. S&P 500, the complete method delivers strong cross-market performance over multiple random seeds.",
+  "hit_queries": [
+   "all:GFlowNet",
+   "all:GFlowNets",
+   "all:\"generative flow network\"",
+   "all:\"generative flow networks\""
+  ]
+ },
+ {
+  "arxiv": "2607.13394",
+  "title": "GFlowRL: Scaling Distribution-Matching RL to Large Language Models",
+  "authors": [
+   "Xiaodong Liu",
+   "Michael Xu",
+   "Jack W. Stokes",
+   "Paul Smolensky",
+   "Doug Burger",
+   "Jianfeng Gao"
+  ],
+  "published": "2026-07-15",
+  "updated": "2026-07-15",
+  "comment": "31 pages, 8 figures, 17 tables",
+  "journal_ref": "",
+  "primary": "cs.CL",
+  "abstract": "Generative Flow Networks (GFlowNets) offer a promising alternative to reward-maximizing reinforcement learning (RL) for large reasoning models, encouraging diverse reasoning paths by matching reward distributions rather than collapsing to dominant modes. Recent work shows promise on math and code, but scaling GFlowNet-style RL to modern post-training pipelines remains difficult: as model size, rollout horizon, reward noise, and distributed-systems complexity grow together, a learned prompt-conditional partition function becomes a source of gradient instability and engineering overhead rather than a useful normalizer. Through systematic analysis, we find that the learned partition function, previously treated as essential, can be replaced by an in-batch Monte Carlo estimate computed from the rollout group already required for training. We propose GFlowRL, a streamlined GFlowNet-style RL algorithm that removes the auxiliary partition network entirely while preserving the reward-distribution-matching objective, completed by two stabilizers: importance-sampling correction for rollout/trainer drift and asymmetric flow-gap clipping for outlier residuals. GFlowRL exceeds all counterparts on math, code, and adversarial red-teaming benchmarks, reaching a Codeforces rating of 2048 at the 14B scale (within 25 Elo of o3-mini) and attaining the highest average ASR@1 on AdvBench and HarmBench, outperforming the previous SOTA multi-turn attacker in a regime where FlowRL, a prior GFlowNet-style method, diverges. The same recipe transfers to all evaluated MoE configurations up to 235B parameters, where FlowRL again fails to converge. To our knowledge, GFlowRL is the first GFlowNet-style RL algorithm to scale stably across both dense and sparse architectures. Code will be at: https://github.com/microsoft/gflowrl",
+  "hit_queries": [
+   "all:GFlowNet",
+   "all:GFlowNets",
+   "all:\"generative flow network\"",
+   "all:\"generative flow networks\""
+  ]
+ },
+ {
+  "arxiv": "2607.06432",
+  "title": "TILDE: TILt-based Distributional Erasure for Concept Unlearning",
+  "authors": [
+   "Naveen George",
+   "Naoki Murata",
+   "Yuhta Takida",
+   "Konda Reddy Mopuri",
+   "Yuki Mitsufuji"
+  ],
+  "published": "2026-07-07",
+  "updated": "2026-07-07",
+  "comment": "",
+  "journal_ref": "",
+  "primary": "cs.LG",
+  "abstract": "Concept unlearning in text-to-image diffusion models is critical for safe and practical deployment: with rising privacy concerns, copyright disputes, trademark constraints, and safety regulations, deployed systems must be able to suppress unwanted concepts after training. Existing methods often remove the target concept effectively, but practical unlearning also requires an equally fundamental property: the unlearned model should retain quality, diversity, and semantic coverage on benign generation. The gold standard is a retain-only model trained from scratch without the unwanted data. However, common erasure objectives do not specify which post-unlearning distribution should approximate this reference, leaving retention as an implicit consequence of the update rule. We propose TILDE, TILt-based Distributional Erasure, which formulates concept unlearning as a distributional alignment problem: the desired target is the minimum-deviation conditional distribution from the pretrained model under a forgetting constraint. This energy-tilted, anchor-free target suppresses concept-expressing images while preserving benign relative mass for each prompt. We instantiate this principle with residual $\\nabla$-GFlowNet training, which learns the score correction induced by the forget energy relative to the pretrained diffusion model. Across objects, artistic styles, and characters, TILDE achieves strong forgetting while improving retention and distributional fidelity over prior baselines.",
+  "hit_queries": [
+   "all:GFlowNet",
+   "all:GFlowNets"
+  ]
+ },
+ {
+  "arxiv": "2607.05266",
+  "title": "A Distributional Framework for Generative Modeling of Molecular Crystals",
+  "authors": [
+   "Michael Kilgour",
+   "Alex Dong",
+   "Mark E. Tuckerman",
+   "Jutta Rogal"
+  ],
+  "published": "2026-07-06",
+  "updated": "2026-07-06",
+  "comment": "",
+  "journal_ref": "",
+  "primary": "cond-mat.mtrl-sci",
+  "abstract": "Molecular crystals are a highly polymorphic class of materials, with a single molecule commonly crystallizing via multiple packing patterns, making structure and property prediction very challenging. Crystal structure prediction typically comprises the production of sets of promising candidate structures, each considered in isolation rather than as samples in a thermodynamic distribution. Likewise, modern generative approaches to this problem, despite naturally sampling distributions of crystals, lack a concrete formulation of the distributions being sampled. Two components are required to impart meaning to the distributions of crystals generated under such models: a canonical parameterization, and a loss function which equilibrates the generated samples to some target distribution. We develop such a parameterization, and train energy-based generative flow networks (GFlowNets) to approximate the Boltzmann distribution over crystal structures for target molecules and space groups. Combined, these components comprise our MXtalGFlow framework for molecular crystal modeling. Going beyond sampling disconnected sets of low-energy structures, MXtalGFlow yields a thermodynamic distribution over crystal structures. We sample and analyze distributions of crystals for two molecules, each under two energy functions, a Lennard-Jones potential and the Universal Model for Atoms. We characterize the local structural basins about the known polymorphs, and identify additional as-yet un-reported packing modes with competitive probabilities to the known experimental structures. With MXtalGFlow, we illustrate how to define and train a model to sample a thermodynamically meaningful distribution of molecular crystals, and analyze such a distribution to glean useful information.",
+  "hit_queries": [
+   "all:GFlowNet",
+   "all:GFlowNets",
+   "all:\"generative flow network\"",
+   "all:\"generative flow networks\""
+  ]
+ },
+ {
+  "arxiv": "2606.24679",
+  "title": "FlowPipe: LLM-Enhanced Conditional Generative Flow Networks for Data Preparation Pipeline Construction",
+  "authors": [
+   "Kunyu Ni",
+   "Lei Cao",
+   "Jie He",
+   "Xiaotong Zhang",
+   "Jianfeng Jin",
+   "Junyu Dong",
+   "Yanwei Yu"
+  ],
+  "published": "2026-06-23",
+  "updated": "2026-06-24",
+  "comment": "Accepted by SIGMOD 2027",
+  "journal_ref": "",
+  "primary": "cs.LG",
+  "abstract": "Data preparation pipelines improve data quality in machine learning by transforming raw tables into learning-ready data through sequential cleaning and feature transformation operators. However, automatically constructing such pipelines is computationally difficult because operator sequences are combinatorial and end-to-end evaluation is expensive. Existing state-of-the-art (SOTA) Multi-DQN methods still face three key limitations: decoupled value estimators weaken long-horizon credit assignment, dataset context is only weakly injected into the policy, and exploration is inefficient in a sparse search space with many invalid states. To address these issues, we propose FlowPipe, a unified framework that formulates pipeline synthesis as conditional probabilistic flow generation over a directed acyclic graph. FlowPipe uses Conditional Generative Flow Networks (C-GFlowNets) with a Trajectory Balance objective to connect terminal validation rewards with early pipeline decisions. It further introduces Deep Semantic Modulation through Feature-wise Linear Modulation (FiLM), allowing LLM-derived logical priors to condition the policy's internal activations according to dataset semantics. In addition, FlowPipe incorporates failure awareness into the flow objective to avoid invalid states and concentrate search on high-potential regions. Experiments on two benchmark suites with 74 real-world datasets show that FlowPipe outperforms SOTA baselines, improving accuracy by 11.96% on average and achieving 12.5x faster training convergence. Source code is available at https://github.com/KunyuNi/FlowPipe.",
+  "hit_queries": [
+   "all:GFlowNet",
+   "all:GFlowNets",
+   "all:\"generative flow network\"",
+   "all:\"generative flow networks\""
+  ]
+ },
+ {
+  "arxiv": "2606.16222",
+  "title": "Latent Thought Flow: Efficient Latent Reasoning in Large Language Models",
+  "authors": [
+   "Xiandong Zou",
+   "Jing Huang",
+   "Jianshu Li",
+   "Pan Zhou"
+  ],
+  "published": "2026-06-15",
+  "updated": "2026-06-15",
+  "comment": "",
+  "journal_ref": "",
+  "primary": "cs.AI",
+  "abstract": "Large Language Models (LLMs) increasingly rely on intermediate reasoning, yet explicit Chain-of-Thought (CoT) suffers from a linguistic space bottleneck: each thought must be decoded into tokens, causing high inference overhead. Latent reasoning moves deliberation into continuous space, but existing methods mostly learn deterministic or reward-maximizing paths, lacking a principled way to allocate probability across trajectories with different correctness and costs. We propose Latent Thought Flow (LTF), which models reasoning as variable-length continuous trajectories and trains a sampler to match a reward-induced posterior over answer quality and computation cost. We instantiate this with a continuous GFlowNet using stochastic latent transitions. To handle sparse answer supervision, we introduce an Entropy-Weighted Subtrajectory Balance objective for intermediate rewards and a reference-prior regularizer to anchor exploration. Experiments under finetuning and transfer learning settings show that LTF outperforms explicit CoT and latent reasoning baselines, improving accuracy by 9.5% while reducing reasoning length by 27.2% on average compared with strong latent reasoning baselines.",
+  "hit_queries": [
+   "all:GFlowNet",
+   "all:GFlowNets"
+  ]
+ },
+ {
+  "arxiv": "2606.16073",
+  "title": "Stop the Sampler! Classifier-Based Adaptive Stopping for Sampling Kernels",
+  "authors": [
+   "Kirill Korolev",
+   "Nikita Morozov",
+   "Stepan Pavlenko",
+   "Esmeralda S. Whitammer",
+   "Sergey Samsonov"
+  ],
+  "published": "2026-06-15",
+  "updated": "2026-07-17",
+  "comment": "ICML 2026 SPIGM Workshop",
+  "journal_ref": "",
+  "primary": "cs.LG",
+  "abstract": "Sampling from complex, unnormalized probability densities is a fundamental challenge in Bayesian inference and probabilistic modeling. While Markov chain Monte Carlo (MCMC) methods provide asymptotic guarantees, they often suffer from slow mixing and high computational costs due to fixed or manually tuned trajectory lengths. In this work, we propose a novel framework that treats trajectory termination as a learnable component of the sampling dynamics. By framing MCMC within the theory of non-acyclic generative flow networks (GFlowNets), we train state-dependent neural classifiers to decide when a trajectory has reached a high-density region and should terminate. We theoretically establish the connection between optimal classifiers and the target density via detailed balance conditions and introduce a multilevel training scheme to facilitate exploration in complex geometries. Experimental results across various benchmark densities demonstrate that our approach significantly reduces average trajectory lengths while improving mode coverage and mixing compared to standard MCMC baselines.",
+  "hit_queries": [
+   "all:GFlowNet",
+   "all:GFlowNets",
+   "all:\"generative flow network\"",
+   "all:\"generative flow networks\"",
+   "all:GFlowNet AND (all:\"shortest path\" OR all:\"minimum flow\" OR all:\"non-acyclic\" OR all:cyclic)"
+  ]
+ },
+ {
+  "arxiv": "2606.15793",
+  "title": "Proximal Policy Optimization for Amortized Discrete Sampling",
+  "authors": [
+   "Anna Zykova-Myzina",
+   "Timofei Gritsaev",
+   "Daniil Tiapkin",
+   "Nikita Morozov"
+  ],
+  "published": "2026-06-14",
+  "updated": "2026-06-14",
+  "comment": "",
+  "journal_ref": "",
+  "primary": "cs.LG",
+  "abstract": "This paper explores policy gradient algorithms for training stochastic policies to sample from structured discrete probability distributions under the Generative Flow Network (GFlowNet) framework. Building on extensive theoretical connections between GFlowNets and entropy-regularized reinforcement learning, we derive equivalents of standard policy gradient algorithms for training GFlowNets, as well as experimentally explore their various methodological aspects, including baseline training and advantage estimation. Most importantly, our work is the first to derive and successfully apply proximal policy optimization to GFlowNets, showing its improved convergence speed and data efficiency compared to standard GFlowNet training objectives on benchmarks ranging from synthetic energies to molecular graph generation.",
+  "hit_queries": [
+   "all:GFlowNet",
+   "all:GFlowNets",
+   "all:\"generative flow network\"",
+   "all:\"generative flow networks\""
+  ]
+ },
+ {
+  "arxiv": "2606.06272",
+  "title": "Your GFlowNet Secretly Learns an Optimal Transport Plan",
+  "authors": [
+   "Ian Maksimov",
+   "Nikita Morozov",
+   "Denis Belomestny",
+   "Sergey Samsonov"
+  ],
+  "published": "2026-06-04",
+  "updated": "2026-06-04",
+  "comment": "ICML 2026 SPIGM Workshop",
+  "journal_ref": "",
+  "primary": "cs.LG",
+  "abstract": "Generative Flow Networks (GFlowNets) are a framework for sampling structured objects via stochastic trajectories in a directed graph. In this work, we establish a theoretical connection between non-acyclic GFlowNets and optimal transport (OT). We show that fixing the initial flow distribution in a minimum-flow GFlowNet reduces its objective to a Kantorovich OT problem with graph-induced shortest path costs. At the optimum, the learned GFlowNet policy therefore encodes an optimal transport plan from the source distribution to the target distribution: we show that sampling trajectories from the minimum-flow GFlowNet recovers the corresponding optimal coupling. Our formulation enables applying the GFlowNet learning framework to OT problems on large graphs via edge flows and neural parameterization. Experiments confirm agreement with exact OT solvers and demonstrate that GFlowNets can learn high-quality transport plans.",
+  "hit_queries": [
+   "all:GFlowNet",
+   "all:GFlowNets",
+   "all:\"generative flow network\"",
+   "all:\"generative flow networks\"",
+   "all:GFlowNet AND all:\"optimal transport\"",
+   "all:GFlowNet AND (all:\"shortest path\" OR all:\"minimum flow\" OR all:\"non-acyclic\" OR all:cyclic)"
+  ]
+ },
+ {
+  "arxiv": "2606.00140",
+  "title": "GEM: Geometric Erasure by Contrastive Velocity Matching in Rectified Flows",
+  "authors": [
+   "Jonas Henry Grebe",
+   "Tobias Braun",
+   "Anna Rohrbach",
+   "Marcus Rohrbach"
+  ],
+  "published": "2026-05-29",
+  "updated": "2026-08-20",
+  "comment": "",
+  "journal_ref": "",
+  "primary": "cs.LG",
+  "abstract": "While the rapid adoption of multimodal generative models offers immense potential, it has also increased the risks of harmful content synthesis, deepfakes, and copyright infringements. To address these challenges, concept erasure has emerged as a prospective safeguard. However, as the field gradually transitions from U-Net-based diffusion models to Rectified Flow Transformers, erasure research has struggled to keep pace. In this work, we introduce GEM, a simple but highly effective erasure framework for Rectified Flow models. As part of our contribution, we establish a principled bridge between trajectory-based unlearning grounded in Generative Flow Networks and classic teacher-guided erasure: we translate trajectory-based signals into a teacher-guided flow-matching setup that unifies the strengths of both paradigms. Concretely, a teacher provides complementary attraction and repulsion signals that we combine into a single geometric guidance objective, yielding targeted suppression of unwanted concepts while preserving benign generation.",
+  "hit_queries": [
+   "all:\"generative flow network\"",
+   "all:\"generative flow networks\""
+  ]
+ },
+ {
+  "arxiv": "2605.15417",
+  "title": "$f$-Trajectory Balance: A Loss Family for Tuning GFlowNets, Generative Models, and LLMs with Off- and On-Policy Data",
+  "authors": [
+   "Jake Fawkes",
+   "Jason Hartford"
+  ],
+  "published": "2026-05-14",
+  "updated": "2026-05-14",
+  "comment": "Published at ICML 2026",
+  "journal_ref": "",
+  "primary": "cs.LG",
+  "abstract": "In GFlowNets and variational inference, it has been shown that the mean square error between target and model log probabilities is an effective, low variance, surrogate loss for training generative models. This loss has the property that when evaluated \\emph{on-policy} its gradients correspond to those of the KL divergence, while \\emph{off-policy} it remains a valid loss with the same global minimizer. In this work, we demonstrate that this construction can be extended to the whole family of $f$-divergences, leading to a family of losses whose on-policy gradients are that of the corresponding $f$-divergence, but retain the same global minimizer off-policy. Specifically, we show that the on-policy gradients lead to a one to one correspondence between translation invariant loss functions on the target and model log probabilities, and $f$-divergences. This equivalence allows us to design new surrogate loss functions for tuning a wide class of generative models that inherit the properties of the corresponding $f$-divergence, such as being more mode covering, whilst being applicable to off-policy data. We apply our losses on a range of tasks, including classic synthetic examples, SynFlowNets for molecule discovery, and asynchronous large language model (LLM) tuning, demonstrating that our models retain their predicted properties on- and off-policy in a wide class of generative models.",
+  "hit_queries": [
+   "all:GFlowNet",
+   "all:GFlowNets"
+  ]
+ },
+ {
+  "arxiv": "2605.01729",
+  "title": "Stable GFlowNets with TV Monitoring and Probabilistic Guarantees",
+  "authors": [
+   "Zengxiang Lei",
+   "Ananth Shreekumar",
+   "Jonathan Rosenthal",
+   "Ruoyu Song",
+   "Alvaro A. Cardenas",
+   "Daniel J. Fremont",
+   "Dongyan Xu",
+   "Satish Ukkusuri",
+   "Z. Berkay Celik"
+  ],
+  "published": "2026-05-03",
+  "updated": "2026-08-09",
+  "comment": "",
+  "journal_ref": "",
+  "primary": "cs.LG",
+  "abstract": "Generative Flow Networks (GFlowNets) sample diverse structured objects in proportion to reward and have been applied to molecular discovery and biological-sequence design, where finding multiple high-quality candidates is more useful than returning a single optimum. Despite their theoretical promise, practical training is often unstable, exhibiting severe loss spikes and mode collapse. To address this, we first assess the sensitivity of GFlowNet objectives, demonstrating that a small Total Variation (TV) distance between the learned and target distributions does not preclude an unbounded training loss. Motivated by this mismatch, we establish converse guarantees by deriving loss-to-TV bounds that certify global fidelity from bounded trajectory balance losses. Lastly, we propose Stable GFlowNets, which leverages our theory to stabilize training via adaptive reference flow and improves the trade-off among mode coverage, robustness, and certifiability.",
+  "hit_queries": [
+   "all:GFlowNet",
+   "all:GFlowNets",
+   "all:\"generative flow network\"",
+   "all:\"generative flow networks\""
+  ]
+ },
+ {
+  "arxiv": "2605.00553",
+  "title": "Stable-GFlowNet: Toward Diverse and Robust LLM Red-Teaming via Contrastive Trajectory Balance",
+  "authors": [
+   "Minchan Kwon",
+   "Sunghyun Baek",
+   "Minseo Kim",
+   "Jaemyung Yu",
+   "Dongyoon Han",
+   "Junmo Kim"
+  ],
+  "published": "2026-05-01",
+  "updated": "2026-06-30",
+  "comment": "ICML 2026 Spotlight",
+  "journal_ref": "",
+  "primary": "cs.LG",
+  "abstract": "Large Language Model (LLM) Red-Teaming, which proactively identifies vulnerabilities of LLMs, is an essential process for ensuring safety. Finding effective and diverse attacks in red-teaming is important, but achieving both is challenging. Generative Flow Networks (GFNs) that perform distribution matching are promising methods, but they are notorious for training instability and mode collapse. In particular, unstable rewards in red-teaming accelerate mode collapse. We propose Stable-GFN (S-GFN), which eliminates partition function $Z$ estimation in GFN and reduces training instability. S-GFN avoids $Z$ estimation through pairwise comparisons and employs a robust masking methodology against noisy rewards. Additionally, we propose a fluency stabilizer to prevent the model from getting stuck in local optima that produce gibberish. S-GFN provides more stable training while maintaining the optimal policy of GFN. We demonstrate the overwhelming attack performance and diversity of S-GFN across various settings. Our code can be found in https://github.com/kmc0207/Stable-GFN.",
+  "hit_queries": [
+   "all:GFlowNet",
+   "all:GFlowNets",
+   "all:\"generative flow network\"",
+   "all:\"generative flow networks\""
+  ]
+ },
+ {
+  "arxiv": "2604.21830",
+  "title": "GFlowState: Visualizing the Training of Generative Flow Networks Beyond the Reward",
+  "authors": [
+   "Florian Holeczek",
+   "Andreas Hinterreiter",
+   "Alex Hernandez-Garcia",
+   "Marc Streit",
+   "Christina Humer"
+  ],
+  "published": "2026-04-23",
+  "updated": "2026-04-23",
+  "comment": "",
+  "journal_ref": "",
+  "primary": "cs.LG",
+  "abstract": "We present GFlowState, a visual analytics system designed to illuminate the training process of Generative Flow Networks (GFlowNets or GFNs). GFlowNets are a probabilistic framework for generating samples proportionally to a reward function. While GFlowNets have proved to be powerful tools in applications such as molecule and material discovery, their training dynamics remain difficult to interpret. Standard machine learning tools allow metric tracking but do not reveal how models explore the sample space, construct sample trajectories, or shift sampling probabilities during training. Our solution, GFlowState, allows users to analyze sampling trajectories, compare the sample space relative to reference datasets, and analyze the training dynamics. To this end, we introduce multiple views, including a chart of candidate rankings, a state projection, a node-link diagram of the trajectory network, and a transition heatmap. These visualizations enable GFlowNet developers and users to investigate sampling behavior and policy evolution, and to identify underexplored regions and sources of training failure. Case studies demonstrate how the system supports debugging and assessing the quality of GFlowNets across application domains. By making the structural dynamics of GFlowNets observable, our work enhances their interpretability and can accelerate GFlowNet development in practice.",
+  "hit_queries": [
+   "all:GFlowNet",
+   "all:GFlowNets",
+   "all:\"generative flow network\"",
+   "all:\"generative flow networks\""
+  ]
+ },
+ {
+  "arxiv": "2604.20707",
+  "title": "Generative Flow Networks for Model Adaptation in Digital Twins of Natural Systems",
+  "authors": [
+   "Pascal Archambault",
+   "Houari Sahraoui",
+   "Eugene Syriani"
+  ],
+  "published": "2026-04-22",
+  "updated": "2026-04-22",
+  "comment": "Under Review",
+  "journal_ref": "",
+  "primary": "cs.LG",
+  "abstract": "Digital twins of natural systems must remain aligned with physical systems that evolve over time, are only partially observed, and are typically modeled by mechanistic simulators whose parameters cannot be measured directly. In such settings, model adaptation is naturally posed as a simulation-based inference problem. However, sparse and indirect observations often fail to identify a unique and optimal calibration, leaving several simulator parameterizations compatible with the available evidence. This article presents a GFlowNet-based approach to model adaptation for digital twins of natural systems. We formulate adaptation as a generative modeling problem over complete simulator configurations, so that plausible parameterizations can be sampled with probability proportional to a reward derived from agreement between simulated and observed behavior. Using a controlled environment agriculture case study based on a mechanistic tomato model, we show that the learned policy recovers dominant regions of the adaptation landscape, retrieves strong calibration hypotheses, and preserves multiple plausible configurations under uncertainty.",
+  "hit_queries": [
+   "all:GFlowNet",
+   "all:GFlowNets",
+   "all:\"generative flow network\"",
+   "all:\"generative flow networks\""
+  ]
+ },
+ {
+  "arxiv": "2604.17140",
+  "title": "Local Inconsistency Resolution: The Interplay between Attention and Control in Probabilistic Models",
+  "authors": [
+   "Oliver E. Richardson",
+   "Mandana Samiei",
+   "Mehran Shakerinava",
+   "Joseph D. Viviano",
+   "Abdessamad El Kabid",
+   "Ali Parviz",
+   "Yoshua Bengio"
+  ],
+  "published": "2026-04-18",
+  "updated": "2026-04-18",
+  "comment": "9 page body,",
+  "journal_ref": "Proceedings of the The 29th International Conference on Artificial Intelligence and Statistics, 2026",
+  "primary": "cs.AI",
+  "abstract": "We present a generic algorithm for learning and approximate inference with an intuitive epistemic interpretation: iteratively focus on a subset of the model and resolve inconsistencies using the parameters under control. This framework, which we call Local Inconsistency Resolution (LIR) is built upon Probabilistic Dependency Graphs (PDGs), which provide a flexible representational foundation capable of capturing inconsistent beliefs. We show how LIR unifies and generalizes a wide variety of important algorithms in the literature, including the Expectation-Maximization (EM) algorithm, belief propagation, adversarial training, GANs, and GFlowNets. In the last case, LIR actually suggests a more natural loss, which we demonstrate improves GFlowNet convergence. Each method can be recovered as a specific instance of LIR by choosing a procedure to direct focus (attention and control). We implement this algorithm for discrete PDGs and study its properties on synthetically generated PDGs, comparing its behavior to the global optimization semantics of the full PDG.",
+  "hit_queries": [
+   "all:GFlowNet",
+   "all:GFlowNets"
+  ]
+ },
+ {
+  "arxiv": "2604.16549",
+  "title": "The thermodynamic efficiency of coupled chaotic dissipative structures",
+  "authors": [
+   "Álvaro G. López",
+   "Inés P. Mariño",
+   "Alfonso Delgado-Bonal"
+  ],
+  "published": "2026-04-17",
+  "updated": "2026-05-14",
+  "comment": "",
+  "journal_ref": "",
+  "primary": "nlin.CD",
+  "abstract": "Dissipative structures are open dynamical systems that sustain coherent macroscopic organization by continuously exchanging energy and matter with their environment and generating entropy. A recent thermodynamic analysis of the paradigmatic Malkus--Lorenz waterwheel interpreted the Lorenz system as an engine, deriving an exact formula for its thermodynamic efficiency, and showing that efficiency tends to increase as the system is driven far from equilibrium while displaying sharp drops near the Hopf subcritical bifurcation to chaos. Here, we extend that single-engine framework to coupled dissipative structures. We introduce two canonical couplings -- master-slave coupling (series) and symmetric diffusive coupling (parallel) -- and prove two fundamental association laws allowing us to reduce the composite systems to an equivalent engine with a specified efficiency. We then apply these abstract results to coupled Lorenz waterwheels, deriving efficiency formulas consistent with the underlying power balance. We perform numerical simulations confirming that (a) series coupling induces an increase in thermodynamic efficiency, (b) parallel coupling averages the efficiency of engines and increases total energy flow, (c) synchronization is typically neutral or beneficial for efficiency except in narrow parameter regions, and (d) coupling modifies the curvature of entropy-generation trends. Our theorems suggest a mathematically rigorous and transparent route to define and compute thermodynamic efficiency for generalized flow networks, with potential application to complex systems energetics.",
+  "hit_queries": [
+   "all:\"generative flow network\"",
+   "all:\"generative flow networks\""
+  ]
+ },
+ {
+  "arxiv": "2603.29557",
+  "title": "FlowPIE: Test-Time Scientific Idea Evolution with Flow-Guided Literature Exploration",
+  "authors": [
+   "Qiyao Wang",
+   "Hongbo Wang",
+   "Longze Chen",
+   "Zhihao Yang",
+   "Guhong Chen",
+   "Hamid Alinejad-Rokny",
+   "Hui Li",
+   "Yuan Lin",
+   "Min Yang"
+  ],
+  "published": "2026-03-31",
+  "updated": "2026-03-31",
+  "comment": "30 pages, 11 figures, 15 tables",
+  "journal_ref": "",
+  "primary": "cs.AI",
+  "abstract": "Scientific idea generation (SIG) is critical to AI-driven autonomous research, yet existing approaches are often constrained by a static retrieval-then-generation paradigm, leading to homogeneous and insufficiently divergent ideas. In this work, we propose FlowPIE, a tightly coupled retrieval-generation framework that treats literature exploration and idea generation as a co-evolving process. FlowPIE expands literature trajectories via a flow-guided Monte Carlo Tree Search (MCTS) inspired by GFlowNets, using the quality of current ideas assessed by an LLM-based generative reward model (GRM) as a supervised signal to guide adaptive retrieval and construct a diverse, high-quality initial population. Based on this population, FlowPIE models idea generation as a test-time idea evolution process, applying selection, crossover, and mutation with the isolation island paradigm and GRM-based fitness computation to incorporate cross-domain knowledge. It effectively mitigates the information cocoons arising from over-reliance on parametric knowledge and static literature. Extensive evaluations demonstrate that FlowPIE consistently produces ideas with higher novelty, feasibility and diversity compared to strong LLM-based and agent-based frameworks, while enabling reward scaling during test time.",
+  "hit_queries": [
+   "all:GFlowNet",
+   "all:GFlowNets"
+  ]
+ },
+ {
+  "arxiv": "2603.18363",
+  "title": "PowerFlow: Unlocking the Dual Nature of LLMs via Principled Distribution Matching",
+  "authors": [
+   "Ruishuo Chen",
+   "Yu Chen",
+   "Zhuoran Li",
+   "Longbo Huang"
+  ],
+  "published": "2026-03-19",
+  "updated": "2026-05-25",
+  "comment": "Camera-ready version accepted at ICML 2026",
+  "journal_ref": "",
+  "primary": "cs.CL",
+  "abstract": "Unsupervised Reinforcement Learning from Internal Feedback (RLIF) has emerged as a promising paradigm for eliciting the latent capabilities of Large Language Models (LLMs) without external supervision. However, current methods rely on heuristic intrinsic rewards, which often lack a well-defined theoretical optimization target and are prone to degenerative biases. In this work, we introduce PowerFlow, a principled framework that reformulates unsupervised fine-tuning as a distribution matching problem. By casting GFlowNet as an amortized variational sampler for unnormalized densities, we propose a length-aware Trajectory-Balance objective that explicitly neutralizes the structural length biases inherent in autoregressive generation. By targeting $α$-power distributions, PowerFlow enables the directional elicitation of the dual nature of LLMs: sharpening the distribution ($α> 1$) to intensify logical reasoning, or flattening it ($α< 1$) to unlock expressive creativity. Extensive experiments demonstrate that PowerFlow consistently outperforms existing RLIF methods, matching or even exceeding supervised GRPO. Furthermore, by mitigating over-sharpening in aligned models, our approach achieves simultaneous gains in diversity and quality, shifting the Pareto frontier in creative tasks.",
+  "hit_queries": [
+   "all:GFlowNet",
+   "all:GFlowNets"
+  ]
+ },
+ {
+  "arxiv": "2603.17301",
+  "title": "WINFlowNets: Warm-up Integrated Networks Training of Generative Flow Networks for Robotics and Machine Fault Adaptation",
+  "authors": [
+   "Zahin Sufiyan",
+   "Shadan Golestan",
+   "Yoshihiro Mitsuka",
+   "Shotaro Miwa",
+   "Osmar Zaiane"
+  ],
+  "published": "2026-03-18",
+  "updated": "2026-03-18",
+  "comment": "",
+  "journal_ref": "",
+  "primary": "cs.LG",
+  "abstract": "Generative Flow Networks for continuous scenarios (CFlowNets) have shown promise in solving sequential decision-making tasks by learning stochastic policies using a flow and a retrieval network. Despite their demonstrated efficiency compared to state-of-the-art Reinforcement Learning (RL) algorithms, their practical application in robotic control tasks is constrained by the reliance on pre-training the retrieval network. This dependency poses challenges in dynamic robotic environments, where pre-training data may not be readily available or representative of the current environment. This paper introduces WINFlowNets, a novel CFlowNets framework that enables the co-training of flow and retrieval networks. WINFlowNets begins with a warm-up phase for the retrieval network to bootstrap its policy, followed by a shared training architecture and a shared replay buffer for co-training both networks. Experiments in simulated robotic environments demonstrate that WINFlowNets surpasses CFlowNets and state-of-the-art RL algorithms in terms of average reward and training stability. Furthermore, WINFlowNets exhibits strong adaptive capability in fault environments, making it suitable for tasks that demand quick adaptation with limited sample data. These findings highlight WINFlowNets' potential for deployment in dynamic and malfunction-prone robotic systems, where traditional pre-training or sample inefficient data collection may be impractical.",
+  "hit_queries": [
+   "all:\"generative flow network\"",
+   "all:\"generative flow networks\""
+  ]
+ },
+ {
+  "arxiv": "2603.03045",
+  "title": "QFlowNet: Fast, Diverse, and Efficient Unitary Synthesis with Generative Flow Networks",
+  "authors": [
+   "Inhoe Koo",
+   "Hyunho Cha",
+   "Jungwoo Lee"
+  ],
+  "published": "2026-03-03",
+  "updated": "2026-03-04",
+  "comment": "7 pages, 6 figures, IEEE International Conference on Quantum Communications, Networking, and Computing (QCNC 2026)",
+  "journal_ref": "",
+  "primary": "quant-ph",
+  "abstract": "Unitary Synthesis, the decomposition of a unitary matrix into a sequence of quantum gates, is a fundamental challenge in quantum compilation. Prevailing reinforcement learning (RL) approaches are often hampered by sparse reward signals, which necessitate complex reward shaping or long training times, and typically converge to a single policy, lacking solution diversity. In this work, we propose QFlowNet, a novel framework that learns efficiently from sparse signals by pairing a Generative Flow Network (GFlowNet) with Transformers. Our approach addresses two key challenges. First, the GFlowNet framework is fundamentally designed to learn a diverse policy that samples solutions proportional to their reward, overcoming the single-solution limitation of RL while offering faster inference than other generative models like diffusion. Second, the Transformers act as a powerful encoder, capturing the non-local structure of unitary matrices and compressing a high-dimensional state into a dense latent representation for the policy network. Our agent achieves an overall success rate of 99.7% on a 3-qubit benchmark(lengths 1-12) and discovers a diverse set of compact circuits, establishing QFlowNet as an efficient and diverse paradigm for unitary synthesis.",
+  "hit_queries": [
+   "all:GFlowNet",
+   "all:GFlowNets",
+   "all:\"generative flow network\"",
+   "all:\"generative flow networks\""
+  ]
+ },
+ {
+  "arxiv": "2603.01786",
+  "title": "Learning Shortest Paths with Generative Flow Networks",
+  "authors": [
+   "Nikita Morozov",
+   "Ian Maksimov",
+   "Daniil Tiapkin",
+   "Sergey Samsonov"
+  ],
+  "published": "2026-03-02",
+  "updated": "2026-03-02",
+  "comment": "",
+  "journal_ref": "",
+  "primary": "cs.LG",
+  "abstract": "In this paper, we present a novel learning framework for finding shortest paths in graphs utilizing Generative Flow Networks (GFlowNets). First, we examine theoretical properties of GFlowNets in non-acyclic environments in relation to shortest paths. We prove that, if the total flow is minimized, forward and backward policies traverse the environment graph exclusively along shortest paths between the initial and terminal states. Building on this result, we show that the pathfinding problem in an arbitrary graph can be solved by training a non-acyclic GFlowNet with flow regularization. We experimentally demonstrate the performance of our method in pathfinding in permutation environments and in solving Rubik's Cubes. For the latter problem, our approach shows competitive results with state-of-the-art machine learning approaches designed specifically for this task in terms of the solution length, while requiring smaller search budget at test-time.",
+  "hit_queries": [
+   "all:GFlowNet",
+   "all:GFlowNets",
+   "all:\"generative flow network\"",
+   "all:\"generative flow networks\"",
+   "all:GFlowNet AND (all:\"shortest path\" OR all:\"minimum flow\" OR all:\"non-acyclic\" OR all:cyclic)"
+  ]
+ },
+ {
+  "arxiv": "2603.01655",
+  "title": "Transform-Invariant Generative Ray Path Sampling for Efficient Radio Propagation Modeling",
+  "authors": [
+   "Jérome Eertmans",
+   "Enrico M. Vitucci",
+   "Vittorio Degli-Esposti",
+   "Nicola Di Cicco",
+   "Laurent Jacques",
+   "Claude Oestges"
+  ],
+  "published": "2026-03-02",
+  "updated": "2026-05-22",
+  "comment": "submitted to npj Wireless Technology, 30 pages, 16 figures",
+  "journal_ref": "",
+  "primary": "cs.LG",
+  "abstract": "Ray tracing has become a standard for accurate radio propagation modeling, but suffers from exponential computational complexity, as the number of candidate paths scales with the number of objects raised to the interaction order. This bottleneck limits its use in large-scale or real-time applications, forcing traditional tools to rely on heuristics that reduce path candidates at the cost of potentially reduced accuracy. To overcome this limitation, we propose a machine-learning-assisted framework that replaces exhaustive path searching with intelligent sampling via Generative Flow Networks. Applying these generative models to this domain presents challenges, particularly sparse rewards due to the rarity of valid paths, which can lead to convergence failures and trivial solutions when evaluating high-order interactions in complex environments. To ensure robust learning and efficient exploration, our framework incorporates three key components. First, an \\emph{experience replay buffer} captures and retains rare valid paths. Second, a uniform exploratory policy improves generalization and prevents overfitting to simple geometries. Third, a physics-based action masking strategy filters out physically impossible paths before the model considers them. Validated on idealized street-canyon scenarios, our model achieves substantial speedups over exhaustive search -- up to $10\\times$ faster on GPU and $100\\times$ faster on CPU -- while maintaining high coverage accuracy and successfully uncovering complex propagation paths. However, out-of-distribution evaluations on real-world Manhattan street geometries reveal that generalizing to substantially different urban morphologies requires further advancement in model capacity or alternative training strategies. Source code, tests, and a tutorial are available at https://github.com/jeertmans/sampling-paths.",
+  "hit_queries": [
+   "all:\"generative flow network\"",
+   "all:\"generative flow networks\""
+  ]
+ },
+ {
+  "arxiv": "2603.01047",
+  "title": "Evaluating GFlowNet from partial episodes for stable and flexible policy-based training",
+  "authors": [
+   "Puhua Niu",
+   "Shili Wu",
+   "Xiaoning Qian"
+  ],
+  "published": "2026-03-01",
+  "updated": "2026-03-01",
+  "comment": "Accepted by ICLR 2026",
+  "journal_ref": "",
+  "primary": "cs.LG",
+  "abstract": "Generative Flow Networks (GFlowNets) were developed to learn policies for efficiently sampling combinatorial candidates by interpreting their generative processes as trajectories in directed acyclic graphs. In the value-based training workflow, the objective is to enforce the balance over partial episodes between the flows of the learned policy and the estimated flows of the desired policy, implicitly encouraging policy divergence minimization. The policy-based strategy alternates between estimating the policy divergence and updating the policy, but reliable estimation of the divergence under directed acyclic graphs remains a major challenge. This work bridges the two perspectives by showing that flow balance also yields a principled policy evaluator that measures the divergence, and an evaluation balance objective over partial episodes is proposed for learning the evaluator. As demonstrated on both synthetic and real-world tasks, evaluation balance not only strengthens the reliability of policy-based training but also broadens its flexibility by seamlessly supporting parameterized backward policies and enabling the integration of offline data-collection techniques.",
+  "hit_queries": [
+   "all:GFlowNet",
+   "all:GFlowNets",
+   "all:\"generative flow network\"",
+   "all:\"generative flow networks\""
+  ]
+ },
+ {
+  "arxiv": "2603.00614",
+  "title": "Designing the Haystack: Programmable Chemical Space for Generative Molecular Discovery",
+  "authors": [
+   "Yuchen Zhu",
+   "Donghai Zhao",
+   "Yangyang Zhang",
+   "Yitong Li",
+   "Xiaorui Wang",
+   "Shuwang Li",
+   "Yue Kong",
+   "Beichen Zhang",
+   "Ricki Chen",
+   "Chang Liu",
+   "Xingcai Zhang",
+   "Tingjun Hou",
+   "Chang-Yu Hsieh"
+  ],
+  "published": "2026-02-28",
+  "updated": "2026-02-28",
+  "comment": "",
+  "journal_ref": "",
+  "primary": "physics.chem-ph",
+  "abstract": "Chemical space exploration underlies drug discovery, yet most generative models treat chemical space as a fixed, implicitly learned distribution, focusing on sampling molecules rather than deliberately designing the space itself. We introduce SpaceGFN, a generative framework that elevates chemical space to a programmable computational object: a controllable degree of freedom enabling explicit construction and adaptive traversal of structured molecular universes. SpaceGFN decouples space definition from exploration. Users specify building blocks and reaction rules to construct chemically and synthetically coherent spaces, while a GFlowNet performs efficient, property-biased sampling within them. In Discovery mode, we demonstrate programmable space design through two strategies. A pseudo-natural product space assembles natural product-like architectures. An evolution-inspired (Evo) space recombines endogenous metabolite fragments via enzyme-consistent transformations, introducing an evolutionary prior into chemical generation. This bias yields favorable shifts in predicted metabolic and toxicological profiles while preserving pharmacological diversity, supported by broad docking enrichment across therapeutic targets. In Editing mode, SpaceGFN enables reaction-consistent lead optimization through a curated toolkit of executable synthetic transformations, allowing local, synthesis-aware modification of existing compounds instead of unrestricted graph mutation. Across 96 drug targets, SpaceGFN achieves strong optimization performance while maintaining structural diversity under synthetic constraints. By integrating programmable chemical universe construction with flow-based exploration and reaction-level editing, SpaceGFN establishes a general paradigm for deliberate navigation of therapeutic chemical space.",
+  "hit_queries": [
+   "all:GFlowNet",
+   "all:GFlowNets"
+  ]
+ },
+ {
+  "arxiv": "2603.00454",
+  "title": "Rooted Absorbed Prefix Trajectory Balance with Submodular Replay for GFlowNet Training",
+  "authors": [
+   "Xi Wang",
+   "Wenbo Lu",
+   "Shengjie Wang"
+  ],
+  "published": "2026-02-28",
+  "updated": "2026-07-20",
+  "comment": "",
+  "journal_ref": "Forty-third International Conference on Machine Learning (ICML 2026)",
+  "primary": "cs.LG",
+  "abstract": "Generative Flow Networks (GFlowNets) enable fine-tuning large language models to approximate reward-proportional posteriors, but they remain prone to mode collapse, manifesting as prefix collapse and length bias. We attribute this to two factors: (i) weak credit assignment to early prefixes, and (ii) biased replay that induces a shifted, non-representative training flow distribution. We propose Rooted absorbed prefix Trajectory Balance RapTB, an objective that anchors subtrajectory supervision at the root and propagates terminal rewards to intermediate prefixes via absorbed suffix-based backups, providing dense prefix-level learning signals. To mitigate replay-induced distribution shift, we further introduce SubM, a submodular replay refresh strategy that promotes both high reward and diversity. Empirically, on tasks such as molecule generation with LLM using SMILES strings, RapTB combined with SubM consistently improves optimization performance and molecular diversity while preserving high validity. The code is released on https://github.com/ComDec/ChemGFN.",
+  "hit_queries": [
+   "all:GFlowNet",
+   "all:GFlowNets",
+   "all:\"generative flow network\"",
+   "all:\"generative flow networks\""
+  ]
+ },
+ {
+  "arxiv": "2602.21565",
+  "title": "Routing by Reaching: Composition of Pre-trained GFlowNets for Multi-Objective Generation",
+  "authors": [
+   "Seokwon Yoon",
+   "Youngbin Choi",
+   "Seunghyuk Cho",
+   "Seungbeom Lee",
+   "MoonJeong Park",
+   "Dongwoo Kim"
+  ],
+  "published": "2026-02-25",
+  "updated": "2026-07-20",
+  "comment": "Appears in the 43rd International Conference on Machine Learning (ICML 2026)",
+  "journal_ref": "",
+  "primary": "cs.LG",
+  "abstract": "Generative Flow Networks (GFlowNets) learn to sample diverse candidates in proportion to a reward function, making them well-suited for scientific discovery, where exploring multiple promising solutions is crucial. Further extending GFlowNets to multi-objective settings has attracted growing interest as real-world applications often involve multiple, conflicting objectives. However, existing approaches require joint training for each combination of objectives, meaning that any change in the objective set necessitates retraining from scratch. We propose a framework that composes pre-trained GFlowNets at inference time, enabling rapid adaptation without fine-tuning or retraining. Importantly, our framework is flexible, capable of handling diverse reward combinations ranging from linear scalarization to complex nonlinear operators, which are often handled separately in previous literature. We prove that our method exactly recovers the target distribution for linear scalarization, and quantify the approximation quality for nonlinear operators through a distortion factor. Experiments on a synthetic 2D grid and real-world molecule generation tasks demonstrate that our approach achieves performance comparable to baselines.",
+  "hit_queries": [
+   "all:GFlowNet",
+   "all:GFlowNets",
+   "all:\"generative flow network\"",
+   "all:\"generative flow networks\""
+  ]
+ },
+ {
+  "arxiv": "2602.17827",
+  "title": "Avoid What You Know: Divergent Trajectory Balance for GFlowNets",
+  "authors": [
+   "Pedro Dall'Antonia",
+   "Tiago da Silva",
+   "Daniel Csillag",
+   "Salem Lahlou",
+   "Diego Mesquita"
+  ],
+  "published": "2026-02-19",
+  "updated": "2026-02-19",
+  "comment": "20 pages, under review",
+  "journal_ref": "",
+  "primary": "cs.LG",
+  "abstract": "Generative Flow Networks (GFlowNets) are a flexible family of amortized samplers trained to generate discrete and compositional objects with probability proportional to a reward function. However, learning efficiency is constrained by the model's ability to rapidly explore diverse high-probability regions during training. To mitigate this issue, recent works have focused on incentivizing the exploration of unvisited and valuable states via curiosity-driven search and self-supervised random network distillation, which tend to waste samples on already well-approximated regions of the state space. In this context, we propose Adaptive Complementary Exploration (ACE), a principled algorithm for the effective exploration of novel and high-probability regions when learning GFlowNets. To achieve this, ACE introduces an exploration GFlowNet explicitly trained to search for high-reward states in regions underexplored by the canonical GFlowNet, which learns to sample from the target distribution. Through extensive experiments, we show that ACE significantly improves upon prior work in terms of approximation accuracy to the target distribution and discovery rate of diverse high-reward states.",
+  "hit_queries": [
+   "all:GFlowNet",
+   "all:GFlowNets",
+   "all:\"generative flow network\"",
+   "all:\"generative flow networks\"",
+   "all:\"flow network\" AND all:sampler AND all:reward"
+  ]
+ },
+ {
+  "arxiv": "2602.17244",
+  "title": "CounterFlowNet: From Minimal Changes to Meaningful Counterfactual Explanations",
+  "authors": [
+   "Oleksii Furman",
+   "Patryk Marszałek",
+   "Jan Masłowski",
+   "Piotr Gaiński",
+   "Maciej Zięba",
+   "Marek Śmieja"
+  ],
+  "published": "2026-02-19",
+  "updated": "2026-02-19",
+  "comment": "",
+  "journal_ref": "",
+  "primary": "cs.LG",
+  "abstract": "Counterfactual explanations (CFs) provide human-interpretable insights into model's predictions by identifying minimal changes to input features that would alter the model's output. However, existing methods struggle to generate multiple high-quality explanations that (1) affect only a small portion of the features, (2) can be applied to tabular data with heterogeneous features, and (3) are consistent with the user-defined constraints. We propose CounterFlowNet, a generative approach that formulates CF generation as sequential feature modification using conditional Generative Flow Networks (GFlowNet). CounterFlowNet is trained to sample CFs proportionally to a user-specified reward function that can encode key CF desiderata: validity, sparsity, proximity and plausibility, encouraging high-quality explanations. The sequential formulation yields highly sparse edits, while a unified action space seamlessly supports continuous and categorical features. Moreover, actionability constraints, such as immutability and monotonicity of features, can be enforced at inference time via action masking, without retraining. Experiments on eight datasets under two evaluation protocols demonstrate that CounterFlowNet achieves superior trade-offs between validity, sparsity, plausibility, and diversity with full satisfaction of the given constraints.",
+  "hit_queries": [
+   "all:GFlowNet",
+   "all:GFlowNets",
+   "all:\"generative flow network\"",
+   "all:\"generative flow networks\""
+  ]
+ },
+ {
+  "arxiv": "2602.12642",
+  "title": "Beyond Normalization: Rethinking the Partition Function as a Difficulty Scheduler for RLVR",
+  "authors": [
+   "Dohyung Kim",
+   "Minbeom Kim",
+   "Jeonghye Kim",
+   "Sangmook Lee",
+   "Sojeong Rhee",
+   "Kyomin Jung"
+  ],
+  "published": "2026-02-13",
+  "updated": "2026-05-28",
+  "comment": "",
+  "journal_ref": "",
+  "primary": "cs.CL",
+  "abstract": "Reward-maximizing RL methods have shown to be capable of enhancing the reasoning performance of LLMs, but often lead to reduced generation diversity. Recent works address this issue by adopting GFlowNets, training LLMs to match a target distribution while jointly learning its partition function. In contrast to prior works that treat this partition function solely as a normalizer, we reinterpret it as a per-prompt expected-reward (i.e., online accuracy) signal, leveraging this unused information to improve sample efficiency. Specifically, we first establish a theoretical relationship between the partition function and per-prompt accuracy estimates. Building on this key insight, we propose Partition Function-Guided RL (PACED-RL), a post-training framework that leverages accuracy estimates to prioritize informative question prompts during training, and further improves sample efficiency through an accuracy estimate error-prioritized replay. Crucially, both components reuse information already produced during GFlowNet training, effectively amortizing the compute overhead into the existing optimization process. Extensive experiments across diverse benchmarks demonstrate strong performance improvements over GRPO and prior GFlowNet approaches, highlighting PACED-RL as a promising direction for a more sample efficient distribution-matching training for LLMs.",
+  "hit_queries": [
+   "all:GFlowNet",
+   "all:GFlowNets"
+  ]
+ },
+ {
+  "arxiv": "2602.11498",
+  "title": "Partial GFlowNet: Accelerating Convergence in Large State Spaces via Strategic Partitioning",
+  "authors": [
+   "Xuan Yu",
+   "Xu Wang",
+   "Rui Zhu",
+   "Yudong Zhang",
+   "Yang Wang"
+  ],
+  "published": "2026-02-12",
+  "updated": "2026-02-12",
+  "comment": "",
+  "journal_ref": "",
+  "primary": "cs.LG",
+  "abstract": "Generative Flow Networks (GFlowNets) have shown promising potential to generate high-scoring candidates with probability proportional to their rewards. As existing GFlowNets freely explore in state space, they encounter significant convergence challenges when scaling to large state spaces. Addressing this issue, this paper proposes to restrict the exploration of actor. A planner is introduced to partition the entire state space into overlapping partial state spaces. Given their limited size, these partial state spaces allow the actor to efficiently identify subregions with higher rewards. A heuristic strategy is introduced to switch partial regions thus preventing the actor from wasting time exploring fully explored or low-reward partial regions. By iteratively exploring these partial state spaces, the actor learns to converge towards the high-reward subregions within the entire state space. Experiments on several widely used datasets demonstrate that \\modelname converges faster than existing works on large state spaces. Furthermore, \\modelname not only generates candidates with higher rewards but also significantly improves their diversity.",
+  "hit_queries": [
+   "all:GFlowNet",
+   "all:GFlowNets",
+   "all:\"generative flow network\"",
+   "all:\"generative flow networks\""
+  ]
+ },
+ {
+  "arxiv": "2602.11491",
+  "title": "Exploring Multiple High-Scoring Subspaces in Generative Flow Networks",
+  "authors": [
+   "Xuan Yu",
+   "Xu Wang",
+   "Rui Zhu",
+   "Yudong Zhang",
+   "Yang Wang"
+  ],
+  "published": "2026-02-12",
+  "updated": "2026-02-12",
+  "comment": "",
+  "journal_ref": "",
+  "primary": "cs.LG",
+  "abstract": "As a probabilistic sampling framework, Generative Flow Networks (GFlowNets) show strong potential for constructing complex combinatorial objects through the sequential composition of elementary components. However, existing GFlowNets often suffer from excessive exploration over vast state spaces, leading to over-sampling of low-reward regions and convergence to suboptimal distributions. Effectively biasing GFlowNets toward high-reward solutions remains a non-trivial challenge. In this paper, we propose CMAB-GFN, which integrates a combinatorial multi-armed bandit (CMAB) framework with GFlowNet policies. The CMAB component prunes low-quality actions, yielding compact high-scoring subspaces for exploration. Restricting GFNs to these compact high-scoring subspaces accelerates the discovery of high-value candidates, while the exploration of different subspaces ensures that diversity is not sacrificed. Experimental results on multiple tasks demonstrate that CMAB-GFN generates higher-reward candidates than existing approaches.",
+  "hit_queries": [
+   "all:GFlowNet",
+   "all:GFlowNets",
+   "all:\"generative flow network\"",
+   "all:\"generative flow networks\""
+  ]
+ },
+ {
+  "arxiv": "2602.10583",
+  "title": "Flow of Spans: Generalizing Language Models to Dynamic Span-Vocabulary via GFlowNets",
+  "authors": [
+   "Bo Xue",
+   "Yunchong Song",
+   "Fanghao Shao",
+   "Xuekai Zhu",
+   "Lin Chen",
+   "Luoyi Fu",
+   "Xinbing Wang",
+   "Zhouhan Lin"
+  ],
+  "published": "2026-02-11",
+  "updated": "2026-02-11",
+  "comment": "Published as a conference paper at ICLR 2026",
+  "journal_ref": "",
+  "primary": "cs.AI",
+  "abstract": "Standard autoregressive language models generate text token-by-token from a fixed vocabulary, inducing a tree-structured state space when viewing token sampling as an action, which limits flexibility and expressiveness. Recent work introduces dynamic vocabulary by sampling retrieved text spans but overlooks that the same sentence can be composed of spans of varying lengths, lacking explicit modeling of the directed acyclic graph (DAG) state space. This leads to restricted exploration of compositional paths and is biased toward the chosen path. Generative Flow Networks (GFlowNets) are powerful for efficient exploring and generalizing over state spaces, particularly those with a DAG structure. However, prior GFlowNets-based language models operate at the token level and remain confined to tree-structured spaces, limiting their potential. In this work, we propose Flow of SpanS (FOSS), a principled GFlowNets framework for span generation. FoSS constructs a dynamic span vocabulary by segmenting the retrieved text flexibly, ensuring a DAG-structured state space, which allows GFlowNets to explore diverse compositional paths and improve generalization. With specialized reward models, FoSS generates diverse, high-quality text. Empirically, FoSS improves MAUVE scores by up to 12.5% over Transformer on text generation and achieves 3.5% gains on knowledge-intensive tasks, consistently outperforming state-of-the-art methods. Scaling experiments further demonstrate FoSS benefits from larger models, more data, and richer retrieval corpora, retaining its advantage over strong baselines.",
+  "hit_queries": [
+   "all:GFlowNet",
+   "all:GFlowNets",
+   "all:\"generative flow network\"",
+   "all:\"generative flow networks\""
+  ]
+ },
+ {
+  "arxiv": "2602.04119",
+  "title": "Synthesizable Molecular Generation via Soft-constrained GFlowNets with Rich Chemical Priors",
+  "authors": [
+   "Hyeonah Kim",
+   "Minsu Kim",
+   "Celine Roget",
+   "Dionessa Biton",
+   "Louis Vaillancourt",
+   "Yves V. Brun",
+   "Yoshua Bengio",
+   "Alex Hernandez-Garcia"
+  ],
+  "published": "2026-02-04",
+  "updated": "2026-06-08",
+  "comment": "",
+  "journal_ref": "",
+  "primary": "cs.LG",
+  "abstract": "The application of generative models for experimental drug discovery campaigns is severely limited by the difficulty of designing molecules de novo that can be synthesized in practice. Previous works have leveraged Generative Flow Networks (GFlowNets) to impose hard synthesizability constraints through the design of state and action spaces based on predefined reaction templates and building blocks. Despite the promising prospects of this approach, it currently lacks flexibility and scalability. As an alternative, we propose S3-GFN, which generates synthesizable SMILES molecules via simple soft regularization of a sequence-based GFlowNet. Our approach leverages rich molecular priors learned from large-scale SMILES corpora to steer molecular generation towards high-reward, synthesizable chemical spaces. The model induces constraints through off-policy replay training with a contrastive learning signal based on separate buffers of synthesizable and unsynthesizable samples. Our experiments show that S3-GFN learns to generate synthesizable molecules ($\\geq 95\\%$) with higher rewards in diverse tasks.",
+  "hit_queries": [
+   "all:GFlowNet",
+   "all:GFlowNets",
+   "all:\"generative flow network\"",
+   "all:\"generative flow networks\""
+  ]
+ },
+ {
+  "arxiv": "2602.03358",
+  "title": "GFlowPO: Generative Flow Network as a Language Model Prompt Optimizer",
+  "authors": [
+   "Junmo Cho",
+   "Suhan Kim",
+   "Sangjune An",
+   "Minsu Kim",
+   "Dong Bok Lee",
+   "Heejun Lee",
+   "Sung Ju Hwang",
+   "Hae Beom Lee"
+  ],
+  "published": "2026-02-03",
+  "updated": "2026-02-03",
+  "comment": "",
+  "journal_ref": "",
+  "primary": "cs.AI",
+  "abstract": "Finding effective prompts for language models (LMs) is critical yet notoriously difficult: the prompt space is combinatorially large, rewards are sparse due to expensive target-LM evaluation. Yet, existing RL-based prompt optimizers often rely on on-policy updates and a meta-prompt sampled from a fixed distribution, leading to poor sample efficiency. We propose GFlowPO, a probabilistic prompt optimization framework that casts prompt search as a posterior inference problem over latent prompts regularized by a meta-prompted reference-LM prior. In the first step, we fine-tune a lightweight prompt-LM with an off-policy Generative Flow Network (GFlowNet) objective, using a replay-based training policy that reuses past prompt evaluations to enable sample-efficient exploration. In the second step, we introduce Dynamic Memory Update (DMU), a training-free mechanism that updates the meta-prompt by injecting both (i) diverse prompts from a replay buffer and (ii) top-performing prompts from a small priority queue, thereby progressively concentrating the search process on high-reward regions. Across few-shot text classification, instruction induction benchmarks, and question answering tasks, GFlowPO consistently outperforms recent discrete prompt optimization baselines.",
+  "hit_queries": [
+   "all:GFlowNet",
+   "all:GFlowNets",
+   "all:\"generative flow network\"",
+   "all:\"generative flow networks\""
+  ]
+ },
+ {
+  "arxiv": "2602.01749",
+  "title": "Controlling Exploration-Exploitation in GFlowNets via Markov Chain Perspectives",
+  "authors": [
+   "Lin Chen",
+   "Samuel Drapeau",
+   "Fanghao Shao",
+   "Xuekai Zhu",
+   "Bo Xue",
+   "Yunchong Song",
+   "Mathieu Laurière",
+   "Zhouhan Lin"
+  ],
+  "published": "2026-02-02",
+  "updated": "2026-02-26",
+  "comment": "",
+  "journal_ref": "",
+  "primary": "cs.AI",
+  "abstract": "Generative Flow Network (GFlowNet) objectives implicitly fix an equal mixing of forward and backward policies, potentially constraining the exploration-exploitation trade-off during training. By further exploring the link between GFlowNets and Markov chains, we establish an equivalence between GFlowNet objectives and Markov chain reversibility, thereby revealing the origin of such constraints, and provide a framework for adapting Markov chain properties to GFlowNets. Building on these theoretical findings, we propose $α$-GFNs, which generalize the mixing via a tunable parameter $α$. This generalization enables direct control over exploration-exploitation dynamics to enhance mode discovery capabilities, while ensuring convergence to unique flows. Across various benchmarks, including Set, Bit Sequence, and Molecule Generation, $α$-GFN objectives consistently outperform previous GFlowNet objectives, achieving up to a $10 \\times$ increase in the number of discovered modes.",
+  "hit_queries": [
+   "all:GFlowNet",
+   "all:GFlowNets",
+   "all:\"generative flow network\"",
+   "all:\"generative flow networks\""
+  ]
+ },
+ {
+  "arxiv": "2601.21061",
+  "title": "Signal from Structure: Exploiting Submodular Upper Bounds in Generative Flow Networks",
+  "authors": [
+   "Alexandre Larouche",
+   "Audrey Durand"
+  ],
+  "published": "2026-01-28",
+  "updated": "2026-05-08",
+  "comment": "",
+  "journal_ref": "",
+  "primary": "cs.LG",
+  "abstract": "Generative Flow Networks (GFlowNets; GFNs) are a class of generative models that learn to sample compositional objects proportionally to their a priori unknown value, their reward. We focus on the case where the reward has a specified, actionable structure, namely that it is submodular. We show submodularity can be harnessed to retrieve upper bounds on the reward of compositional objects that have not yet been observed. We provide in-depth analyses of the probability of such bounds occurring, as well as how many unobserved compositional objects can be covered by a bound. Following the Optimism in the Face of Uncertainty principle, we then introduce SUBo-GFN, which uses the submodular upper bounds to train a GFN. We show that SUBo-GFN generates orders of magnitude more training data than classical GFNs for the same number of queries to the reward function. We demonstrate the effectiveness of SUBo-GFN in terms of distribution matching and high-quality candidate generation on synthetic and real-world submodular tasks.",
+  "hit_queries": [
+   "all:GFlowNet",
+   "all:GFlowNets",
+   "all:\"generative flow network\"",
+   "all:\"generative flow networks\""
+  ]
+ },
+ {
+  "arxiv": "2511.19264",
+  "title": "Interpreting GFlowNets for Drug Discovery: What probes can and cannot show",
+  "authors": [
+   "Amirtha Varshini A S",
+   "Duminda S. Ranasinghe",
+   "Hok Hei Tam"
+  ],
+  "published": "2025-11-24",
+  "updated": "2026-08-05",
+  "comment": "25 pages, 17 figures in V2. v1 was Accepted for presentation at NeurIPS 2025 WiML Workshop and Molecular Machine Learning Conference (MoML) 2025",
+  "journal_ref": "",
+  "primary": "cs.LG",
+  "abstract": "Generative Flow Networks (GFlowNets) construct molecules through sequential decisions, but their internal policies remain opaque, limiting adoption in drug discovery, where chemists need interpretable rationales for proposed structures. We present a control-validated interpretability study of SynFlowNet, a synthesis-aware GFlowNet trained with a drug-likeness (QED) reward. Our framework combines gradient saliency and counterfactual edits, an undercomplete factor analysis, and an overcomplete BatchTopK sparse autoencoder, evaluated with shuffled-label controls, RDKit-descriptor baselines, a scaffold-disjoint split, cross-seed stability, and an architecture-matched untrained network. These controls materially change the interpretation. Physicochemical properties and functional groups are highly decodable from SynFlowNet embeddings, but an untrained network with the same architecture performs essentially as well as the trained policy (drug-likeness within 0.005 and marginally better molecular-size decoding). Thus, this decodability reflects graph architecture and atom featurization rather than representations acquired through policy training. The surviving conclusions are narrower: the overcomplete autoencoder reconstructs embeddings better than a matched undercomplete baseline at comparable sparsity; chemically enriched substructure detectors, including per-halogen and boron features, emerge in individual runs, although only a small subset of dictionary directions is stable across seeds; and zeroing individual features produces property-specific effects on probe decoding. Beyond SynFlowNet, this study provides a reusable control protocol for molecular-model interpretability, separating learned structure from signals supplied by architecture and input representation. High probe scores alone should not be treated as evidence of learned chemistry.",
+  "hit_queries": [
+   "all:GFlowNet",
+   "all:GFlowNets",
+   "all:\"generative flow network\"",
+   "all:\"generative flow networks\""
+  ]
+ },
+ {
+  "arxiv": "2511.16592",
+  "title": "gfnx: Fast and Scalable Library for Generative Flow Networks in JAX",
+  "authors": [
+   "Daniil Tiapkin",
+   "Artem Agarkov",
+   "Nikita Morozov",
+   "Ian Maksimov",
+   "Askar Tsyganov",
+   "Timofei Gritsaev",
+   "Sergey Samsonov"
+  ],
+  "published": "2025-11-20",
+  "updated": "2025-11-20",
+  "comment": "GitHub: https://github.com/d-tiapkin/gfnx | Documentation: https://gfnx.readthedocs.io",
+  "journal_ref": "",
+  "primary": "cs.LG",
+  "abstract": "In this paper, we present gfnx, a fast and scalable package for training and evaluating Generative Flow Networks (GFlowNets) written in JAX. gfnx provides an extensive set of environments and metrics for benchmarking, accompanied with single-file implementations of core objectives for training GFlowNets. We include synthetic hypergrids, multiple sequence generation environments with various editing regimes and particular reward designs for molecular generation, phylogenetic tree construction, Bayesian structure learning, and sampling from the Ising model energy. Across different tasks, gfnx achieves significant wall-clock speedups compared to Pytorch-based benchmarks (such as torchgfn library) and author implementations. For example, gfnx achieves up to 55 times speedup on CPU-based sequence generation environments, and up to 80 times speedup with the GPU-based Bayesian network structure learning setup. Our package provides a diverse set of benchmarks and aims to standardize empirical evaluation and accelerate research and applications of GFlowNets. The library is available on GitHub (https://github.com/d-tiapkin/gfnx) and on pypi (https://pypi.org/project/gfnx/). Documentation is available on https://gfnx.readthedocs.io.",
+  "hit_queries": [
+   "all:GFlowNet",
+   "all:GFlowNets",
+   "all:\"generative flow network\"",
+   "all:\"generative flow networks\""
+  ]
+ },
+ {
+  "arxiv": "2511.11079",
+  "title": "ARCTraj: A Dataset and Benchmark of Human Reasoning Trajectories for Abstract Problem Solving",
+  "authors": [
+   "Sejin Kim",
+   "Hayan Choi",
+   "Seokki Lee",
+   "Sundong Kim"
+  ],
+  "published": "2025-11-14",
+  "updated": "2026-02-15",
+  "comment": "KDD 2026 (Datasets and Benchmarks) accepted",
+  "journal_ref": "",
+  "primary": "cs.AI",
+  "abstract": "We present ARCTraj, a dataset and methodological framework for modeling human reasoning through complex visual tasks in the Abstraction and Reasoning Corpus (ARC). While ARC has inspired extensive research on abstract reasoning, most existing approaches rely on static input-output supervision, which limits insight into how reasoning unfolds over time. ARCTraj addresses this gap by recording temporally ordered, object-level actions that capture how humans iteratively transform inputs into outputs, revealing intermediate reasoning steps that conventional datasets overlook. Collected via the O2ARC web interface, it contains around 10,000 trajectories annotated with task identifiers, timestamps, and success labels across 400 training tasks from the ARC-AGI-1 benchmark. It further defines a unified reasoning pipeline encompassing data collection, action abstraction, Markov decision process (MDP) formulation, and downstream learning, enabling integration with reinforcement learning, generative modeling, and sequence modeling methods such as PPO, World Models, GFlowNets, Diffusion agents, and Decision Transformers. Analyses of spatial selection, color attribution, and strategic convergence highlight the structure and diversity of human reasoning. Together, these contributions position ARCTraj as a structured and interpretable foundation for studying human-like reasoning, advancing explainability, alignment, and generalizable intelligence.",
+  "hit_queries": [
+   "all:GFlowNet",
+   "all:GFlowNets"
+  ]
+ },
+ {
+  "arxiv": "2511.09677",
+  "title": "Boosted GFlowNets: Improving Exploration via Sequential Learning",
+  "authors": [
+   "Pedro Dall'Antonia",
+   "Tiago da Silva",
+   "Daniel Augusto de Souza",
+   "César Lincoln C. Mattos",
+   "Diego Mesquita"
+  ],
+  "published": "2025-11-12",
+  "updated": "2026-03-14",
+  "comment": "11 pages, 3 figures (22 pages total including supplementary material)",
+  "journal_ref": "",
+  "primary": "cs.LG",
+  "abstract": "Generative Flow Networks (GFlowNets) are powerful samplers for compositional objects that, by design, sample proportionally to a given non-negative reward. Nonetheless, in practice, they often struggle to explore the reward landscape evenly: trajectories toward easy-to-reach regions dominate training, while hard-to-reach modes receive vanishing or uninformative gradients, leading to poor coverage of high-reward areas. We address this imbalance with Boosted GFlowNets, a method that sequentially trains an ensemble of GFlowNets, each optimizing a residual reward that compensates for the mass already captured by previous models. This residual principle reactivates learning signals in underexplored regions and, under mild assumptions, ensures a monotone non-degradation property: adding boosters cannot worsen the learned distribution and typically improves it. Empirically, Boosted GFlowNets achieve substantially better exploration and sample diversity on multimodal synthetic benchmarks and peptide design tasks, while preserving the stability and simplicity of standard trajectory-balance training.",
+  "hit_queries": [
+   "all:GFlowNet",
+   "all:GFlowNets",
+   "all:\"generative flow network\"",
+   "all:\"generative flow networks\"",
+   "all:\"flow network\" AND all:sampler AND all:reward"
+  ]
+ },
+ {
+  "arxiv": "2511.06188",
+  "title": "Meta-Learning-Driven GFlowNets for 3D Directional Modulation in Mobile Wireless Systems",
+  "authors": [
+   "Zhihao Tao",
+   "Athina P. Petropulu"
+  ],
+  "published": "2025-11-09",
+  "updated": "2025-11-09",
+  "comment": "Submitted to IEEE ICC 2026",
+  "journal_ref": "",
+  "primary": "eess.SP",
+  "abstract": "In our prior work we have proposed the use of GFlowNets, a generative AI (GenAI) framework, for designing a secure communication system comprising a time-modulated intelligent reflecting surface (TM-IRS). However, GFlowNet-based approaches assume static environments, limiting their applicability in mobile wireless networks. In this paper, we proposes a novel Meta-GFlowNet framework that achieves rapid adaptation to dynamic conditions using model-agnostic meta-learning. As the communication user is moving, the framework learns a direction-general prior across user directions via inner trajectory-balance updates and outer meta-updates, enabling quick convergence to new user directions. The approach requires no labeled data, employing a pseudo-supervised consistency objective derived from the learned reward by GFlowNet and the actual sum-rate reward of the TM-IRS system. Simulation results show that the proposed method attains faster adaptation and higher secrecy performance than retrained GFlowNets, offering an efficient GenAI framework for dynamic wireless environments. Although the scenario considered here focuses on directional modulation-based physical-layer security, the proposed framework can also be applied to other mobile wireless systems, such as joint sensing-communication networks, that utilize GFlowNets.",
+  "hit_queries": [
+   "all:GFlowNet",
+   "all:GFlowNets"
+  ]
+ },
+ {
+  "arxiv": "2511.00804",
+  "title": "EraseFlow: Learning Concept Erasure Policies via GFlowNet-Driven Alignment",
+  "authors": [
+   "Abhiram Kusumba",
+   "Maitreya Patel",
+   "Kyle Min",
+   "Changhoon Kim",
+   "Chitta Baral",
+   "Yezhou Yang"
+  ],
+  "published": "2025-11-02",
+  "updated": "2025-11-09",
+  "comment": "NeurIPS'25 Spotlight | Project page: https://eraseflow.github.io/",
+  "journal_ref": "",
+  "primary": "cs.LG",
+  "abstract": "Erasing harmful or proprietary concepts from powerful text to image generators is an emerging safety requirement, yet current \"concept erasure\" techniques either collapse image quality, rely on brittle adversarial losses, or demand prohibitive retraining cycles. We trace these limitations to a myopic view of the denoising trajectories that govern diffusion based generation. We introduce EraseFlow, the first framework that casts concept unlearning as exploration in the space of denoising paths and optimizes it with GFlowNets equipped with the trajectory balance objective. By sampling entire trajectories rather than single end states, EraseFlow learns a stochastic policy that steers generation away from target concepts while preserving the model's prior. EraseFlow eliminates the need for carefully crafted reward models and by doing this, it generalizes effectively to unseen concepts and avoids hackable rewards while improving the performance. Extensive empirical results demonstrate that EraseFlow outperforms existing baselines and achieves an optimal trade off between performance and prior preservation.",
+  "hit_queries": [
+   "all:GFlowNet",
+   "all:GFlowNets"
+  ]
+ },
+ {
+  "arxiv": "2510.26688",
+  "title": "FlowQ-Net: A Generative Framework for Automated Quantum Circuit Design",
+  "authors": [
+   "Jun Dai",
+   "Michael Rizvi-Martel",
+   "Guillaume Rabusseau"
+  ],
+  "published": "2025-10-30",
+  "updated": "2025-10-30",
+  "comment": "",
+  "journal_ref": "",
+  "primary": "quant-ph",
+  "abstract": "Designing efficient quantum circuits is a central bottleneck to exploring the potential of quantum computing, particularly for noisy intermediate-scale quantum (NISQ) devices, where circuit efficiency and resilience to errors are paramount. The search space of gate sequences grows combinatorially, and handcrafted templates often waste scarce qubit and depth budgets. We introduce \\textsc{FlowQ-Net} (Flow-based Quantum design Network), a generative framework for automated quantum circuit synthesis based on Generative Flow Networks (GFlowNets). This framework learns a stochastic policy to construct circuits sequentially, sampling them in proportion to a flexible, user-defined reward function that can encode multiple design objectives such as performance, depth, and gate count. This approach uniquely enables the generation of a diverse ensemble of high-quality circuits, moving beyond single-solution optimization. We demonstrate the efficacy of \\textsc{FlowQ-Net} through an extensive set of simulations. We apply our method to Variational Quantum Algorithm (VQA) ansatz design for molecular ground state estimation, Max-Cut, and image classification, key challenges in near-term quantum computing. Circuits designed by \\textsc{FlowQ-Net} achieve significant improvements, yielding circuits that are 10$\\times$-30$\\times$ more compact in terms of parameters, gates, and depth compared to commonly used unitary baselines, without compromising accuracy. This trend holds even when subjected to error profiles from real-world quantum devices. Our results underline the potential of generative models as a general-purpose methodology for automated quantum circuit design, offering a promising path towards more efficient quantum algorithms and accelerating scientific discovery in the quantum domain.",
+  "hit_queries": [
+   "all:GFlowNet",
+   "all:GFlowNets",
+   "all:\"generative flow network\"",
+   "all:\"generative flow networks\""
+  ]
+ },
+ {
+  "arxiv": "2510.26197",
+  "title": "Structurally Valid Log Generation using FSM-GFlowNets",
+  "authors": [
+   "Riya Samanta"
+  ],
+  "published": "2025-10-30",
+  "updated": "2025-10-30",
+  "comment": "",
+  "journal_ref": "",
+  "primary": "cs.ET",
+  "abstract": "Generating structurally valid and behaviorally diverse synthetic event logs for interaction-aware models is a challenging yet crucial problem, particularly in settings with limited or privacy constrained user data. Existing methods such as heuristic simulations and LLM based generators often lack structural coherence or controllability, producing synthetic data that fails to accurately represent real world system interactions. This paper presents a framework that integrates Finite State Machines or FSMs with Generative Flow Networks or GFlowNets to generate structured, semantically valid, and diverse synthetic event logs. Our FSM-constrained GFlowNet ensures syntactic validity and behavioral variation through dynamic action masking and guided sampling. The FSM, derived from expert traces, encodes domain-specific rules, while the GFlowNet is trained using a flow matching objective with a hybrid reward balancing FSM compliance and statistical fidelity. We instantiate the framework in the context of UI interaction logs using the UIC HCI dataset, but the approach generalizes to any symbolic sequence domain. Experimental results based on distributional metrics show that our FSM GFlowNet produces realistic, structurally consistent logs, achieving, for instance, under the real user logs baseline, a KL divergence of 0.2769 and Chi squared distance of 0.3522, significantly outperforming GPT-4o's 2.5294/13.8020 and Gemini's 3.7233/63.0355, alongside a leading bigram overlap of 0.1214 vs. GPT 4o's 0.0028 and Gemini's 0.0007. A downstream use case intent classification demonstrates that classifiers trained solely on our synthetic logs produced from FSM-GFlowNet achieve competitive accuracy compared to real data.",
+  "hit_queries": [
+   "all:GFlowNet",
+   "all:GFlowNets",
+   "all:\"generative flow network\"",
+   "all:\"generative flow networks\""
+  ]
+ },
+ {
+  "arxiv": "2510.22107",
+  "title": "Discovering Latent Graphs with GFlowNets for Diverse Conditional Image Generation",
+  "authors": [
+   "Bailey Trang",
+   "Parham Saremi",
+   "Alan Q. Wang",
+   "Fangrui Huang",
+   "Zahra TehraniNasab",
+   "Amar Kumar",
+   "Tal Arbel",
+   "Li Fei-Fei",
+   "Ehsan Adeli"
+  ],
+  "published": "2025-10-25",
+  "updated": "2025-12-18",
+  "comment": "",
+  "journal_ref": "The 39th Annual Conference on Neural Information Processing Systems 2025",
+  "primary": "cs.CV",
+  "abstract": "Capturing diversity is crucial in conditional and prompt-based image generation, particularly when conditions contain uncertainty that can lead to multiple plausible outputs. To generate diverse images reflecting this diversity, traditional methods often modify random seeds, making it difficult to discern meaningful differences between samples, or diversify the input prompt, which is limited in verbally interpretable diversity. We propose Rainbow, a novel conditional image generation framework, applicable to any pretrained conditional generative model, that addresses inherent condition/prompt uncertainty and generates diverse plausible images. Rainbow is based on a simple yet effective idea: decomposing the input condition into diverse latent representations, each capturing an aspect of the uncertainty and generating a distinct image. First, we integrate a latent graph, parameterized by Generative Flow Networks (GFlowNets), into the prompt representation computation. Second, leveraging GFlowNets' advanced graph sampling capabilities to capture uncertainty and output diverse trajectories over the graph, we produce multiple trajectories that collectively represent the input condition, leading to diverse condition representations and corresponding output images. Evaluations on natural image and medical image datasets demonstrate Rainbow's improvement in both diversity and fidelity across image synthesis, image generation, and counterfactual generation tasks.",
+  "hit_queries": [
+   "all:GFlowNet",
+   "all:GFlowNets",
+   "all:\"generative flow network\"",
+   "all:\"generative flow networks\""
+  ]
+ },
+ {
+  "arxiv": "2510.21523",
+  "title": "Interpretable epistemic uncertainty decomposition in sequential generative models via polynomial chaos surrogates",
+  "authors": [
+   "Ramón Nartallo-Kaluarachchi",
+   "Shashanka Ubaru",
+   "Małgorzata J Zimoń",
+   "Dongsung Huh",
+   "Robert Manson-Sawko",
+   "Lior Horesh",
+   "Yoshua Bengio"
+  ],
+  "published": "2025-10-24",
+  "updated": "2026-05-15",
+  "comment": "37 pages, 15 figures",
+  "journal_ref": "",
+  "primary": "cs.LG",
+  "abstract": "Sequential generative models conditioned on uncertain rewards are central to AI-driven scientific discovery, yet the epistemic uncertainty they inherit from imperfect reward estimates remains unquantified. We propagate this uncertainty through generative flow networks (GFlowNets) by fitting polynomial chaos expansions (PCEs) to small ensembles of trained models. The PCE coefficients yield analytical Sobol sensitivity indices, providing the first interpretable decomposition of which reward components drive which generative decisions, a capability unavailable from deep ensembles, Bayesian neural networks, or Monte Carlo dropout. Convergence guarantees are established theoretically and four of five are formally verified in the Lean 4 proof assistant. Across three real-world tasks the framework reveals actionable structure invisible to ensembles alone. On the Doyle-Dreher Buchwald-Hartwig dataset catalyst selection is robust ($D_{\\mathrm{catalyst}}\\approx 71$) while additive selection is fragile ($D_{\\mathrm{additive}}\\approx 179$, $2.5\\times$ higher). In fragment-based molecular design the linker position is the most sensitive ($D_{\\mathrm{linker}}\\approx 28$) while decoration positions are the most robust ($D\\approx 14$-$18$), reversing the conventional scaffold-robust / decoration-fragile assumption. On the Sachs protein signalling network, MAPK-cascade edges and PKA/PKC hub edges separate into distinct sensitivity regimes, providing a targeted map for perturbation experiments. Calibration coverage at the 95% level reaches 0.97-1.00 across the dominant steps, and the surrogate evaluates 10{,}000 policy samples in milliseconds - $10^{3}$-$10^{4}\\times$ faster than exhaustive retraining.",
+  "hit_queries": [
+   "all:GFlowNet",
+   "all:GFlowNets",
+   "all:\"generative flow network\"",
+   "all:\"generative flow networks\""
+  ]
+ },
+ {
+  "arxiv": "2510.21886",
+  "title": "Exploration through Generation: Applying GFlowNets to Structured Search",
+  "authors": [
+   "Mark Phillip Matovic"
+  ],
+  "published": "2025-10-23",
+  "updated": "2025-10-23",
+  "comment": "12 pages",
+  "journal_ref": "",
+  "primary": "cs.AI",
+  "abstract": "This work applies Generative Flow Networks (GFlowNets) to three graph optimization problems: the Traveling Salesperson Problem, Minimum Spanning Tree, and Shortest Path. GFlowNets are generative models that learn to sample solutions proportionally to a reward function. The models are trained using the Trajectory Balance loss to build solutions sequentially, selecting edges for spanning trees, nodes for paths, and cities for tours. Experiments on benchmark instances of varying sizes show that GFlowNets learn to find optimal solutions. For each problem type, multiple graph configurations with different numbers of nodes were tested. The generated solutions match those from classical algorithms (Dijkstra for shortest path, Kruskal for spanning trees, and exact solvers for TSP). Training convergence depends on problem complexity, with the number of episodes required for loss stabilization increasing as graph size grows. Once training converges, the generated solutions match known optima from classical algorithms across the tested instances. This work demonstrates that generative models can solve combinatorial optimization problems through learned policies. The main advantage of this learning-based approach is computational scalability: while classical algorithms have fixed complexity per instance, GFlowNets amortize computation through training. With sufficient computational resources, the framework could potentially scale to larger problem instances where classical exact methods become infeasible.",
+  "hit_queries": [
+   "all:GFlowNet",
+   "all:GFlowNets",
+   "all:\"generative flow network\"",
+   "all:\"generative flow networks\"",
+   "all:GFlowNet AND (all:\"shortest path\" OR all:\"minimum flow\" OR all:\"non-acyclic\" OR all:cyclic)"
+  ]
+ },
+ {
+  "arxiv": "2510.04792",
+  "title": "Hybrid-Balance GFlowNet for Solving Vehicle Routing Problems",
+  "authors": [
+   "Ni Zhang",
+   "Zhiguang Cao"
+  ],
+  "published": "2025-10-06",
+  "updated": "2025-10-06",
+  "comment": "Accepted by NeurIPS 2025",
+  "journal_ref": "",
+  "primary": "cs.AI",
+  "abstract": "Existing GFlowNet-based methods for vehicle routing problems (VRPs) typically employ Trajectory Balance (TB) to achieve global optimization but often neglect important aspects of local optimization. While Detailed Balance (DB) addresses local optimization more effectively, it alone falls short in solving VRPs, which inherently require holistic trajectory optimization. To address these limitations, we introduce the Hybrid-Balance GFlowNet (HBG) framework, which uniquely integrates TB and DB in a principled and adaptive manner by aligning their intrinsically complementary strengths. Additionally, we propose a specialized inference strategy for depot-centric scenarios like the Capacitated Vehicle Routing Problem (CVRP), leveraging the depot node's greater flexibility in selecting successors. Despite this specialization, HBG maintains broad applicability, extending effectively to problems without explicit depots, such as the Traveling Salesman Problem (TSP). We evaluate HBG by integrating it into two established GFlowNet-based solvers, i.e., AGFN and GFACS, and demonstrate consistent and significant improvements across both CVRP and TSP, underscoring the enhanced solution quality and generalization afforded by our approach.",
+  "hit_queries": [
+   "all:GFlowNet",
+   "all:GFlowNets"
+  ]
+ },
+ {
+  "arxiv": "2510.03811",
+  "title": "Curriculum-Augmented GFlowNets For mRNA Sequence Generation",
+  "authors": [
+   "Aya Laajil",
+   "Abduragim Shtanchaev",
+   "Sajan Muhammad",
+   "Eric Moulines",
+   "Salem Lahlou"
+  ],
+  "published": "2025-10-04",
+  "updated": "2025-10-04",
+  "comment": "",
+  "journal_ref": "",
+  "primary": "cs.LG",
+  "abstract": "Designing mRNA sequences is a major challenge in developing next-generation therapeutics, since it involves exploring a vast space of possible nucleotide combinations while optimizing sequence properties like stability, translation efficiency, and protein expression. While Generative Flow Networks are promising for this task, their training is hindered by sparse, long-horizon rewards and multi-objective trade-offs. We propose Curriculum-Augmented GFlowNets (CAGFN), which integrate curriculum learning with multi-objective GFlowNets to generate de novo mRNA sequences. CAGFN integrates a length-based curriculum that progressively adapts the maximum sequence length guiding exploration from easier to harder subproblems. We also provide a new mRNA design environment for GFlowNets which, given a target protein sequence and a combination of biological objectives, allows for the training of models that generate plausible mRNA candidates. This provides a biologically motivated setting for applying and advancing GFlowNets in therapeutic sequence design. On different mRNA design tasks, CAGFN improves Pareto performance and biological plausibility, while maintaining diversity. Moreover, CAGFN reaches higher-quality solutions faster than a GFlowNet trained with random sequence sampling (no curriculum), and enables generalization to out-of-distribution sequences.",
+  "hit_queries": [
+   "all:GFlowNet",
+   "all:GFlowNets",
+   "all:\"generative flow network\"",
+   "all:\"generative flow networks\""
+  ]
+ },
+ {
+  "arxiv": "2510.02142",
+  "title": "Catalyst GFlowNet for electrocatalyst design: A hydrogen evolution reaction case study",
+  "authors": [
+   "Lena Podina",
+   "Christina Humer",
+   "Alexandre Duval",
+   "Victor Schmidt",
+   "Ali Ramlaoui",
+   "Shahana Chatterjee",
+   "Yoshua Bengio",
+   "Alex Hernandez-Garcia",
+   "David Rolnick",
+   "Félix Therrien"
+  ],
+  "published": "2025-10-02",
+  "updated": "2025-10-02",
+  "comment": "5 pages, 2 figures. Accepted to NeurIPS AI for Materials Workshop 2025",
+  "journal_ref": "",
+  "primary": "cs.LG",
+  "abstract": "Efficient and inexpensive energy storage is essential for accelerating the adoption of renewable energy and ensuring a stable supply, despite fluctuations in sources such as wind and solar. Electrocatalysts play a key role in hydrogen energy storage (HES), allowing the energy to be stored as hydrogen. However, the development of affordable and high-performance catalysts for this process remains a significant challenge. We introduce Catalyst GFlowNet, a generative model that leverages machine learning-based predictors of formation and adsorption energy to design crystal surfaces that act as efficient catalysts. We demonstrate the performance of the model through a proof-of-concept application to the hydrogen evolution reaction, a key reaction in HES, for which we successfully identified platinum as the most efficient known catalyst. In future work, we aim to extend this approach to the oxygen evolution reaction, where current optimal catalysts are expensive metal oxides, and open the search space to discover new materials. This generative modeling framework offers a promising pathway for accelerating the search for novel and efficient catalysts.",
+  "hit_queries": [
+   "all:GFlowNet",
+   "all:GFlowNets"
+  ]
+ },
+ {
+  "arxiv": "2510.00805",
+  "title": "Planning-Augmented Sampling with Early Guidance for High-Reward Discovery",
+  "authors": [
+   "Rui Zhu",
+   "Yudong Zhang",
+   "Xuan Yu",
+   "Chen Zhang",
+   "Xu Wang",
+   "Yang Wang"
+  ],
+  "published": "2025-10-01",
+  "updated": "2026-02-01",
+  "comment": "",
+  "journal_ref": "",
+  "primary": "cs.LG",
+  "abstract": "Generative Flow Networks (GFlowNets) enable structured generation with inherent diversity, but existing sampling strategies often rely on weak guided exploration, slowing early discovery of high-reward candidates. In tasks such as molecular design, rapid and consistent generation of high-reward solutions can outweigh faithful distribution matching. We propose a planning-augmented framework in which Monte Carlo Tree Search using polynomial upper confidence bounds provides online value estimates, and a controllable soft-greedy mechanism integrates these planning signals into the GFlowNets forward policy. This design fosters early exploration of high-reward trajectories and gradually shifts to policy-driven exploitation as experience accumulates. Empirical results show that our method accelerates early high-reward discovery, sustains top-quality sample generation, and preserves diversity across representative tasks. All implementations are available at https://github.com/ZRNB/PLUS.",
+  "hit_queries": [
+   "all:GFlowNet",
+   "all:GFlowNets",
+   "all:\"generative flow network\"",
+   "all:\"generative flow networks\""
+  ]
+ },
+ {
+  "arxiv": "2509.25055",
+  "title": "AlphaSAGE: Structure-Aware Alpha Mining via GFlowNets for Robust Exploration",
+  "authors": [
+   "Binqi Chen",
+   "Hongjun Ding",
+   "Ning Shen",
+   "Jinsheng Huang",
+   "Taian Guo",
+   "Luchen Liu",
+   "Ming Zhang"
+  ],
+  "published": "2025-09-29",
+  "updated": "2026-05-19",
+  "comment": "",
+  "journal_ref": "",
+  "primary": "q-fin.CP",
+  "abstract": "The automated mining of predictive signals, or alphas, is a central challenge in quantitative finance. While Reinforcement Learning (RL) has emerged as a promising paradigm for generating formulaic alphas, existing frameworks are fundamentally hampered by a triad of interconnected issues. First, they suffer from reward sparsity, where meaningful feedback is only available upon the completion of a full formula, leading to inefficient and unstable exploration. Second, they rely on semantically inadequate sequential representations of mathematical expressions, failing to capture the structure that determine an alpha's behavior. Third, the standard RL objective of maximizing expected returns inherently drives policies towards a single optimal mode, directly contradicting the practical need for a diverse portfolio of non-correlated alphas. To overcome these challenges, we introduce AlphaSAGE (Structure-Aware Alpha Mining via Generative Flow Networks for Robust Exploration), a novel framework is built upon three cornerstone innovations: (1) a structure-aware encoder based on Relational Graph Convolutional Network (RGCN); (2) a new framework with Generative Flow Networks (GFlowNets); and (3) a dense, multi-faceted reward structure. Empirical results demonstrate that AlphaSAGE outperforms existing baselines in mining a more diverse, novel, and highly predictive portfolio of alphas, thereby proposing a new paradigm for automated alpha mining. Our code is available at https://github.com/BerkinChen/AlphaSAGE.",
+  "hit_queries": [
+   "all:GFlowNet",
+   "all:GFlowNets",
+   "all:\"generative flow network\"",
+   "all:\"generative flow networks\""
+  ]
+ },
+ {
+  "arxiv": "2509.21947",
+  "title": "Active Attacks: Red-teaming LLMs via Adaptive Environments",
+  "authors": [
+   "Taeyoung Yun",
+   "Pierre-Luc St-Charles",
+   "Jinkyoo Park",
+   "Yoshua Bengio",
+   "Minsu Kim"
+  ],
+  "published": "2025-09-26",
+  "updated": "2025-10-04",
+  "comment": "22 pages, 7 figures, 18 tables",
+  "journal_ref": "",
+  "primary": "cs.LG",
+  "abstract": "We address the challenge of generating diverse attack prompts for large language models (LLMs) that elicit harmful behaviors (e.g., insults, sexual content) and are used for safety fine-tuning. Rather than relying on manual prompt engineering, attacker LLMs can be trained with reinforcement learning (RL) to automatically generate such prompts using only a toxicity classifier as a reward. However, capturing a wide range of harmful behaviors is a significant challenge that requires explicit diversity objectives. Existing diversity-seeking RL methods often collapse to limited modes: once high-reward prompts are found, exploration of new regions is discouraged. Inspired by the active learning paradigm that encourages adaptive exploration, we introduce \\textit{Active Attacks}, a novel RL-based red-teaming algorithm that adapts its attacks as the victim evolves. By periodically safety fine-tuning the victim LLM with collected attack prompts, rewards in exploited regions diminish, which forces the attacker to seek unexplored vulnerabilities. This process naturally induces an easy-to-hard exploration curriculum, where the attacker progresses beyond easy modes toward increasingly difficult ones. As a result, Active Attacks uncovers a wide range of local attack modes step by step, and their combination achieves wide coverage of the multi-mode distribution. Active Attacks, a simple plug-and-play module that seamlessly integrates into existing RL objectives, unexpectedly outperformed prior RL-based methods -- including GFlowNets, PPO, and REINFORCE -- by improving cross-attack success rates against GFlowNets, the previous state-of-the-art, from 0.07% to 31.28% (a relative gain greater than $400\\ \\times$) with only a 6% increase in computation. Our code is publicly available \\href{https://github.com/dbsxodud-11/active_attacks}{here}.",
+  "hit_queries": [
+   "all:GFlowNet",
+   "all:GFlowNets"
+  ]
+ },
+ {
+  "arxiv": "2509.20408",
+  "title": "A Theory of Multi-Agent Generative Flow Networks",
+  "authors": [
+   "Leo Maxime Brunswic",
+   "Haozhi Wang",
+   "Shuang Luo",
+   "Jianye Hao",
+   "Amir Rasouli",
+   "Yinchuan Li"
+  ],
+  "published": "2025-09-24",
+  "updated": "2025-09-24",
+  "comment": "Accepted at SPIGM Workshop NeurIPS 2025",
+  "journal_ref": "",
+  "primary": "cs.LG",
+  "abstract": "Generative flow networks utilize a flow-matching loss to learn a stochastic policy for generating objects from a sequence of actions, such that the probability of generating a pattern can be proportional to the corresponding given reward. However, a theoretical framework for multi-agent generative flow networks (MA-GFlowNets) has not yet been proposed. In this paper, we propose the theory framework of MA-GFlowNets, which can be applied to multiple agents to generate objects collaboratively through a series of joint actions. We further propose four algorithms: a centralized flow network for centralized training of MA-GFlowNets, an independent flow network for decentralized execution, a joint flow network for achieving centralized training with decentralized execution, and its updated conditional version. Joint Flow training is based on a local-global principle allowing to train a collection of (local) GFN as a unique (global) GFN. This principle provides a loss of reasonable complexity and allows to leverage usual results on GFN to provide theoretical guarantees that the independent policies generate samples with probability proportional to the reward function. Experimental results demonstrate the superiority of the proposed framework compared to reinforcement learning and MCMC-based methods.",
+  "hit_queries": [
+   "all:GFlowNet",
+   "all:GFlowNets",
+   "all:\"generative flow network\"",
+   "all:\"generative flow networks\""
+  ]
+ },
+ {
+  "arxiv": "2509.15486",
+  "title": "Discrete Flow-Based Generative Models for Measurement Optimization in Quantum Computing",
+  "authors": [
+   "Isaac L. Huidobro-Meezs",
+   "Jun Dai",
+   "Rodrigo A. Vargas-Hernández"
+  ],
+  "published": "2025-09-18",
+  "updated": "2026-08-25",
+  "comment": "26 pages, 9 figures and 4 tables. Contact authors for SM",
+  "journal_ref": "",
+  "primary": "quant-ph",
+  "abstract": "Estimating molecular Hamiltonians to chemical accuracy requires a large number of measurements. Hamiltonian overlapping grouping methods focus on reducing measurement counts, employing greedy initializations, such as sorted insertion (SI), leaving useful measurement/circuit trade-offs unexplored. Here, we formulate Hamiltonian grouping as a reward-driven generative search problem and introduce a Generative Flow Networks (GFlowNets)-based model that colors graph representations of molecular qubit Hamiltonians to sample non-overlapping commuting groupings. The reward function can combine measurement cost, circuit count, and compiled two-qubit-gate count, enabling multi-objective optimization without differentiable cost functions or model pretraining. Across molecular Hamiltonian benchmarks, the GFlowNets sampler finds fully commuting non-overlapping groupings with average measurement requirements 18% lower than SI, and produces Pareto sets that expose trade-offs among shots, circuits, and two-qubit resources. When used to initialize iterative coefficient splitting (ICS), GFlowNet-generated groupings reduce post-ICS measurement estimates by up to 40% for Jordan-Wigner-mapped fully commuting Hamiltonians relative to SI initialization. Composite rewards further identify lower two-qubit gate groupings, including cases with more than 100 fewer compiled two-qubit gates, while retaining comparable post-ICS measurement benefits. GFlowNets provide a flexible workflow for resource-aware measurement and quantum-resource optimization in quantum chemistry, replacing single-heuristic outputs with diverse candidate groupings that can be selected according to hardware-specific priorities. Our results show that our GFlowNets' generative policy framework not only reduces measurement and two-qubit gate costs but also provides flexibility for hardware-aware adaptations via its reward function.",
+  "hit_queries": [
+   "all:GFlowNet",
+   "all:GFlowNets",
+   "all:\"generative flow network\"",
+   "all:\"generative flow networks\"",
+   "all:\"flow network\" AND all:sampler AND all:reward"
+  ]
+ },
+ {
+  "arxiv": "2509.05565",
+  "title": "Time-Modulated Intelligent Reflecting Surfaces for Integrated Sensing, Communication and Security: A Generative AI Design Framework",
+  "authors": [
+   "Zhihao Tao",
+   "Athina Petropulu",
+   "H. Vincent Poor"
+  ],
+  "published": "2025-09-06",
+  "updated": "2025-12-30",
+  "comment": "Nature Portfolio Journal, npj Wireless Technology, the special issue on ISAC",
+  "journal_ref": "",
+  "primary": "eess.SP",
+  "abstract": "We propose a novel approach to achieve physical layer security for integrated sensing and communication (ISAC) systems operating in the presence of targets that may be eavesdroppers. The system is aided by a time-modulated intelligent reflecting surface (TM-IRS), which is configured to preserve the integrity of the transmitted data at one or more legitimate communication users (CUs) while making them appear scrambled in all other directions. The TM-IRS design leverages a generative flow network (GFlowNet) framework to learn a stochastic policy that samples high-performing TM-IRS configurations from a vast discrete parameter space. Specifically, we begin by formulating the achievable sum rate for the legitimate CUs and the beampattern gain toward the target direction, based on which we construct reward functions for GFlowNets that jointly capture both communication and sensing performance. The TM-IRS design is modeled as a deterministic Markov decision process (MDP), where each terminal state corresponds to a complete configuration of TM-IRS parameters. GFlowNets, parametrized by deep neural networks are employed to learn a stochastic policy that samples TM-IRS parameter sets with probability proportional to their associated reward. Experimental results demonstrate the effectiveness of the proposed GFlowNet-based method in integrating sensing, communication and security simultaneously, and also exhibit significant sampling efficiency as compared to the exhaustive combinatorial search and enhanced robustness against the existing benchmarks of physical layer security.",
+  "hit_queries": [
+   "all:GFlowNet",
+   "all:GFlowNets",
+   "all:\"generative flow network\"",
+   "all:\"generative flow networks\""
+  ]
+ },
+ {
+  "arxiv": "2509.01632",
+  "title": "Relative Trajectory Balance is equivalent to Trust-PCL",
+  "authors": [
+   "Tristan Deleu",
+   "Padideh Nouri",
+   "Yoshua Bengio",
+   "Doina Precup"
+  ],
+  "published": "2025-09-01",
+  "updated": "2025-09-01",
+  "comment": "",
+  "journal_ref": "",
+  "primary": "cs.LG",
+  "abstract": "Recent progress in generative modeling has highlighted the importance of Reinforcement Learning (RL) for fine-tuning, with KL-regularized methods in particular proving to be highly effective for both autoregressive and diffusion models. Complementing this line of work, the Relative Trajectory Balance (RTB) objective was recently introduced in the context of Generative Flow Networks (GFlowNets) to serve the same role of improving fine-tuning in sequential generative models. Building on prior work linking GFlowNets and maximum-entropy RL, we establish in this paper an equivalence between RTB and Trust-PCL, an off-policy RL method with KL regularization. This equivalence situates RTB within the broader theoretical landscape of KL-regularized RL, and clarifies its relationship to earlier methods. Leveraging this insight, we revisit an illustrative example from the RTB paper and show that KL-regularized RL methods achieve comparable performance, offering an alternative perspective to what was previously reported.",
+  "hit_queries": [
+   "all:GFlowNet",
+   "all:GFlowNets",
+   "all:\"generative flow network\"",
+   "all:\"generative flow networks\""
+  ]
+ },
+ {
+  "arxiv": "2509.00704",
+  "title": "Why Pool When You Can Flow? Active Learning with GFlowNets",
+  "authors": [
+   "Renfei Zhang",
+   "Mohit Pandey",
+   "Artem Cherkasov",
+   "Martin Ester"
+  ],
+  "published": "2025-08-31",
+  "updated": "2026-06-24",
+  "comment": "Accepted at the NeurIPS 2025 Workshop on AI Virtual Cells and Instruments: A New Era in Drug Discovery and Development (AI4D3 2025), San Diego, California, USA. 6 pages; 5 figures",
+  "journal_ref": "",
+  "primary": "cs.LG",
+  "abstract": "The scalability of pool-based active learning is limited by the computational cost of evaluating large unlabeled datasets, a challenge that is particularly acute in virtual screening for drug discovery. While active learning strategies such as Bayesian Active Learning by Disagreement (BALD) prioritize informative samples, it remains computationally intensive when scaled to libraries containing billions samples. In this work, we introduce BALD-GFlowNet, a generative active learning framework that circumvents this issue. Our method leverages Generative Flow Networks (GFlowNets) to directly sample objects in proportion to the BALD reward. By replacing traditional pool-based acquisition with generative sampling, BALD-GFlowNet achieves scalability that is independent of the size of the unlabeled pool. In our virtual screening experiment, we show that BALD-GFlowNet achieves a performance comparable to that of standard BALD baseline while generating more structurally diverse molecules, offering a promising direction for efficient and scalable molecular discovery.",
+  "hit_queries": [
+   "all:GFlowNet",
+   "all:GFlowNets",
+   "all:\"generative flow network\"",
+   "all:\"generative flow networks\""
+  ]
+ },
+ {
+  "arxiv": "2508.17166",
+  "title": "Generative Flow Networks for Personalized Multimedia Systems: A Case Study on Short Video Feeds",
+  "authors": [
+   "Yili Jin",
+   "Ling Pan",
+   "Rui-Xiao Zhang",
+   "Jiangchuan Liu",
+   "Xue Liu"
+  ],
+  "published": "2025-08-23",
+  "updated": "2025-08-23",
+  "comment": "ACM Multimedia 2025",
+  "journal_ref": "",
+  "primary": "cs.MM",
+  "abstract": "Multimedia systems underpin modern digital interactions, facilitating seamless integration and optimization of resources across diverse multimedia applications. To meet growing personalization demands, multimedia systems must efficiently manage competing resource needs, adaptive content, and user-specific data handling. This paper introduces Generative Flow Networks (GFlowNets, GFNs) as a brave new framework for enabling personalized multimedia systems. By integrating multi-candidate generative modeling with flow-based principles, GFlowNets offer a scalable and flexible solution for enhancing user-specific multimedia experiences. To illustrate the effectiveness of GFlowNets, we focus on short video feeds, a multimedia application characterized by high personalization demands and significant resource constraints, as a case study. Our proposed GFlowNet-based personalized feeds algorithm demonstrates superior performance compared to traditional rule-based and reinforcement learning methods across critical metrics, including video quality, resource utilization efficiency, and delivery cost. Moreover, we propose a unified GFlowNet-based framework generalizable to other multimedia systems, highlighting its adaptability and wide-ranging applicability. These findings underscore the potential of GFlowNets to advance personalized multimedia systems by addressing complex optimization challenges and supporting sophisticated multimedia application scenarios.",
+  "hit_queries": [
+   "all:GFlowNet",
+   "all:GFlowNets",
+   "all:\"generative flow network\"",
+   "all:\"generative flow networks\""
+  ]
+ },
+ {
+  "arxiv": "2508.15442",
+  "title": "Mitigating Hallucinations in LM-Based TTS Models via Distribution Alignment Using GFlowNets",
+  "authors": [
+   "Chenlin Liu",
+   "Minghui Fang",
+   "Patrick Zhang",
+   "Wei Zhou",
+   "Jie Gao",
+   "Jiqing Han"
+  ],
+  "published": "2025-08-21",
+  "updated": "2025-09-05",
+  "comment": "Accepted to EMNLP 2025 Main Conference (Oral)",
+  "journal_ref": "",
+  "primary": "eess.AS",
+  "abstract": "Language Model (LM)-based Text-to-Speech (TTS) systems often generate hallucinated speech that deviates from input text. Existing mitigation strategies either demand excessive training resources or introduce significant inference latency. In this paper, we propose GFlOwNet-guided distribution AlignmenT (GOAT) for LM-based TTS, a post-training framework that mitigates hallucinations without relying on massive resources or inference cost. Specifically, we first conduct an uncertainty analysis, revealing a strong positive correlation between hallucination and model uncertainty. Based on this, we reformulate TTS generation as a trajectory flow optimization problem and introduce an enhanced Subtrajectory Balance objective together with a sharpened internal reward as target distribution. We further integrate reward temperature decay and learning rate optimization for stability and performance balance. Extensive experiments show that GOAT reduce over 50% character error rates on challenging test cases and lowering uncertainty by up to 58%, demonstrating its strong generalization ability and effectiveness.",
+  "hit_queries": [
+   "all:GFlowNet",
+   "all:GFlowNets"
+  ]
+ },
+ {
+  "arxiv": "2508.13208",
+  "title": "Modeling GRNs with a Probabilistic Categorical Framework",
+  "authors": [
+   "Yiyang Jia",
+   "Zheng Wei",
+   "Zheng Yang",
+   "Guohong Peng"
+  ],
+  "published": "2025-08-16",
+  "updated": "2025-08-16",
+  "comment": "21 pages, 5 figures",
+  "journal_ref": "",
+  "primary": "q-bio.MN",
+  "abstract": "Understanding the complex and stochastic nature of Gene Regulatory Networks (GRNs) remains a central challenge in systems biology. Existing modeling paradigms often struggle to effectively capture the intricate, multi-factor regulatory logic and to rigorously manage the dual uncertainties of network structure and kinetic parameters. In response, this work introduces the Probabilistic Categorical GRN(PC-GRN) framework. It is a novel theoretical approach founded on the synergistic integration of three core methodologies. Firstly, category theory provides a formal language for the modularity and composition of regulatory pathways. Secondly, Bayesian Typed Petri Nets (BTPNs) serve as an interpretable,mechanistic substrate for modeling stochastic cellular processes, with kinetic parameters themselves represented as probability distributions. The central innovation of PC-GRN is its end-to-end generative Bayesian inference engine, which learns a full posterior distribution over BTPN models (P (G, Θ|D)) directly from data. This is achieved by the novel interplay of a GFlowNet, which learns a policy to sample network topologies, and a HyperNetwork, which performs amortized inference to predict their corresponding parameter distributions. The resulting framework provides a mathematically rigorous, biologically interpretable, and uncertainty-aware representation of GRNs, advancing predictive modeling and systems-level analysis.",
+  "hit_queries": [
+   "all:GFlowNet",
+   "all:GFlowNets"
+  ]
+ },
+ {
+  "arxiv": "2508.06576",
+  "title": "GFlowNets for Learning Better Drug-Drug Interaction Representations",
+  "authors": [
+   "Azmine Toushik Wasi"
+  ],
+  "published": "2025-08-07",
+  "updated": "2025-10-30",
+  "comment": "Accepted to ICANN 2025:AIDD and NeurIPS 2025 Workshop on Structured Probabilistic Inference & Generative Modeling (https://openreview.net/forum?id=LZW1jSgfCI)",
+  "journal_ref": "",
+  "primary": "cs.LG",
+  "abstract": "Drug-drug interactions pose a significant challenge in clinical pharmacology, with severe class imbalance among interaction types limiting the effectiveness of predictive models. Common interactions dominate datasets, while rare but critical interactions remain underrepresented, leading to poor model performance on infrequent cases. Existing methods often treat DDI prediction as a binary problem, ignoring class-specific nuances and exacerbating bias toward frequent interactions. To address this, we propose a framework combining Generative Flow Networks (GFlowNet) with Variational Graph Autoencoders (VGAE) to generate synthetic samples for rare classes, improving model balance and generate effective and novel DDI pairs. Our approach enhances predictive performance across interaction types, ensuring better clinical reliability.",
+  "hit_queries": [
+   "all:GFlowNet",
+   "all:GFlowNets",
+   "all:\"generative flow network\"",
+   "all:\"generative flow networks\""
+  ]
+ },
+ {
+  "arxiv": "2507.11759",
+  "title": "Torsional-GFN: a conditional conformation generator for small molecules",
+  "authors": [
+   "Alexandra Volokhova",
+   "Léna Néhale Ezzine",
+   "Piotr Gaiński",
+   "Luca Scimeca",
+   "Emmanuel Bengio",
+   "Prudencio Tossou",
+   "Yoshua Bengio",
+   "Alex Hernandez-Garcia"
+  ],
+  "published": "2025-07-15",
+  "updated": "2025-07-15",
+  "comment": "The two first authors are Alexandra Volokhova and Léna Néhale Ezzine, with equal contribution",
+  "journal_ref": "",
+  "primary": "cs.LG",
+  "abstract": "Generating stable molecular conformations is crucial in several drug discovery applications, such as estimating the binding affinity of a molecule to a target. Recently, generative machine learning methods have emerged as a promising, more efficient method than molecular dynamics for sampling of conformations from the Boltzmann distribution. In this paper, we introduce Torsional-GFN, a conditional GFlowNet specifically designed to sample conformations of molecules proportionally to their Boltzmann distribution, using only a reward function as training signal. Conditioned on a molecular graph and its local structure (bond lengths and angles), Torsional-GFN samples rotations of its torsion angles. Our results demonstrate that Torsional-GFN is able to sample conformations approximately proportional to the Boltzmann distribution for multiple molecules with a single model, and allows for zero-shot generalization to unseen bond lengths and angles coming from the MD simulations for such molecules. Our work presents a promising avenue for scaling the proposed approach to larger molecular systems, achieving zero-shot generalization to unseen molecules, and including the generation of the local structure into the GFlowNet model.",
+  "hit_queries": [
+   "all:GFlowNet",
+   "all:GFlowNets"
+  ]
+ },
+ {
+  "arxiv": "2506.16313",
+  "title": "Improved Exploration in GFlownets via Enhanced Epistemic Neural Networks",
+  "authors": [
+   "Sajan Muhammad",
+   "Salem Lahlou"
+  ],
+  "published": "2025-06-19",
+  "updated": "2025-10-22",
+  "comment": "Accepted to the EXAIT Workshop at ICML 2025, and ICoIAS 2025",
+  "journal_ref": "",
+  "primary": "cs.LG",
+  "abstract": "Efficiently identifying the right trajectories for training remains an open problem in GFlowNets. To address this, it is essential to prioritize exploration in regions of the state space where the reward distribution has not been sufficiently learned. This calls for uncertainty-driven exploration, in other words, the agent should be aware of what it does not know. This attribute can be measured by joint predictions, which are particularly important for combinatorial and sequential decision problems. In this research, we integrate epistemic neural networks (ENN) with the conventional architecture of GFlowNets to enable more efficient joint predictions and better uncertainty quantification, thereby improving exploration and the identification of optimal trajectories. Our proposed algorithm, ENN-GFN-Enhanced, is compared to the baseline method in GFlownets and evaluated in grid environments and structured sequence generation in various settings, demonstrating both its efficacy and efficiency.",
+  "hit_queries": [
+   "all:GFlowNet",
+   "all:GFlowNets"
+  ]
+ },
+ {
+  "arxiv": "2506.16114",
+  "title": "GFlowGR: Fine-tuning Generative Recommendation Frameworks with Generative Flow Networks",
+  "authors": [
+   "Yejing Wang",
+   "Shengyu Zhou",
+   "Jinyu Lu",
+   "Qidong Liu",
+   "Xinhang Li",
+   "Wenlin Zhang",
+   "Feng Li",
+   "Pengjie Wang",
+   "Chuan Yu",
+   "Jian Xu",
+   "Bo Zheng",
+   "Xiangyu Zhao"
+  ],
+  "published": "2025-06-19",
+  "updated": "2026-06-01",
+  "comment": "",
+  "journal_ref": "",
+  "primary": "cs.IR",
+  "abstract": "Generative recommendations (GR), which usually include item tokenizers and generative Large Language Models (LLMs), have demonstrated remarkable success across a wide range of scenarios. The majority of existing research efforts primarily concentrate on developing powerful item tokenizers or advancing LLM decoding strategies to attain superior performance. However, the critical fine-tuning step in GR frameworks, which is essential for adapting LLMs to recommendation data, remains largely unexplored. Current approaches predominantly rely on either the next-token prediction loss of supervised fine-tuning (SFT) or recommendationspecific direct preference optimization (DPO) strategies. Both methods ignore the exploration of possible positive unobserved samples, which is commonly referred to as the exposure bias problem. To mitigate this problem, this paper treats the GR as a multi-step generation task and constructs a GFlowNets-based fine-tuning framework (GFlowGR). The proposed framework integrates collaborative knowledge from traditional recommender systems to create an adaptive trajectory sampler and a comprehensive reward model. Leveraging the diverse generation property of GFlowNets, along with sampling and heuristic weighting techniques, GFlowGR emerges as a promising approach to mitigate the exposure bias problem. Extensive empirical results on two real-world datasets and with two different GR backbones highlight the effectiveness and robustness of GFlowGR.",
+  "hit_queries": [
+   "all:GFlowNet",
+   "all:GFlowNets",
+   "all:\"generative flow network\"",
+   "all:\"generative flow networks\"",
+   "all:\"flow network\" AND all:sampler AND all:reward"
+  ]
+ },
+ {
+  "arxiv": "2506.15684",
+  "title": "Nabla-R2D3: Effective and Efficient 3D Diffusion Alignment with 2D Rewards",
+  "authors": [
+   "Qingming Liu",
+   "Zhen Liu",
+   "Dinghuai Zhang",
+   "Kui Jia"
+  ],
+  "published": "2025-06-18",
+  "updated": "2025-06-18",
+  "comment": "Technical Report (21 pages, 21 figures)",
+  "journal_ref": "",
+  "primary": "cs.GR",
+  "abstract": "Generating high-quality and photorealistic 3D assets remains a longstanding challenge in 3D vision and computer graphics. Although state-of-the-art generative models, such as diffusion models, have made significant progress in 3D generation, they often fall short of human-designed content due to limited ability to follow instructions, align with human preferences, or produce realistic textures, geometries, and physical attributes. In this paper, we introduce Nabla-R2D3, a highly effective and sample-efficient reinforcement learning alignment framework for 3D-native diffusion models using 2D rewards. Built upon the recently proposed Nabla-GFlowNet method, which matches the score function to reward gradients in a principled manner for reward finetuning, our Nabla-R2D3 enables effective adaptation of 3D diffusion models using only 2D reward signals. Extensive experiments show that, unlike vanilla finetuning baselines which either struggle to converge or suffer from reward hacking, Nabla-R2D3 consistently achieves higher rewards and reduced prior forgetting within a few finetuning steps.",
+  "hit_queries": [
+   "all:GFlowNet",
+   "all:GFlowNets"
+  ]
+ },
+ {
+  "arxiv": "2506.14992",
+  "title": "Secure Time-Modulated Intelligent Reflecting Surface via Generative Flow Networks",
+  "authors": [
+   "Zhihao Tao",
+   "Athina P. Petropulu"
+  ],
+  "published": "2025-06-17",
+  "updated": "2025-06-17",
+  "comment": "",
+  "journal_ref": "",
+  "primary": "eess.SP",
+  "abstract": "We propose a novel directional modulation (DM) design for OFDM transmitters aided by a time-modulated intelligent reflecting surface (TM-IRS). The TM-IRS is configured to preserve the integrity of transmitted signals toward multiple legitimate users while scrambling the signal in all other directions. Existing TM-IRS design methods typically target a single user direction and follow predefined rule-based procedures, making them unsuitable for multi-user scenarios. Here, we propose a generative AI-based approach to design good sets of TM-IRS parameters out of a set of all possible quantized ranges of parameters. The design objective is to maximize the sum rate across the authorized directions. We model the TM-IRS parameter selection as a deterministic Markov decision process (MDP), where each terminal state corresponds to a specific configuration of TM-IRS parameters. GFlowNets are employed to learn a stochastic policy that samples TM-IRS parameter sets with probability proportional to their associated sum rate reward. Experimental results demonstrate that the proposed method effectively enhances the security of the TM-IRS-aided OFDM systems with multi-users. Also, despite the vast size of the TM-IRS configuration space, the GFlowNet is able to converge after training on fewer than 0.000001% of all possible configurations, demonstrating remarkable efficiency compared to exhaustive combinatorial search. Implementation code is available at https://github.com/ZhihaoTao/GFN4TM-RIS to facilitate reproducibility.",
+  "hit_queries": [
+   "all:GFlowNet",
+   "all:GFlowNets",
+   "all:\"generative flow network\"",
+   "all:\"generative flow networks\""
+  ]
+ },
+ {
+  "arxiv": "2506.19865",
+  "title": "Scalable and Cost-Efficient de Novo Template-Based Molecular Generation",
+  "authors": [
+   "Piotr Gaiński",
+   "Oussama Boussif",
+   "Andrei Rekesh",
+   "Dmytro Shevchuk",
+   "Ali Parviz",
+   "Mike Tyers",
+   "Robert A. Batey",
+   "Michał Koziarski"
+  ],
+  "published": "2025-06-10",
+  "updated": "2025-11-04",
+  "comment": "",
+  "journal_ref": "",
+  "primary": "q-bio.BM",
+  "abstract": "Template-based molecular generation offers a promising avenue for drug design by ensuring generated compounds are synthetically accessible through predefined reaction templates and building blocks. In this work, we tackle three core challenges in template-based GFlowNets: (1) minimizing synthesis cost, (2) scaling to large building block libraries, and (3) effectively utilizing small fragment sets. We propose Recursive Cost Guidance, a backward policy framework that employs auxiliary machine learning models to approximate synthesis cost and viability. This guidance steers generation toward low-cost synthesis pathways, significantly enhancing cost-efficiency, molecular diversity, and quality, especially when paired with an Exploitation Penalty that balances the trade-off between exploration and exploitation. To enhance performance in smaller building block libraries, we develop a Dynamic Library mechanism that reuses intermediate high-reward states to construct full synthesis trees. Our approach establishes state-of-the-art results in template-based molecular generation.",
+  "hit_queries": [
+   "all:GFlowNet",
+   "all:GFlowNets"
+  ]
+ },
+ {
+  "arxiv": "2506.02685",
+  "title": "Symmetry-Aware GFlowNets",
+  "authors": [
+   "Hohyun Kim",
+   "Seunggeun Lee",
+   "Min-hwan Oh"
+  ],
+  "published": "2025-06-03",
+  "updated": "2025-10-16",
+  "comment": "29 pages; Accepted at ICML 2025",
+  "journal_ref": "",
+  "primary": "stat.ML",
+  "abstract": "Generative Flow Networks (GFlowNets) offer a powerful framework for sampling graphs in proportion to their rewards. However, existing approaches suffer from systematic biases due to inaccuracies in state transition probability computations. These biases, rooted in the inherent symmetries of graphs, impact both atom-based and fragment-based generation schemes. To address this challenge, we introduce Symmetry-Aware GFlowNets (SA-GFN), a method that incorporates symmetry corrections into the learning process through reward scaling. By integrating bias correction directly into the reward structure, SA-GFN eliminates the need for explicit state transition computations. Empirical results show that SA-GFN enables unbiased sampling while enhancing diversity and consistently generating high-reward graphs that closely match the target distribution.",
+  "hit_queries": [
+   "all:GFlowNet",
+   "all:GFlowNets",
+   "all:\"generative flow network\"",
+   "all:\"generative flow networks\""
+  ]
+ },
+ {
+  "arxiv": "2505.20110",
+  "title": "Beyond the Proxy: Trajectory-Distilled Guidance for Offline GFlowNet Training",
+  "authors": [
+   "Ruishuo Chen",
+   "Xun Wang",
+   "Rui Hu",
+   "Zhuoran Li",
+   "Longbo Huang"
+  ],
+  "published": "2025-05-26",
+  "updated": "2026-05-25",
+  "comment": "Camera-ready version accepted at ICML 2026",
+  "journal_ref": "",
+  "primary": "cs.LG",
+  "abstract": "Generative Flow Networks (GFlowNets) excel at sampling diverse, high-reward objects. In many practical applications where active reward queries are infeasible, these models must be trained using static offline datasets. Prevailing training methods typically rely on a proxy model to provide reward feedback for online sampled trajectories. However, constructing a reliable proxy is often challenging due to data scarcity or high evaluation costs. While existing proxy-free approaches attempt to address this, they often impose coarse constraints that limit the model's ability to explore effectively. To overcome these limitations, we propose Trajectory-Distilled GFlowNet (TD-GFN), a novel proxy-free training framework. TD-GFN utilizes inverse reinforcement learning (IRL) to extract dense, transition-level edge rewards from offline trajectories, providing rich structural guidance for efficient exploration. Crucially, to ensure robustness, these rewards guide the policy indirectly through DAG pruning and prioritized backward sampling. This design ensures that gradient updates rely exclusively on ground-truth terminal rewards from the dataset, thereby preventing error propagation. Empirical results demonstrate that TD-GFN significantly outperforms a broad range of existing baselines in both convergence speed and sample quality, establishing a more robust and efficient paradigm for offline GFlowNet training.",
+  "hit_queries": [
+   "all:GFlowNet",
+   "all:GFlowNets",
+   "all:\"generative flow network\"",
+   "all:\"generative flow networks\""
+  ]
+ },
+ {
+  "arxiv": "2506.12033",
+  "title": "EMERGENT: Efficient and Manipulation-resistant Matching using GFlowNets",
+  "authors": [
+   "Mayesha Tasnim",
+   "Erman Acar",
+   "Sennay Ghebreab"
+  ],
+  "published": "2025-05-22",
+  "updated": "2025-05-22",
+  "comment": "",
+  "journal_ref": "",
+  "primary": "cs.LG",
+  "abstract": "The design of fair and efficient algorithms for allocating public resources, such as school admissions, housing, or medical residency, has a profound social impact. In one-sided matching problems, where individuals are assigned to items based on ranked preferences, a fundamental trade-off exists between efficiency and strategyproofness. Existing algorithms like Random Serial Dictatorship (RSD), Probabilistic Serial (PS), and Rank Minimization (RM) capture only one side of this trade-off: RSD is strategyproof but inefficient, while PS and RM are efficient but incentivize manipulation. We propose EMERGENT, a novel application of Generative Flow Networks (GFlowNets) to one-sided matching, leveraging its ability to sample diverse, high-reward solutions. In our approach, efficient and manipulation-resistant matches emerge naturally: high-reward solutions yield efficient matches, while the stochasticity of GFlowNets-based outputs reduces incentives for manipulation. Experiments show that EMERGENT outperforms RSD in rank efficiency while significantly reducing strategic vulnerability compared to matches produced by RM and PS. Our work highlights the potential of GFlowNets for applications involving social choice mechanisms, where it is crucial to balance efficiency and manipulability.",
+  "hit_queries": [
+   "all:GFlowNet",
+   "all:GFlowNets",
+   "all:\"generative flow network\"",
+   "all:\"generative flow networks\""
+  ]
+ },
+ {
+  "arxiv": "2505.15251",
+  "title": "Loss-Guided Auxiliary Agents for Overcoming Mode Collapse in GFlowNets",
+  "authors": [
+   "Idriss Malek",
+   "Aya Laajil",
+   "Abhijith Sharma",
+   "Eric Moulines",
+   "Salem Lahlou"
+  ],
+  "published": "2025-05-21",
+  "updated": "2025-11-10",
+  "comment": "Accepted to AAAI 2026",
+  "journal_ref": "",
+  "primary": "cs.LG",
+  "abstract": "Although Generative Flow Networks (GFlowNets) are designed to capture multiple modes of a reward function, they often suffer from mode collapse in practice, getting trapped in early-discovered modes and requiring prolonged training to find diverse solutions. Existing exploration techniques often rely on heuristic novelty signals. We propose Loss-Guided GFlowNets (LGGFN), a novel approach where an auxiliary GFlowNet's exploration is \\textbf{directly driven by the main GFlowNet's training loss}. By prioritizing trajectories where the main model exhibits \\textbf{high loss}, LGGFN focuses sampling on poorly understood regions of the state space. This targeted exploration significantly accelerates the discovery of diverse, high-reward samples. Empirically, across \\textbf{diverse benchmarks} including grid environments, structured sequence generation, Bayesian structure learning, and biological sequence design, LGGFN consistently \\textbf{outperforms} baselines in exploration efficiency and sample diversity. For instance, on a challenging sequence generation task, it discovered over 40 times more unique valid modes while simultaneously reducing the exploration error metric by approximately 99\\%.",
+  "hit_queries": [
+   "all:GFlowNet",
+   "all:GFlowNets",
+   "all:\"generative flow network\"",
+   "all:\"generative flow networks\""
+  ]
+ },
+ {
+  "arxiv": "2505.13196",
+  "title": "A Physics-Inspired Optimizer: Velocity Regularized Adam",
+  "authors": [
+   "Pranav Vaidhyanathan",
+   "Lucas Schorling",
+   "Natalia Ares",
+   "Maike Osborne"
+  ],
+  "published": "2025-05-19",
+  "updated": "2026-06-09",
+  "comment": "L. Schorling and P. Vaidhyanathan contributed equally to this work. 20 pages, 10 figures",
+  "journal_ref": "",
+  "primary": "cs.LG",
+  "abstract": "We introduce Velocity-Regularized Adam (VRAdam), a physics-inspired optimizer for training deep neural networks that draws on ideas from quartic terms for kinetic energy with its stabilizing effects on various system dynamics. Previous algorithms, including the ubiquitous Adam, operate at the so-called adaptive edge of stability regime during training, leading to rapid oscillations and slowed convergence of loss. However, VRAdam adds a higher order penalty on the learning rate based on the velocity such that the algorithm automatically slows down whenever weight updates become large. In practice, we observe that the effective dynamic learning rate shrinks in high-velocity regimes, and damping oscillations. By combining this velocity-based regularizer for global damping with per-parameter scaling of Adam, we create a powerful hybrid optimizer. For this optimizer, we provide rigorous theoretical analysis of operation at the edge of stability from a physical and control perspective for the momentum. Furthermore, we derive convergence bounds with the rate $\\mathcal{O}(\\ln(N)/\\sqrt{N})$ for a stochastic non convex objective under mild assumptions. We demonstrate that VRAdam exceeds the performance against standard optimizers including AdamW. We benchmark various tasks such as image classification, language modeling, and generative modeling using diverse architectures and training methodologies including Convolutional Neural Networks (CNNs), Transformers, and GFlowNets.",
+  "hit_queries": [
+   "all:GFlowNet",
+   "all:GFlowNets"
+  ]
+ },
+ {
+  "arxiv": "2505.12358",
+  "title": "AbFlowNet: Optimizing Antibody-Antigen Binding Energy via Diffusion-GFlowNet Fusion",
+  "authors": [
+   "Abrar Rahman Abir",
+   "Haz Sameen Shahgir",
+   "Md Rownok Zahan Ratul",
+   "Md Toki Tahmid",
+   "Greg Ver Steeg",
+   "Yue Dong"
+  ],
+  "published": "2025-05-18",
+  "updated": "2025-05-18",
+  "comment": "",
+  "journal_ref": "",
+  "primary": "cs.LG",
+  "abstract": "Complementarity Determining Regions (CDRs) are critical segments of an antibody that facilitate binding to specific antigens. Current computational methods for CDR design utilize reconstruction losses and do not jointly optimize binding energy, a crucial metric for antibody efficacy. Rather, binding energy optimization is done through computationally expensive Online Reinforcement Learning (RL) pipelines rely heavily on unreliable binding energy estimators. In this paper, we propose AbFlowNet, a novel generative framework that integrates GFlowNet with Diffusion models. By framing each diffusion step as a state in the GFlowNet framework, AbFlowNet jointly optimizes standard diffusion losses and binding energy by directly incorporating energy signals into the training process, thereby unifying diffusion and reward optimization in a single procedure. Experimental results show that AbFlowNet outperforms the base diffusion model by 3.06% in amino acid recovery, 20.40% in geometric reconstruction (RMSD), and 3.60% in binding energy improvement ratio. ABFlowNet also decreases Top-1 total energy and binding energy errors by 24.8% and 38.1% without pseudo-labeling the test dataset or using computationally expensive online RL regimes.",
+  "hit_queries": [
+   "all:GFlowNet",
+   "all:GFlowNets"
+  ]
+ },
+ {
+  "arxiv": "2505.05224",
+  "title": "GFlowNets for Active Learning Based Resource Allocation in Next Generation Wireless Networks",
+  "authors": [
+   "Charbel Bou Chaaya",
+   "Mehdi Bennis"
+  ],
+  "published": "2025-05-08",
+  "updated": "2025-05-08",
+  "comment": "",
+  "journal_ref": "",
+  "primary": "cs.LG",
+  "abstract": "In this work, we consider the radio resource allocation problem in a wireless system with various integrated functionalities, such as communication, sensing and computing. We design suitable resource management techniques that can simultaneously cater to those heterogeneous requirements, and scale appropriately with the high-dimensional and discrete nature of the problem. We propose a novel active learning framework where resource allocation patterns are drawn sequentially, evaluated in the environment, and then used to iteratively update a surrogate model of the environment. Our method leverages a generative flow network (GFlowNet) to sample favorable solutions, as such models are trained to generate compositional objects proportionally to their training reward, hence providing an appropriate coverage of its modes. As such, GFlowNet generates diverse and high return resource management designs that update the surrogate model and swiftly discover suitable solutions. We provide simulation results showing that our method can allocate radio resources achieving 20% performance gains against benchmarks, while requiring less than half of the number of acquisition rounds.",
+  "hit_queries": [
+   "all:GFlowNet",
+   "all:GFlowNets",
+   "all:\"generative flow network\"",
+   "all:\"generative flow networks\""
+  ]
+ },
+ {
+  "arxiv": "2505.03561",
+  "title": "Ergodic Generative Flows",
+  "authors": [
+   "Leo Maxime Brunswic",
+   "Mateo Clemente",
+   "Rui Heng Yang",
+   "Adam Sigal",
+   "Amir Rasouli",
+   "Yinchuan Li"
+  ],
+  "published": "2025-05-06",
+  "updated": "2025-05-06",
+  "comment": "20 pages, 5 figures, 1 table, accepted at ICML 2025",
+  "journal_ref": "",
+  "primary": "cs.LG",
+  "abstract": "Generative Flow Networks (GFNs) were initially introduced on directed acyclic graphs to sample from an unnormalized distribution density. Recent works have extended the theoretical framework for generative methods allowing more flexibility and enhancing application range. However, many challenges remain in training GFNs in continuous settings and for imitation learning (IL), including intractability of flow-matching loss, limited tests of non-acyclic training, and the need for a separate reward model in imitation learning. The present work proposes a family of generative flows called Ergodic Generative Flows (EGFs) which are used to address the aforementioned issues. First, we leverage ergodicity to build simple generative flows with finitely many globally defined transformations (diffeomorphisms) with universality guarantees and tractable flow-matching loss (FM loss). Second, we introduce a new loss involving cross-entropy coupled to weak flow-matching control, coined KL-weakFM loss. It is designed for IL training without a separate reward model. We evaluate IL-EGFs on toy 2D tasks and real-world datasets from NASA on the sphere, using the KL-weakFM loss. Additionally, we conduct toy 2D reinforcement learning experiments with a target reward, using the FM loss.",
+  "hit_queries": [
+   "all:\"generative flow network\"",
+   "all:\"generative flow networks\""
+  ]
+ },
+ {
+  "arxiv": "2505.02035",
+  "title": "Secrets of GFlowNets' Learning Behavior: A Theoretical Study",
+  "authors": [
+   "Tianshu Yu"
+  ],
+  "published": "2025-05-04",
+  "updated": "2025-05-04",
+  "comment": "",
+  "journal_ref": "",
+  "primary": "cs.LG",
+  "abstract": "Generative Flow Networks (GFlowNets) have emerged as a powerful paradigm for generating composite structures, demonstrating considerable promise across diverse applications. While substantial progress has been made in exploring their modeling validity and connections to other generative frameworks, the theoretical understanding of their learning behavior remains largely uncharted. In this work, we present a rigorous theoretical investigation of GFlowNets' learning behavior, focusing on four fundamental dimensions: convergence, sample complexity, implicit regularization, and robustness. By analyzing these aspects, we seek to elucidate the intricate mechanisms underlying GFlowNet's learning dynamics, shedding light on its strengths and limitations. Our findings contribute to a deeper understanding of the factors influencing GFlowNet performance and provide insights into principled guidelines for their effective design and deployment. This study not only bridges a critical gap in the theoretical landscape of GFlowNets but also lays the foundation for their evolution as a reliable and interpretable framework for generative modeling. Through this, we aspire to advance the theoretical frontiers of GFlowNets and catalyze their broader adoption in the AI community.",
+  "hit_queries": [
+   "all:GFlowNet",
+   "all:GFlowNets",
+   "all:\"generative flow network\"",
+   "all:\"generative flow networks\""
+  ]
+ },
+ {
+  "arxiv": "2504.19981",
+  "title": "Accurate and Diverse LLM Mathematical Reasoning via Automated PRM-Guided GFlowNets",
+  "authors": [
+   "Adam Younsi",
+   "Ahmed Attia",
+   "Abdalgader Abubaker",
+   "Mohamed El Amine Seddik",
+   "Hakim Hacid",
+   "Salem Lahlou"
+  ],
+  "published": "2025-04-28",
+  "updated": "2025-10-13",
+  "comment": "",
+  "journal_ref": "",
+  "primary": "cs.LG",
+  "abstract": "Achieving both accuracy and diverse reasoning remains challenging for Large Language Models (LLMs) in complex domains like mathematics. A key bottleneck is evaluating intermediate reasoning steps to guide generation without costly human annotations. To address this, we first introduce a novel Process Reward Model (PRM) trained automatically using Monte Carlo Tree Search coupled with a similarity-based data augmentation technique, effectively capturing step-level reasoning quality. Leveraging this PRM, we then adapt Generative Flow Networks (GFlowNets) to operate at the reasoning step level. Unlike traditional reinforcement learning focused on maximizing a single reward, GFlowNets naturally sample diverse, high-quality solutions proportional to their rewards, as measured by our PRM. Empirical evaluation shows strong improvements in both accuracy and solution diversity on challenging mathematical benchmarks (e.g., +2.59% absolute accuracy on MATH Level 5 for Llama3.2-3B), with effective generalization to unseen datasets (+9.4\\% absolute on SAT MATH). Furthermore, we benchmark our PRM against existing open-source reward models, demonstrating superior alignment with reasoning quality and more consistent guidance for downstream generation. Our work demonstrates the potential of PRM-guided, step-level GFlowNets for developing more robust and versatile mathematical reasoning in LLMs.",
+  "hit_queries": [
+   "all:GFlowNet",
+   "all:GFlowNets",
+   "all:\"generative flow network\"",
+   "all:\"generative flow networks\""
+  ]
+ },
+ {
+  "arxiv": "2504.08051",
+  "title": "Compositional Flows for 3D Molecule and Synthesis Pathway Co-design",
+  "authors": [
+   "Tony Shen",
+   "Seonghwan Seo",
+   "Ross Irwin",
+   "Kieran Didi",
+   "Simon Olsson",
+   "Woo Youn Kim",
+   "Martin Ester"
+  ],
+  "published": "2025-04-10",
+  "updated": "2025-07-15",
+  "comment": "Accepted to ICML 2025, 29 pages, 7 figures, code: https://github.com/tsa87/cgflow",
+  "journal_ref": "",
+  "primary": "cs.LG",
+  "abstract": "Many generative applications, such as synthesis-based 3D molecular design, involve constructing compositional objects with continuous features. Here, we introduce Compositional Generative Flows (CGFlow), a novel framework that extends flow matching to generate objects in compositional steps while modeling continuous states. Our key insight is that modeling compositional state transitions can be formulated as a straightforward extension of the flow matching interpolation process. We further build upon the theoretical foundations of generative flow networks (GFlowNets), enabling reward-guided sampling of compositional structures. We apply CGFlow to synthesizable drug design by jointly designing the molecule's synthetic pathway with its 3D binding pose. Our approach achieves state-of-the-art binding affinity on all 15 targets from the LIT-PCBA benchmark, and 5.8$\\times$ improvement in sampling efficiency compared to 2D synthesis-based baseline. To our best knowledge, our method is also the first to achieve state of-art-performance in both Vina Dock (-9.38) and AiZynth success rate (62.2\\%) on the CrossDocked benchmark.",
+  "hit_queries": [
+   "all:GFlowNet",
+   "all:GFlowNets",
+   "all:\"generative flow network\"",
+   "all:\"generative flow networks\""
+  ]
+ },
+ {
+  "arxiv": "2504.02968",
+  "title": "Global-Order GFlowNets",
+  "authors": [
+   "Lluís Pastor-Pérez",
+   "Javier Alonso-Garcia",
+   "Lukas Mauch"
+  ],
+  "published": "2025-04-03",
+  "updated": "2025-04-03",
+  "comment": "8 pages, ICLR 2025 Workshop format",
+  "journal_ref": "",
+  "primary": "cs.LG",
+  "abstract": "Order-Preserving (OP) GFlowNets have demonstrated remarkable success in tackling complex multi-objective (MOO) black-box optimization problems using stochastic optimization techniques. Specifically, they can be trained online to efficiently sample diverse candidates near the Pareto front. A key advantage of OP GFlowNets is their ability to impose a local order on training samples based on Pareto dominance, eliminating the need for scalarization - a common requirement in other approaches like Preference-Conditional GFlowNets. However, we identify an important limitation of OP GFlowNets: imposing a local order on training samples can lead to conflicting optimization objectives. To address this issue, we introduce Global-Order GFlowNets, which transform the local order into a global one, thereby resolving these conflicts. Our experimental evaluations on various benchmarks demonstrate the efficacy and promise of our proposed method.",
+  "hit_queries": [
+   "all:GFlowNet",
+   "all:GFlowNets"
+  ]
+ },
+ {
+  "arxiv": "2503.14549",
+  "title": "Sampling Decisions: Exact Path-Space Control for Physics-Informed Generative Sampling",
+  "authors": [
+   "Michael Chertkov",
+   "Hamidreza Behjoo",
+   "Sungsoo Ahn"
+  ],
+  "published": "2025-03-17",
+  "updated": "2026-08-02",
+  "comment": "35 pages, 7 figures",
+  "journal_ref": "",
+  "primary": "cs.LG",
+  "abstract": "Scientific generative models must turn tractable local decisions into globally correlated samples that respect physical constraints. We introduce Sampling Decisions, a finite-horizon framework in which a structured object is assembled on a growing state graph and corrected globally by an exact path-space control law. For a prescribed Gibbs target, the corrected law is the unique relative-entropy projection of a sequential prior and is realized by a Doob h-transform with a linear backward desirability recursion. The same object admits equivalent interpretations as a KL-optimal controller, a one-sided Schrodinger transport, and an ideal value or flow function for autoregressive and GFlowNet-type generation. A route-resolved formulation yields a finite-particle algorithm, whose transition kernels and terminal law converge as the path budget grows. For binary graphical models, we prove a structural cancellation theorem: every fixed singleton-product prior disappears from the population correction, so improved one-point marginals do not alter the exact generative dynamics. The relevant information is conditional and prefix dependent. Statistical physics supplies this structure through a Local-Boltzmann prior that absorbs interactions as spins are revealed, while optimal path-space control supplies the missing look-ahead field from the unrevealed subgraph. On exactly enumerable Ising grids, this physics-informed proposal increases effective sample size by factors of about ten to nearly one thousand relative to product proposals and reaches the exact-target reference band at the tested budgets. On a larger 10*10 grid, beyond exact enumeration, the same hierarchy persists: Local-Boltzmann guidance avoids the severe weight collapse of product proposals and approaches a long-run MCMC baseline on the reported diagnostics.",
+  "hit_queries": [
+   "all:GFlowNet",
+   "all:GFlowNets"
+  ]
+ },
+ {
+  "arxiv": "2503.07377",
+  "title": "Process-Supervised LLM Recommenders via Flow-guided Tuning",
+  "authors": [
+   "Chongming Gao",
+   "Mengyao Gao",
+   "Chenxiao Fan",
+   "Shuai Yuan",
+   "Wentao Shi",
+   "Xiangnan He"
+  ],
+  "published": "2025-03-10",
+  "updated": "2025-05-12",
+  "comment": "Accepted by SIGIR 2025",
+  "journal_ref": "",
+  "primary": "cs.IR",
+  "abstract": "While large language models (LLMs) are increasingly adapted for recommendation systems via supervised fine-tuning (SFT), this approach amplifies popularity bias due to its likelihood maximization objective, compromising recommendation diversity and fairness. To address this, we present Flow-guided fine-tuning recommender (Flower), which replaces SFT with a Generative Flow Network (GFlowNet) framework that enacts process supervision through token-level reward propagation. Flower's key innovation lies in decomposing item-level rewards into constituent token rewards, enabling direct alignment between token generation probabilities and their reward signals. This mechanism achieves three critical advancements: (1) popularity bias mitigation and fairness enhancement through empirical distribution matching, (2) preservation of diversity through GFlowNet's proportional sampling, and (3) flexible integration of personalized preferences via adaptable token rewards. Experiments demonstrate Flower's superior distribution-fitting capability and its significant advantages over traditional SFT in terms of accuracy, fairness, and diversity, highlighting its potential to improve LLM-based recommendation systems. The implementation is available via https://github.com/MrPeach0301/Flower",
+  "hit_queries": [
+   "all:GFlowNet",
+   "all:GFlowNets",
+   "all:\"generative flow network\"",
+   "all:\"generative flow networks\""
+  ]
+ },
+ {
+  "arxiv": "2503.06985",
+  "title": "Learning Decision Trees as Amortized Structure Inference",
+  "authors": [
+   "Mohammed Mahfoud",
+   "Ghait Boukachab",
+   "Michał Koziarski",
+   "Alex Hernandez-Garcia",
+   "Stefan Bauer",
+   "Yoshua Bengio",
+   "Nikolay Malkin"
+  ],
+  "published": "2025-03-10",
+  "updated": "2025-03-10",
+  "comment": "Code: $\\href{https://github.com/GFNOrg/dt-gfn}{https://github.com/GFNOrg/dt-gfn}$",
+  "journal_ref": "",
+  "primary": "cs.LG",
+  "abstract": "Building predictive models for tabular data presents fundamental challenges, notably in scaling consistently, i.e., more resources translating to better performance, and generalizing systematically beyond the training data distribution. Designing decision tree models remains especially challenging given the intractably large search space, and most existing methods rely on greedy heuristics, while deep learning inductive biases expect a temporal or spatial structure not naturally present in tabular data. We propose a hybrid amortized structure inference approach to learn predictive decision tree ensembles given data, formulating decision tree construction as a sequential planning problem. We train a deep reinforcement learning (GFlowNet) policy to solve this problem, yielding a generative model that samples decision trees from the Bayesian posterior. We show that our approach, DT-GFN, outperforms state-of-the-art decision tree and deep learning methods on standard classification benchmarks derived from real-world data, robustness to distribution shifts, and anomaly detection, all while yielding interpretable models with shorter description lengths. Samples from the trained DT-GFN model can be ensembled to construct a random forest, and we further show that the performance of scales consistently in ensemble size, yielding ensembles of predictors that continue to generalize systematically.",
+  "hit_queries": [
+   "all:GFlowNet",
+   "all:GFlowNets"
+  ]
+ },
+ {
+  "arxiv": "2503.06514",
+  "title": "GFlowVLM: Enhancing Multi-step Reasoning in Vision-Language Models with Generative Flow Networks",
+  "authors": [
+   "Haoqiang Kang",
+   "Enna Sachdeva",
+   "Piyush Gupta",
+   "Sangjae Bae",
+   "Kwonjoon Lee"
+  ],
+  "published": "2025-03-09",
+  "updated": "2025-03-25",
+  "comment": "",
+  "journal_ref": "CVPR 2025",
+  "primary": "cs.CL",
+  "abstract": "Vision-Language Models (VLMs) have recently shown promising advancements in sequential decision-making tasks through task-specific fine-tuning. However, common fine-tuning methods, such as Supervised Fine-Tuning (SFT) and Reinforcement Learning (RL) techniques like Proximal Policy Optimization (PPO), present notable limitations: SFT assumes Independent and Identically Distributed (IID) data, while PPO focuses on maximizing cumulative rewards. These limitations often restrict solution diversity and hinder generalization in multi-step reasoning tasks. To address these challenges, we introduce a novel framework, GFlowVLM, a framework that fine-tune VLMs using Generative Flow Networks (GFlowNets) to promote generation of diverse solutions for complex reasoning tasks. GFlowVLM models the environment as a non-Markovian decision process, allowing it to capture long-term dependencies essential for real-world applications. It takes observations and task descriptions as inputs to prompt chain-of-thought (CoT) reasoning which subsequently guides action selection. We use task based rewards to fine-tune VLM with GFlowNets. This approach enables VLMs to outperform prior fine-tuning methods, including SFT and RL. Empirical results demonstrate the effectiveness of GFlowVLM on complex tasks such as card games (NumberLine, BlackJack) and embodied planning tasks (ALFWorld), showing enhanced training efficiency, solution diversity, and stronger generalization capabilities across both in-distribution and out-of-distribution scenarios.",
+  "hit_queries": [
+   "all:GFlowNet",
+   "all:GFlowNets",
+   "all:\"generative flow network\"",
+   "all:\"generative flow networks\""
+  ]
+ },
+ {
+  "arxiv": "2503.06337",
+  "title": "Pretraining Generative Flow Networks with Inexpensive Rewards for Molecular Graph Generation",
+  "authors": [
+   "Mohit Pandey",
+   "Gopeshh Subbaraj",
+   "Artem Cherkasov",
+   "Martin Ester",
+   "Emmanuel Bengio"
+  ],
+  "published": "2025-03-08",
+  "updated": "2025-06-12",
+  "comment": "arXiv admin note: text overlap with arXiv:2409.09702",
+  "journal_ref": "",
+  "primary": "cs.LG",
+  "abstract": "Generative Flow Networks (GFlowNets) have recently emerged as a suitable framework for generating diverse and high-quality molecular structures by learning from rewards treated as unnormalized distributions. Previous works in this framework often restrict exploration by using predefined molecular fragments as building blocks, limiting the chemical space that can be accessed. In this work, we introduce Atomic GFlowNets (A-GFNs), a foundational generative model leveraging individual atoms as building blocks to explore drug-like chemical space more comprehensively. We propose an unsupervised pre-training approach using drug-like molecule datasets, which teaches A-GFNs about inexpensive yet informative molecular descriptors such as drug-likeliness, topological polar surface area, and synthetic accessibility scores. These properties serve as proxy rewards, guiding A-GFNs towards regions of chemical space that exhibit desirable pharmacological properties. We further implement a goal-conditioned finetuning process, which adapts A-GFNs to optimize for specific target properties. In this work, we pretrain A-GFN on a subset of ZINC dataset, and by employing robust evaluation metrics we show the effectiveness of our approach when compared to other relevant baseline methods for a wide range of drug design tasks. The code is accessible at https://github.com/diamondspark/AGFN.",
+  "hit_queries": [
+   "all:GFlowNet",
+   "all:GFlowNets",
+   "all:\"generative flow network\"",
+   "all:\"generative flow networks\""
+  ]
+ },
+ {
+  "arxiv": "2503.01819",
+  "title": "Do GFlowNets Transfer? Case Study on the Game of 24/42",
+  "authors": [
+   "Adesh Gupta",
+   "Abhinav Kumar",
+   "Mansi Gupta",
+   "Paras Chopra"
+  ],
+  "published": "2025-03-03",
+  "updated": "2025-03-03",
+  "comment": "",
+  "journal_ref": "",
+  "primary": "cs.AI",
+  "abstract": "Generating diverse solutions is key to human-like reasoning, yet autoregressive language models focus on single accurate responses, limiting creativity. GFlowNets optimize solution generation as a flow network, promising greater diversity. Our case study shows their limited zero-shot transferability by fine-tuning small and medium-sized large language models on the Game of 24 and testing them on the Game of 42 datasets. Results revealed that GFlowNets struggle to maintain solution diversity and accuracy, highlighting key limitations in their cross-task generalization and the need for future research in improved transfer learning capabilities.",
+  "hit_queries": [
+   "all:GFlowNet",
+   "all:GFlowNets"
+  ]
+ },
+ {
+  "arxiv": "2503.01931",
+  "title": "Adversarial Generative Flow Network for Solving Vehicle Routing Problems",
+  "authors": [
+   "Ni Zhang",
+   "Jingfeng Yang",
+   "Zhiguang Cao",
+   "Xu Chi"
+  ],
+  "published": "2025-03-03",
+  "updated": "2025-03-03",
+  "comment": "Accepted at ICLR 2025",
+  "journal_ref": "",
+  "primary": "cs.LG",
+  "abstract": "Recent research into solving vehicle routing problems (VRPs) has gained significant traction, particularly through the application of deep (reinforcement) learning for end-to-end solution construction. However, many current construction-based neural solvers predominantly utilize Transformer architectures, which can face scalability challenges and struggle to produce diverse solutions. To address these limitations, we introduce a novel framework beyond Transformer-based approaches, i.e., Adversarial Generative Flow Networks (AGFN). This framework integrates the generative flow network (GFlowNet)-a probabilistic model inherently adept at generating diverse solutions (routes)-with a complementary model for discriminating (or evaluating) the solutions. These models are trained alternately in an adversarial manner to improve the overall solution quality, followed by a proposed hybrid decoding method to construct the solution. We apply the AGFN framework to solve the capacitated vehicle routing problem (CVRP) and travelling salesman problem (TSP), and our experimental results demonstrate that AGFN surpasses the popular construction-based neural solvers, showcasing strong generalization capabilities on synthetic and real-world benchmark instances.",
+  "hit_queries": [
+   "all:GFlowNet",
+   "all:GFlowNets",
+   "all:\"generative flow network\"",
+   "all:\"generative flow networks\""
+  ]
+ },
+ {
+  "arxiv": "2502.19337",
+  "title": "Consistent Amortized Clustering via Generative Flow Networks",
+  "authors": [
+   "Irit Chelly",
+   "Roy Uziel",
+   "Oren Freifeld",
+   "Ari Pakman"
+  ],
+  "published": "2025-02-26",
+  "updated": "2025-02-26",
+  "comment": "Accepted to AISTATS 2025 on January 21, 2025",
+  "journal_ref": "",
+  "primary": "cs.LG",
+  "abstract": "Neural models for amortized probabilistic clustering yield samples of cluster labels given a set-structured input, while avoiding lengthy Markov chain runs and the need for explicit data likelihoods. Existing methods which label each data point sequentially, like the Neural Clustering Process, often lead to cluster assignments highly dependent on the data order. Alternatively, methods that sequentially create full clusters, do not provide assignment probabilities. In this paper, we introduce GFNCP, a novel framework for amortized clustering. GFNCP is formulated as a Generative Flow Network with a shared energy-based parametrization of policy and reward. We show that the flow matching conditions are equivalent to consistency of the clustering posterior under marginalization, which in turn implies order invariance. GFNCP also outperforms existing methods in clustering performance on both synthetic and real-world data.",
+  "hit_queries": [
+   "all:\"generative flow network\"",
+   "all:\"generative flow networks\""
+  ]
+ },
+ {
+  "arxiv": "2502.11477",
+  "title": "Learning to Sample Effective and Diverse Prompts for Text-to-Image Generation",
+  "authors": [
+   "Taeyoung Yun",
+   "Dinghuai Zhang",
+   "Jinkyoo Park",
+   "Ling Pan"
+  ],
+  "published": "2025-02-17",
+  "updated": "2025-02-17",
+  "comment": "18 pages, 14 figures, 6 tables",
+  "journal_ref": "",
+  "primary": "cs.CV",
+  "abstract": "Recent advances in text-to-image diffusion models have achieved impressive image generation capabilities. However, it remains challenging to control the generation process with desired properties (e.g., aesthetic quality, user intention), which can be expressed as black-box reward functions. In this paper, we focus on prompt adaptation, which refines the original prompt into model-preferred prompts to generate desired images. While prior work uses reinforcement learning (RL) to optimize prompts, we observe that applying RL often results in generating similar postfixes and deterministic behaviors. To this end, we introduce \\textbf{P}rompt \\textbf{A}daptation with \\textbf{G}FlowNets (\\textbf{PAG}), a novel approach that frames prompt adaptation as a probabilistic inference problem. Our key insight is that leveraging Generative Flow Networks (GFlowNets) allows us to shift from reward maximization to sampling from an unnormalized density function, enabling both high-quality and diverse prompt generation. However, we identify that a naive application of GFlowNets suffers from mode collapse and uncovers a previously overlooked phenomenon: the progressive loss of neural plasticity in the model, which is compounded by inefficient credit assignment in sequential prompt generation. To address this critical challenge, we develop a systematic approach in PAG with flow reactivation, reward-prioritized sampling, and reward decomposition for prompt adaptation. Extensive experiments validate that PAG successfully learns to sample effective and diverse prompts for text-to-image generation. We also show that PAG exhibits strong robustness across various reward functions and transferability to different text-to-image models.",
+  "hit_queries": [
+   "all:GFlowNet",
+   "all:GFlowNets",
+   "all:\"generative flow network\"",
+   "all:\"generative flow networks\""
+  ]
+ },
+ {
+  "arxiv": "2502.07735",
+  "title": "Revisiting Non-Acyclic GFlowNets in Discrete Environments",
+  "authors": [
+   "Nikita Morozov",
+   "Ian Maksimov",
+   "Daniil Tiapkin",
+   "Sergey Samsonov"
+  ],
+  "published": "2025-02-11",
+  "updated": "2025-09-11",
+  "comment": "ICML 2025; minor corrections in proofs of Proposition 3.6 and 3.8 in v3, all results remain unchanged",
+  "journal_ref": "",
+  "primary": "cs.LG",
+  "abstract": "Generative Flow Networks (GFlowNets) are a family of generative models that learn to sample objects from a given probability distribution, potentially known up to a normalizing constant. Instead of working in the object space, GFlowNets proceed by sampling trajectories in an appropriately constructed directed acyclic graph environment, greatly relying on the acyclicity of the graph. In our paper, we revisit the theory that relaxes the acyclicity assumption and present a simpler theoretical framework for non-acyclic GFlowNets in discrete environments. Moreover, we provide various novel theoretical insights related to training with fixed backward policies, the nature of flow functions, and connections between entropy-regularized RL and non-acyclic GFlowNets, which naturally generalize the respective concepts and theoretical results from the acyclic setting. In addition, we experimentally re-examine the concept of loss stability in non-acyclic GFlowNet training, as well as validate our own theoretical findings.",
+  "hit_queries": [
+   "all:GFlowNet",
+   "all:GFlowNets",
+   "all:\"generative flow network\"",
+   "all:\"generative flow networks\"",
+   "all:GFlowNet AND (all:\"shortest path\" OR all:\"minimum flow\" OR all:\"non-acyclic\" OR all:cyclic)"
+  ]
+ },
+ {
+  "arxiv": "2502.03669",
+  "title": "Unrealized Expectations: Comparing AI Methods vs Classical Algorithms for Maximum Independent Set",
+  "authors": [
+   "Yikai Wu",
+   "Haoyu Zhao",
+   "Sanjeev Arora"
+  ],
+  "published": "2025-02-05",
+  "updated": "2026-04-25",
+  "comment": "Published on TMLR 04/2026. 28 pages, 6 figures, 98 tables",
+  "journal_ref": "Transactions on Machine Learning Research (2026)",
+  "primary": "cs.LG",
+  "abstract": "AI methods, such as generative models and reinforcement learning, have recently been applied to combinatorial optimization (CO) problems, especially NP-hard ones. This paper compares such GPU-based methods with classical CPU-based methods on the Maximum Independent Set (MIS) problem. Strikingly, even on in-distribution random graphs, leading AI-inspired methods are consistently outperformed by the state-of-the-art classical solver KaMIS running on a single CPU, and some AI-inspired methods frequently fail to surpass even the simplest degree-based greedy heuristic. Even with post-processing techniques like local search, AI-inspired methods still perform worse than CPU-based solvers. To better understand the source of these failures, we introduce a novel analysis, serialization, which reveals that non-backtracking AI-inspired methods, e.g. LTFT (which is based on GFlowNets), end up reasoning similarly to the simplest degree-based greedy, and thus worse than KaMIS. More generally, our findings suggest a need for a rethinking of current approaches in AI for CO, advocating for more rigorous benchmarking and the principled integration of classical heuristics. Additionally, we also find that CPU-based algorithm KaMIS have strong performance on sparse random graphs, which appears to show that the shattering threshold conjecture for large independent sets proposed by Coja-Oghlan & Efthymiou (2015) does not apply for real-life sizes (such as 10^6 nodes).",
+  "hit_queries": [
+   "all:GFlowNet",
+   "all:GFlowNets"
+  ]
+ },
+ {
+  "arxiv": "2502.02127",
+  "title": "Exploring Generative Networks for Manifolds with Non-Trivial Topology",
+  "authors": [
+   "Shiyang Chen",
+   "Gert Aarts",
+   "Biagio Lucini"
+  ],
+  "published": "2025-02-04",
+  "updated": "2025-02-04",
+  "comment": "10 pages, 7 figures. Talk presented at the 41th International Symposium on Lattice Field Theory (Lattice 2024), July 28th to August 3rd, 2024, the University of Liverpool, United Kingdom",
+  "journal_ref": "",
+  "primary": "hep-lat",
+  "abstract": "The expressive power of neural networks in modelling non-trivial distributions can in principle be exploited to bypass topological freezing and critical slowing down in simulations of lattice field theories. Some popular approaches are unable to sample correctly non-trivial topology, which may lead to some classes of configurations not being generated. In this contribution, we present a novel generative method inspired by a model previously introduced in the ML community (GFlowNets). We demonstrate its efficiency at exploring ergodically configuration manifolds with non-trivial topology through applications such as triple ring models and two-dimensional lattice scalar field theory.",
+  "hit_queries": [
+   "all:GFlowNet",
+   "all:GFlowNets"
+  ]
+ },
+ {
+  "arxiv": "2501.12592",
+  "title": "FedGrAINS: Personalized SubGraph Federated Learning with Adaptive Neighbor Sampling",
+  "authors": [
+   "Emir Ceyani",
+   "Han Xie",
+   "Baturalp Buyukates",
+   "Carl Yang",
+   "Salman Avestimehr"
+  ],
+  "published": "2025-01-22",
+  "updated": "2025-01-23",
+  "comment": "Accepted to SDM2025 (SIAM Data Mining 2025)",
+  "journal_ref": "",
+  "primary": "cs.LG",
+  "abstract": "Graphs are crucial for modeling relational and biological data. As datasets grow larger in real-world scenarios, the risk of exposing sensitive information increases, making privacy-preserving training methods like federated learning (FL) essential to ensure data security and compliance with privacy regulations. Recently proposed personalized subgraph FL methods have become the de-facto standard for training personalized Graph Neural Networks (GNNs) in a federated manner while dealing with the missing links across clients' subgraphs due to privacy restrictions. However, personalized subgraph FL faces significant challenges due to the heterogeneity in client subgraphs, such as degree distributions among the nodes, which complicate federated training of graph models. To address these challenges, we propose \\textit{FedGrAINS}, a novel data-adaptive and sampling-based regularization method for subgraph FL. FedGrAINS leverages generative flow networks (GFlowNets) to evaluate node importance concerning clients' tasks, dynamically adjusting the message-passing step in clients' GNNs. This adaptation reflects task-optimized sampling aligned with a trajectory balance objective. Experimental results demonstrate that the inclusion of \\textit{FedGrAINS} as a regularizer consistently improves the FL performance compared to baselines that do not leverage such regularization.",
+  "hit_queries": [
+   "all:GFlowNet",
+   "all:GFlowNets",
+   "all:\"generative flow network\"",
+   "all:\"generative flow networks\""
+  ]
+ },
+ {
+  "arxiv": "2501.14813",
+  "title": "Dissertation Machine Learning in Materials Science -- A case study in Carbon Nanotube field effect transistors",
+  "authors": [
+   "Shulin Tan"
+  ],
+  "published": "2025-01-19",
+  "updated": "2025-01-19",
+  "comment": "PhD thesis",
+  "journal_ref": "",
+  "primary": "physics.app-ph",
+  "abstract": "In this thesis, I explored the use of several machine learning techniques, including neural networks, simulation-based inference, and generative flow networks, on predicting CNTFETs performance, probing the conductivity properties of CNT network, and generating CNTFETs processing information for target performance.",
+  "hit_queries": [
+   "all:\"generative flow network\"",
+   "all:\"generative flow networks\""
+  ]
+ },
+ {
+  "arxiv": "2501.08676",
+  "title": "FlexiClip: Locality-Preserving Free-Form Character Animation",
+  "authors": [
+   "Anant Khandelwal"
+  ],
+  "published": "2025-01-15",
+  "updated": "2025-07-20",
+  "comment": "13 pages, 4 figures, 7 tables, Accepted in ICML 2025, https://openreview.net/forum?id=xtxCM4XZ82",
+  "journal_ref": "Proceedings of the 42nd International Conference on Machine Learning, Vancouver, Canada. PMLR 267, 2025",
+  "primary": "cs.CV",
+  "abstract": "Animating clipart images with seamless motion while maintaining visual fidelity and temporal coherence presents significant challenges. Existing methods, such as AniClipart, effectively model spatial deformations but often fail to ensure smooth temporal transitions, resulting in artifacts like abrupt motions and geometric distortions. Similarly, text-to-video (T2V) and image-to-video (I2V) models struggle to handle clipart due to the mismatch in statistical properties between natural video and clipart styles. This paper introduces FlexiClip, a novel approach designed to overcome these limitations by addressing the intertwined challenges of temporal consistency and geometric integrity. FlexiClip extends traditional Bézier curve-based trajectory modeling with key innovations: temporal Jacobians to correct motion dynamics incrementally, continuous-time modeling via probability flow ODEs (pfODEs) to mitigate temporal noise, and a flow matching loss inspired by GFlowNet principles to optimize smooth motion transitions. These enhancements ensure coherent animations across complex scenarios involving rapid movements and non-rigid deformations. Extensive experiments validate the effectiveness of FlexiClip in generating animations that are not only smooth and natural but also structurally consistent across diverse clipart types, including humans and animals. By integrating spatial and temporal modeling with pre-trained video diffusion models, FlexiClip sets a new standard for high-quality clipart animation, offering robust performance across a wide range of visual content. Project Page: https://creative-gen.github.io/flexiclip.github.io/",
+  "hit_queries": [
+   "all:GFlowNet",
+   "all:GFlowNets"
+  ]
+ },
+ {
+  "arxiv": "2501.06148",
+  "title": "From discrete-time policies to continuous-time diffusion samplers: Asymptotic equivalences and faster training",
+  "authors": [
+   "Julius Berner",
+   "Lorenz Richter",
+   "Marcin Sendera",
+   "Jarrid Rector-Brooks",
+   "Nikolay Malkin"
+  ],
+  "published": "2025-01-10",
+  "updated": "2026-02-04",
+  "comment": "TMLR final version; code: https://github.com/GFNOrg/gfn-diffusion/tree/stagger",
+  "journal_ref": "",
+  "primary": "cs.LG",
+  "abstract": "We study the problem of training neural stochastic differential equations, or diffusion models, to sample from a Boltzmann distribution without access to target samples. Existing methods for training such models enforce time-reversal of the generative and noising processes, using either differentiable simulation or off-policy reinforcement learning (RL). We prove equivalences between families of objectives in the limit of infinitesimal discretization steps, linking entropic RL methods (GFlowNets) with continuous-time objects (partial differential equations and path space measures). We further show that an appropriate choice of coarse time discretization during training allows greatly improved sample efficiency and the use of time-local objectives, achieving competitive performance on standard sampling benchmarks with reduced computational cost.",
+  "hit_queries": [
+   "all:GFlowNet",
+   "all:GFlowNets"
+  ]
+ },
+ {
+  "arxiv": "2501.05498",
+  "title": "Generative Flow Networks: Theory and Applications to Structure Learning",
+  "authors": [
+   "Tristan Deleu"
+  ],
+  "published": "2025-01-09",
+  "updated": "2025-01-09",
+  "comment": "",
+  "journal_ref": "",
+  "primary": "cs.LG",
+  "abstract": "Without any assumptions about data generation, multiple causal models may explain our observations equally well. To avoid selecting a single arbitrary model that could result in unsafe decisions if it does not match reality, it is therefore essential to maintain a notion of epistemic uncertainty about our possible candidates. This thesis studies the problem of structure learning from a Bayesian perspective, approximating the posterior distribution over the structure of a causal model, represented as a directed acyclic graph (DAG), given data. It introduces Generative Flow Networks (GFlowNets), a novel class of probabilistic models designed for modeling distributions over discrete and compositional objects such as graphs. They treat generation as a sequential decision making problem, constructing samples of a target distribution defined up to a normalization constant piece by piece. In the first part of this thesis, we present the mathematical foundations of GFlowNets, their connections to existing domains of machine learning and statistics such as variational inference and reinforcement learning, and their extensions beyond discrete problems. In the second part of this thesis, we show how GFlowNets can approximate the posterior distribution over DAG structures of causal Bayesian Networks, along with the parameters of its causal mechanisms, given observational and experimental data.",
+  "hit_queries": [
+   "all:GFlowNet",
+   "all:GFlowNets",
+   "all:\"generative flow network\"",
+   "all:\"generative flow networks\""
+  ]
+ },
+ {
+  "arxiv": "2501.03405",
+  "title": "A Study of the Efficacy of Generative Flow Networks for Robotics and Machine Fault-Adaptation",
+  "authors": [
+   "Zahin Sufiyan",
+   "Shadan Golestan",
+   "Shotaro Miwa",
+   "Yoshihiro Mitsuka",
+   "Osmar Zaiane"
+  ],
+  "published": "2025-01-06",
+  "updated": "2025-01-06",
+  "comment": "",
+  "journal_ref": "",
+  "primary": "cs.RO",
+  "abstract": "Advancements in robotics have opened possibilities to automate tasks in various fields such as manufacturing, emergency response and healthcare. However, a significant challenge that prevents robots from operating in real-world environments effectively is out-of-distribution (OOD) situations, wherein robots encounter unforseen situations. One major OOD situations is when robots encounter faults, making fault adaptation essential for real-world operation for robots. Current state-of-the-art reinforcement learning algorithms show promising results but suffer from sample inefficiency, leading to low adaptation speed due to their limited ability to generalize to OOD situations. Our research is a step towards adding hardware fault tolerance and fast fault adaptability to machines. In this research, our primary focus is to investigate the efficacy of generative flow networks in robotic environments, particularly in the domain of machine fault adaptation. We simulated a robotic environment called Reacher in our experiments. We modify this environment to introduce four distinct fault environments that replicate real-world machines/robot malfunctions. The empirical evaluation of this research indicates that continuous generative flow networks (CFlowNets) indeed have the capability to add adaptive behaviors in machines under adversarial conditions. Furthermore, the comparative analysis of CFlowNets with reinforcement learning algorithms also provides some key insights into the performance in terms of adaptation speed and sample efficiency. Additionally, a separate study investigates the implications of transferring knowledge from pre-fault task to post-fault environments. Our experiments confirm that CFlowNets has the potential to be deployed in a real-world machine and it can demonstrate adaptability in case of malfunctions to maintain functionality.",
+  "hit_queries": [
+   "all:\"generative flow network\"",
+   "all:\"generative flow networks\""
+  ]
+ }
+]

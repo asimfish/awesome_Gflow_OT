@@ -1,0 +1,53 @@
+{
+  "issue_count": 8,
+  "issues": [
+    {
+      "page": 4,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 4: displayed equation at y=523 shifted horizontally by 16pt vs original"
+    },
+    {
+      "page": 4,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 4: paragraph still in English (9 words, 0 CJK chars) at x=306.9, y=695.2: Then F are edge flows induced by PB and F(sf) =P"
+    },
+    {
+      "page": 5,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 5: displayed equation at y=288 shifted horizontally by 25pt vs original"
+    },
+    {
+      "page": 5,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 5: paragraph still in English (20 words, 0 CJK chars) at x=307.3, y=96.0: Let PB(s | s′) > 0 be a backward policy,F(sf) > 0 a fina"
+    },
+    {
+      "page": 13,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 13: paragraph still in English (4 words, 0 CJK chars) at x=55.4, y=310.2: Similarly for any s ∈S \\ {sf}:"
+    },
+    {
+      "page": 14,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 14: paragraph still in English (36 words, 0 CJK chars) at x=55.1, y=492.2: The inequality is due to three facts: (i) C(s) > 0 ∀s ∈S"
+    },
+    {
+      "page": 15,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 15: paragraph still in English (6 words, 0 CJK chars) at x=309.1, y=366.4: ′∈out(s) F(s →s′). Next, for any τ ∈T we have"
+    },
+    {
+      "page": 20,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 20: displayed equation at y=247 shifted horizontally by 44pt vs original"
+    }
+  ]
+}

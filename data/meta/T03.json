@@ -1,0 +1,19 @@
+{
+  "id": "T03",
+  "arxiv": "2201.13259",
+  "title": "Trajectory Balance: Improved Credit Assignment in GFlowNets",
+  "authors": ["Nikolay Malkin", "Moksh Jain", "Emmanuel Bengio", "Chen Sun", "Yoshua Bengio"],
+  "venue": "NeurIPS 2022 (Advances in Neural Information Processing Systems 35)",
+  "venue_type": "main",
+  "year": 2022,
+  "code_url": "https://github.com/GFNOrg/gflownet/tree/trajectory_balance",
+  "one_line_en": "Replaces the local flow-matching and detailed-balance constraints by a single whole-trajectory constraint Z prod P_F = R(x) prod P_B (Eq. 13), proves that zero trajectory-balance residual on all complete trajectories implies reward matching and proportional sampling (Prop. 1), notes that any fixed backward policy pins down a unique reward-matching flow (Sec. 3.1), and reports faster credit propagation on long sequences and large action spaces plus up to 5x runtime speedup over flow matching.",
+  "one_line_zh": "用一条完整轨迹上的约束 Z prod P_F = R(x) prod P_B（Eq. 13）取代 FM/DB 的局部约束，证明所有完整轨迹残差为零即可推出 reward matching 与正比采样（Prop. 1），指出任一固定的反向策略都唯一确定一个 reward-matching 流（Sec. 3.1），并报告在长序列与大动作空间上更快的信用传播以及相对 FM 最多 5 倍的运行加速。",
+  "tags": ["trajectory-balance", "credit-assignment", "log-Z-estimation", "gradient-variance", "backward-policy-choice", "subtrajectory-balance", "variational-inference-connection", "molecule-design", "sequence-generation", "base-loss-for-GFN-OT"],
+  "priority": "P0",
+  "verification": {
+    "checked_on": "2026-09-02",
+    "sources": ["local PDF papers/2201.13259.pdf (arXiv v3, 2023-10-04); first-page footnote: 36th Conference on Neural Information Processing Systems (NeurIPS 2022)", "dblp rec/conf/nips/MalkinJBSB22: venue NeurIPS 2022, Conference and Workshop Papers", "NeurIPS proceedings page paper_files/paper/2022/hash/27b51baca8377a0cf109f6ecc15a0f70"],
+    "note": "Main conference. Author list follows the local PDF and dblp. The paper cites GFlowNet Foundations with early-arXiv numbering (Prop. 3 / Corollary 1 / Prop. 6 / Prop. 10), which does not match the JMLR or arXiv-v5 numbering; see report T03 editor's note for the mapping. Reported 5x speedup over flow matching is hardware-dependent (Tesla K80, Appendix B.2)."
+  }
+}

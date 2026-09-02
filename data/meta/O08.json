@@ -1,0 +1,73 @@
+{
+  "id": "O08",
+  "arxiv": "2606.06272",
+  "title": "Your GFlowNet Secretly Learns an Optimal Transport Plan",
+  "authors": [
+    "Ian Maksimov",
+    "Nikita Morozov",
+    "Denis Belomestny",
+    "Sergey Samsonov"
+  ],
+  "venue": "ICML 2026 SPIGM Workshop",
+  "venue_type": "workshop",
+  "year": 2026,
+  "code_url": null,
+  "one_line_en": "Fixing the initial edge-flow distribution L in a minimum-flow non-acyclic GFlowNet turns its objective into a Kantorovich OT problem with graph shortest-path ground cost (Theorem 3.2), so the optimal forward policy encodes an executable optimal transport plan rather than a static coupling matrix.",
+  "one_line_zh": "在非无环 GFlowNet 的最小总流问题上固定第一步边流 F(s0->u)=L(u)，目标函数就精确变成以图最短路为 ground cost 的 Kantorovich OT（定理 3.2），最优前向策略给出的不是静态耦合矩阵，而是可在隐式组合图上逐步执行的传输路由策略。",
+  "tags": [
+    "gfn-ot",
+    "non-acyclic",
+    "min-cost-flow",
+    "kantorovich",
+    "beckmann",
+    "shortest-path-cost",
+    "linear-programming",
+    "lp-duality",
+    "trajectory-balance",
+    "flow-regularization"
+  ],
+  "priority": "P0",
+  "pdf": "papers/2606.06272.pdf",
+  "report": "reports/O08_2606.06272.md",
+  "arxiv_v1_date": "2026-06-04",
+  "pdf_footer_note": "Preprint. June 5, 2026",
+  "affiliations": [
+    "HSE University",
+    "Duisburg-Essen University"
+  ],
+  "key_results": [
+    "Theorem 3.2: GFlow* = OT* and the induced trajectory distribution yields an optimal coupling Pi*_{u,x} = sum_{tau: u->x} P*(tau)",
+    "Theorem 3.3 / Theorem A.5: dual potentials equal BFS distance d(s); complementary slackness F*(s->s')(pi*_{s'} - 1 - pi*_s) = 0 confines optimal flow to the shortest-path subgraph",
+    "Appendix A.1 (Prop. A.1/A.2, Cor. A.3): eliminating P_F and P_B turns bilinear detailed balance into a linear program",
+    "Appendix A.4: extended dual maps onto Kantorovich dual via a_x = pi_x, b_u = -pi_u with a_x + b_u <= d(u,x)",
+    "Table 1 hypergrid: E|tau| matches POT OT* (e.g. H=10 Moon 4.352 vs 4.351) while TV-hat stays at or below the perfect-sampler reference",
+    "Table 2 permutations: n=4 E|tau| 0.557 vs OT* 0.567, n=8 1.010 vs 1.008 at lambda=1e-2; n=20 has no tractable OT* reference"
+  ],
+  "assumptions": [
+    "finite directed graph, cycles allowed",
+    "s0 has no incoming edges, s_f no outgoing edges; s0 exits only into U, s_f entered only from X",
+    "every pair (u, x) in U x X connected by a finite path",
+    "both marginals normalized: sum_u L(u) = sum_x R(x) = 1, hence Z = 1 is known",
+    "unit-length shortest-path ground cost d(u,x) = |tau_{u,x}| (unweighted, possibly asymmetric)",
+    "R(x) > 0 for all terminal x (needed for dual optimality in Theorem 3.3)"
+  ],
+  "prerequisites": ["T36", "T19", "O07", "O02"],
+  "competitors": ["C01", "C02", "C03"],
+  "not_in_paper": [
+    "hypergrid dimension D",
+    "code release",
+    "wall-clock or memory comparison against network simplex / Sinkhorn / neural OT",
+    "coupling-level error metrics or measured primal-dual gap",
+    "any bound relating balance residual to OT suboptimality"
+  ],
+  "verification": {
+    "checked_on": "2026-09-02",
+    "sources": [
+      "local PDF papers/2606.06272.pdf, full text including Appendix A (theory) and Appendix B (experimental details)",
+      "arXiv stamp on page 1: arXiv:2606.06272v1 [cs.LG] 4 Jun 2026; footer of the title block: 'Preprint. June 5, 2026'",
+      "Table 1, Table 2 and Figure 1 numbers re-read from rendered page images to confirm column alignment",
+      "venue field taken from repository data/papers.yaml"
+    ],
+    "note": "Workshop paper, not main conference. The PDF itself carries no venue line, only the preprint footer, so the ICML 2026 SPIGM Workshop attribution comes from the repository catalog. Main theorem is Theorem 3.2 (Assumption 3.1 is the assumption block); the dual result is Theorem 3.3 with full statement as Theorem A.5 in Appendix A.3 - the main text's pointer to 'Appendix A.5' is a numbering slip in the original."
+  }
+}

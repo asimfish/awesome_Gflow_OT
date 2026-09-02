@@ -1,0 +1,17 @@
+{
+  "issue_count": 2,
+  "issues": [
+    {
+      "page": 17,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 17: paragraph still in English (6 words, 0 CJK chars) at x=62.1, y=412.1: 1. The space (X, d) is a length space if"
+    },
+    {
+      "page": 17,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 17: paragraph still in English (6 words, 0 CJK chars) at x=62.1, y=451.0: 2. The space (X, d) is a geodesic space if"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+\appendix
+\begin{frame}{Backup Slides}\centering\Large 备份页\end{frame}
+\begin{frame}{Backup · O08 Theorem 3.2 证明骨架}
+\small
+\begin{enumerate}
+\item \textbf{消策略}：DB 约束 $F(s)P_F(s'\mid s)=F(s')P_B(s\mid s')$ 在决策变量里是双线性的；以边流 $\mathcal F(s\to s')$ 为变量后约束成为线性（Appendix A.1）。
+\item \textbf{约简}：把状态流 $\mathcal F(s)=\sum_{s'}\mathcal F(s\to s')$ 代入，流守恒写成 $\operatorname{div}\mathcal F(s)=L(s)-R(s)$（Eq. (10)$\to$(11)）；总流目标去掉常数 $\sum_u L(u)=1$。
+\item \textbf{GFlow$^\star\le$OT$^\star$}：取最优耦合 $\Pi^\star$，对每对 $(u,x)$ 任选一条最短路 $\tau_{u,x}$，令 $\mathcal F=\sum_{u,x}\Pi^\star_{u,x}\,\mathbb I[\cdot\in\tau_{u,x}]$；路径的 divergence 是 $\mathbb I[s=u]-\mathbb I[s=x]$，故可行，代价 $=\sum\Pi^\star d$。
+\item \textbf{GFlow$^\star\ge$OT$^\star$}：取最优流 $\mathcal F^\star$，还原 $P_F^\star$ 与轨迹分布 $\mathbb P^\star$；端点分布 $\Pi^\star_{u,x}=\sum_{\tau:u\rightsquigarrow x}\mathbb P^\star(\tau)$ 是可行耦合，且每条轨迹长度 $\ge d(u,x)$，故总流 $\ge$ OT 代价。
+\item \textbf{对偶}（Thm. 3.3）：$\max_\pi\sum_x R(x)\pi_x$ s.t. $\pi_{s_0}=0,\ \pi_{s'}-\pi_s\le1$；$\pi_s\le d(s)$，$d(\cdot)$ 对偶最优；互补松弛 $\Rightarrow$ 最优流支撑在最短路子图。
+\end{enumerate}
+\end{frame}
+\begin{frame}{Backup · 中译 PDF 与 QA 口径}
+\small
+\begin{itemize}
+\item 引擎：SuperTranslate \texttt{pdf\_zh\_translator}，参数 \texttt{--preserve-graphics-text --skip-overflow}，DeepSeek 后端。
+\item 不重排页面：公式、图表、引用先冻结，正文按原坐标回填；每页 \texttt{inspect} 对象级比对。
+\item 17/18 完成；O01（Peyr\'e 讲义，百余页）因翻译 API 余额耗尽未译。
+\item 已知 issue 类型：\texttt{untranslated\_block}（附录证明的数学密集句保留英文）、\texttt{font\_size\_drift}（字号缩放）、\texttt{display\_formula\_misaligned}（行间公式横向偏移 $\le$25pt）。
+\end{itemize}
+\end{frame}

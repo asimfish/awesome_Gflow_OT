@@ -1,0 +1,111 @@
+papers:
+- id: O08
+  tier: core-ot
+  title: Your GFlowNet Secretly Learns an Optimal Transport Plan
+  arxiv: '2606.06272'
+  venue: ICML 2026 SPIGM Workshop
+  priority: P0
+- id: O07
+  tier: core-ot
+  title: Learning Shortest Paths with Generative Flow Networks
+  arxiv: '2603.01786'
+  venue: ICML 2026 SPIGM Workshop
+  priority: P0
+- id: T00
+  tier: gfn-theory
+  title: Flow Network based Generative Models for Non-Iterative Diverse Candidate
+    Generation
+  arxiv: '2106.04399'
+  venue: NeurIPS 2021
+  priority: P0
+- id: T02
+  tier: gfn-theory
+  title: GFlowNet Foundations
+  arxiv: '2111.09266'
+  venue: JMLR 2023
+  priority: P0
+- id: T03
+  tier: gfn-theory
+  title: 'Trajectory balance: Improved credit assignment in GFlowNets'
+  arxiv: '2201.13259'
+  venue: NeurIPS 2022
+  priority: P0
+- id: T05
+  tier: gfn-theory
+  title: Learning GFlowNets from partial episodes for improved convergence and stability
+  arxiv: '2209.12782'
+  venue: ICML 2023
+  priority: P1
+- id: T10
+  tier: gfn-theory
+  title: Towards Understanding and Improving GFlowNet Training
+  arxiv: '2305.07170'
+  venue: ICML 2023
+  priority: P1
+- id: T19
+  tier: gfn-theory
+  title: A Theory of Non-Acyclic Generative Flow Networks
+  arxiv: '2312.15246'
+  venue: AAAI 2024
+  priority: P0
+- id: T36
+  tier: gfn-theory
+  title: Revisiting Non-Acyclic GFlowNets in Discrete Environments
+  arxiv: '2502.07735'
+  venue: ICML 2025
+  priority: P0
+- id: O01
+  tier: ot-side
+  title: Optimal Transport for Machine Learners
+  arxiv: '2505.06589'
+  venue: lecture notes 2025
+  priority: P0
+- id: O02
+  tier: ot-side
+  title: Quadratically Regularized Optimal Transport on Graphs
+  arxiv: '1704.08200'
+  venue: SIAM J. Sci. Comput. 2018
+  priority: P1
+- id: O03
+  tier: ot-side
+  title: 'GeONet: a neural operator for learning the Wasserstein geodesic'
+  arxiv: '2209.14440'
+  venue: UAI 2024
+  priority: P2
+- id: O04
+  tier: ot-side
+  title: Schrodinger Bridge Flow for Unpaired Data Translation
+  arxiv: '2409.09347'
+  venue: NeurIPS 2024 Spotlight
+  priority: P1
+- id: O05
+  tier: ot-side
+  title: Universal Neural Optimal Transport
+  arxiv: '2212.00133'
+  venue: ICML 2025
+  priority: P1
+- id: O06
+  tier: ot-side
+  title: Computing high-dimensional optimal transport by flow neural networks
+  arxiv: '2305.11857'
+  venue: AISTATS 2025
+  priority: P2
+- id: C01
+  tier: competitor
+  title: Unsupervised Learning for Optimal Transport plan prediction between unbalanced
+    graphs
+  arxiv: '2506.12025'
+  venue: NeurIPS 2025
+  priority: P1
+- id: C02
+  tier: competitor
+  title: Generalized Schrodinger Bridge on Graphs
+  arxiv: '2602.04675'
+  venue: preprint 2026
+  priority: P1
+- id: C03
+  tier: competitor
+  title: Discrete Diffusion Schrodinger Bridge Matching for Graph Transformation
+  arxiv: '2410.01500'
+  venue: ICLR 2025
+  priority: P2

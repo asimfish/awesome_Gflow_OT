@@ -1,0 +1,14 @@
+{
+  "id": "O06",
+  "arxiv": "2305.11857",
+  "title": "Computing high-dimensional optimal transport by flow neural networks",
+  "authors": ["Chen Xu", "Xiuyuan Cheng", "Yao Xie"],
+  "venue": "AISTATS 2025",
+  "venue_type": "main",
+  "year": 2025,
+  "code_url": "https://github.com/hamrel-cxu/FlowOT",
+  "one_line_en": "Q-flow solves the Benamou-Brenier dynamic OT between two sample-only distributions with a neural ODE: both terminal constraints are relaxed into KL divergences estimated on the fly by logistic classifiers, plus a finite-difference W2 transport cost, trained bi-directionally; the learned OT trajectory is then reused for image-to-image translation and high-dimensional density ratio estimation. Note: here flow means a continuous normalizing flow velocity field, NOT a GFlowNet.",
+  "one_line_zh": "Q-flow 用神经 ODE 直接解两端只有样本的 Benamou-Brenier 动态 OT：两个终端约束都松弛成 KL（由 logistic 分类器现场估计密度比），再加一个有限差分形式的 W2 传输代价项，双向交替训练；学到的 OT 轨道被复用于图像翻译与高维密度比估计。注意：标题里的 flow neural network 指连续正规化流 / 神经 ODE 的速度场，与 GFlowNet 无关。",
+  "tags": ["dynamic-OT", "benamou-brenier", "neural-ODE", "continuous-normalizing-flow", "KL-relaxation", "density-ratio-estimation", "image-to-image-translation", "per-pair-solver", "not-a-gflownet", "ot-side"],
+  "priority": "P2"
+}

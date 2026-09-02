@@ -1,0 +1,19 @@
+{
+  "id": "O02",
+  "arxiv": "1704.08200",
+  "title": "Quadratically Regularized Optimal Transport on Graphs",
+  "authors": ["Montacer Essid", "Justin Solomon"],
+  "venue": "SIAM Journal on Scientific Computing 40(4): A1961-A1986, 2018",
+  "venue_type": "journal",
+  "year": 2018,
+  "code_url": null,
+  "one_line_en": "Writes graph W1 as a Beckmann min-cost network flow on edges (Kantorovich with shortest-path cost is equivalent to min-cost flow), adds a quadratic regularizer whose small-alpha solution coincides with an LP solution (sparsity), and derives a dual Newton-type solver whose Hessian is the active-subgraph Laplacian.",
+  "one_line_zh": "把图上 W1 写成边流上的 Beckmann 最小费用网络流（以最短路为费用的 Kantorovich 问题等价于最小费用流），加二次正则并证明小正则解即为 LP 解（稀疏性），并给出以活动子图 Laplacian 为 Hessian 的对偶 Newton 型求解器。",
+  "tags": ["optimal-transport", "graph-ot", "beckmann", "min-cost-flow", "quadratic-regularization", "sparsity", "laplacian", "flow-decomposition"],
+  "priority": "P1",
+  "verification": {
+    "checked_on": "2026-09-02",
+    "sources": ["local PDF papers/1704.08200.pdf (arXiv v4, 2018-03-23, math.OC; title with hyphen: Quadratically-Regularized)", "epubs.siam.org/doi/10.1137/17M1132665: SIAM J. Sci. Comput. Vol. 40, No. 4, pp. A1961-A1986; submitted 2017-06-01, accepted 2018-03-08, published electronically 2018-07-03"],
+    "note": "Journal article. Algorithm 1 caption mentions an accompanying Matlab implementation but no URL is given, hence code_url null. Title follows the journal version (no hyphen)."
+  }
+}

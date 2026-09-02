@@ -1,0 +1,19 @@
+{
+  "id": "T19",
+  "arxiv": "2312.15246",
+  "title": "A Theory of Non-Acyclic Generative Flow Networks",
+  "authors": ["Leo Maxime Brunswic", "Yinchuan Li", "Yushun Xu", "Shangling Jui", "Lizhuang Ma"],
+  "venue": "AAAI 2024 (Proceedings of the AAAI Conference on Artificial Intelligence 38(10): 11124-11131)",
+  "venue_type": "main",
+  "year": 2024,
+  "code_url": null,
+  "one_line_en": "Extends GFlowNet flow theory to measurable spaces with cycles via 0-flows, proves ratio-type FM/DB/TB losses are unstable (flows pile into cycles) and gives a family of difference-type stable losses; the appendix characterizes R-flows as one acyclic flow plus the cycle space and bounds expected trajectory length by total flow.",
+  "one_line_zh": "用 0-flow 把 GFlowNet 流理论推广到含环的可测空间，证明比值型 FM/DB/TB 损失不稳定（流堆进环里）并给出差值型稳定损失族；附录把 R-流集合刻画为「一个无环流 + 环空间」，并以总流上界期望轨迹长度。",
+  "tags": ["gflownet-theory", "non-acyclic", "measure-theory", "0-flow", "loss-stability", "flow-space-geometry", "expected-trajectory-length"],
+  "priority": "P0",
+  "verification": {
+    "checked_on": "2026-09-02",
+    "sources": ["local PDF papers/2312.15246.pdf (arXiv v1, 2023-12-23, with Appendix A-C); footer: Copyright 2024 AAAI", "T36 (arXiv 2502.07735) reference list: Proceedings of the AAAI Conference on Artificial Intelligence, volume 38, pp. 11124-11131, 2024, author list includes Yiheng Feng", "background doc gflownet_survey/docs/GFLOWNET_NONACYCLIC_CN.md (ojs.aaai.org article 28989)"],
+    "note": "Main conference. Author list follows the local arXiv PDF (5 authors); the AAAI proceedings version adds Yiheng Feng. No code link anywhere in the paper; Appendix C.1 only states a TensorFlow 2.4.4 implementation. The 8-page AAAI version omits the appendix results (sampler flow, flow-space structure) that the report cites by arXiv numbering."
+  }
+}

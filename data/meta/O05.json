@@ -1,0 +1,14 @@
+{
+  "id": "O05",
+  "arxiv": "2212.00133",
+  "title": "Universal Neural Optimal Transport",
+  "authors": ["Jonathan Geuter", "Gregor Kornhardt", "Ingimar Tomasson", "Vaios Laschos"],
+  "venue": "ICML 2025",
+  "venue_type": "main",
+  "year": 2025,
+  "code_url": "https://github.com/GregorKornhardt/UNOT",
+  "one_line_en": "Trains a Fourier Neural Operator to predict the entropic-OT dual potential for arbitrary pairs of discrete measures at arbitrary resolution, using an adversarial measure generator plus a self-supervised bootstrapping loss whose minimisation provably bounds the loss against the true potential; yields state-of-the-art Sinkhorn initialisation with up to 7.4x speedup.",
+  "one_line_zh": "用 Fourier Neural Operator 预测熵 OT 的对偶势，输入是任意一对离散测度、任意分辨率；训练靠一个可证明覆盖全部非负分布的对抗生成器 + 一个自监督 bootstrapping 损失（目标由 5 步 Sinkhorn 给出，Prop. 5 保证它压住与真解的误差），因此不依赖任何真实数据集。是目前唯一做到跨数据集与跨分辨率泛化的摊销 OT 求解器，也是评估条件 GFlowNet-OT 泛化能力的强基线。",
+  "tags": ["entropic-OT", "static-OT", "dual-potential", "fourier-neural-operator", "amortized-OT", "sinkhorn-initialization", "adversarial-generator", "bootstrapping-loss", "cross-dataset-generalization", "barycenter", "quasi-geodesic", "ot-side", "strong-baseline"],
+  "priority": "P1"
+}

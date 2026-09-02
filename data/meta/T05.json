@@ -1,0 +1,33 @@
+{
+  "id": "T05",
+  "arxiv": "2209.12782",
+  "title": "Learning GFlowNets from Partial Episodes for Improved Convergence and Stability",
+  "authors": [
+    "Kanika Madan",
+    "Jarrid Rector-Brooks",
+    "Maksym Korablyov",
+    "Emmanuel Bengio",
+    "Moksh Jain",
+    "Andrei Nica",
+    "Tom Bosc",
+    "Yoshua Bengio",
+    "Nikolay Malkin"
+  ],
+  "venue": "ICML 2023",
+  "venue_type": "main",
+  "year": 2023,
+  "code_url": null,
+  "one_line_en": "SubTB(lambda) generalizes the GFlowNet balance constraint from single transitions and full trajectories to subtrajectories of any length, geometrically weighted by lambda, interpolating between the high-bias low-variance DB objective and the low-bias high-variance TB objective.",
+  "one_line_zh": "SubTB(λ) 把 GFlowNet 的平衡约束推广到任意长度的子轨迹，用长度的几何权重 λ 在高偏差低方差的 DB 与低偏差高方差的 TB 之间连续插值，在稀疏奖励与长轨迹环境上显著加速收敛。",
+  "tags": [
+    "gflownet",
+    "training-objective",
+    "subtrajectory-balance",
+    "bias-variance",
+    "state-flow",
+    "credit-assignment",
+    "sparse-reward",
+    "long-trajectory"
+  ],
+  "priority": "P1"
+}

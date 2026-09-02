@@ -1,0 +1,14 @@
+{
+  "id": "O03",
+  "arxiv": "2209.14440",
+  "title": "GeONet: a neural operator for learning the Wasserstein geodesic",
+  "authors": ["Andrew Gracyk", "Xiaohui Chen"],
+  "venue": "UAI 2024",
+  "venue_type": "main",
+  "year": 2024,
+  "code_url": "https://github.com/agracyk2/GeONet",
+  "one_line_en": "A DeepONet-based neural operator that maps a pair of endpoint measures to the whole Wasserstein geodesic by fitting the primal-dual KKT system (continuity + Hamilton-Jacobi) of the Benamou-Brenier problem, trained without any geodesic ground truth.",
+  "one_line_zh": "用双分支 DeepONet 直接拟合 Benamou-Brenier 问题的原始-对偶 KKT 方程组（连续性方程 + Hamilton-Jacobi），把「一对边缘分布 → 整条 Wasserstein 测地线」摊销成一次前向传播；训练只需边界分布对、不需要测地线真值，输出网格无关因而支持零样本超分辨率。",
+  "tags": ["dynamic-OT", "benamou-brenier", "neural-operator", "deeponet", "physics-informed", "amortized-OT", "wasserstein-geodesic", "entropic-regularization", "mesh-invariant", "ot-side"],
+  "priority": "P2"
+}

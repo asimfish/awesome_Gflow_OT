@@ -1,0 +1,19 @@
+{
+  "id": "T36",
+  "arxiv": "2502.07735",
+  "title": "Revisiting Non-Acyclic GFlowNets in Discrete Environments",
+  "authors": ["Nikita Morozov", "Ian Maksimov", "Daniil Tiapkin", "Sergey Samsonov"],
+  "venue": "ICML 2025 (Proceedings of the 42nd International Conference on Machine Learning, PMLR 267)",
+  "venue_type": "main",
+  "year": 2025,
+  "code_url": "https://github.com/GreatDrake/non-acyclic-gfn",
+  "one_line_en": "Rebuilds non-acyclic GFlowNet theory on finite graphs with the backward policy as primitive: flows are expected visit counts, positive conservative flows biject with (P_B, F(s_f)), fixed P_B gives a unique solution so loss stability is irrelevant, and minimal expected length equals minimal total flow (a linear objective over the flow polytope); also generalizes the entropy-regularized RL equivalence.",
+  "one_line_zh": "在有限图上以反向策略为第一性对象重建非无环 GFlowNet 理论：流 = 期望访问次数，正守恒流与 (P_B, F(s_f)) 一一对应，固定 P_B 时解唯一、稳定性无关，最小期望长度等价于最小总流（流多面体上的线性目标）；并把熵正则 RL 等价推广到有环情形。",
+  "tags": ["gflownet-theory", "non-acyclic", "expected-visit-counts", "backward-policy", "minimum-flow", "state-flow-regularization", "entropy-regularized-rl", "scaling-hypothesis"],
+  "priority": "P0",
+  "verification": {
+    "checked_on": "2026-09-02",
+    "sources": ["local PDF papers/2502.07735.pdf (arXiv v3, 2025-09-11); first-page footer: Proceedings of the 42nd International Conference on Machine Learning, Vancouver, Canada. PMLR 267, 2025", "Source code line in Sec. 1: github.com/GreatDrake/non-acyclic-gfn", "background doc gflownet_survey/docs/GFLOWNET_NONACYCLIC_CN.md: PMLR 267:44887-44910"],
+    "note": "Main conference. Morozov and Maksimov are marked equal contribution; correspondence Morozov. Page numbers 44887-44910 come from the background doc's checked PMLR entry, not from the PDF."
+  }
+}

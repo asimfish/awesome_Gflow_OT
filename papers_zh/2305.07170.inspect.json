@@ -1,0 +1,23 @@
+{
+  "issue_count": 3,
+  "issues": [
+    {
+      "page": 7,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 7: displayed equation at y=398 shifted horizontally by 35pt vs original"
+    },
+    {
+      "page": 18,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 18: displayed equation at y=68 shifted horizontally by 20pt vs original"
+    },
+    {
+      "page": 19,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 19: paragraph still in English (4 words, 0 CJK chars) at x=54.8, y=326.7: For any natural number n,"
+    }
+  ]
+}

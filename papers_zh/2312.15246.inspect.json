@@ -1,0 +1,215 @@
+{
+  "issue_count": 35,
+  "issues": [
+    {
+      "page": 2,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 2: block set at 7.67pt but the original at this position is 9.96pt (ratio 0.77 vs page median 0.92) at x=54.8, y=455.2: s_{τ} 按奖励比例分布。人们训练一个参数化的边流模型以满足流匹配约束，而奖励约束则通过实现来"
+    },
+    {
+      "page": 2,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 2: block set at 7.67pt but the original at this position is 9.96pt (ratio 0.77 vs page median 0.92) at x=57.3, y=483.5: L ，当且仅当流匹配约束（1）被满足时该损失被最小化。迄今为止，"
+    },
+    {
+      "page": 2,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 2: block set at 7.67pt but the original at this position is 9.96pt (ratio 0.77 vs page median 0.92) at x=54.8, y=500.2: 已提出三类损失：流匹配损失（FM）（Bengio 等人，2021a）、详细平衡损失（DB ）（B"
+    },
+    {
+      "page": 3,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 3: paragraph still in English (9 words, 0 CJK chars) at x=54.0, y=162.2: for all 0-flow F0 which is a subflow of each Fi."
+    },
+    {
+      "page": 4,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Source prose remained verbatim at x=331.7, y=294.0: where"
+    },
+    {
+      "page": 4,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Source prose remained verbatim at x=337.3, y=305.0: and"
+    },
+    {
+      "page": 4,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Source prose remained verbatim at x=548.0, y=315.9: and"
+    },
+    {
+      "page": 9,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 9: paragraph still in English (11 words, 0 CJK chars) at x=319.5, y=223.3: Let πf i,Gi i∈{1,2} be two weighted Markovkernels. They "
+    },
+    {
+      "page": 9,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 9: paragraph still in English (7 words, 0 CJK chars) at x=332.5, y=483.1: Furthermore, for any two weighted Markov kernels(π1"
+    },
+    {
+      "page": 10,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 10: block set at 8.37pt but the original at this position is 9.96pt (ratio 0.84 vs page median 0.92) at x=320.3, y=180.9: 引理2。如果至多可数无限，则非循环边流子集和极小边流子集在窄收敛下都是闭的。"
+    },
+    {
+      "page": 10,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 10: block set at 8.25pt but the original at this position is 9.96pt (ratio 0.83 vs page median 0.92) at x=320.3, y=629.2: ^{8}。7 此处拓扑意味着边可以正向或反向穿越。8 在图的情境下，"
+    },
+    {
+      "page": 11,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 11: paragraph still in English (7 words, 0 CJK chars) at x=67.0, y=534.9: Furthermore, for any two weighted Markov kernels(π1"
+    },
+    {
+      "page": 11,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 11: paragraph still in English (10 words, 0 CJK chars) at x=332.5, y=394.9: Furthermore, for any B ⊂S measurable, we have thefollowi"
+    },
+    {
+      "page": 11,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Source prose remained verbatim at x=344.6, y=481.1: where"
+    },
+    {
+      "page": 12,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 12: block set at 6.77pt but the original at this position is 9.96pt (ratio 0.68 vs page median 0.92) at x=320.3, y=588.3: 注意，在每一步中，右侧可能定义良好且每一步都是合法的，即使和是无限的。"
+    },
+    {
+      "page": 12,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 12: paragraph still in English (5 words, 0 CJK chars) at x=319.5, y=464.7: so F is a R-flow by Lemma 3."
+    },
+    {
+      "page": 12,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 12: paragraph still in English (21 words, 0 CJK chars) at x=319.5, y=602.7: 1S∗F out ≤1S∗Fout, F out(s0) = Fout(s0) andF out sf= 0 ≤"
+    },
+    {
+      "page": 12,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Source prose remained verbatim at x=549.1, y=615.6: and"
+    },
+    {
+      "page": 13,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 13: block set at 7.47pt but the original at this position is 9.96pt (ratio 0.75 vs page median 0.92) at x=417.9, y=224.7: F^{′′}少了一条非零边，因此该过程最终停止"
+    },
+    {
+      "page": 13,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 13: block set at 7.47pt but the original at this position is 9.96pt (ratio 0.75 vs page median 0.92) at x=331.2, y=238.8: K_{n}. 内的一个环。因此我们可以考虑某个"
+    },
+    {
+      "page": 13,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 13: block set at 7.47pt but the original at this position is 9.96pt (ratio 0.75 vs page median 0.92) at x=345.5, y=312.5: F^{′}^{r}中提取任何环，这意味着对于所有"
+    },
+    {
+      "page": 13,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 13: paragraph still in English (34 words, 0 CJK chars) at x=54.0, y=421.7: A sequence of minimizers of Lαn is a minimizing se-quenc"
+    },
+    {
+      "page": 14,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 14: block set at 8.37pt but the original at this position is 9.96pt (ratio 0.84 vs page median 0.92) at x=54.8, y=133.6: 引理2。如果至多可数无限，则非循环边流子集和极小边流子集在窄收敛下都是闭的。"
+    },
+    {
+      "page": 14,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 14: paragraph still in English (3 words, 0 CJK chars) at x=100.0, y=693.6: dFf is bounded;"
+    },
+    {
+      "page": 14,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Source prose remained verbatim at x=61.5, y=645.6: and"
+    },
+    {
+      "page": 15,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 15: paragraph still in English (56 words, 0 CJK chars) at x=54.0, y=363.8: We do not have such strong generic instability results f"
+    },
+    {
+      "page": 15,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 15: paragraph still in English (5 words, 0 CJK chars) at x=58.5, y=449.6: dFb is bounded,• for all ξ ∈R+,"
+    },
+    {
+      "page": 15,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 15: paragraph still in English (6 words, 0 CJK chars) at x=54.0, y=566.5: with ω(⋅) = ϕ#ν and is the map ϕ(s0 →s1 →⋯→sf) =(s1,sτ)."
+    },
+    {
+      "page": 15,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 15: paragraph still in English (12 words, 0 CJK chars) at x=54.0, y=588.4: In particular, if Ff s0Fb(s0 →⋅) and Ff(⋅→sfFbsfthen the"
+    },
+    {
+      "page": 15,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Source prose remained verbatim at x=131.3, y=329.8: then"
+    },
+    {
+      "page": 15,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Source prose remained verbatim at x=62.6, y=579.2: with"
+    },
+    {
+      "page": 15,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Source prose remained verbatim at x=249.0, y=601.1: and"
+    },
+    {
+      "page": 16,
+      "code": "preserved_ink_mismatch",
+      "severity": "error",
+      "message": "Page 16: preserved region at x=113, y=640 (28x40pt) renders with ink coverage 0.02 vs original"
+    },
+    {
+      "page": 16,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 16: paragraph still in English (14 words, 0 CJK chars) at x=54.0, y=109.4: Theorem 4. If f,g,ν,R satisfy the properties above thenf"
+    },
+    {
+      "page": 16,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 16: paragraph still in English (11 words, 0 CJK chars) at x=54.0, y=153.8: Lemma 7. Let X be a measurable space, the functionα,β ↦∫"
+    }
+  ]
+}

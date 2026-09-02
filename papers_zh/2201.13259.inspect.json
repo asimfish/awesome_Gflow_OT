@@ -1,0 +1,11 @@
+{
+  "issue_count": 1,
+  "issues": [
+    {
+      "page": 13,
+      "code": "reference_content_changed",
+      "severity": "error",
+      "message": "Page 13: protected references gained 110 translated CJK characters"
+    }
+  ]
+}

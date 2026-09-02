@@ -1,0 +1,23 @@
+{
+  "issue_count": 3,
+  "issues": [
+    {
+      "page": 12,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 12: displayed equation at y=309 shifted horizontally by 21pt vs original"
+    },
+    {
+      "page": 14,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 14: block set at 6.97pt but the original at this position is 9.97pt (ratio 0.70 vs page median 0.92) at x=170.6, y=264.8: |P^{(}^{s}^{-}^{t}^{)}|<+∞. 。根据命题5，存在一个仅依赖于图和"
+    },
+    {
+      "page": 14,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 14: block set at 6.97pt but the original at this position is 9.97pt (ratio 0.70 vs page median 0.92) at x=98.1, y=282.5: 的路径数量有限，存在一个仅依赖于图的"
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "id": "O07",
+  "arxiv": "2603.01786",
+  "title": "Learning Shortest Paths with Generative Flow Networks",
+  "authors": [
+    "Nikita Morozov",
+    "Ian Maksimov",
+    "Daniil Tiapkin",
+    "Sergey Samsonov"
+  ],
+  "venue": "ICML 2026 SPIGM Workshop",
+  "venue_type": "workshop",
+  "year": 2026,
+  "code_url": "https://github.com/GreatDrake/gfn-pathfinding",
+  "one_line_en": "Minimizing the expected trajectory length of a non-acyclic GFlowNet is equivalent to assigning zero probability to every non-shortest trajectory (Theorem 3.4, iff), which reduces unweighted shortest-path search to training a flow-regularized non-acyclic GFlowNet whose backward policy solves the task.",
+  "one_line_zh": "非无环 GFlowNet 的期望轨迹长度取最小值，当且仅当所有非最短路轨迹被赋零概率（定理 3.4，充要）；据此把任意无权图的最短路问题归约为训练一个带流正则的非无环 GFlowNet，训完的后向策略即最短路求解器，在魔方上以更小 beam 预算达到 SOTA 可比解长。",
+  "tags": [
+    "gfn-ot",
+    "non-acyclic",
+    "shortest-path",
+    "min-flow",
+    "cayley-graph",
+    "rubiks-cube",
+    "trajectory-balance",
+    "flow-regularization",
+    "beam-search",
+    "absorbing-markov-chain"
+  ],
+  "priority": "P0",
+  "pdf": "papers/2603.01786.pdf",
+  "report": "reports/O07_2603.01786.md",
+  "arxiv_v1_date": "2026-03-02",
+  "affiliations": [
+    "HSE University",
+    "CMAP, CNRS, Ecole polytechnique",
+    "LMO, Universite Paris-Saclay"
+  ],
+  "key_results": [
+    "Lemma 3.2: E[n_tau] >= sum_x P_B(x | s_f) l(x) via the tower property plus l(x) as a per-trajectory floor",
+    "Lemma 3.3: a constructive parent map par(s) with l(s) = l(par(s)) + 1 attains E[n_tau] = sum_x R(x)/Z * l(x)",
+    "Theorem 3.4: minimizing E[n_tau] is equivalent (iff) to zero probability on all non-shortest trajectories; optimal P_B is generally not unique (Remark 3.5)",
+    "Assumption 3.1 replaces T36's P_B > 0 by E[n_tau] < infinity, since the optimal policy must zero out non-shortest edges (Appendix A)",
+    "Section 3.2 reduction: reverse the edges, set s0 = v_g, make every vertex terminal, take R = 1; then optimal E[n_tau] equals the average shortest-path length",
+    "Table 1 2x2x2 cube: optimal average 10.64 reached at W = 2^6 versus W = 2^10 for CayleyPy Cube (16x smaller beam), full solve rate even at W = 1",
+    "Table 1 3x3x3 cube: better at small beams (W = 2^9: 23.49 vs 24.34), comparable at large beams (W = 2^18: 21.24 vs 21.15)",
+    "Runtime at W = 2^18 on one NVIDIA H200: 1.74 s per configuration (25M params) versus 6.19 s for CayleyPy Cube (4M params), attributed to one forward pass emitting logits for all neighbours"
+  ],
+  "assumptions": [
+    "finite directed graph with Assumption 2.1 (s0 no incoming edges, s_f no outgoing edges, every state reachable from s0 and reaching s_f)",
+    "Assumption 3.1: backward random walk from s_f has finite expected length E[n_tau] < infinity",
+    "unweighted graph, hop-count distance l(.)",
+    "R > 0 on all terminal states; the reduction uses R = 1",
+    "every vertex of the input graph can reach the goal vertex v_g",
+    "theory characterizes exact minimizers; training uses the soft lambda penalty and beam search absorbs the approximation gap"
+  ],
+  "prerequisites": ["T36", "T19", "T03"],
+  "successors": ["O08"],
+  "bridge_to_O08": "single-source (s0) shortest path with cost l(x) = d(s0, x); O08 adds F(s0->u) = L(u) to lift it to multi-source Kantorovich OT with cost d(u,x). Lemma 3.2 corresponds to O08 Eq. (18); Lemma 3.3 corresponds to O08 Theorem 3.2 Part 1; O08 Theorem 3.3 re-derives this claim through LP duality.",
+  "not_in_paper": [
+    "numeric table for the Swap Puzzle (only Figure 2 curves)",
+    "comparison against classical BFS / bidirectional BFS on medium graphs",
+    "analysis of the N_max truncation's effect on the optimum",
+    "explanation of why the best lambda differs by five orders of magnitude between the 2x2x2 and 3x3x3 cubes",
+    "weighted or cost-sensitive graphs (listed as future work in Section 5)"
+  ]
+}

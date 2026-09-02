@@ -1,0 +1,1769 @@
+[
+ {
+  "arxiv": "2608.29635",
+  "title": "Unsupervised Multi-Scale Gromov-Wasserstein Hypergraph Alignment",
+  "authors": [
+   "Lutz Oettershagen",
+   "Honglian Wang",
+   "Aristides Gionis"
+  ],
+  "published": "2026-08-30",
+  "updated": "2026-08-30",
+  "comment": "Accepted at ICDM 2026",
+  "journal_ref": "",
+  "primary": "cs.LG",
+  "abstract": "We study unsupervised hypergraph alignment, where the goal is to infer node correspondences between two hypergraphs using only structural information, without node features, labels, seed matches, or side information. Direct higher-order formulations can represent hyperedge interactions faithfully, but they can be computationally demanding and cumbersome for non-uniform hypergraphs. Graph-reduction approaches introduce a different challenge: clique expansions keep the alignment problem on the original node set but collapse all hyperedge evidence into one pairwise graph, whereas bipartite expansions preserve incidence structure but enlarge the problem from nodes to nodes plus hyperedges. We introduce FALCON (Filtration-based hypergrAph aLignment via Cross-scale Optimal traNsport), an unsupervised optimal-transport framework for hypergraph alignment. Instead of representing each hypergraph by a single collapsed clique graph, FALCON constructs a filtration-induced sequence of clique-based co-occurrence dissimilarity matrices and jointly aligns all levels through one shared multi-scale Gromov--Wasserstein (GW) objective. The shared transport plan enforces a globally consistent node correspondence across filtration levels while avoiding the auxiliary hyperedge nodes introduced by bipartite expansion. Experiments on perturbation benchmarks derived from real-world hypergraphs show that FALCON is robust to structural noise and in almost all cases outperforms strong graph- and hypergraph-alignment baselines.",
+  "hit_queries": [
+   "all:\"optimal transport\" AND all:graph AND (all:neural OR all:learning) AND all:plan"
+  ]
+ },
+ {
+  "arxiv": "2608.29152",
+  "title": "Uniform Statistical Convergence of Empirical Sinkhorn Potentials with Exponential and Polynomial Dependence on the Regularization Parameter",
+  "authors": [
+   "Denis Belomestny"
+  ],
+  "published": "2026-08-29",
+  "updated": "2026-08-29",
+  "comment": "",
+  "journal_ref": "",
+  "primary": "stat.ML",
+  "abstract": "We study the empirical Sinkhorn estimator of the entropic optimal transport potentials under the uniform loss. Since the potentials are only unique up to additive constants, we measure the error using the quotient supremum norm, defined as $d_\\infty([u],[v]) = \\inf_{a\\in\\mathbb{R}}\\|u-v-a\\|_\\infty$. For a fixed regularization parameter $\\varepsilon>0$, we establish a non-asymptotic statistical rate of $n^{-1/2}$. This is achieved by combining the Birkhoff-Hopf contraction theorem with entropy bounds on normalized kernel sections. However, the constant in this bound grows exponentially with $1/ε$. To improve this, we isolate geometric conditions under which the empirical estimator maintains the $n^{-1/2}$ rate but features polynomial dependence on $1/\\varepsilon$. The key requirement is a polynomial residual-stability estimate for the population Sinkhorn map. We provide sufficient criteria for this, including a polynomial contraction property and a local inverse estimate. Furthermore, we introduce two rigorously verifiable model classes an $\\varepsilon$-weak residual-interaction class obtained after separable centering and another based on connected tight-edge graphs for fixed discrete costs where the polynomial rate is guaranteed without relying on abstract resolvent assumptions. Finally, we establish matching minimax lower bounds demonstrating that the $\\varepsilon n^{-1/2}$ rate cannot be uniformly improved in the bounded-interaction regime.",
+  "hit_queries": [
+   "all:\"entropic optimal transport\" AND all:discrete"
+  ]
+ },
+ {
+  "arxiv": "2608.28262",
+  "title": "SinkSLOT: Sinkhorn via Sparse Lifted Optimal Transport",
+  "authors": [
+   "Ian Hsieh",
+   "Soumya Snigdha Kundu",
+   "Tom Vercauteren",
+   "Reuben Dorent"
+  ],
+  "published": "2026-08-28",
+  "updated": "2026-08-28",
+  "comment": "",
+  "journal_ref": "",
+  "primary": "cs.LG",
+  "abstract": "Entropic optimal transport (EOT) has been shown to offer a computationally tractable approximation to exact optimal transport. However, the standard Sinkhorn-Knopp algorithm has two main limitations. First, given discrete measures with $N$ points, each iteration requires $O(N^2)$ operations, which restricts its use on large-scale datasets (e.g. $N\\geq10^4$). Second, it uses the independent coupling as a reference measure for regularisation. This assigns mass to high-cost transport edges at moderate regularisation strengths. We propose SinkSLOT, which addresses both limitations by putting forth the expected sliced lifted transport plan as a natural way to sparsify the Gibbs kernel with a non-independent prior coupling. We prove that: 1) SinkSLOT converges; 2) with $L$ slices, each resulting sparse Sinkhorn iteration costs $O(LN)$; and 3) the resulting objective is a divergence requiring no debiasing. Experiments on synthetic benchmarks show that SinkSLOT delivers substantial speedups over state-of-the-art dense and sparse EOT methods. We also demonstrate the applicability of the proposed divergence in a gradient flow experiment. The code is publicly available at https://github.com/cai4cai/SinkSLOT.",
+  "hit_queries": [
+   "all:\"entropic optimal transport\" AND all:discrete"
+  ]
+ },
+ {
+  "arxiv": "2608.27500",
+  "title": "Optimal Transport for Network Comparison: A Review with Machine Learning Applications",
+  "authors": [
+   "James Hyun",
+   "François G. Meyer"
+  ],
+  "published": "2026-08-27",
+  "updated": "2026-08-27",
+  "comment": "",
+  "journal_ref": "",
+  "primary": "stat.ML",
+  "abstract": "Network comparison using optimal transport is a growing area of research in network science. Unlike standard graph metrics, optimal transport computes both network dissimilarity and a transport plan that explains how one graph morphs into another. In this paper, we review how optimal transport compares undirected, unweighted graphs using three primary distances: the Wasserstein, Gromov-Wasserstein, and Bures-Wasserstein distances. We examine the closed form of the Wasserstein distance in one dimension via node feature probability distributions, and show how the transport plans of the Wasserstein and Gromov-Wasserstein distances capture which specific nodes influence the distance after graph perturbation. For the Bures-Wasserstein distance, we derive bounds using Laplacian spectra to bypass full spectral decompositions. Finally, we evaluate these distances using a synthetic network dataset for clustering and a real-world time series network for anomaly detection.",
+  "hit_queries": [
+   "all:\"optimal transport\" AND all:graph AND (all:neural OR all:learning) AND all:plan"
+  ]
+ },
+ {
+  "arxiv": "2608.10619",
+  "title": "Pair-Centric Graph Rewiring for Over-Squashing via Optimal Transport-Guided Communication Alignment",
+  "authors": [
+   "Yan Wang",
+   "Chuan-Xian Ren"
+  ],
+  "published": "2026-08-11",
+  "updated": "2026-08-11",
+  "comment": "",
+  "journal_ref": "",
+  "primary": "cs.LG",
+  "abstract": "Message-passing neural networks (MPNNs) often struggle when task-relevant information is distributed across distant regions of a graph, since local propagation must compress remote signals through limited structural interfaces. Graph rewiring provides a structural response to over-squashing. Most existing methods rely on edge-level bottleneck scores or graph-level connectivity surrogates. With a limited rewiring budget, the key question is which pairwise communications most need structural support. This paper proposes PairAlign, a pair-centric graph rewiring framework that makes this question explicit through demand-support shortage. Specifically, PairAlign combines original-graph structural demand with current-graph finite-hop propagation support; their ratio highlights interactions whose communication demand is poorly supported by topology, and our theory shows that this score provides a computable proxy for the corresponding Jacobian-based shortage with a pair-level interpretation of over-squashing. Our theory reveals a two-sided effect of edge insertion: a new edge can create useful walks and simultaneously dilute existing normalized transition mass. Guided by this observation, PairAlign optimizes shortage to favor edge additions that alleviate over-squashing. Beyond selecting useful additions, PairAlign further introduces an Optimal Transport-guided rewiring mechanism to coordinate the finite edge budget for pair-level structural compatibility and shortage-target coverage. It formulates communication alignment between the candidate edge budget and the shortage targets, and the theory shows that this allocation covers shortage targets more broadly and effectively than a greedy-local assignment. Experiments on standard graph benchmarks show PairAlign's improvement across message-passing backbones, validating pair-level repair as an effective route for alleviating over-squashing.",
+  "hit_queries": [
+   "all:\"optimal transport\" AND all:graphs AND all:\"neural\""
+  ]
+ },
+ {
+  "arxiv": "2607.24876",
+  "title": "Low-Latency Generative Semantic Communication via Channel-Realization Flow Matching",
+  "authors": [
+   "Fan Gao",
+   "Youzheng Wang",
+   "Zhijin Qin",
+   "Feifei Gao"
+  ],
+  "published": "2026-07-27",
+  "updated": "2026-07-27",
+  "comment": "Accpeted by Globecom 2026. 6 pages, 7 figures",
+  "journal_ref": "",
+  "primary": "cs.IT",
+  "abstract": "Generative semantic communication receivers deliver high perceptual quality but suffer from prohibitive decoding latency. This bottleneck arises because diffusion receivers rely on stochastic iterative decoding, while existing flow matching receivers employ independent endpoint coupling that ignores the physical source--channel link, yielding unnecessarily long and curved sampling trajectories. In this paper, we reformulate receiver-side recovery as a realization-coupled bridge flow matching problem under explicit bandwidth and power constraints. Specifically, we propose Realization-Coupled Bridge Flow Matching (RC-BFM), where the decoder initializes from a channel-induced semantic state rather than isotropic noise. Crucially, training pairs are linked via a realization-coupled entropic optimal transport (RC-OT) plan that preserves the physical channel realization of each transmission while maintaining robustness to stochastic fading. Furthermore, we identify independent coupling as the fundamental source of a conditional train--test distribution shift in conditional flow matching-based receivers, and derive an end-to-end distortion bound whose discretization error decays as \\(O(K^{-2})\\). Experiments on CIFAR-10 and FFHQ-64\\(\\times\\)64 over AWGN and Rayleigh fading channels demonstrate that RC-BFM achieves a superior fidelity--perception trade-off, reducing decoding latency by over 10\\(\\times\\) compared to diffusion-based receivers.",
+  "hit_queries": [
+   "all:\"entropic optimal transport\" AND all:discrete"
+  ]
+ },
+ {
+  "arxiv": "2607.19176",
+  "title": "Exponential Convergence of the Sinkhorn Algorithm for the Schrödinger Bridge with Regime Switching",
+  "authors": [
+   "Katharina Eichinger",
+   "Anna Kazeykina",
+   "Zhenjie Ren",
+   "Hecheng Wang"
+  ],
+  "published": "2026-07-21",
+  "updated": "2026-07-21",
+  "comment": "",
+  "journal_ref": "",
+  "primary": "math.PR",
+  "abstract": "This paper studies the convergence of the Sinkhorn algorithm for the Schrödinger bridge problem with regime switching, as introduced in Zlotchevski and Chen (2025). We consider a class of regime-switching stochastic systems on the hybrid state space $E=\\mathbb{R}^d\\times\\{1,\\ldots,m\\}$, and construct the Sinkhorn iteration through the associated equivalent entropic optimal transport formulation. The main result of this paper is the exponential convergence of the Sinkhorn algorithm in relative entropy under compactness assumptions. Our proofs are inspired by the arguments recently developed for proving exponential convergence of the classical Schrödinger problem in Chiarini, Conforti, Greco and Tamanini (2024), Eckstein (2025). We perform a similar analysis for the partially observed terminal setting, where only the marginal distribution of the continuous component is prescribed at the terminal time, while the discrete regime is unobserved.",
+  "hit_queries": [
+   "all:\"entropic optimal transport\" AND all:discrete"
+  ]
+ },
+ {
+  "arxiv": "2607.17082",
+  "title": "OTAP: Structure-Aware Optimal Transport for Evaluating Planning and Execution in Agent Trajectories",
+  "authors": [
+   "Babak Barazandeh",
+   "Subhabrata Majumdar",
+   "George Michailidis"
+  ],
+  "published": "2026-07-19",
+  "updated": "2026-08-01",
+  "comment": "",
+  "journal_ref": "",
+  "primary": "cs.AI",
+  "abstract": "Large language model agents solve tasks by generating trajectories that interleave planning, tool calls, and intermediate results. Current evaluation metrics reduce such a trajectory to a binary success flag, compare it against a reference by exact matching, or delegate judgment to another language model. A success flag cannot distinguish a sound solution from one that succeeds by luck, and says nothing about why a failed run went wrong. Exact matching penalizes plans that are valid but reordered or decomposed differently from the reference. We reframe trajectory evaluation as a distance between the agent's execution graph and a set of valid solution graphs, and instantiate it via an unbalanced fused Gromov-Wasserstein transport problem over attributed dependency graphs. The resulting score, termed OTAP (Optimal Transport for Agentic Planning), is a pseudo-metric that is provably invariant to dependency-preserving reorderings and has bounded sensitivity to redundant steps. Its unbalanced marginals handle missing or hallucinated steps without forcing a match, and its soft coupling accommodates variation in plan granularity. On controlled perturbations and three public benchmarks, OTAP separates valid from invalid trajectories in a regime where semantics-only metrics score below chance. Its advantage tracks the fidelity of the dependency graph: largest where edges follow from operator semantics, smallest where they are inferred from free text. Where a formal verifier exists, strict surface metrics predict validity better than OTAP does, which places OTAP in open-ended domains where no verifier is available.",
+  "hit_queries": [
+   "all:\"optimal transport\" AND all:graph AND (all:neural OR all:learning) AND all:plan"
+  ]
+ },
+ {
+  "arxiv": "2607.17146",
+  "title": "The Geometry of Semantic Space: A Continuous Geometric Framework for the Transformer Architecture",
+  "authors": [
+   "Zhihua Liang"
+  ],
+  "published": "2026-07-19",
+  "updated": "2026-07-19",
+  "comment": "",
+  "journal_ref": "",
+  "primary": "cond-mat.dis-nn",
+  "abstract": "We present a continuous geometric framework that models the discrete algebraic operations of the Transformer architecture as an integro-differential equation (IDE) on a semantic fiber bundle $\\calE = \\calM \\times \\R^d$. Beginning from a single geometric axiom -- that the token sequence forms a discrete $1$-manifold equipped with a canonical measure lattice -- we translate every core component of the modern Transformer (RMSNorm, RoPE, Softmax Attention, FFN, Residual Stream, SGD, Weight Decay) into a cohesive vocabulary of differential geometry, measure theory, and stochastic calculus. The resulting framework yields quantitative predictions spanning entropic optimal transport (Attention as a Schrödinger bridge) and non-equilibrium thermodynamics (SGD as Itô diffusion violating detailed balance). We conduct a six-part experimental campaign across five architectures (Qwen3, LLaMA\\nobreakdash-3.1, Gemma\\nobreakdash-3, GPT-2, Mistral) spanning $124$M to $8$B parameters. The empirical observables are quantitatively consistent with the geometric predictions: the $ε^{-1/2}$ Lipschitz scaling calibration at machine precision ($R^2 = 1.000$), the Lie--Trotter operator-splitting torsion, the symmetric ablation instability confirming the Dual-Law of Topological Stability, the $\\calO(1/\\sqrt{k})$ thermodynamic suppression of Poincaré recurrence on the RoPE torus, the thermodynamic context-limit phase transition, and the Non-Equilibrium Steady State parameter vortex -- verified across two optimizers (AdamW and Pure SGD) to exclude momentum artifacts. The results demonstrate that analyzing Transformers through the lens of continuous stochastic differential geometry provides a predictive descriptive vocabulary for the stability limits, context bounds, and optimization dynamics of Large Language Models.",
+  "hit_queries": [
+   "all:\"entropic optimal transport\" AND all:discrete"
+  ]
+ },
+ {
+  "arxiv": "2607.07773",
+  "title": "Graph-Regularized Deep Learning for EEG-Based Emotion Recognition with Psychologically-Grounded Label Structure",
+  "authors": [
+   "Dongyang Kuang",
+   "Zizheng Ma",
+   "Yushan Zhang",
+   "Xiaocong Zeng"
+  ],
+  "published": "2026-07-08",
+  "updated": "2026-07-08",
+  "comment": "",
+  "journal_ref": "",
+  "primary": "cs.LG",
+  "abstract": "EEG-based emotion recognition is critical for mental health monitoring and affective brain-computer interfaces, yet existing deep learning approaches often treat emotion classes as isolated labels, ignoring their psychological interdependencies. We propose a graph-regularized learning framework that conceptualizes emotions as nodes in a graph where edges encode proximity based on dimensional emotion theories. We adapt three complementary regularization strategies--Graph Label Smoothing (intuitive soft labeling), Commuting distance on graph via Graph Laplacian (spectral graph theory), and Sliced Wasserstein Distance (optimal transport on graph)--ordered by increasing computational complexity. These strategies penalize model predictions that deviate from the established emotion topology. Our framework is evaluated across three representative backbone architectures: AudioTransformer (pure transformer), Conformer (CNN-transformer hybrid), and DCGNN (causal graph neural network), demonstrating architecture-agnostic benefits. Experiments on SEED-IV (4 classes) and SEED-V (5 classes) datasets show consistent improvements: best case up to +5.42% accuracy and 39% reduction in psychologically implausible misclassifications. Ultimately, our framework help raise the upper bound of performance achievable with standard approaches. Code will be released.",
+  "hit_queries": [
+   "all:\"optimal transport\" AND all:graphs AND all:\"neural\""
+  ]
+ },
+ {
+  "arxiv": "2606.16273",
+  "title": "Generative Modeling on Metric Graphs via Neural Optimal Transport",
+  "authors": [
+   "Alessandro Micheli",
+   "Yueqi Cao",
+   "Anthea Monod",
+   "Samir Bhatt"
+  ],
+  "published": "2026-06-15",
+  "updated": "2026-06-15",
+  "comment": "",
+  "journal_ref": "",
+  "primary": "stat.ML",
+  "abstract": "We introduce, to our knowledge, the first deep generative modeling framework for probability distributions continuously supported on compact metric graphs. Given source and target measures on a metric graph, our method embeds the graph into a smooth ambient space, solves an entropic Kantorovich problem via a neural semidual parameterization, and projects generated samples back onto the original graph. We study two embedded geometries: an extrinsic Euclidean realization and the intrinsic tropical Abel--Jacobi embedding into the Jacobian torus. In both cases, the resulting generator is graph-supported by construction. We prove that, in the joint limit of increasing neural expressivity, the learned generator converges weakly to a valid transport coupling between the original graph measures. Empirically, across a range of geometrically distinct graphs, our method matches or improves upon heuristic transport baselines based on discrete graph OT, while scaling more favorably. Finally, we demonstrate scalability on real-world urban mobility data by training our model on one million Uber pickup locations in Manhattan, New York City.",
+  "hit_queries": [
+   "all:\"optimal transport\" AND all:graphs AND all:\"neural\""
+  ]
+ },
+ {
+  "arxiv": "2606.16923",
+  "title": "MA-SBI: Misspecification-Aware Simulation-Based Inference via Side-Channel Guidance",
+  "authors": [
+   "Arunkumar V",
+   "Manoranjan Gandhudi",
+   "Gangadharan G. R.",
+   "Arun Prakash",
+   "S. Senthilkumar"
+  ],
+  "published": "2026-06-15",
+  "updated": "2026-06-15",
+  "comment": "23 pages, 9 figures, 12 tables",
+  "journal_ref": "",
+  "primary": "cs.AI",
+  "abstract": "Simulation-based inference (SBI) of latent parameters is often hindered by simulator misspecification, the mismatch between simulated and real-world observations caused by inherent modeling simplifications. RoPE, the recent state-of-the-art for robust SBI, addresses this through optimal transport between learned representations of real and simulated observations, but requires ground-truth parameter calibration pairs that are typically unavailable in the very settings where SBI is needed. What practitioners do have is unstructured side-information such as regime labels, instruction text, and policy bulletins. We propose Misspecification-Aware Simulation-Based Inference (MA-SBI), a calibration-free framework that turns this side-channel into a posterior correction. A learned corrector maps side-channel text to an observation-space shift applied before any pre-trained amortized posterior, requiring no retraining and no parameter ground-truth. Our main theorem bounds achievable bias reduction by the mutual information between misspecification and side-channel, with a non-vacuous constant that extends to all sub-Gaussian noise via Donsker-Varadhan. On hide-the-calibration benchmarks, MA-SBI with text alone matches the oracle posterior across 10 seeds and two backbones (TOST equivalence), while RoPE given more data does not. The two approaches are complementary: where misspecification is structural and recoverable from parameter pairs, RoPE dominates, as the theory predicts. A stochastic variant improves posterior-predictive log-likelihood on real COVID and OxCGRT epidemiological data, and correctly leaves the posterior unchanged on a well-specified cognitive-science corpus.",
+  "hit_queries": [
+   "all:\"amortized\" AND all:\"optimal transport\""
+  ]
+ },
+ {
+  "arxiv": "2606.07239",
+  "title": "Generative Molecular Morphing for Flexible-Size Design via Unbalanced Optimal Transport",
+  "authors": [
+   "Malte Franke",
+   "Stefan P. Schmid",
+   "Zarko Ivkovic",
+   "Kjell Jorner",
+   "Andreas Krause"
+  ],
+  "published": "2026-06-05",
+  "updated": "2026-06-05",
+  "comment": "",
+  "journal_ref": "",
+  "primary": "cs.LG",
+  "abstract": "The success of generative molecular design hinges on a model's steerability toward high-reward samples. Because many molecular properties are intrinsically linked to molecular size, accurately capturing the joint distribution of properties and the number of atoms is essential. However, current diffusion and flow-based models fix the number of atoms, which ultimately limits their ability to navigate this complex relationship. To address this, we introduce Morph, a flexible-size generative model for conditional and unconditional 3D molecular design based on geometric graphs. By dynamically adapting size, Morph can seamlessly integrate existing structural priors, like scaffolds, and significantly enhances property steering. We show that Morph matches current fixed-size state-of-the-art models while offering the benefit of unparalleled sampling flexibility. We demonstrate out-of-distribution generation in regimes where previous models fail, paving the way for enhanced generative modeling for molecular design.",
+  "hit_queries": [
+   "all:\"unbalanced optimal transport\" AND (all:graph OR all:neural)"
+  ]
+ },
+ {
+  "arxiv": "2606.06272",
+  "title": "Your GFlowNet Secretly Learns an Optimal Transport Plan",
+  "authors": [
+   "Ian Maksimov",
+   "Nikita Morozov",
+   "Denis Belomestny",
+   "Sergey Samsonov"
+  ],
+  "published": "2026-06-04",
+  "updated": "2026-06-04",
+  "comment": "ICML 2026 SPIGM Workshop",
+  "journal_ref": "",
+  "primary": "cs.LG",
+  "abstract": "Generative Flow Networks (GFlowNets) are a framework for sampling structured objects via stochastic trajectories in a directed graph. In this work, we establish a theoretical connection between non-acyclic GFlowNets and optimal transport (OT). We show that fixing the initial flow distribution in a minimum-flow GFlowNet reduces its objective to a Kantorovich OT problem with graph-induced shortest path costs. At the optimum, the learned GFlowNet policy therefore encodes an optimal transport plan from the source distribution to the target distribution: we show that sampling trajectories from the minimum-flow GFlowNet recovers the corresponding optimal coupling. Our formulation enables applying the GFlowNet learning framework to OT problems on large graphs via edge flows and neural parameterization. Experiments confirm agreement with exact OT solvers and demonstrate that GFlowNets can learn high-quality transport plans.",
+  "hit_queries": [
+   "all:\"optimal transport\" AND all:graph AND (all:neural OR all:learning) AND all:plan",
+   "all:\"optimal transport\" AND all:graphs AND all:\"neural\""
+  ]
+ },
+ {
+  "arxiv": "2606.03317",
+  "title": "Ollivier-Ricci curvature in cycle overlap mode",
+  "authors": [
+   "Zexian Zhou",
+   "Bo Jiao"
+  ],
+  "published": "2026-06-02",
+  "updated": "2026-07-15",
+  "comment": "27 pages, 10 figures",
+  "journal_ref": "",
+  "primary": "cs.SI",
+  "abstract": "Ollivier-Ricci curvature of an edge (x,y) is defined by comparing the distance taken to transport from neighbors of x to neighbors of y. It is a structural measure that has been studied in many fields such as community detection and deep neural networks. However, high computational complexity or error limits its application on large scale-free graphs. This paper proposes an optimal transport principle to minimize the distance by 3,4,5-cycles that include the edge (x,y), and designs a curvature calculation approach named Curvature in Cycle Overlap Mode (CCOM). In this approach, a greedy and pruning algorithm is proposed to approximate the optimal transport principle. We theoretically and experimentally verified that our approach CCOM can significantly improve the accuracy of the curvature on real-world networks with low time consumption. In addition, we compared CCOM with baseline approximation approaches in community detection tasks using the same curvature-based framework, and experimentally confirmed the effectiveness of CCOM on large scale-free graphs. Open source code is available at https://github.com/hitreasonx/CCOM.",
+  "hit_queries": [
+   "all:\"optimal transport\" AND all:graphs AND all:\"neural\""
+  ]
+ },
+ {
+  "arxiv": "2606.01565",
+  "title": "Hierarchical Semantic-Augmented Navigation: Optimal Transport and Graph-Driven Reasoning for Vision-Language Navigation",
+  "authors": [
+   "Xiang Fang",
+   "Wanlong Fang",
+   "Changshuo Wang"
+  ],
+  "published": "2026-06-01",
+  "updated": "2026-06-01",
+  "comment": "Published in NeurIPS 2025, address some typos",
+  "journal_ref": "",
+  "primary": "cs.RO",
+  "abstract": "Vision-Language Navigation in Continuous Environments (VLN-CE) poses a formidable challenge for autonomous agents, requiring seamless integration of natural language instructions and visual observations to navigate complex 3D indoor spaces. Existing approaches often falter in long-horizon tasks due to limited scene understanding, inefficient planning, and lack of robust decision-making frameworks. We introduce the \\textbf{Hierarchical Semantic-Augmented Navigation (HSAN)} framework, a groundbreaking approach that redefines VLN-CE through three synergistic innovations. First, HSAN constructs a dynamic hierarchical semantic scene graph, leveraging vision-language models to capture multi-level environmental representations, from objects to regions to zones, enabling nuanced spatial reasoning. Second, it employs an optimal transport-based topological planner, grounded in Kantorovich's duality, to select long-term goals by balancing semantic relevance and spatial accessibility with theoretical guarantees of optimality. Third, a graph-aware reinforcement learning policy ensures precise low-level control, navigating subgoals while robustly avoiding obstacles. By integrating spectral graph theory, optimal transport, and advanced multi-modal learning, HSAN addresses the shortcomings of static maps and heuristic planners prevalent in prior work. Extensive experiments on multiple challenging VLN-CE datasets demonstrate that HSAN achieves state-of-the-art performance, with significant improvements in navigation success and generalization to unseen environments.",
+  "hit_queries": [
+   "all:\"optimal transport\" AND all:graph AND (all:neural OR all:learning) AND all:plan",
+   "all:\"optimal transport\" AND all:\"reinforcement learning\" AND (all:graph OR all:discrete)"
+  ]
+ },
+ {
+  "arxiv": "2605.27883",
+  "title": "Stability of Quadratically Regularized Optimal Transport",
+  "authors": [
+   "Alberto González-Sanz",
+   "Marcel Nutz"
+  ],
+  "published": "2026-05-27",
+  "updated": "2026-05-27",
+  "comment": "",
+  "journal_ref": "",
+  "primary": "math.OC",
+  "abstract": "Quadratically regularized optimal transport (QOT) is a sparse alternative to entropic optimal transport. We develop a quantitative stability theory for QOT under perturbations of the marginals, the transport cost function, and the regularization parameter. The centerpiece is an $L^\\infty$-stability result for the dual potentials. Starting from an error bound in an $L^2$-space that varies with the marginals, we use a self-bound for the potentials to derive a local $L^\\infty$-Lipschitz bound that is uniform over marginals. This bound also yields stability of the optimal coupling and of its support. In particular, we show that for the quadratic transport cost, the support of the optimal coupling is locally Lipschitz in Hausdorff distance under perturbations of the marginals. To the best of our knowledge, this is the first stability result for the optimal support in regularized optimal transport.",
+  "hit_queries": [
+   "all:\"optimal transport\" AND all:\"error bound\" AND (all:dual OR all:certificate)"
+  ]
+ },
+ {
+  "arxiv": "2605.27175",
+  "title": "Polyak-Lojasiewicz Inequality for Quadratically Regularized Optimal Transport",
+  "authors": [
+   "Alberto González-Sanz",
+   "Marcel Nutz",
+   "Andrés Riveros Valdevenito"
+  ],
+  "published": "2026-05-26",
+  "updated": "2026-05-26",
+  "comment": "To appear in 'SIAM Journal on Optimization'",
+  "journal_ref": "",
+  "primary": "math.OC",
+  "abstract": "Quadratically regularized optimal transport (QOT) is an alternative to entropic regularization that yields sparse couplings and avoids numerical instabilities due to exponential scaling. From an optimization viewpoint, the dual QOT objective is concave but features a positive part function which prevents strong concavity and reduces smoothness of optimizers. Consequently, standard arguments for linear convergence of algorithms do not apply. In this paper, we nevertheless establish a quantitative curvature property for the QOT dual. Under mild assumptions covering both continuous and semi-discrete transport problems, we prove a local error bound and a Polyak-Lojasiewicz (PL) inequality, with explicit constants depending only on the problem primitives. These results are obtained by functional-analytic techniques exploiting that near the optimum, the argument of the positive part function is positive on the interior of the support of the optimal coupling. As applications, we derive linear convergence of the gradient ascent, coordinate ascent, and coordinate gradient ascent algorithms on the dual problem, with explicit contraction rates.",
+  "hit_queries": [
+   "all:\"optimal transport\" AND all:\"error bound\" AND (all:dual OR all:certificate)"
+  ]
+ },
+ {
+  "arxiv": "2605.26078",
+  "title": "Global Convergence of Wasserstein Policy Gradient for Entropy-Regularized Reinforcement Learning",
+  "authors": [
+   "Zhaoyu Zhu",
+   "Rui Gao",
+   "Shuang Li"
+  ],
+  "published": "2026-05-25",
+  "updated": "2026-06-08",
+  "comment": "",
+  "journal_ref": "",
+  "primary": "cs.LG",
+  "abstract": "Wasserstein policy gradient (WPG) is a policy optimization method for reinforcement learning (RL) that exploits the optimal-transport geometry of action distributions. For the entropy-regularized RL objective, WPG evolves each state-conditional policy by transporting it along the action gradient of the soft Q-function together with a Langevin-type diffusion. Despite its appeal for continuous-control problems, its global convergence properties remain poorly understood. Standard Langevin analyses do not directly apply, because the RL objective depends on the policy through the Bellman recursion rather than through a static convex functional, and the Langevin drift is determined by the soft Q-function, whose regularity must be controlled along the policy iterates. In this paper, we develop a global convergence theory for WPG by exploiting the Bellman structure of entropy-regularized RL. We show that the role usually played by convexity can be replaced by a Bellman-based argument: the soft Bellman residual admits a statewise KL representation with respect to a Gibbs policy; Bellman contraction relates this residual to the global optimality gap; and a Bellman resolvent identity connects value improvement to relative Fisher information. Combined with a uniform log-Sobolev inequality (LSI) for the evolving Gibbs family, these ingredients yield a distributional Polyak--Łojasiewicz condition. We further establish the regularity and uniform bounds needed to control the discretization error, thereby obtaining geometric contraction up to a discretization bias. Conceptually, our analysis shows that although entropy-regularized RL is not convex in the usual flat sense, the Bellman recursion induces a favorable Polyak--Lojasiewicz-type (PL) geometry that supports global convergence of WPG.",
+  "hit_queries": [
+   "all:\"optimal transport\" AND all:\"reinforcement learning\" AND (all:graph OR all:discrete)"
+  ]
+ },
+ {
+  "arxiv": "2605.20883",
+  "title": "Learning fMRI activations dictionaries across individual geometries via optimal transport",
+  "authors": [
+   "Sonia Mazelet",
+   "Rémi Flamary",
+   "Bertrand Thirion"
+  ],
+  "published": "2026-05-20",
+  "updated": "2026-05-20",
+  "comment": "",
+  "journal_ref": "",
+  "primary": "cs.LG",
+  "abstract": "Dictionary learning is a powerful tool for creating interpretable representations. When applied to functional magnetic resonance imaging (fMRI) data, the resulting patterns of brain activity can be used for various downstream tasks, such as brain state classification or population-level analysis. However, a major challenge is the variability in brain geometry across individuals. This is usually addressed by projecting each individual brain geometry onto a common template, which removes subject-specific information. In this work, we introduce a novel approach to dictionary learning on fMRI data that explicitly accounts for this variability. We use the optimal transport-based Fused Gromov-Wasserstein (FGW) distance to compare graphs with different geometries and features. To address the challenge of computing multiple FGW distances for large graphs such as those arising from fMRI data, we rely on amortized optimization to learn a neural network that predicts an approximation of the optimal transport plans, which substantially reduces the computational cost. Additionally, we learn dictionary atoms that depend on the FGW trade-off parameter, which controls the balance between feature alignment and structural consistency. Numerical experiments on the HCP dataset demonstrate that the proposed approach captures different levels of geometric variability in the data and provides representations that preserve essential information.",
+  "hit_queries": [
+   "all:\"optimal transport\" AND all:graph AND (all:neural OR all:learning) AND all:plan",
+   "all:\"optimal transport\" AND all:graphs AND all:\"neural\"",
+   "all:\"amortized\" AND all:\"optimal transport\""
+  ]
+ },
+ {
+  "arxiv": "2605.08793",
+  "title": "cuRegOT: A GPU-Accelerated Solver for Entropic-Regularized Optimal Transport",
+  "authors": [
+   "Yixuan Qiu"
+  ],
+  "published": "2026-05-09",
+  "updated": "2026-05-09",
+  "comment": "",
+  "journal_ref": "",
+  "primary": "cs.MS",
+  "abstract": "Optimal transport (OT) has emerged as a fundamental tool in modern machine learning, yet its computational cost remains a significant bottleneck for large-scale applications. While harnessing the massive parallelism of modern GPU hardware is critical for efficiency, the de facto standard Sinkhorn algorithm, despite its ease of parallelization, often suffers from slow convergence in challenging problems. More recently, the sparse-plus-low-rank quasi-Newton method offers a balance between convergence rate and per-iteration complexity; however, its efficiency on GPUs is severely hindered by the serial nature of sparse matrix symbolic analysis and irregular memory access patterns. To bridge this gap, we present cuRegOT, a high-performance GPU solver tailored for entropic-regularized OT. We introduce a suite of algorithmic and architectural optimizations, including an amortized symbolic analysis strategy to mitigate CPU bottlenecks, an asynchronous Sinkhorn iterates generation mechanism, and a fused kernel for bandwidth-efficient gradient evaluation. These strategies are backed by rigorous theoretical guarantees ensuring algorithmic convergence. Extensive numerical experiments demonstrate that cuRegOT achieves significant speedups over state-of-the-art GPU-based solvers across a variety of benchmark tasks.",
+  "hit_queries": [
+   "all:\"amortized\" AND all:\"optimal transport\""
+  ]
+ },
+ {
+  "arxiv": "2605.08273",
+  "title": "Efficient Prompt Learning for Traffic Forecasting",
+  "authors": [
+   "Qianru Zhang",
+   "Xinyi Gao",
+   "Alexander Zhou",
+   "Reynold Cheng",
+   "Siu-Ming Yiu",
+   "Hongzhi Yin"
+  ],
+  "published": "2026-05-08",
+  "updated": "2026-05-08",
+  "comment": "24 pages. This paper is accepted by VLDBJ",
+  "journal_ref": "The VLDB Journal of 2026",
+  "primary": "cs.LG",
+  "abstract": "Accurate traffic prediction is essential for optimizing transportation systems, enhancing resource allocation, and improving overall urban administration. Spatio-temporal graph neural networks (GNNs) have achieved state-of-the-art performance and have been widely used in various spatio-temporal prediction scenarios. However, these prediction methods often exhibit low generalization ability, struggling with distribution shifts caused by spatio-temporal dynamics. To address this challenge, we propose an approach to enhance the generalization and adaptation of spatio-temporal GNNs through efficient prompting. Specifically, we introduce a lightweight and model-agnostic prompt tuning framework for spatio-temporal GNNs, named SimpleST. It facilitates adapting pre-trained spatio-temporal GNNs to novel distributions while keeping the model parameters fixed. This prompt mechanism reduces the overhead and complexity of adaptation, enabling efficient utilization of pre-trained models for out-of-distribution generalization. Extensive experiments conducted on five real-world urban spatio-temporal datasets demonstrate the superiority of our approach in terms of prediction accuracy and computational efficiency.",
+  "hit_queries": [
+   "all:\"optimal transport\" AND all:graphs AND all:\"neural\""
+  ]
+ },
+ {
+  "arxiv": "2605.06829",
+  "title": "A Unified Measure-Theoretic View of Diffusion, Score-Based, and Flow Matching Generative Models",
+  "authors": [
+   "Aditya Ranganath",
+   "Mukesh Singhal"
+  ],
+  "published": "2026-05-07",
+  "updated": "2026-05-07",
+  "comment": "62 pages, 1 figure, jmlr preprint",
+  "journal_ref": "",
+  "primary": "cs.LG",
+  "abstract": "We survey continuous-time generative modeling methods based on transporting a simple reference distribution to a data distribution via stochastic or deterministic dynamics. We present a unified framework in which diffusion models, score-based generative models, and flow matching are instances of learning a time-dependent vector field that induces a family of marginals $(ρ_t)_{t \\in [0,1]}$ governed by continuity and Fokker-Planck equations. Such a unified theory is timely because these methods are converging methodologically, yet fragmented notation and competing derivations continue to obscure their shared structure and the practical tradeoffs governing sampling, stability, and computation. Within this framework, we (i) derive reverse-time sampling for diffusion and score-based models as controlled stochastic dynamics, (ii) show that the probability flow ODE yields identical marginals and connects diffusion to likelihood-based normalizing flows, and (iii) interpret flow matching as direct regression of the velocity field under a chosen interpolation, clarifying when it coincides with or differs from score-based training. We compare objectives, sampling schemes, and discretization errors under unified notation, discuss connections to Schrodinger bridges and entropic optimal transport, and summarize theoretical guarantees and open problems on approximation, stability, and scalability.",
+  "hit_queries": [
+   "all:\"Schrodinger bridge\" AND (all:discrete OR all:graph OR all:graphs)",
+   "all:\"entropic optimal transport\" AND all:discrete"
+  ]
+ },
+ {
+  "arxiv": "2605.08254",
+  "title": "HyperTransport: Amortized Conditioning of T2I Generative Models",
+  "authors": [
+   "Valentino Maiorca",
+   "Eleonora Gualdoni",
+   "Xavier Suau",
+   "Marco Cuturi",
+   "Luca Zappella",
+   "Pau Rodríguez"
+  ],
+  "published": "2026-05-07",
+  "updated": "2026-05-07",
+  "comment": "",
+  "journal_ref": "",
+  "primary": "cs.LG",
+  "abstract": "As foundation models grow in capability, the ability to efficiently and reliably control their behavior becomes critical. Fine-tuning these models can be costly, and while prompting can be practical for controllability, it remains fragile due to models' high sensitivity to exact prompt wording and structure. This brittleness has driven interest in activation steering techniques that offer more stable and predictable control over model behavior. However, existing activation steering methods require per-concept optimization, which makes them ill-suited to deployment scenarios where the concept set is large, evolving, or only specified at request time: each new concept incurs at least minutes of optimization on the target model. We propose HyperTransport, a hypernetwork framework that amortizes this cost by mapping embeddings from a pretrained encoder (CLIP in our instantiation) directly to intervention parameters, trained end-to-end using an optimal transport loss. Once trained, HyperTransport produces each new intervention in a single hypernetwork forward pass, 3600-7000x faster than per-concept fitting. On concepts unseen during training, it matches the strongest per-concept baselines at inducing the target concept. By decoupling concept representation from intervention prediction, HyperTransport combines three capabilities that no existing approach offers as a set: amortized steering for open-ended concept sets, continuous interpretable strength control, and cross-modal conditioning where reference images can directly steer text-based generation. We validate HyperTransport on DMD2 and Nitro-1-PixArt across 167 held-out test concepts via CLIP-based metrics, a VLM-as-a-judge evaluation, and a user study. In pairwise comparisons, both human and VLM judges prefer HyperTransport over prompting ~2x as often.",
+  "hit_queries": [
+   "all:\"amortized\" AND all:\"optimal transport\""
+  ]
+ },
+ {
+  "arxiv": "2605.04255",
+  "title": "Entropic Riemannian Neural Optimal Transport",
+  "authors": [
+   "Alessandro Micheli",
+   "Silvia Sapora",
+   "Anthea Monod",
+   "Samir Bhatt"
+  ],
+  "published": "2026-05-05",
+  "updated": "2026-05-05",
+  "comment": "",
+  "journal_ref": "",
+  "primary": "stat.ML",
+  "abstract": "Many machine learning problems involve data supported on curved spaces such as spheres, rotation groups, hyperbolic spaces, and general Riemannian manifolds, where Euclidean geometry can distort distances, averages, and the resulting optimal transport (OT) problem. Existing manifold OT methods have pursued amortized out-of-sample maps, while entropic regularization has made discrete OT more scalable, but these advantages have remained largely disjoint. We propose Entropic Riemannian Neural Optimal Transport (Entropic RNOT), a unified framework that combines intrinsic entropic OT with amortized out-of-sample evaluation on Riemannian manifolds. Our method learns a single target-side Schrödinger potential through a neural pullback parameterization, recovers the induced Gibbs coupling, and uses the resulting conditional laws to construct intrinsic transport surrogates. These include barycentric projections on Cartan-Hadamard manifolds and heat-smoothed conditional surrogates on stochastically complete manifolds, the latter turning possibly atomic target laws into absolutely continuous ones. For fixed regularization $\\varepsilon>0$, we prove that the proposed hypothesis class recovers the entropic optimal coupling in strong probabilistic metrics. As consequences, barycentric surrogates converge in $L^2$, while heat-smoothed surrogates are stable at fixed heat time and asymptotically unbiased as the heat time vanishes. The guarantees hold for compactly supported data on possibly noncompact manifolds. Empirically, our method matches or improves over Euclidean, tangent-space, and log-Euclidean baselines on benchmarks over $\\mathbb{S}^2$, $\\mathrm{SO}(3)$, $\\mathrm{SPD}(3)$, $\\mathrm{SE}(3)$, and $\\mathbb{H}^2$, scales favorably relative to discrete manifold Sinkhorn, and in a protein-ligand docking application, refines poses on $\\mathrm{SE}(3)$ without retraining or per-instance optimization.",
+  "hit_queries": [
+   "all:\"amortized\" AND all:\"optimal transport\""
+  ]
+ },
+ {
+  "arxiv": "2605.02497",
+  "title": "Closed Forms for Gaussian Kullback--Leibler Unbalanced Optimal Transport without Coupling Entropy",
+  "authors": [
+   "Jiaping Yang",
+   "Yunxin Zhang"
+  ],
+  "published": "2026-05-04",
+  "updated": "2026-05-04",
+  "comment": "",
+  "journal_ref": "",
+  "primary": "math.OC",
+  "abstract": "We obtain an explicit solution for the static Kullback--Leibler (KL) unbalanced optimal transport problem between finite non-degenerate Gaussian measures with quadratic cost, two independent positive marginal relaxation parameters, and no entropy penalty on the coupling. The minimizer is a scaled Wasserstein coupling between two adjusted Gaussian marginals and is supported on an affine graph; in entropic Gaussian unbalanced transport, by contrast, the optimal plan is non-degenerate on the product space. The covariance map is the unique positive definite solution of a Riccati equation and admits a principal-square-root representation. Compared with the known equal-penalty Gaussian Hellinger--Kantorovich endpoint, the result treats the asymmetric two-sided Kullback--Leibler relaxation and gives the modified marginals, joint minimizer, value, and a direct quadratic KL-dual certificate. The large-relaxation limit recovers the Gaussian Wasserstein cost for equal masses.",
+  "hit_queries": [
+   "all:\"unbalanced optimal transport\" AND (all:graph OR all:neural)"
+  ]
+ },
+ {
+  "arxiv": "2604.22366",
+  "title": "Statistical Estimation of Monge Transport Maps via Brenier Potentials",
+  "authors": [
+   "Elsa Cazelles",
+   "Edouard Pauwels",
+   "Léo Portales"
+  ],
+  "published": "2026-04-24",
+  "updated": "2026-04-24",
+  "comment": "",
+  "journal_ref": "",
+  "primary": "math.OC",
+  "abstract": "We introduce and analyze a statistical estimator for Monge transport maps: solutions to the quadratic optimal transport problem in Euclidean space. For absolutely continuous source measures, this map is uniquely defined as the gradient of a convex function, a result known as Brenier's theorem. Without absolute continuity, the problem is relaxed, maps are replaced by coupling measures, and optimal couplings are supported on the subdifferential of a convex function, a Brenier potential. This characterization is the basis for our statistical estimator of Monge transport maps for measures known only through finite samples. The resulting Brenier potential has a simple closed-form expression based on the dual solution of the discrete sampled problem. In particular, our methodology does not rely on smoothness or continuity of the Monge transport map and requires no computation beyond primal-dual solutions of the discrete finite-dimensional problem. We exhibit convergence rates for this estimator based on a new error bound for the quadratic optimal transport problem. In the semi-discrete setting, where the target measure is finitely supported, our estimator enjoys sharper convergence rates. Finally, using similar proof techniques, we provide a novel convergence rate for empirical couplings.",
+  "hit_queries": [
+   "all:\"optimal transport\" AND all:\"error bound\" AND (all:dual OR all:certificate)"
+  ]
+ },
+ {
+  "arxiv": "2604.15114",
+  "title": "Amortized Optimal Transport from Sliced Potentials",
+  "authors": [
+   "Minh-Phuc Truong",
+   "Khai Nguyen"
+  ],
+  "published": "2026-04-16",
+  "updated": "2026-04-16",
+  "comment": "26 pages, 11 figures, 10 tables",
+  "journal_ref": "",
+  "primary": "stat.ML",
+  "abstract": "We propose a novel amortized optimization method for predicting optimal transport (OT) plans across multiple pairs of measures by leveraging Kantorovich potentials derived from sliced OT. We introduce two amortization strategies: regression-based amortization (RA-OT) and objective-based amortization (OA-OT). In RA-OT, we formulate a functional regression model that treats Kantorovich potentials from the original OT problem as responses and those obtained from sliced OT as predictors, and estimate these models via least-squares methods. In OA-OT, we estimate the parameters of the functional model by optimizing the Kantorovich dual objective. In both approaches, the predicted OT plan is subsequently recovered from the estimated potentials. As amortized OT methods, both RA-OT and OA-OT enable efficient solutions to repeated OT problems across different measure pairs by reusing information learned from prior instances to rapidly approximate new solutions. Moreover, by exploiting the structure provided by sliced OT, the proposed models are more parsimonious, independent of specific structures of the measures, such as the number of atoms in the discrete case, while achieving high accuracy. We demonstrate the effectiveness of our approaches on tasks including MNIST digit transport, color transfer, supply-demand transportation on spherical data, and mini-batch OT conditional flow matching.",
+  "hit_queries": [
+   "all:\"amortized\" AND all:\"optimal transport\""
+  ]
+ },
+ {
+  "arxiv": "2605.08098",
+  "title": "Reinforcement learning for inverse structural design and rapid laser cutting of kirigami prototypes",
+  "authors": [
+   "Milad Yazdani",
+   "Shahriar Shalileh",
+   "Dena Shahriari"
+  ],
+  "published": "2026-04-16",
+  "updated": "2026-04-16",
+  "comment": "",
+  "journal_ref": "Materials & Design (2026), Article 116545",
+  "primary": "cs.LG",
+  "abstract": "Kirigami is an increasingly useful fabrication method to produce shape-programmable metamaterial structures. However, inverse design remains difficult because deployment is nonlinear, and feasible cut layouts must satisfy discrete compatibility rules, avoid overlap, and map one target shape to valid designs. We present RL-Kirigami, an inverse design framework that combines optimal-transport conditional flow matching (OT-CFM) with reinforcement learning to generate compatible ratio fields for compact reconfigurable parallelogram quad kirigami. A marching decoder enforces global geometric compatibility, and Group Relative Policy Optimization (GRPO) aligns the generator with nondifferentiable rewards for silhouette matching, feasibility, and ratio-field regularity. Across procedurally generated target shape instances, a single sample from the pretrained OT-CFM prior reached $94.2%$ sIoU and outperformed solver baselines while reducing forward simulator evaluations from hundreds to 1. GRPO improved accuracy to $94.91%$ sIoU and, with regularity included, reduced $\\mathrm{TV}(\\mathbf{x})$ from 0.95 to 0.81 while maintaining $94.83%$ sIoU. Generated layouts were exported to DXF and laser-cut in $50~μ\\mathrm{m}$ polymeric sheets to produce deployable prototypes in $8.0 \\pm 1.0$ minutes per part. These results support a manufacturing-aware inverse design workflow for deployable kirigami metamaterials under hard geometric feasibility constraints.",
+  "hit_queries": [
+   "all:\"optimal transport\" AND all:\"reinforcement learning\" AND (all:graph OR all:discrete)"
+  ]
+ },
+ {
+  "arxiv": "2604.14265",
+  "title": "Reinforcement Learning via Value Gradient Flow",
+  "authors": [
+   "Haoran Xu",
+   "Kaiwen Hu",
+   "Somayeh Sojoudi",
+   "Amy Zhang"
+  ],
+  "published": "2026-04-15",
+  "updated": "2026-04-15",
+  "comment": "ICLR 2026",
+  "journal_ref": "",
+  "primary": "cs.LG",
+  "abstract": "We study behavior-regularized reinforcement learning (RL), where regularization toward a reference distribution (the dataset in offline RL or the base model in LLM RL finetuning) is essential to prevent value over-optimization caused by erroneous out-of-distribution extrapolation. Existing methods either rely on reparameterized policy gradient, which are difficult to scale to large generative models, or on reject sampling, which can be overly conservative when attempting to move beyond the behavior support. In this paper, we propose Value Gradient Flow (VGF), a scalable new paradigm for behavior-regularized RL. VGF casts behavior-regularized RL as an optimal transport problem that maps the reference distribution to the value-induced optimal policy distribution. We solve this transport problem via discrete gradient flow, where value gradients guide particles initialized from the reference distribution. Our analysis shows that VGF imposes regularization implicitly by controlling the transport budget. VGF eliminates explicit policy parameterization while remaining expressive and flexible, this enables adaptive test-time scaling by adjusting the transport budget. Extensive experiments demonstrate that VGF significantly outperforms prior methods, achieving state-of-the-art results on offline RL benchmarks (D4RL, OGBench) and LLM RL tasks. Code and runs can be found at https://ryanxhr.github.io/vgf.",
+  "hit_queries": [
+   "all:\"optimal transport\" AND all:\"reinforcement learning\" AND (all:graph OR all:discrete)"
+  ]
+ },
+ {
+  "arxiv": "2604.14211",
+  "title": "Ollivier-Ricci Curvature of Riemannian Manifolds and Directed Graphs with Applications to Graph Neural Networks",
+  "authors": [
+   "Eleanor P Wiesler"
+  ],
+  "published": "2026-04-06",
+  "updated": "2026-08-24",
+  "comment": "",
+  "journal_ref": "",
+  "primary": "math.DG",
+  "abstract": "This thesis is an exposition of Ollivier-Ricci Curvature of metric spaces as introduced by Yann Ollivier, which is based upon the 1-Wasserstein Distance and optimal transport theory. We present some of the major results and proofs that connect Ollivier-Ricci curvature with classical Ricci curvature of Riemannian manifolds, including extensions of various theoretical bounds and theorems such as Bonnet-Myers and Levy-Gromov. Then we shift to results introduced by Lin-Lu-Yau on an extension of Ollivier-Ricci curvature on graphs, as well as the work of Jost-Liu on proving various combinatorial bounds for graph Ollivier-Ricci curvature. At the end of this thesis we present novel ideas and proofs regarding extensions of these results to directed graphs, and finally applications of graph-based Ollivier-Ricci curvature to various algorithms in network science and graph machine learning.",
+  "hit_queries": [
+   "all:\"optimal transport\" AND all:graphs AND all:\"neural\""
+  ]
+ },
+ {
+  "arxiv": "2604.01144",
+  "title": "Schrodinger Bridges and Density Steering Problems for Gaussian Mixtures Models in Discrete-Time",
+  "authors": [
+   "George Rapakoulias",
+   "Fengjiao Liu",
+   "Panagiotis Tsiotras"
+  ],
+  "published": "2026-04-01",
+  "updated": "2026-04-01",
+  "comment": "",
+  "journal_ref": "",
+  "primary": "eess.SY",
+  "abstract": "In this work, we revisit the discrete-time Schrödinger Bridge (SB) and Density Steering (DS) problems for Gaussian mixture model (GMM) boundary distributions. Building on the existing literature, we construct a set of feasible Markovian policies that transport the initial distribution to the final distribution, and are expressed as mixtures of elementary component-to-component optimal policies. We then study the policy optimization within this feasible set in the context of discrete-time SBs and density-steering problems, respectively. We show that for minimum-effort density-steering problems, the proposed policy achieves the same control cost as existing approaches in the literature. For discrete-time SB problems, the proposed policy yields a cost smaller than or equal to that in the literature, resulting in a less conservative approximation. Finally, we study the continuous-time limit of our proposed discrete-time approach and show that it agrees with recently proposed approximations to the continuous-time SB for GMM boundary distributions. We illustrate this new result through two numerical examples.",
+  "hit_queries": [
+   "all:\"Schrodinger bridge\" AND (all:discrete OR all:graph OR all:graphs)"
+  ]
+ },
+ {
+  "arxiv": "2603.22564",
+  "title": "MIOFlow 2.0: A unified framework for inferring cellular stochastic dynamics from single cell and spatial transcriptomics data",
+  "authors": [
+   "Xingzhi Sun",
+   "João Felipe Rocha",
+   "Brett Phelan",
+   "Dhananjay Bhaskar",
+   "Guillaume Huguet",
+   "Yanlei Zhang",
+   "Alexander Tong",
+   "Ke Xu",
+   "Oluwadamilola Fasina",
+   "Mark Gerstein",
+   "Natalia Ivanova",
+   "Christine L. Chaffer",
+   "Guy Wolf",
+   "Smita Krishnaswamy"
+  ],
+  "published": "2026-03-23",
+  "updated": "2026-04-15",
+  "comment": "",
+  "journal_ref": "",
+  "primary": "cs.LG",
+  "abstract": "Understanding cellular trajectories via time-resolved single-cell transcriptomics is vital for studying development, regeneration, and disease. A key challenge is inferring continuous trajectories from discrete snapshots. Biological complexity stems from stochastic cell fate decisions, temporal proliferation changes, and spatial environmental influences. Current methods often use deterministic interpolations treating cells in isolation, failing to capture the probabilistic branching, population shifts, and niche-dependent signaling driving real biological processes. We introduce Manifold Interpolating Optimal-Transport Flow (MIOFlow) 2.0. This framework learns biologically informed cellular trajectories by integrating manifold learning, optimal transport, and neural differential equations. It models three core processes: (1) stochasticity and branching via Neural Stochastic Differential Equations; (2) non-conservative population changes using a learned growth-rate model initialized with unbalanced optimal transport; and (3) environmental influence through a joint latent space unifying gene expression with spatial features like local cell type composition and signaling. By operating in a PHATE-distance matching autoencoder latent space, MIOFlow 2.0 ensures trajectories respect the data's intrinsic geometry. Empirical comparisons show expressive trajectory learning via neural differential equations outperforms existing generative models, including simulation-free flow matching. Validated on synthetic datasets, embryoid body differentiation, and spatially resolved axolotl brain regeneration, MIOFlow 2.0 improves trajectory accuracy and reveals hidden drivers of cellular transitions, like specific signaling niches. MIOFlow 2.0 thus bridges single-cell and spatial transcriptomics to uncover tissue-scale trajectories.",
+  "hit_queries": [
+   "all:\"unbalanced optimal transport\" AND (all:graph OR all:neural)"
+  ]
+ },
+ {
+  "arxiv": "2603.19755",
+  "title": "Regularity of Solutions to Beckmann's Parametric Optimal Transport",
+  "authors": [
+   "Hanno Gottschalk",
+   "Tobias J. Riedlinger"
+  ],
+  "published": "2026-03-20",
+  "updated": "2026-03-20",
+  "comment": "arXiv admin note: text overlap with arXiv:2503.10729",
+  "journal_ref": "",
+  "primary": "math.AP",
+  "abstract": "Beckmann's problem in optimal transport minimizes the total squared flux in a continuous transport problem from a source to a target distribution. In this article, the regularity theory for solutions to Beckmann's problem in optimal transport is developed utilizing an unconstrained Lagrangian formulation and solving the variational first order optimality conditions. It turns out that the Lagrangian multiplier that enforces Beckmann's divergence constraint fulfills a Poisson equation and the flux vector field is obtained as the potential's gradient. Utilizing Schauder estimates from elliptic regularity theory, the exact Hölder regularity of the potential, the flux and the flow generating is derived on the basis of Hölder regularity of source and target densities on a bounded, regular domain. If the target distribution depends on parameters, as is the case in conditional (``promptable'') generative learning, we provide sufficient conditions for separate and joint Hölder continuity of the resulting vector field in the parameter and the data dimension. Following a recent result by Belomnestny et al., one can thus approximate such vector fields with deep ReQu neural networks in C^(k,alpha)-Hölder norm. We also show that this approach generalizes to other probability paths, like Fisher-Rao gradient flows.",
+  "hit_queries": [
+   "all:Beckmann AND all:\"optimal transport\""
+  ]
+ },
+ {
+  "arxiv": "2603.12366",
+  "title": "Sinkhorn-Drifting Generative Models",
+  "authors": [
+   "Ping He",
+   "Om Khangaonkar",
+   "Hamed Pirsiavash",
+   "Yikun Bai",
+   "Soheil Kolouri"
+  ],
+  "published": "2026-03-12",
+  "updated": "2026-03-26",
+  "comment": "",
+  "journal_ref": "",
+  "primary": "cs.LG",
+  "abstract": "We establish a theoretical link between the recently proposed \"drifting\" generative dynamics and gradient flows induced by the Sinkhorn divergence. In a particle discretization, the drift field admits a cross-minus-self decomposition: an attractive term toward the target distribution and a repulsive/self-correction term toward the current model, both expressed via one-sided normalized Gibbs kernels. We show that Sinkhorn divergence yields an analogous cross-minus-self structure, but with each term defined by entropic optimal-transport couplings obtained through two-sided Sinkhorn scaling (i.e., enforcing both marginals). This provides a precise sense in which drifting acts as a surrogate for a Sinkhorn-divergence gradient flow, interpolating between one-sided normalization and full two-sided Sinkhorn scaling. Crucially, this connection resolves an identifiability gap in prior drifting formulations: leveraging the definiteness of the Sinkhorn divergence, we show that zero drift (equilibrium of the dynamics) implies that the model and target measures match. Experiments show that Sinkhorn drifting reduces sensitivity to kernel temperature and improves one-step generative quality, trading off additional training time for a more stable optimization, without altering the inference procedure used by drift methods. These theoretical gains translate to strong low-temperature improvements in practice: on FFHQ-ALAE at the lowest temperature setting we evaluate, Sinkhorn drifting reduces mean FID from 187.7 to 37.1 and mean latent EMD from 453.3 to 144.4, while on MNIST it preserves full class coverage across the temperature sweep. Project page: https://mint-vu.github.io/SinkhornDrifting/",
+  "hit_queries": [
+   "all:\"entropic optimal transport\" AND all:discrete"
+  ]
+ },
+ {
+  "arxiv": "2602.23566",
+  "title": "Flowette: Flow Matching with Graphette Priors for Graph Generation",
+  "authors": [
+   "Asiri Wijesinghe",
+   "Sevvandi Kandanaarachchi",
+   "Daniel M. Steinberg",
+   "Cheng Soon Ong"
+  ],
+  "published": "2026-02-27",
+  "updated": "2026-05-18",
+  "comment": "48 Pages",
+  "journal_ref": "",
+  "primary": "cs.LG",
+  "abstract": "We study generative modeling of graphs with recurring subgraph motifs. We propose Flowette, a continuous flow matching framework that employs a graph neural network-based transformer to learn a velocity field over graph representations with node and edge attributes. Our model promotes topology-aware alignment through optimal transport-based coupling and encourages global structural coherence through regularisation. To incorporate domain-driven structural priors, we introduce graphettes, a new probabilistic family of graph structure models that generalize graphons via controlled structural edits for motifs such as rings, stars, and trees. We theoretically analyze the coupling, invariance, and structural properties of the framework, evaluate it on synthetic and molecular benchmarks, and isolate the contributions of the structural prior, the optimal-transport coupling, and the regularisation terms through controlled ablations. Flowette achieves competitive performance overall, attaining state-of-the-art results on several metrics across multiple benchmarks, highlighting the effectiveness of combining structural priors with flow-based training for modeling complex graph distributions.",
+  "hit_queries": [
+   "all:\"optimal transport\" AND all:graphs AND all:\"neural\""
+  ]
+ },
+ {
+  "arxiv": "2602.22052",
+  "title": "AutoSew: A Geometric Approach to Stitching Prediction with Graph Neural Networks",
+  "authors": [
+   "Pablo Ríos-Navarro",
+   "Elena Garces",
+   "Jorge Lopez-Moreno"
+  ],
+  "published": "2026-02-25",
+  "updated": "2026-02-25",
+  "comment": "WACV 2026",
+  "journal_ref": "",
+  "primary": "cs.CV",
+  "abstract": "Automating garment assembly from sewing patterns remains a significant challenge due to the lack of standardized annotation protocols and the frequent absence of semantic cues. Existing methods often rely on panel labels or handcrafted heuristics, which limit their applicability to real-world, non-conforming patterns. We present AutoSew, a fully automatic, geometry-based approach for predicting stitch correspondences directly from 2D pattern contours. AutoSew formulates the problem as a graph matching task, leveraging a Graph Neural Network to capture local and global geometric context, and employing a differentiable optimal transport solver to infer stitching relationships-including multi-edge connections. To support this task, we update the GarmentCodeData dataset modifying over 18k patterns with realistic multi-edge annotations, reflecting industrial assembly scenarios. AutoSew achieves 96% F1-score and successfully assembles 73.3% of test garments without error, outperforming existing methods while relying solely on geometric input. Our results demonstrate that geometry alone can robustly guide stitching prediction, enabling scalable garment assembly without manual input.",
+  "hit_queries": [
+   "all:\"optimal transport\" AND all:graphs AND all:\"neural\""
+  ]
+ },
+ {
+  "arxiv": "2602.22036",
+  "title": "Discovering new photovoltaics using optimal transport theory",
+  "authors": [
+   "Matthew A. H. Walker",
+   "Zibo Zhou",
+   "Junayd Ul Islam",
+   "Keith T. Butler"
+  ],
+  "published": "2026-02-25",
+  "updated": "2026-02-26",
+  "comment": "",
+  "journal_ref": "",
+  "primary": "cond-mat.mtrl-sci",
+  "abstract": "Searching by chemical and structural analogy is one of the most commonly used and successful approaches to materials discovery. However, formulating this task for algorithmic implementation raises the question of how we define similar materials. Methods have been proposed for searching materials space using vectors based on chemical composition and functional fragments in the material. Descriptors for structural similarity have also been proposed. However, the question of how to incorporate and balance structural and compositional similarity measures in a single metric remains open. Here, we adapt methods developed for calculating distances between undirected graphs and apply them to crystalline materials similarity. The Fused Gromov-Wasserstein (FGW) metric uses optimal transport theory to map between two graphs considering a balance of the graph structure and the information present at the nodes of the graph (atoms in crystals). We apply the method to exploring new photovoltaic materials. We demonstrate that FGW is competitive with embeddings from an equivariant graph neural network, trained on $> 10^6$ materials, despite minimal training. We then apply FGW to a discovery campaign to identify materials from the Materials Project database that have not previously been explored as photovoltaics, but have similarities to known high-efficiency materials. After validating predictions with hybrid density functional theory, we identify seven previously unexplored high-efficiency photovoltaic absorber candidates, including Cs$_5$Sb$_8$, which is found to have a predicted SLME of $> 30\\%$ and to be thermodynamically stable. The FGW approach demonstrates the power of strong inductive biases for developing metrics for materials exploration with minimal training data.",
+  "hit_queries": [
+   "all:\"optimal transport\" AND all:graphs AND all:\"neural\""
+  ]
+ },
+ {
+  "arxiv": "2602.13418",
+  "title": "Text Has Curvature",
+  "authors": [
+   "Karish Grover",
+   "Hanqing Zeng",
+   "Yinglong Xia",
+   "Christos Faloutsos",
+   "Geoffrey J. Gordon"
+  ],
+  "published": "2026-02-13",
+  "updated": "2026-02-13",
+  "comment": "",
+  "journal_ref": "",
+  "primary": "cs.LG",
+  "abstract": "Does text have an intrinsic curvature? Language is increasingly modeled in curved geometries - hyperbolic spaces for hierarchy, mixed-curvature manifolds for compositional structure - yet a basic scientific question remains unresolved: what does curvature mean for text itself, in a way that is native to language rather than an artifact of the embedding space we choose? We argue that text does indeed have curvature, and show how to detect it, define it, and use it. To this end, we propose Texture, a text-native, word-level discrete curvature signal, and make three contributions. (a) Existence: We provide empirical and theoretical certificates that semantic inference in natural corpora is non-flat, i.e. language has inherent curvature. (b) Definition: We define Texture by reconciling left- and right-context beliefs around a masked word through a Schrodinger bridge, yielding a curvature field that is positive where context focuses meaning and negative where it fans out into competing continuations. (c) Utility: Texture is actionable: it serves as a general-purpose measurement and control primitive enabling geometry without geometric training; we instantiate it on two representative tasks, improving long-context inference through curvature-guided compression and retrieval-augmented generation through curvature-guided routing. Together, our results establish a text-native curvature paradigm, making curvature measurable and practically useful.",
+  "hit_queries": [
+   "all:\"Schrodinger bridge\" AND (all:discrete OR all:graph OR all:graphs)"
+  ]
+ },
+ {
+  "arxiv": "2602.09933",
+  "title": "Unbalanced optimal transport for robust longitudinal lesion evolution with registration-aware and appearance-guided priors",
+  "authors": [
+   "Melika Qahqaie",
+   "Dominik Neumann",
+   "Tobias Heimann",
+   "Andreas Maier",
+   "Veronika A. Zimmer"
+  ],
+  "published": "2026-02-10",
+  "updated": "2026-02-10",
+  "comment": "This work has been submitted to the IEEE for possible publication. Accepted at the IEEE International Symposium on Biomedical Imaging (ISBI) 2026",
+  "journal_ref": "",
+  "primary": "cs.CV",
+  "abstract": "Evaluating lesion evolution in longitudinal CT scans of can cer patients is essential for assessing treatment response, yet establishing reliable lesion correspondence across time remains challenging. Standard bipartite matchers, which rely on geometric proximity, struggle when lesions appear, disappear, merge, or split. We propose a registration-aware matcher based on unbalanced optimal transport (UOT) that accommodates unequal lesion mass and adapts priors to patient-level tumor-load changes. Our transport cost blends (i) size-normalized geometry, (ii) local registration trust from the deformation-field Jacobian, and (iii) optional patch-level appearance consistency. The resulting transport plan is sparsified by relative pruning, yielding one-to-one matches as well as new, disappearing, merging, and splitting lesions without retraining or heuristic rules. On longitudinal CT data, our approach achieves consistently higher edge-detection precision and recall, improved lesion-state recall, and superior lesion-graph component F1 scores versus distance-only baselines.",
+  "hit_queries": [
+   "all:\"unbalanced optimal transport\" AND (all:graph OR all:neural)"
+  ]
+ },
+ {
+  "arxiv": "2602.08417",
+  "title": "Graph-Loc: Robust Graph-Based LiDAR Pose Tracking with Compact Structural Map Priors under Low Observability and Occlusion",
+  "authors": [
+   "Wentao Zhao",
+   "Yihe Niu",
+   "Zikun Chen",
+   "Rui Li",
+   "Yanbo Wang",
+   "Tianchen Deng",
+   "Jingchuan Wang"
+  ],
+  "published": "2026-02-09",
+  "updated": "2026-07-09",
+  "comment": "",
+  "journal_ref": "",
+  "primary": "cs.RO",
+  "abstract": "Map-based LiDAR pose tracking is essential for long-term autonomous operation, where onboard map priors need be compact for scalable storage and fast retrieval, while online observations are often partial, repetitive, and heavily occluded. We propose Graph-Loc, a graph-based localization framework that tracks the platform pose against compact structural map priors represented as a lightweight point-line graph. Such priors can be constructed from heterogeneous sources commonly available in practice, including polygon outlines vectorized from occupancy/grid maps and CAD/model/floor-plan layouts. For each incoming LiDAR scan, Graph-Loc extracts sparse point and line primitives to form an observation graph, retrieves a pose-conditioned visible subgraph via LiDAR ray simulation, and performs scan-to-map association through unbalanced optimal transport with a local graph-context regularizer. The unbalanced formulation relaxes mass conservation, improving robustness to missing, spurious, and fragmented structures under occlusion. To enhance stability in low-observability segments, we estimate information anisotropy from the refinement normal matrix and defer updates along weakly constrained directions until sufficient constraints reappear. Experiments on public benchmarks, controlled stress tests, and real-world deployments demonstrate accurate and stable tracking with KB-level priors from heterogeneous map sources, including under geometrically degenerate and sustained occlusion and in the presence of gradual scene changes.",
+  "hit_queries": [
+   "all:\"unbalanced optimal transport\" AND (all:graph OR all:neural)"
+  ]
+ },
+ {
+  "arxiv": "2602.04308",
+  "title": "Statistical Mechanics of the Sub-Optimal Transport",
+  "authors": [
+   "Riccardo Piombo",
+   "Lorenzo Buffa",
+   "Dario Mazzilli",
+   "Aurelio Patelli"
+  ],
+  "published": "2026-02-04",
+  "updated": "2026-02-17",
+  "comment": "29 pages, 4 figures",
+  "journal_ref": "",
+  "primary": "cond-mat.stat-mech",
+  "abstract": "Statistical mechanics is a powerful framework for analyzing optimization yielding analytical results for matching, optimal transport, and other combinatorial problems. However, these methods typically target the zero-temperature limit, where systems collapse onto optimal configurations, a.k.a. the ground states. Real-world systems often occupy intermediate regimes where entropy and cost minimization genuinely compete, producing configurations that are structured yet sub-optimal. The Sub-Optimal Transport (SOT) model captures this competition through an ensemble of weighted bipartite graphs: a coupling parameter interpolates between entropy-dominated dense configurations and cost-dominated sparse structures. This crossover has been observed numerically but lacked analytical understanding. Here we develop a mean-field theory that characterizes this transition. We show that local fluctuations in Lagrange multipliers become sub-extensive in the thermodynamic limit, reducing the full model with strength constraints to an effective single-constraint problem admitting an exact solution in some intermediate regime. The resulting free energy is analytic in the coupling parameter, confirming a smooth crossover rather than a phase transition. We derive closed-form expressions for thermodynamic observables and weight distributions, validated against numerical simulations. These results establish the first analytical description of the SOT model, extending statistical mechanics methods beyond the zero-temperature regime.",
+  "hit_queries": [
+   "all:\"optimal transport\" AND all:graphs AND all:\"neural\""
+  ]
+ },
+ {
+  "arxiv": "2602.03970",
+  "title": "Statistical Guarantees for Reasoning Probes on Looped Boolean Circuits",
+  "authors": [
+   "Anastasis Kratsios",
+   "Giulia Livieri",
+   "A. Martina Neuman"
+  ],
+  "published": "2026-02-03",
+  "updated": "2026-05-31",
+  "comment": "",
+  "journal_ref": "",
+  "primary": "stat.ML",
+  "abstract": "We study the statistical behavior of reasoning probes in a stylized model of iterative computation inspired by neural algorithmic reasoning. The underlying computation is given by a looped Boolean circuit whose graph is a perfect $ν$-ary tree ($ν\\ge 2$), with outputs recursively fed back as inputs across computation rounds. A probe observes a sampled subset of internal nodes and seeks to infer the latent operation at each node, represented as a probability distribution over a finite set of admissible Boolean gates. This partial observability induces a transductive generalization problem on a structured computation graph. We show that when the probe is parameterized by a graph convolutional network and queries $N$ nodes, the worst-case generalization error decays at the optimal rate $\\mathcal{O}(\\sqrt{\\log(2/δ)}/\\sqrt{N})$ with probability at least $1-δ$. Our analysis combines metric embedding techniques with tools from optimal transport. A key insight is that this rate is achievable independently of the size of the computation graph, enabled by a low-distortion one-dimensional snowflake embedding of the induced graph metric. These results highlight a geometric mechanism underlying statistical efficiency in probing structured, iterative computations.",
+  "hit_queries": [
+   "all:\"optimal transport\" AND all:graphs AND all:\"neural\""
+  ]
+ },
+ {
+  "arxiv": "2602.03566",
+  "title": "Riemannian Neural Optimal Transport",
+  "authors": [
+   "Alessandro Micheli",
+   "Yueqi Cao",
+   "Anthea Monod",
+   "Samir Bhatt"
+  ],
+  "published": "2026-02-03",
+  "updated": "2026-02-03",
+  "comment": "58 pages",
+  "journal_ref": "",
+  "primary": "cs.LG",
+  "abstract": "Computational optimal transport (OT) offers a principled framework for generative modeling. Neural OT methods, which use neural networks to learn an OT map (or potential) from data in an amortized way, can be evaluated out of sample after training, but existing approaches are tailored to Euclidean geometry. Extending neural OT to high-dimensional Riemannian manifolds remains an open challenge. In this paper, we prove that any method for OT on manifolds that produces discrete approximations of transport maps necessarily suffers from the curse of dimensionality: achieving a fixed accuracy requires a number of parameters that grows exponentially with the manifold dimension. Motivated by this limitation, we introduce Riemannian Neural OT (RNOT) maps, which are continuous neural-network parameterizations of OT maps on manifolds that avoid discretization and incorporate geometric structure by construction. Under mild regularity assumptions, we prove that RNOT maps approximate Riemannian OT maps with sub-exponential complexity in the dimension. Experiments on synthetic and real datasets demonstrate improved scalability and competitive performance relative to discretization-based baselines.",
+  "hit_queries": [
+   "all:\"amortized\" AND all:\"optimal transport\""
+  ]
+ },
+ {
+  "arxiv": "2602.01624",
+  "title": "PISCES: Annotation-free Text-to-Video Post-Training via Optimal Transport-Aligned Rewards",
+  "authors": [
+   "Minh-Quan Le",
+   "Gaurav Mittal",
+   "Cheng Zhao",
+   "David Gu",
+   "Dimitris Samaras",
+   "Mei Chen"
+  ],
+  "published": "2026-02-02",
+  "updated": "2026-06-22",
+  "comment": "Accepted to ICML 2026. Project page and code: https://roar-ai.github.io/pisces/",
+  "journal_ref": "",
+  "primary": "cs.CV",
+  "abstract": "Text-to-video (T2V) generation aims to synthesize videos with high visual quality and temporal consistency that are semantically aligned with input text. Reward-based post-training has emerged as a promising direction to improve the quality and semantic alignment of generated videos. However, recent methods either rely on large-scale human preference annotations or operate on misaligned embeddings from pre-trained vision-language models, leading to limited scalability or suboptimal supervision. We present $\\texttt{PISCES}$, an annotation-free post-training algorithm that addresses these limitations via a novel Dual Optimal Transport (OT)-aligned Rewards module. To align reward signals with human judgment, $\\texttt{PISCES}$ uses OT to bridge text and video embeddings at both distributional and discrete token levels, enabling reward supervision to fulfill two objectives: (i) a Distributional OT-aligned Quality Reward that captures overall visual quality and temporal coherence; and (ii) a Discrete Token-level OT-aligned Semantic Reward that enforces semantic, spatio-temporal correspondence between text and video tokens. To our knowledge, $\\texttt{PISCES}$ is the first to improve annotation-free reward supervision in generative post-training through the lens of OT. Experiments on both short- and long-video generation show that $\\texttt{PISCES}$ outperforms both annotation-based and annotation-free methods on VBench across Quality and Semantic scores, with human preference studies further validating its effectiveness. We show that the Dual OT-aligned Rewards module is compatible with multiple optimization paradigms, including direct backpropagation and reinforcement learning fine-tuning. Project page: https://roar-ai.github.io/pisces",
+  "hit_queries": [
+   "all:\"optimal transport\" AND all:\"reinforcement learning\" AND (all:graph OR all:discrete)"
+  ]
+ },
+ {
+  "arxiv": "2602.00682",
+  "title": "RecGOAT: Graph Optimal Adaptive Transport for LLM-Enhanced Multimodal Recommendation with Dual Semantic Alignment",
+  "authors": [
+   "Yuecheng Li",
+   "Hengwei Ju",
+   "Zeyu Song",
+   "Wei Yang",
+   "Chi Lu",
+   "Peng Jiang",
+   "Kun Gai"
+  ],
+  "published": "2026-01-31",
+  "updated": "2026-05-25",
+  "comment": "Under Review",
+  "journal_ref": "",
+  "primary": "cs.IR",
+  "abstract": "Integrating large language model (LLM) representations into multimodal recommendation has shown promise, yet a fundamental challenge remains largely overlooked: the semantic heterogeneity between generative LM representations and the ID-based collaborative signals that recommendation systems rely on. Naively injecting LM features without alignment degrades recommendation performance rather than improving it. To resolve this, we propose RecGOAT, a dual-granularity semantic alignment framework built on graph neural networks and optimal transport theory. RecGOAT first enriches collaborative semantics through multimodal attentive graphs that capture item-item, user-item, and user-user relationships, initializing user representations via LLM-inferred behavioral preferences. It then aligns LM-derived modality representations with recommendation IDs at two complementary granularities: (1) instance-level alignment via cross-modal contrastive learning (CMCL), which produces discriminative per-sample representations; and (2) distribution-level alignment via optimal adaptive transport (OAT), which minimizes the 1-Wasserstein distance between ID distributions and LLM semantics to produce a unified, consistently aligned feature space. Theoretically, we prove that the unified representation achieves strictly lower target error than any single-modality representation, with the gap bounded by the Wasserstein distance and the InfoNCE loss, providing rigorous guarantees for both alignment consistency and fusion comprehensiveness. Extensive experiments on three public benchmarks demonstrate state-of-the-art performance. Deployment on a large-scale online advertising platform further validates RecGOAT's industrial scalability. Our code is available at https://github.com/6lyc/RecGOAT-LLM4Rec.",
+  "hit_queries": [
+   "all:\"optimal transport\" AND all:graphs AND all:\"neural\""
+  ]
+ },
+ {
+  "arxiv": "2602.00318",
+  "title": "Optimal Transport-Guided Adversarial Attacks on Graph Neural Network-Based Bot Detection",
+  "authors": [
+   "Kunal Mukherjee",
+   "Zulfikar Alom",
+   "Tran Gia Bao Ngo",
+   "Cuneyt Gurcan Akcora",
+   "Murat Kantarcioglu"
+  ],
+  "published": "2026-01-30",
+  "updated": "2026-05-11",
+  "comment": "Accepted to Proceedings of the Forty-Third International Conference on Machine Learning (ICML) 2026",
+  "journal_ref": "Proceedings of the Forty-Third International Conference on Machine Learning 2026",
+  "primary": "cs.LG",
+  "abstract": "The rise of bot accounts on social media poses significant risks to public discourse. To address this threat, modern bot detectors increasingly rely on Graph Neural Networks (GNNs). However, the effectiveness of these GNN-based detectors in real-world settings remains poorly understood. In practice, attackers continuously adapt their strategies as well as must operate under domain-specific and temporal constraints, which can fundamentally limit the applicability of existing attack methods. As a result, there is a critical need for robust GNN-based bot detection methods under realistic, constraint-aware attack scenarios. To address this gap, we introduce BOCLOAK to systematically evaluate the robustness of GNN-based social bot detection via both edge editing and node injection adversarial attacks under realistic constraints. BOCLOAK constructs a probability measure over spatio-temporal neighbor features and learns an optimal transport geometry that separates human and bot behaviors. It then decodes transport plans into sparse, plausible edge edits that evade detection while obeying real-world constraints. We evaluate BOCLOAK across three social bot datasets, five state-of-the-art bot detectors, three adversarial defenses, and compare it against four leading graph adversarial attack baselines. BOCLOAK achieves up to 80.13% higher attack success rates while using 99.80% less GPU memory under realistic real-world constraints. Most importantly, BOCLOAK shows that optimal transport provides a lightweight, principled framework for bridging the gap between adversarial attacks and real-world bot detection.",
+  "hit_queries": [
+   "all:\"optimal transport\" AND all:graph AND (all:neural OR all:learning) AND all:plan",
+   "all:\"optimal transport\" AND all:graphs AND all:\"neural\""
+  ]
+ },
+ {
+  "arxiv": "2601.22856",
+  "title": "OptiMAG: Structure-Semantic Alignment via Unbalanced Optimal Transport",
+  "authors": [
+   "Yilong Zuo",
+   "Xunkai Li",
+   "Zhihan Zhang",
+   "Qiangqiang Dai",
+   "Ronghua Li",
+   "Guoren Wang"
+  ],
+  "published": "2026-01-30",
+  "updated": "2026-01-30",
+  "comment": "",
+  "journal_ref": "",
+  "primary": "cs.LG",
+  "abstract": "Multimodal Attributed Graphs (MAGs) have been widely adopted for modeling complex systems by integrating multi-modal information, such as text and images, on nodes. However, we identify a discrepancy between the implicit semantic structure induced by different modality embeddings and the explicit graph structure. For instance, neighbors in the explicit graph structure may be close in one modality but distant in another. Since existing methods typically perform message passing over the fixed explicit graph structure, they inadvertently aggregate dissimilar features, introducing modality-specific noise and impeding effective node representation learning. To address this, we propose OptiMAG, an Unbalanced Optimal Transport-based regularization framework. OptiMAG employs the Fused Gromov-Wasserstein distance to explicitly guide cross-modal structural consistency within local neighborhoods, effectively mitigating structural-semantic conflicts. Moreover, a KL divergence penalty enables adaptive handling of cross-modal inconsistencies. This framework can be seamlessly integrated into existing multimodal graph models, acting as an effective drop-in regularizer. Experiments demonstrate that OptiMAG consistently outperforms baselines across multiple tasks, ranging from graph-centric tasks (e.g., node classification, link prediction) to multimodal-centric generation tasks (e.g., graph2text, graph2image). The source code will be available upon acceptance.",
+  "hit_queries": [
+   "all:\"unbalanced optimal transport\" AND (all:graph OR all:neural)"
+  ]
+ },
+ {
+  "arxiv": "2601.20203",
+  "title": "Minimum-Cost Network Flow with Dual Predictions",
+  "authors": [
+   "Zhiyang Chen",
+   "Hailong Yao",
+   "Xia Yin"
+  ],
+  "published": "2026-01-28",
+  "updated": "2026-01-28",
+  "comment": "accepted by AAAI 2026",
+  "journal_ref": "",
+  "primary": "cs.LG",
+  "abstract": "Recent work has shown that machine-learned predictions can provably improve the performance of classic algorithms. In this work, we propose the first minimum-cost network flow algorithm augmented with a dual prediction. Our method is based on a classic minimum-cost flow algorithm, namely $\\varepsilon$-relaxation. We provide time complexity bounds in terms of the infinity norm prediction error, which is both consistent and robust. We also prove sample complexity bounds for PAC-learning the prediction. We empirically validate our theoretical results on two applications of minimum-cost flow, i.e., traffic networks and chip escape routing, in which we learn a fixed prediction, and a feature-based neural network model to infer the prediction, respectively. Experimental results illustrate $12.74\\times$ and $1.64\\times$ average speedup on two applications.",
+  "hit_queries": [
+   "all:\"minimum cost flow\" AND (all:learning OR all:neural)"
+  ]
+ },
+ {
+  "arxiv": "2601.13350",
+  "title": "Beyond Mapping : Domain-Invariant Representations via Spectral Embedding of Optimal Transport Plans",
+  "authors": [
+   "Abdel Djalil Sad Saoud",
+   "Fred Maurice Ngolè Mboula",
+   "Hanane Slimani"
+  ],
+  "published": "2026-01-19",
+  "updated": "2026-03-06",
+  "comment": "Accepted at The IEEE International Conference on Acoustics, Speech, and Signal Processing (ICASSP 2026)",
+  "journal_ref": "",
+  "primary": "cs.LG",
+  "abstract": "Distributional shifts between training and inference time data remain a central challenge in machine learning, often leading to poor performance. It motivated the study of principled approaches for domain alignment, such as optimal transport based unsupervised domain adaptation, that relies on approximating Monge map using transport plans, which is sensitive to the transport problem regularization strategy and hyperparameters, and might yield biased domains alignment. In this work, we propose to interpret smoothed transport plans as adjacency matrices of bipartite graphs connecting source to target domain and derive domain-invariant samples' representations through spectral embedding. We evaluate our approach on acoustic adaptation benchmarks for music genre recognition, music-speech discrimination, as well as electrical cable defect detection and classification tasks using time domain reflection in different diagnosis settings, achieving overall strong performances.",
+  "hit_queries": [
+   "all:\"optimal transport\" AND all:graph AND (all:neural OR all:learning) AND all:plan"
+  ]
+ },
+ {
+  "arxiv": "2601.09229",
+  "title": "SPOT-Face: Forensic Face Identification using Attention Guided Optimal Transport",
+  "authors": [
+   "Ravi Shankar Prasad",
+   "Dinesh Singh"
+  ],
+  "published": "2026-01-14",
+  "updated": "2026-01-14",
+  "comment": "14 pages, 5 figures, 3 tables (ICPR_2026)",
+  "journal_ref": "",
+  "primary": "cs.CV",
+  "abstract": "Person identification in forensic investigations becomes very challenging when common identification means for DNA (i.e., hair strands, soft tissue) are not available. Current methods utilize deep learning methods for face recognition. However, these methods lack effective mechanisms to model cross-domain structural correspondence between two different forensic modalities. In this paper, we introduce a SPOT-Face, a superpixel graph-based framework designed for cross-domain forensic face identification of victims using their skeleton and sketch images. Our unified framework involves constructing a superpixel-based graph from an image and then using different graph neural networks(GNNs) backbones to extract the embeddings of these graphs, while cross-domain correspondence is established through attention-guided optimal transport mechanism. We have evaluated our proposed framework on two publicly available dataset: IIT\\_Mandi\\_S2F (S2F) and CUFS. Extensive experiments were conducted to evaluate our proposed framework. The experimental results show significant improvement in identification metrics ( i.e., Recall, mAP) over existing graph-based baselines. Furthermore, our framework demonstrates to be highly effective for matching skulls and sketches to faces in forensic investigations.",
+  "hit_queries": [
+   "all:\"optimal transport\" AND all:graphs AND all:\"neural\""
+  ]
+ },
+ {
+  "arxiv": "2512.10874",
+  "title": "A Differentiable Digital Twin of Distributed Link Scheduling for Contention-Aware Networking",
+  "authors": [
+   "Zhongyuan Zhao",
+   "Yujun Ming",
+   "Kevin Chan",
+   "Ananthram Swami",
+   "Santiago Segarra"
+  ],
+  "published": "2025-12-11",
+  "updated": "2025-12-11",
+  "comment": "5 pages, 8 figures, presented in Asilomar Conference on Signals, Systems, and Computers 2025",
+  "journal_ref": "",
+  "primary": "cs.NI",
+  "abstract": "Many routing and flow optimization problems in wired networks can be solved efficiently using minimum cost flow formulations. However, this approach does not extend to wireless multi-hop networks, where the assumptions of fixed link capacity and linear cost structure collapse due to contention for shared spectrum resources. The key challenge is that the long-term capacity of a wireless link becomes a non-linear function of its network context, including network topology, link quality, and the traffic assigned to neighboring links. In this work, we pursue a new direction of modeling wireless network under randomized medium access control by developing an analytical network digital twin (NDT) that predicts link duty cycles from network context. We generalize randomized contention as finding a Maximal Independent Set (MIS) on the conflict graph using weighted Luby's algorithm, derive an analytical model of link duty cycles, and introduce an iterative procedure that resolves the circular dependency among duty cycle, link capacity, and contention probability. Our numerical experiments show that the proposed NDT accurately predicts link duty cycles and congestion patterns with up to a 5000x speedup over packet-level simulation, and enables us to optimize link scheduling using gradient descent for reduced congestion and radio footprint.",
+  "hit_queries": [
+   "all:\"minimum cost flow\" AND (all:learning OR all:neural)"
+  ]
+ },
+ {
+  "arxiv": "2512.09514",
+  "title": "Transport Novelty Distance: A Distributional Metric for Evaluating Material Generative Models",
+  "authors": [
+   "Paul Hagemann",
+   "Simon Müller",
+   "Janine George",
+   "Philipp Benner"
+  ],
+  "published": "2025-12-10",
+  "updated": "2025-12-10",
+  "comment": "",
+  "journal_ref": "",
+  "primary": "cond-mat.mtrl-sci",
+  "abstract": "Recent advances in generative machine learning have opened new possibilities for the discovery and design of novel materials. However, as these models become more sophisticated, the need for rigorous and meaningful evaluation metrics has grown. Existing evaluation approaches often fail to capture both the quality and novelty of generated structures, limiting our ability to assess true generative performance. In this paper, we introduce the Transport Novelty Distance (TNovD) to judge generative models used for materials discovery jointly by the quality and novelty of the generated materials. Based on ideas from Optimal Transport theory, TNovD uses a coupling between the features of the training and generated sets, which is refined into a quality and memorization regime by a threshold. The features are generated from crystal structures using a graph neural network that is trained to distinguish between materials, their augmented counterparts, and differently sized supercells using contrastive learning. We evaluate our proposed metric on typical toy experiments relevant for crystal structure prediction, including memorization, noise injection and lattice deformations. Additionally, we validate the TNovD on the MP20 validation set and the WBM substitution dataset, demonstrating that it is capable of detecting both memorized and low-quality material data. We also benchmark the performance of several popular material generative models. While introduced for materials, our TNovD framework is domain-agnostic and can be adapted for other areas, such as images and molecules.",
+  "hit_queries": [
+   "all:\"optimal transport\" AND all:graphs AND all:\"neural\""
+  ]
+ },
+ {
+  "arxiv": "2512.06577",
+  "title": "Deep Neural Network-Based Aerial Transport in the Presence of Cooperative and Uncooperative UAS",
+  "authors": [
+   "Muhammad Junayed Hasan Zahed",
+   "Hossein Rastgoftar"
+  ],
+  "published": "2025-12-06",
+  "updated": "2025-12-06",
+  "comment": "",
+  "journal_ref": "",
+  "primary": "eess.SY",
+  "abstract": "We present a resilient deep neural network (DNN) framework for decentralized transport and coverage using uncrewed aerial systems (UAS) operating in $\\mathbb{R}^n$. The proposed DNN-based mass-transport architecture constructs a layered inter-UAS communication graph from an initial formation, assigns time-varying communication weights through a forward scheduling mechanism that guides the team from the initial to the final configuration, and ensures stability and convergence of the resulting multi-agent transport dynamics. The framework is explicitly designed to remain robust in the presence of uncooperative agents that deviate from or refuse to follow the prescribed protocol. Our method preserves a fixed feed-forward topology but dynamically prunes edges to uncooperative agents, maintains convex, feedforward mentoring among cooperative agents, and computes global desired set points through a sparse linear relation consistent with leader references. The target set is abstracted by $N$ points that become final desired positions, enabling coverage-optimal transport while keeping computation low and guarantees intact. Extensive simulations demonstrate that, under full cooperation, all agents converge rapidly to the target zone with a 10\\% boundary margin and under partial cooperation with uncooperative agents, the system maintains high convergence among cooperative agents with performance degradation localized near the disruptions, evidencing graceful resilience and scalability. These results confirm that forward-weight scheduling, hierarchical mentor--mentee coordination, and on-the-fly DNN restructuring yield robust, provably stable UAS transport in realistic fault scenarios.",
+  "hit_queries": [
+   "all:\"optimal transport\" AND all:graphs AND all:\"neural\""
+  ]
+ },
+ {
+  "arxiv": "2512.05282",
+  "title": "Entropic selection for optimal transport on the line with distance cost",
+  "authors": [
+   "Armand Ley"
+  ],
+  "published": "2025-12-04",
+  "updated": "2025-12-04",
+  "comment": "",
+  "journal_ref": "",
+  "primary": "math.OC",
+  "abstract": "We study the small-regularisation limit of the entropic optimal transport problem on the line with distance cost. While convergence of entropic minimizers is well understood in the discrete setting and in the case where the cost is continuous and there is a unique optimal transport plan, the question of existence and characterization outside these settings remains largely open. We propose a natural candidate for the limiting object and establish its convergence under mutual singularity of the marginals. For arbitrary marginals, we moreover prove that every limit point of entropic minimizers obeys a structural condition known as weak multiplicativity. The construction of our candidate relies on a decomposition theorem for optimal transport plan that we believe is of independent interest. This article complements the previous work of Di Marino and Louet.",
+  "hit_queries": [
+   "all:\"entropic optimal transport\" AND all:discrete"
+  ]
+ },
+ {
+  "arxiv": "2512.03194",
+  "title": "GRAND: Guidance, Rebalancing, and Assignment for Networked Dispatch in Multi-Agent Path Finding",
+  "authors": [
+   "Johannes Gaber",
+   "Meshal Alharbi",
+   "Daniele Gammelli",
+   "Gioele Zardini"
+  ],
+  "published": "2025-12-02",
+  "updated": "2026-03-04",
+  "comment": "",
+  "journal_ref": "",
+  "primary": "cs.RO",
+  "abstract": "Large robot fleets are now common in warehouses and other logistics settings, where small control gains translate into large operational impacts. In this article, we address task scheduling for lifelong Multi-Agent Pickup-and-Delivery (MAPD) and propose a hybrid method that couples learning-based global guidance with lightweight optimization. A graph neural network policy trained via reinforcement learning outputs a desired distribution of free agents over an aggregated warehouse graph. This signal is converted into region-to-region rebalancing through a minimum-cost flow, and finalized by small, local assignment problems, preserving accuracy while keeping per-step latency within a 1 s compute budget. We call this approach GRAND: a hierarchical algorithm that relies on Guidance, Rebalancing, and Assignment to explicitly leverage the workspace Network structure and Dispatch agents to tasks. On congested warehouse benchmarks from the League of Robot Runners (LoRR) with up to 500 agents, our approach improves throughput by up to 10% over the 2024 winning scheduler while maintaining real-time execution. The results indicate that coupling graph-structured learned guidance with tractable solvers reduces congestion and yields a practical, scalable blueprint for high-throughput scheduling in large fleets.",
+  "hit_queries": [
+   "all:\"minimum cost flow\" AND (all:learning OR all:neural)"
+  ]
+ },
+ {
+  "arxiv": "2511.19741",
+  "title": "Efficient Transferable Optimal Transport via Min-Sliced Transport Plans",
+  "authors": [
+   "Xinran Liu",
+   "Elaheh Akbari",
+   "Rocio Diaz Martin",
+   "Navid NaderiAlizadeh",
+   "Soheil Kolouri"
+  ],
+  "published": "2025-11-24",
+  "updated": "2026-05-26",
+  "comment": "",
+  "journal_ref": "",
+  "primary": "cs.CV",
+  "abstract": "Optimal Transport (OT) offers a powerful framework for finding correspondences between distributions and addressing matching and alignment problems in various areas of computer vision, including shape analysis, image generation, and multimodal tasks. The computation cost of OT, however, hinders its scalability. Slice-based transport plans have recently shown promise for reducing the computational cost by leveraging the closed-form solutions of 1D OT problems. These methods optimize a one-dimensional projection (slice) to obtain a conditional transport plan that minimizes the transport cost in the ambient space. While efficient, these methods leave open the question of whether learned optimal slicers can transfer to new distribution pairs under distributional shift. Understanding this transferability is crucial in settings with evolving data or repeated OT computations across closely related distributions. In this paper, we study the min-Sliced Transport Plan (min-STP) framework and investigate the transferability of optimized slicers: can a slicer trained on one distribution pair yield effective transport plans for new, unseen pairs? Theoretically, we show that optimized slicers remain close under slight perturbations of the data distributions, enabling efficient transfer across related tasks. To further improve scalability, we introduce a minibatch formulation of min-STP and provide statistical guarantees on its accuracy. Empirically, we demonstrate that the transferable min-STP achieves strong one-shot matching performance and facilitates amortized training for point cloud alignment and flow-based generative modeling.",
+  "hit_queries": [
+   "all:\"amortized\" AND all:\"optimal transport\""
+  ]
+ },
+ {
+  "arxiv": "2511.16778",
+  "title": "GCL-OT: Graph Contrastive Learning with Optimal Transport for Heterophilic Text-Attributed Graphs",
+  "authors": [
+   "Yating Ren",
+   "Yikun Ban",
+   "Huobin Tan"
+  ],
+  "published": "2025-11-20",
+  "updated": "2026-01-28",
+  "comment": "AAAI 2026",
+  "journal_ref": "",
+  "primary": "cs.LG",
+  "abstract": "Recently, structure-text contrastive learning has shown promising performance on text-attributed graphs by leveraging the complementary strengths of graph neural networks and language models. However, existing methods typically rely on homophily assumptions in similarity estimation and hard optimization objectives, which limit their applicability to heterophilic graphs. Although existing methods can mitigate heterophily through structural adjustments or neighbor aggregation, they usually treat textual embeddings as static targets, leading to suboptimal alignment. In this work, we identify multi-granular heterophily in text-attributed graphs, including complete heterophily, partial heterophily, and latent homophily, which makes structure-text alignment particularly challenging due to mixed, noisy, and missing semantic correlations. To achieve flexible and bidirectional alignment, we propose GCL-OT, a novel graph contrastive learning framework with optimal transport, equipped with tailored mechanisms for each type of heterophily. Specifically, for partial heterophily, we design a RealSoftMax-based similarity estimator to emphasize key neighbor-word interactions while easing background noise. For complete heterophily, we introduce a prompt-based filter that adaptively excludes irrelevant noise during optimal transport alignment. Furthermore, we incorporate OT-guided soft supervision to uncover potential neighbors with similar semantics, enhancing the learning of latent homophily. Theoretical analysis shows that GCL-OT can improve the mutual information bound and Bayes error guarantees. Extensive experiments on nine benchmarks show that GCL-OT outperforms state-of-the-art methods, demonstrating its effectiveness and robustness.",
+  "hit_queries": [
+   "all:\"optimal transport\" AND all:graphs AND all:\"neural\""
+  ]
+ },
+ {
+  "arxiv": "2511.16458",
+  "title": "A convex approach for Markov chain estimation from aggregate data via inverse optimal transport",
+  "authors": [
+   "Michele Mascherpa",
+   "Axel Ringh",
+   "Amirhossein Taghvaei",
+   "Johan Karlsson"
+  ],
+  "published": "2025-11-20",
+  "updated": "2025-11-20",
+  "comment": "8 pages, 3 Figures. Submitted to European Control Conference 2026 (ECC26)",
+  "journal_ref": "",
+  "primary": "math.OC",
+  "abstract": "We address the problem of identifying the dynamical law governing the evolution of a population of indistinguishable particles, when only aggregate distributions at successive times are observed. Assuming a Markovian evolution on a discrete state space, the task reduces to estimating the underlying transition probability matrix from distributional data. We formulate this inverse problem within the framework of entropic optimal transport, as a joint optimization over the transition matrix and the transport plans connecting successive distributions. This formulation results in a convex optimization problem, and we propose an efficient iterative algorithm based on the entropic proximal method. We illustrate the accuracy and convergence of the method in two numerical setups, considering estimation from independent snapshots and estimation from a time series of aggregate observations, respectively.",
+  "hit_queries": [
+   "all:\"entropic optimal transport\" AND all:discrete"
+  ]
+ },
+ {
+  "arxiv": "2511.01443",
+  "title": "Efficient Curvature-aware Graph Network",
+  "authors": [
+   "Chaoqun Fei",
+   "Tinglve Zhou",
+   "Tianyong Hao",
+   "Yangyang Li"
+  ],
+  "published": "2025-11-03",
+  "updated": "2025-12-26",
+  "comment": "",
+  "journal_ref": "",
+  "primary": "cs.LG",
+  "abstract": "Graph curvature provides geometric priors for Graph Neural Networks (GNNs), enhancing their ability to model complex graph structures, particularly in terms of structural awareness, robustness, and theoretical interpretability. Among existing methods, Ollivier-Ricci curvature has been extensively studied due to its strong geometric interpretability, effectively characterizing the local geometric distribution between nodes. However, its prohibitively high computational complexity limits its applicability to large-scale graph datasets. To address this challenge, we propose a novel graph curvature measure--Effective Resistance Curvature--which quantifies the ease of message passing along graph edges using the effective resistance between node pairs, instead of the optimal transport distance. This method significantly outperforms Ollivier-Ricci curvature in computational efficiency while preserving comparable geometric expressiveness. Theoretically, we prove the low computational complexity of effective resistance curvature and establish its substitutability for Ollivier-Ricci curvature. Furthermore, extensive experiments on diverse GNN tasks demonstrate that our method achieves competitive performance with Ollivier-Ricci curvature while drastically reducing computational overhead.",
+  "hit_queries": [
+   "all:\"optimal transport\" AND all:graphs AND all:\"neural\""
+  ]
+ },
+ {
+  "arxiv": "2510.17945",
+  "title": "An Exact Quantile-Energy Equality for Terminal Halfspaces in Linear-Gaussian Control with a Discrete-Time Companion, KL/Schrodinger Links, and High-Precision Validation",
+  "authors": [
+   "Sandro Andric"
+  ],
+  "published": "2025-10-20",
+  "updated": "2025-10-20",
+  "comment": "",
+  "journal_ref": "",
+  "primary": "eess.SY",
+  "abstract": "We prove an exact equality between the minimal quadratic control energy and the squared normal-quantile gap for terminal halfspaces in linear-Gaussian systems with additive control and quadratic effort $E(u) = \\tfrac12\\!\\int u^\\top M u\\,dt$ where $M = B^\\topΣ^{-1}B$. For terminal halfspace events, the minimal energy equals the squared normal-quantile gap divided by twice a controllability-to-noise ratio $R_T^2(w)=(w^\\top W_c^M w)/(w^\\top V_T w)$ and is attained by a matched-filter control. We provide an exact zero-order-hold discrete-time companion via block exponentials, relate the result to minimum-energy control, Gaussian isoperimetry, risk-sensitive/KL control, and Schrodinger bridges, and validate to high precision with Monte Carlo. We state assumptions, singular-$M$ handling, and edge cases. The statement is a compact synthesis and design-ready translator, not a universal principle. Novelty: while the ingredients (Gramians, Cauchy-Schwarz, Gaussian isoperimetry) are classical, to our knowledge the explicit quantile-energy equality with a constructive matched-filter achiever for terminal halfspaces, and its discrete-time companion, are not recorded together in the cited literature.",
+  "hit_queries": [
+   "all:\"Schrodinger bridge\" AND (all:discrete OR all:graph OR all:graphs)"
+  ]
+ },
+ {
+  "arxiv": "2510.15388",
+  "title": "Iterative Refinement of Flow Policies in Probability Space for Online Reinforcement Learning",
+  "authors": [
+   "Mingyang Sun",
+   "Pengxiang Ding",
+   "Weinan Zhang",
+   "Donglin Wang"
+  ],
+  "published": "2025-10-17",
+  "updated": "2025-10-17",
+  "comment": "",
+  "journal_ref": "",
+  "primary": "cs.LG",
+  "abstract": "While behavior cloning with flow/diffusion policies excels at learning complex skills from demonstrations, it remains vulnerable to distributional shift, and standard RL methods struggle to fine-tune these models due to their iterative inference process and the limitations of existing workarounds. In this work, we introduce the Stepwise Flow Policy (SWFP) framework, founded on the key insight that discretizing the flow matching inference process via a fixed-step Euler scheme inherently aligns it with the variational Jordan-Kinderlehrer-Otto (JKO) principle from optimal transport. SWFP decomposes the global flow into a sequence of small, incremental transformations between proximate distributions. Each step corresponds to a JKO update, regularizing policy changes to stay near the previous iterate and ensuring stable online adaptation with entropic regularization. This decomposition yields an efficient algorithm that fine-tunes pre-trained flows via a cascade of small flow blocks, offering significant advantages: simpler/faster training of sub-models, reduced computational/memory costs, and provable stability grounded in Wasserstein trust regions. Comprehensive experiments demonstrate SWFP's enhanced stability, efficiency, and superior adaptation performance across diverse robotic control benchmarks.",
+  "hit_queries": [
+   "all:\"optimal transport\" AND all:\"reinforcement learning\" AND (all:graph OR all:discrete)"
+  ]
+ },
+ {
+  "arxiv": "2509.25444",
+  "title": "Neural Optimal Transport Meets Multivariate Conformal Prediction",
+  "authors": [
+   "Vladimir Kondratyev",
+   "Alexander Fishkov",
+   "Nikita Kotelevskii",
+   "Mahmoud Hegazy",
+   "Remi Flamary",
+   "Maxim Panov",
+   "Eric Moulines"
+  ],
+  "published": "2025-09-29",
+  "updated": "2025-09-29",
+  "comment": "",
+  "journal_ref": "",
+  "primary": "stat.ML",
+  "abstract": "We propose a framework for conditional vector quantile regression (CVQR) that combines neural optimal transport with amortized optimization, and apply it to multivariate conformal prediction. Classical quantile regression does not extend naturally to multivariate responses, while existing approaches often ignore the geometry of joint distributions. Our method parametrizes the conditional vector quantile function as the gradient of a convex potential implemented by an input-convex neural network, ensuring monotonicity and uniform ranks. To reduce the cost of solving high-dimensional variational problems, we introduced amortized optimization of the dual potentials, yielding efficient training and faster inference. We then exploit the induced multivariate ranks for conformal prediction, constructing distribution-free predictive regions with finite-sample validity. Unlike coordinatewise methods, our approach adapts to the geometry of the conditional distribution, producing tighter and more informative regions. Experiments on benchmark datasets show improved coverage-efficiency trade-offs compared to baselines, highlighting the benefits of integrating neural optimal transport with conformal prediction.",
+  "hit_queries": [
+   "all:\"amortized\" AND all:\"optimal transport\""
+  ]
+ },
+ {
+  "arxiv": "2509.23348",
+  "title": "Entering the Era of Discrete Diffusion Models: A Benchmark for Schrödinger Bridges and Entropic Optimal Transport",
+  "authors": [
+   "Xavier Aramayo Carrasco",
+   "Grigoriy Ksenofontov",
+   "Aleksei Leonov",
+   "Iaroslav Sergeevich Koshelev",
+   "Alexander Korotin"
+  ],
+  "published": "2025-09-27",
+  "updated": "2026-03-02",
+  "comment": "",
+  "journal_ref": "",
+  "primary": "cs.LG",
+  "abstract": "The Entropic Optimal Transport (EOT) problem and its dynamic counterpart, the Schrödinger bridge (SB) problem, play an important role in modern machine learning, linking generative modeling with optimal transport theory. While recent advances in discrete diffusion and flow models have sparked growing interest in applying SB methods to discrete domains, there remains no reliable way to assess how well these methods actually solve the underlying problem. We address this challenge by introducing a benchmark for SB on discrete spaces. Our construction yields pairs of probability distributions with analytically known SB solutions, enabling rigorous evaluation. As a byproduct of building this benchmark, we obtain two new SB algorithms, DLightSB and DLightSB-M, and additionally extend prior related work to construct the $α$-CSBM algorithm. We demonstrate the utility of our benchmark by evaluating both existing and new solvers in high-dimensional discrete settings. This work provides the first step toward proper evaluation of SB methods on discrete spaces, paving the way for more reproducible future studies. The code for the benchmark and all associated experiments is available at https://github.com/gregkseno/catsbench.",
+  "hit_queries": [
+   "all:\"entropic optimal transport\" AND all:discrete"
+  ]
+ },
+ {
+  "arxiv": "2509.14722",
+  "title": "Towards Pre-trained Graph Condensation via Optimal Transport",
+  "authors": [
+   "Yeyu Yan",
+   "Shuai Zheng",
+   "Wenjun Hui",
+   "Xiangkai Zhu",
+   "Dong Chen",
+   "Zhenfeng Zhu",
+   "Yao Zhao",
+   "Kunlun He"
+  ],
+  "published": "2025-09-18",
+  "updated": "2025-09-18",
+  "comment": "",
+  "journal_ref": "",
+  "primary": "cs.LG",
+  "abstract": "Graph condensation (GC) aims to distill the original graph into a small-scale graph, mitigating redundancy and accelerating GNN training. However, conventional GC approaches heavily rely on rigid GNNs and task-specific supervision. Such a dependency severely restricts their reusability and generalization across various tasks and architectures. In this work, we revisit the goal of ideal GC from the perspective of GNN optimization consistency, and then a generalized GC optimization objective is derived, by which those traditional GC methods can be viewed nicely as special cases of this optimization paradigm. Based on this, Pre-trained Graph Condensation (PreGC) via optimal transport is proposed to transcend the limitations of task- and architecture-dependent GC methods. Specifically, a hybrid-interval graph diffusion augmentation is presented to suppress the weak generalization ability of the condensed graph on particular architectures by enhancing the uncertainty of node states. Meanwhile, the matching between optimal graph transport plan and representation transport plan is tactfully established to maintain semantic consistencies across source graph and condensed graph spaces, thereby freeing graph condensation from task dependencies. To further facilitate the adaptation of condensed graphs to various downstream tasks, a traceable semantic harmonizer from source nodes to condensed nodes is proposed to bridge semantic associations through the optimized representation transport plan in pre-training. Extensive experiments verify the superiority and versatility of PreGC, demonstrating its task-independent nature and seamless compatibility with arbitrary GNNs.",
+  "hit_queries": [
+   "all:\"optimal transport\" AND all:graph AND (all:neural OR all:learning) AND all:plan"
+  ]
+ },
+ {
+  "arxiv": "2509.14959",
+  "title": "Discrete optimal transport is a strong audio adversarial attack",
+  "authors": [
+   "Anton Selitskiy",
+   "Akib Shahriyar",
+   "Jishnuraj Prakasan"
+  ],
+  "published": "2025-09-18",
+  "updated": "2026-06-15",
+  "comment": "",
+  "journal_ref": "",
+  "primary": "eess.AS",
+  "abstract": "In this paper, we investigate discrete optimal transport (DOT) as a black-box attack against modern automatic speaker verification (ASV) and anti-spoofing countermeasure (CM) systems. Our attack operates as a post-processing distribution-alignment step. Frame-level WavLM embeddings of generated speech (or another person speech) are aligned to an unpaired bona fide speech pool using entropic optimal transport and a top-k barycentric projection, followed by neural vocoding. Unlike gradient-based attacks, the proposed method requires no access to model parameters, gradients, or training data. Experiments on ASVspoof2019 and ASVspoof5 demonstrate that DOT attack substantially increases CM EER and substantially degrades ASV performance across multiple spoofing attacks. The attack transfers across datasets and remains effective after CM fine-tuning. Analysis using speaker similarity, Fréchet Audio Distance, and visualization of embedding distributions suggests that DOT succeeds by shifting source speech toward bona fide regions of the representation space rather than by maximizing speaker similarity. These results indicate that optimal-transport-based distribution alignment represents a previously underexplored attack vector for contemporary ASV and anti-spoofing systems.",
+  "hit_queries": [
+   "all:\"entropic optimal transport\" AND all:discrete"
+  ]
+ },
+ {
+  "arxiv": "2509.06576",
+  "title": "Automated Hierarchical Graph Construction for Multi-source Electronic Health Records",
+  "authors": [
+   "Yinjie Wang",
+   "Doudou Zhou",
+   "Yue Liu",
+   "Junwei Lu",
+   "Tianxi Cai"
+  ],
+  "published": "2025-09-08",
+  "updated": "2025-09-08",
+  "comment": "",
+  "journal_ref": "",
+  "primary": "stat.ML",
+  "abstract": "Electronic Health Records (EHRs), comprising diverse clinical data such as diagnoses, medications, and laboratory results, hold great promise for translational research. EHR-derived data have advanced disease prevention, improved clinical trial recruitment, and generated real-world evidence. Synthesizing EHRs across institutions enables large-scale, generalizable studies that capture rare diseases and population diversity, but remains hindered by the heterogeneity of medical codes, institution-specific terminologies, and the absence of standardized data structures. These barriers limit the interpretability, comparability, and scalability of EHR-based analyses, underscoring the need for robust methods to harmonize and extract meaningful insights from distributed, heterogeneous data. To address this, we propose MASH (Multi-source Automated Structured Hierarchy), a fully automated framework that aligns medical codes across institutions using neural optimal transport and constructs hierarchical graphs with learned hyperbolic embeddings. During training, MASH integrates information from pre-trained language models, co-occurrence patterns, textual descriptions, and supervised labels to capture semantic and hierarchical relationships among medical concepts more effectively. Applied to real-world EHR data, including diagnosis, medication, and laboratory codes, MASH produces interpretable hierarchical graphs that facilitate the navigation and understanding of heterogeneous clinical data. Notably, it generates the first automated hierarchies for unstructured local laboratory codes, establishing foundational references for downstream applications.",
+  "hit_queries": [
+   "all:\"optimal transport\" AND all:graphs AND all:\"neural\""
+  ]
+ },
+ {
+  "arxiv": "2508.17641",
+  "title": "An efficient algorithm for entropic optimal transport under martingale-type constraints",
+  "authors": [
+   "Xun Tang",
+   "Michael Shavlovsky",
+   "Holakou Rahmanian",
+   "Tesi Xiao",
+   "Lexing Ying"
+  ],
+  "published": "2025-08-25",
+  "updated": "2025-08-25",
+  "comment": "",
+  "journal_ref": "",
+  "primary": "math.OC",
+  "abstract": "This work introduces novel computational methods for entropic optimal transport (OT) problems under martingale-type conditions. The considered problems include the discrete martingale optimal transport (MOT) problem. Moreover, as the (super-)martingale conditions are equivalent to row-wise (in-)equality constraints on the coupling matrix, our work applies to a prevalent class of OT problems with structural constraints. Inspired by the recent empirical success of Sinkhorn-type algorithms, we propose an entropic formulation for the MOT problem and introduce Sinkhorn-type algorithms with sparse Newton iterations that utilize the (approximate) sparsity of the Hessian matrix of the dual objective. As exact martingale conditions are typically infeasible, we adopt entropic regularization to find an approximate constraint-satisfied solution. We show that, in practice, the proposed algorithms enjoy both super-exponential convergence and robustness with controllable thresholds for total constraint violations.",
+  "hit_queries": [
+   "all:\"entropic optimal transport\" AND all:discrete"
+  ]
+ },
+ {
+  "arxiv": "2508.15593",
+  "title": "Inductive Domain Transfer In Misspecified Simulation-Based Inference",
+  "authors": [
+   "Ortal Senouf",
+   "Antoine Wehenkel",
+   "Cédric Vincent-Cuaz",
+   "Emmanuel Abbé",
+   "Pascal Frossard"
+  ],
+  "published": "2025-08-21",
+  "updated": "2025-10-21",
+  "comment": "",
+  "journal_ref": "",
+  "primary": "cs.LG",
+  "abstract": "Simulation-based inference (SBI) is a statistical inference approach for estimating latent parameters of a physical system when the likelihood is intractable but simulations are available. In practice, SBI is often hindered by model misspecification--the mismatch between simulated and real-world observations caused by inherent modeling simplifications. RoPE, a recent SBI approach, addresses this challenge through a two-stage domain transfer process that combines semi-supervised calibration with optimal transport (OT)-based distribution alignment. However, RoPE operates in a fully transductive setting, requiring access to a batch of test samples at inference time, which limits scalability and generalization. We propose here a fully inductive and amortized SBI framework that integrates calibration and distributional alignment into a single, end-to-end trainable model. Our method leverages mini-batch OT with a closed-form coupling to align real and simulated observations that correspond to the same latent parameters, using both paired calibration data and unpaired samples. A conditional normalizing flow is then trained to approximate the OT-induced posterior, enabling efficient inference without simulation access at test time. Across a range of synthetic and real-world benchmarks--including complex medical biomarker estimation--our approach matches or surpasses the performance of RoPE, as well as other standard SBI and non-SBI estimators, while offering improved scalability and applicability in challenging, misspecified environments.",
+  "hit_queries": [
+   "all:\"amortized\" AND all:\"optimal transport\""
+  ]
+ },
+ {
+  "arxiv": "2508.00451",
+  "title": "WeightFlow: Learning Stochastic Dynamics via Evolving Weight of Neural Network",
+  "authors": [
+   "Ruikun Li",
+   "Jiazhen Liu",
+   "Huandong Wang",
+   "Qingmin Liao",
+   "Yong Li"
+  ],
+  "published": "2025-08-01",
+  "updated": "2025-12-01",
+  "comment": "Accepted by AAAI (Oral)",
+  "journal_ref": "",
+  "primary": "cs.CE",
+  "abstract": "Modeling stochastic dynamics from discrete observations is a key interdisciplinary challenge. Existing methods often fail to estimate the continuous evolution of probability densities from trajectories or face the curse of dimensionality. To address these limitations, we presents a novel paradigm: modeling dynamics directly in the weight space of a neural network by projecting the evolving probability distribution. We first theoretically establish the connection between dynamic optimal transport in measure space and an equivalent energy functional in weight space. Subsequently, we design WeightFlow, which constructs the neural network weights into a graph and learns its evolution via a graph controlled differential equation. Experiments on interdisciplinary datasets demonstrate that WeightFlow improves performance by an average of 43.02\\% over state-of-the-art methods, providing an effective and scalable solution for modeling high-dimensional stochastic dynamics.",
+  "hit_queries": [
+   "all:\"optimal transport\" AND all:graphs AND all:\"neural\""
+  ]
+ },
+ {
+  "arxiv": "2508.00357",
+  "title": "Sheaf Graph Neural Networks via PAC-Bayes Spectral Optimization",
+  "authors": [
+   "Yoonhyuk Choi",
+   "Jiho Choi",
+   "Chong-Kwon Kim"
+  ],
+  "published": "2025-08-01",
+  "updated": "2025-11-09",
+  "comment": "AAAI 2026",
+  "journal_ref": "",
+  "primary": "cs.LG",
+  "abstract": "Over-smoothing in Graph Neural Networks (GNNs) causes collapse in distinct node features, particularly on heterophilic graphs where adjacent nodes often have dissimilar labels. Although sheaf neural networks partially mitigate this problem, they typically rely on static or heavily parameterized sheaf structures that hinder generalization and scalability. Existing sheaf-based models either predefine restriction maps or introduce excessive complexity, yet fail to provide rigorous stability guarantees. In this paper, we introduce a novel scheme called SGPC (Sheaf GNNs with PAC-Bayes Calibration), a unified architecture that combines cellular-sheaf message passing with several mechanisms, including optimal transport-based lifting, variance-reduced diffusion, and PAC-Bayes spectral regularization for robust semi-supervised node classification. We establish performance bounds theoretically and demonstrate that end-to-end training in linear computational complexity can achieve the resulting bound-aware objective. Experiments on nine homophilic and heterophilic benchmarks show that SGPC outperforms state-of-the-art spectral and sheaf-based GNNs while providing certified confidence intervals on unseen nodes. The code and proofs are in https://github.com/ChoiYoonHyuk/SGPC.",
+  "hit_queries": [
+   "all:\"optimal transport\" AND all:graphs AND all:\"neural\""
+  ]
+ },
+ {
+  "arxiv": "2507.22270",
+  "title": "Weighted Conditional Flow Matching",
+  "authors": [
+   "Sergio Calvo-Ordonez",
+   "Matthieu Meunier",
+   "Alvaro Cartea",
+   "Christoph Reisinger",
+   "Yarin Gal",
+   "Jose Miguel Hernandez-Lobato"
+  ],
+  "published": "2025-07-29",
+  "updated": "2026-01-01",
+  "comment": "Working paper. Changes to generalize the framework",
+  "journal_ref": "",
+  "primary": "cs.LG",
+  "abstract": "Conditional flow matching (CFM) has emerged as a powerful framework for training continuous normalizing flows due to its computational efficiency and effectiveness. However, standard CFM often produces paths that deviate significantly from straight-line interpolations between prior and target distributions, making generation slower and less accurate due to the need for fine discretization at inference. Recent methods enhance CFM performance by inducing shorter and straighter trajectories but typically rely on computationally expensive mini-batch optimal transport (OT). Drawing insights from entropic optimal transport (EOT), we propose Weighted Conditional Flow Matching (W-CFM), a novel approach that modifies the classical CFM loss by weighting each training pair $(x, y)$ with a Gibbs kernel. We show that this weighting recovers the entropic OT coupling up to some bias in the marginals, and we provide the conditions under which the marginals remain nearly unchanged. Moreover, we establish an equivalence between W-CFM and the minibatch OT method in the large-batch limit, showing how our method overcomes computational and performance bottlenecks linked to batch size. Empirically, we test our method on unconditional generation on various synthetic and real datasets, confirming that W-CFM achieves comparable or superior sample quality, fidelity, and diversity to other alternative baselines while maintaining the computational efficiency of vanilla CFM.",
+  "hit_queries": [
+   "all:\"entropic optimal transport\" AND all:discrete"
+  ]
+ },
+ {
+  "arxiv": "2507.20065",
+  "title": "Geometric Operator Learning with Optimal Transport",
+  "authors": [
+   "Xinyi Li",
+   "Zongyi Li",
+   "Nikola Kovachki",
+   "Anima Anandkumar"
+  ],
+  "published": "2025-07-26",
+  "updated": "2025-07-26",
+  "comment": "",
+  "journal_ref": "",
+  "primary": "cs.LG",
+  "abstract": "We propose integrating optimal transport (OT) into operator learning for partial differential equations (PDEs) on complex geometries. Classical geometric learning methods typically represent domains as meshes, graphs, or point clouds. Our approach generalizes discretized meshes to mesh density functions, formulating geometry embedding as an OT problem that maps these functions to a uniform density in a reference space. Compared to previous methods relying on interpolation or shared deformation, our OT-based method employs instance-dependent deformation, offering enhanced flexibility and effectiveness. For 3D simulations focused on surfaces, our OT-based neural operator embeds the surface geometry into a 2D parameterized latent space. By performing computations directly on this 2D representation of the surface manifold, it achieves significant computational efficiency gains compared to volumetric simulation. Experiments with Reynolds-averaged Navier-Stokes equations (RANS) on the ShapeNet-Car and DrivAerNet-Car datasets show that our method achieves better accuracy and also reduces computational expenses in terms of both time and memory usage compared to existing machine learning models. Additionally, our model demonstrates significantly improved accuracy on the FlowBench dataset, underscoring the benefits of employing instance-dependent deformation for datasets with highly variable geometries.",
+  "hit_queries": [
+   "all:\"optimal transport\" AND all:graphs AND all:\"neural\""
+  ]
+ },
+ {
+  "arxiv": "2507.09890",
+  "title": "Soft Graph Clustering for single-cell RNA Sequencing Data",
+  "authors": [
+   "Ping Xu",
+   "Pengfei Wang",
+   "Zhiyuan Ning",
+   "Meng Xiao",
+   "Min Wu",
+   "Yuanchun Zhou"
+  ],
+  "published": "2025-07-14",
+  "updated": "2025-07-14",
+  "comment": "",
+  "journal_ref": "",
+  "primary": "cs.LG",
+  "abstract": "Clustering analysis is fundamental in single-cell RNA sequencing (scRNA-seq) data analysis for elucidating cellular heterogeneity and diversity. Recent graph-based scRNA-seq clustering methods, particularly graph neural networks (GNNs), have significantly improved in tackling the challenges of high-dimension, high-sparsity, and frequent dropout events that lead to ambiguous cell population boundaries. However, their reliance on hard graph constructions derived from thresholded similarity matrices presents challenges:(i) The simplification of intercellular relationships into binary edges (0 or 1) by applying thresholds, which restricts the capture of continuous similarity features among cells and leads to significant information loss.(ii) The presence of significant inter-cluster connections within hard graphs, which can confuse GNN methods that rely heavily on graph structures, potentially causing erroneous message propagation and biased clustering outcomes. To tackle these challenges, we introduce scSGC, a Soft Graph Clustering for single-cell RNA sequencing data, which aims to more accurately characterize continuous similarities among cells through non-binary edge weights, thereby mitigating the limitations of rigid data structures. The scSGC framework comprises three core components: (i) a zero-inflated negative binomial (ZINB)-based feature autoencoder; (ii) a dual-channel cut-informed soft graph embedding module; and (iii) an optimal transport-based clustering optimization module. Extensive experiments across ten datasets demonstrate that scSGC outperforms 13 state-of-the-art clustering models in clustering accuracy, cell type annotation, and computational efficiency. These results highlight its substantial potential to advance scRNA-seq data analysis and deepen our understanding of cellular heterogeneity.",
+  "hit_queries": [
+   "all:\"optimal transport\" AND all:graphs AND all:\"neural\""
+  ]
+ },
+ {
+  "arxiv": "2506.22565",
+  "title": "Adjoint Schrödinger Bridge Sampler",
+  "authors": [
+   "Guan-Horng Liu",
+   "Jaemoo Choi",
+   "Yongxin Chen",
+   "Benjamin Kurt Miller",
+   "Ricky T. Q. Chen"
+  ],
+  "published": "2025-06-27",
+  "updated": "2025-11-24",
+  "comment": "NeurIPS 2025 (Oral presentation)",
+  "journal_ref": "",
+  "primary": "stat.ML",
+  "abstract": "Computational methods for learning to sample from the Boltzmann distribution -- where the target distribution is known only up to an unnormalized energy function -- have advanced significantly recently. Due to the lack of explicit target samples, however, prior diffusion-based methods, known as diffusion samplers, often require importance-weighted estimation or complicated learning processes. Both trade off scalability with extensive evaluations of the energy and model, thereby limiting their practical usage. In this work, we propose Adjoint Schrödinger Bridge Sampler (ASBS), a new diffusion sampler that employs simple and scalable matching-based objectives yet without the need to estimate target samples during training. ASBS is grounded on a mathematical model -- the Schrödinger Bridge -- which enhances sampling efficiency via kinetic-optimal transportation. Through a new lens of stochastic optimal control theory, we demonstrate how SB-based diffusion samplers can be learned at scale via Adjoint Matching and prove convergence to the global solution. Notably, ASBS generalizes the recent Adjoint Sampling (Havens et al., 2025) to arbitrary source distributions by relaxing the so-called memoryless condition that largely restricts the design space. Through extensive experiments, we demonstrate the effectiveness of ASBS on sampling from classical energy functions, amortized conformer generation, and molecular Boltzmann distributions. Code available at https://github.com/facebookresearch/adjoint_samplers",
+  "hit_queries": [
+   "all:\"amortized\" AND all:\"optimal transport\""
+  ]
+ },
+ {
+  "arxiv": "2506.11969",
+  "title": "A Robust Local Fréchet Regression Using Unbalanced Neural Optimal Transport with Applications to Dynamic Single-cell Genomics Data",
+  "authors": [
+   "Binghao Yan",
+   "Hongzhe Li"
+  ],
+  "published": "2025-06-13",
+  "updated": "2025-06-13",
+  "comment": "28 pages, 3 main figures and 5 supplementary figures",
+  "journal_ref": "",
+  "primary": "stat.AP",
+  "abstract": "Single-cell RNA sequencing (scRNA-seq) technologies have enabled the profiling of gene expression for a collection of cells across time during a dynamic biological process. Given that each time point provides only a static snapshot, modeling and understanding the underlying cellular dynamics remains a central yet challenging task in modern genomics. To associate biological time with single cell distributions, we develop a robust local Fréchet regression for interpolating the high-dimensional cellular distribution at any given time point using data observed over a finite time points. To allow for robustness in cell distributions, we propose to apply the unbalanced optimal transport-based Wasserstein distance in our local Fréchet regression analysis. We develop a computationally efficient algorithm to generate the cell distribution for a given time point using generative neural networks. The resulting single cell generated models and the corresponding transport plans can be use to interpolate the single cells at any unobserved time point and to track the cell trajectory during the cell differentiation process. We demonstrate the methods using three single cell differentiation data sets, including differentiation of human embryonic stem cells into embryoids, mouse hematopoietic and progenitor cell differentiation, and reprogramming of mouse embryonic fibroblasts. We show that the proposed methods lead to better single cell interpolations, reveal different cell differential trajectories, and identify early genes that regulate these cell trajectories.",
+  "hit_queries": [
+   "all:\"unbalanced optimal transport\" AND (all:graph OR all:neural)"
+  ]
+ },
+ {
+  "arxiv": "2506.09682",
+  "title": "Wasserstein Hypergraph Neural Network",
+  "authors": [
+   "Iulia Duta",
+   "Pietro Liò"
+  ],
+  "published": "2025-06-11",
+  "updated": "2025-06-11",
+  "comment": "",
+  "journal_ref": "",
+  "primary": "cs.LG",
+  "abstract": "The ability to model relational information using machine learning has driven advancements across various domains, from medicine to social science. While graph representation learning has become mainstream over the past decade, representing higher-order relationships through hypergraphs is rapidly gaining momentum. In the last few years, numerous hypergraph neural networks have emerged, most of them falling under a two-stage, set-based framework. The messages are sent from nodes to edges and then from edges to nodes. However, most of the advancement still takes inspiration from the graph counterpart, often simplifying the aggregations to basic pooling operations. In this paper we are introducing Wasserstein Hypergraph Neural Network, a model that treats the nodes and hyperedge neighbourhood as distributions and aggregate the information using Sliced Wasserstein Pooling. Unlike conventional aggregators such as mean or sum, which only capture first-order statistics, our approach has the ability to preserve geometric properties like the shape and spread of distributions. This enables the learned embeddings to reflect how easily one hyperedge distribution can be transformed into another, following principles of optimal transport. Experimental results demonstrate that applying Wasserstein pooling in a hypergraph setting significantly benefits node classification tasks, achieving top performance on several real-world datasets.",
+  "hit_queries": [
+   "all:\"optimal transport\" AND all:graphs AND all:\"neural\""
+  ]
+ },
+ {
+  "arxiv": "2506.08761",
+  "title": "Normalized Radon Cumulative Distribution Transforms for Invariance and Robustness in Optimal Transport Based Image Classification",
+  "authors": [
+   "Matthias Beckmann",
+   "Robert Beinert",
+   "Jonas Bresch"
+  ],
+  "published": "2025-06-10",
+  "updated": "2025-06-10",
+  "comment": "",
+  "journal_ref": "",
+  "primary": "math.NA",
+  "abstract": "The Radon cumulative distribution transform (R-CDT), is an easy-to-compute feature extractor that facilitates image classification tasks especially in the small data regime. It is closely related to the sliced Wasserstein distance and provably guaranties the linear separability of image classes that emerge from translations or scalings. In many real-world applications, like the recognition of watermarks in filigranology, however, the data is subject to general affine transformations originating from the measurement process. To overcome this issue, we recently introduced the so-called max-normalized R-CDT that only requires elementary operations and guaranties the separability under arbitrary affine transformations. The aim of this paper is to continue our study of the max-normalized R-CDT especially with respect to its robustness against non-affine image deformations. Our sensitivity analysis shows that its separability properties are stable provided the Wasserstein-infinity distance between the samples can be controlled. Since the Wasserstein-infinity distance only allows small local image deformations, we moreover introduce a mean-normalized version of the R-CDT. In this case, robustness relates to the Wasserstein-2 distance and also covers image deformations caused by impulsive noise for instance. Our theoretical results are supported by numerical experiments showing the effectiveness of our novel feature extractors as well as their robustness against local non-affine deformations and impulsive noise.",
+  "hit_queries": [
+   "all:Beckmann AND all:\"optimal transport\""
+  ]
+ },
+ {
+  "arxiv": "2506.02619",
+  "title": "HGOT: Self-supervised Heterogeneous Graph Neural Network with Optimal Transport",
+  "authors": [
+   "Yanbei Liu",
+   "Chongxu Wang",
+   "Zhitao Xiao",
+   "Lei Geng",
+   "Yanwei Pang",
+   "Xiao Wang"
+  ],
+  "published": "2025-06-03",
+  "updated": "2025-06-03",
+  "comment": "The paper has 9 pages of text and 13 pages in total (including acknowledgments, impact statement, references, and appendix), with 6 figures and 2 tables. This paper has been accepted by ICML 2025 conference and this is a final version of the manuscript submitted to the conference",
+  "journal_ref": "",
+  "primary": "cs.LG",
+  "abstract": "Heterogeneous Graph Neural Networks (HGNNs), have demonstrated excellent capabilities in processing heterogeneous information networks. Self-supervised learning on heterogeneous graphs, especially contrastive self-supervised strategy, shows great potential when there are no labels. However, this approach requires the use of carefully designed graph augmentation strategies and the selection of positive and negative samples. Determining the exact level of similarity between sample pairs is non-trivial.To solve this problem, we propose a novel self-supervised Heterogeneous graph neural network with Optimal Transport (HGOT) method which is designed to facilitate self-supervised learning for heterogeneous graphs without graph augmentation strategies. Different from traditional contrastive self-supervised learning, HGOT employs the optimal transport mechanism to relieve the laborious sampling process of positive and negative samples. Specifically, we design an aggregating view (central view) to integrate the semantic information contained in the views represented by different meta-paths (branch views). Then, we introduce an optimal transport plan to identify the transport relationship between the semantics contained in the branch view and the central view. This allows the optimal transport plan between graphs to align with the representations, forcing the encoder to learn node representations that are more similar to the graph space and of higher quality. Extensive experiments on four real-world datasets demonstrate that our proposed HGOT model can achieve state-of-the-art performance on various downstream tasks. In particular, in the node classification task, HGOT achieves an average of more than 6% improvement in accuracy compared with state-of-the-art methods.",
+  "hit_queries": [
+   "all:\"optimal transport\" AND all:graph AND (all:neural OR all:learning) AND all:plan",
+   "all:\"optimal transport\" AND all:graphs AND all:\"neural\""
+  ]
+ },
+ {
+  "arxiv": "2505.24642",
+  "title": "WILTing Trees: Interpreting the Distance Between MPNN Embeddings",
+  "authors": [
+   "Masahiro Negishi",
+   "Thomas Gärtner",
+   "Pascal Welke"
+  ],
+  "published": "2025-05-30",
+  "updated": "2025-05-30",
+  "comment": "25 pages, 10 figures. Accepted to ICML 2025. See https://github.com/masahiro-negishi/wilt for code",
+  "journal_ref": "",
+  "primary": "cs.LG",
+  "abstract": "We investigate the distance function learned by message passing neural networks (MPNNs) in specific tasks, aiming to capture the functional distance between prediction targets that MPNNs implicitly learn. This contrasts with previous work, which links MPNN distances on arbitrary tasks to structural distances on graphs that ignore task-specific information. To address this gap, we distill the distance between MPNN embeddings into an interpretable graph distance. Our method uses optimal transport on the Weisfeiler Leman Labeling Tree (WILT), where the edge weights reveal subgraphs that strongly influence the distance between embeddings. This approach generalizes two well-known graph kernels and can be computed in linear time. Through extensive experiments, we demonstrate that MPNNs define the relative position of embeddings by focusing on a small set of subgraphs that are known to be functionally important in the domain.",
+  "hit_queries": [
+   "all:\"optimal transport\" AND all:graphs AND all:\"neural\""
+  ]
+ },
+ {
+  "arxiv": "2505.17293",
+  "title": "Graph Data Selection for Domain Adaptation: A Model-Free Approach",
+  "authors": [
+   "Ting-Wei Li",
+   "Ruizhong Qiu",
+   "Hanghang Tong"
+  ],
+  "published": "2025-05-22",
+  "updated": "2025-10-24",
+  "comment": "",
+  "journal_ref": "",
+  "primary": "cs.LG",
+  "abstract": "Graph domain adaptation (GDA) is a fundamental task in graph machine learning, with techniques like shift-robust graph neural networks (GNNs) and specialized training procedures to tackle the distribution shift problem. Although these model-centric approaches show promising results, they often struggle with severe shifts and constrained computational resources. To address these challenges, we propose a novel model-free framework, GRADATE (GRAph DATa sElector), that selects the best training data from the source domain for the classification task on the target domain. GRADATE picks training samples without relying on any GNN model's predictions or training recipes, leveraging optimal transport theory to capture and adapt to distribution changes. GRADATE is data-efficient, scalable and meanwhile complements existing model-centric GDA approaches. Through comprehensive empirical studies on several real-world graph-level datasets and multiple covariate shift types, we demonstrate that GRADATE outperforms existing selection methods and enhances off-the-shelf GDA methods with much fewer training data.",
+  "hit_queries": [
+   "all:\"optimal transport\" AND all:graphs AND all:\"neural\""
+  ]
+ },
+ {
+  "arxiv": "2506.12025",
+  "title": "Unsupervised Learning for Optimal Transport plan prediction between unbalanced graphs",
+  "authors": [
+   "Sonia Mazelet",
+   "Rémi Flamary",
+   "Bertrand Thirion"
+  ],
+  "published": "2025-05-21",
+  "updated": "2025-07-08",
+  "comment": "",
+  "journal_ref": "",
+  "primary": "cs.LG",
+  "abstract": "Optimal transport between graphs, based on Gromov-Wasserstein and other extensions, is a powerful tool for comparing and aligning graph structures. However, solving the associated non-convex optimization problems is computationally expensive, which limits the scalability of these methods to large graphs. In this work, we present Unbalanced Learning of Optimal Transport (ULOT), a deep learning method that predicts optimal transport plans between two graphs. Our method is trained by minimizing the fused unbalanced Gromov-Wasserstein (FUGW) loss. We propose a novel neural architecture with cross-attention that is conditioned on the FUGW tradeoff hyperparameters. We evaluate ULOT on synthetic stochastic block model (SBM) graphs and on real cortical surface data obtained from fMRI. ULOT predicts transport plans with competitive loss up to two orders of magnitude faster than classical solvers. Furthermore, the predicted plan can be used as a warm start for classical solvers to accelerate their convergence. Finally, the predicted transport plan is fully differentiable with respect to the graph inputs and FUGW hyperparameters, enabling the optimization of functionals of the ULOT plan.",
+  "hit_queries": [
+   "all:\"optimal transport\" AND all:graph AND (all:neural OR all:learning) AND all:plan",
+   "all:\"optimal transport\" AND all:graphs AND all:\"neural\""
+  ]
+ },
+ {
+  "arxiv": "2505.12626",
+  "title": "scSiameseClu: A Siamese Clustering Framework for Interpreting single-cell RNA Sequencing Data",
+  "authors": [
+   "Ping Xu",
+   "Zhiyuan Ning",
+   "Pengjiang Li",
+   "Wenhao Liu",
+   "Pengyang Wang",
+   "Jiaxu Cui",
+   "Yuanchun Zhou",
+   "Pengfei Wang"
+  ],
+  "published": "2025-05-19",
+  "updated": "2025-10-02",
+  "comment": "",
+  "journal_ref": "",
+  "primary": "q-bio.GN",
+  "abstract": "Single-cell RNA sequencing (scRNA-seq) reveals cell heterogeneity, with cell clustering playing a key role in identifying cell types and marker genes. Recent advances, especially graph neural networks (GNNs)-based methods, have significantly improved clustering performance. However, the analysis of scRNA-seq data remains challenging due to noise, sparsity, and high dimensionality. Compounding these challenges, GNNs often suffer from over-smoothing, limiting their ability to capture complex biological information. In response, we propose scSiameseClu, a novel Siamese Clustering framework for interpreting single-cell RNA-seq data, comprising of 3 key steps: (1) Dual Augmentation Module, which applies biologically informed perturbations to the gene expression matrix and cell graph relationships to enhance representation robustness; (2) Siamese Fusion Module, which combines cross-correlation refinement and adaptive information fusion to capture complex cellular relationships while mitigating over-smoothing; and (3) Optimal Transport Clustering, which utilizes Sinkhorn distance to efficiently align cluster assignments with predefined proportions while maintaining balance. Comprehensive evaluations on seven real-world datasets demonstrate that scSiameseClu outperforms state-of-the-art methods in single-cell clustering, cell type annotation, and cell type classification, providing a powerful tool for scRNA-seq data interpretation.",
+  "hit_queries": [
+   "all:\"optimal transport\" AND all:graphs AND all:\"neural\""
+  ]
+ },
+ {
+  "arxiv": "2503.23705",
+  "title": "Steering Large Agent Populations using Mean-Field Schrodinger Bridges with Gaussian Mixture Models",
+  "authors": [
+   "George Rapakoulias",
+   "Ali Reza Pedram",
+   "Panagiotis Tsiotras"
+  ],
+  "published": "2025-03-31",
+  "updated": "2025-06-18",
+  "comment": "Accepted for publication in L-CSS",
+  "journal_ref": "",
+  "primary": "cs.LG",
+  "abstract": "The Mean-Field Schrodinger Bridge (MFSB) problem is an optimization problem aiming to find the minimum effort control policy to drive a McKean-Vlassov stochastic differential equation from one probability measure to another. In the context of multi-agent control, the objective is to control the configuration of a swarm of identical, interacting cooperative agents, as captured by the time-varying probability measure of their state. Available methods for solving this problem for distributions with continuous support rely either on spatial discretizations of the problem's domain or on approximating optimal solutions using neural networks trained through stochastic optimization schemes. For agents following Linear Time Varying dynamics, and for Gaussian Mixture Model boundary distributions, we propose a highly efficient parameterization to approximate the optimal solutions of the corresponding MFSB in closed form, without any learning step. Our proposed approach consists of a mixture of elementary policies, each solving a Gaussian-to-Gaussian Covariance Steering problem from the components of the initial mixture to the components of the terminal mixture. Leveraging the semidefinite formulation of the Covariance Steering problem, the proposed solver can handle probabilistic constraints on the system's state while maintaining numerical tractability. We illustrate our approach on a variety of numerical examples.",
+  "hit_queries": [
+   "all:\"Schrodinger bridge\" AND (all:discrete OR all:graph OR all:graphs)"
+  ]
+ },
+ {
+  "arxiv": "2503.21579",
+  "title": "Fusion of Graph Neural Networks via Optimal Transport",
+  "authors": [
+   "Weronika Ormaniec",
+   "Michael Vollenweider",
+   "Elisa Hoskovec"
+  ],
+  "published": "2025-03-27",
+  "updated": "2025-03-27",
+  "comment": "",
+  "journal_ref": "",
+  "primary": "cs.LG",
+  "abstract": "In this paper, we explore the idea of combining GCNs into one model. To that end, we align the weights of different models layer-wise using optimal transport (OT). We present and evaluate three types of transportation costs and show that the studied fusion method consistently outperforms the performance of vanilla averaging. Finally, we present results suggesting that model fusion using OT is harder in the case of GCNs than MLPs and that incorporating the graph structure into the process does not improve the performance of the method.",
+  "hit_queries": [
+   "all:\"optimal transport\" AND all:graphs AND all:\"neural\""
+  ]
+ },
+ {
+  "arxiv": "2503.15105",
+  "title": "Control, Optimal Transport and Neural Differential Equations in Supervised Learning",
+  "authors": [
+   "Minh-Nhat Phung",
+   "Minh-Binh Tran"
+  ],
+  "published": "2025-03-19",
+  "updated": "2026-05-19",
+  "comment": "",
+  "journal_ref": "",
+  "primary": "math.NA",
+  "abstract": "We study the fundamental computational problem of approximating optimal transport (OT) equations using neural differential equations (Neural ODEs). More specifically, we develop a novel framework for approximating unbalanced optimal transport (UOT) in the continuum using Neural ODEs. By generalizing a discrete UOT problem with Pearson divergence, we constructively design vector fields for Neural ODEs that converge to the true UOT dynamics, thereby advancing the mathematical foundations of computational transport and machine learning. To this end, we design a numerical scheme inspired by the Sinkhorn algorithm to solve the corresponding minimization problem and rigorously prove its convergence, providing explicit error estimates. From the obtained numerical solutions, we derive vector fields defining the transport dynamics and construct the corresponding transport equation. Finally, from the numerically obtained transport equation, we construct a neural differential equation whose flow converges to the true transport dynamics in an appropriate limiting regime.",
+  "hit_queries": [
+   "all:\"unbalanced optimal transport\" AND (all:graph OR all:neural)"
+  ]
+ },
+ {
+  "arxiv": "2503.12633",
+  "title": "Fast filtering of non-Gaussian models using Amortized Optimal Transport Maps",
+  "authors": [
+   "Mohammad Al-Jarrah",
+   "Bamdad Hosseini",
+   "Amirhossein Taghvaei"
+  ],
+  "published": "2025-03-16",
+  "updated": "2025-05-21",
+  "comment": "6 pages, 4 figures",
+  "journal_ref": "",
+  "primary": "math.OC",
+  "abstract": "In this paper, we present the amortized optimal transport filter (A-OTF) designed to mitigate the computational burden associated with the real-time training of optimal transport filters (OTFs). OTFs can perform accurate non-Gaussian Bayesian updates in the filtering procedure, but they require training at every time step, which makes them expensive. The proposed A-OTF framework exploits the similarity between OTF maps during an initial/offline training stage in order to reduce the cost of inference during online calculations. More precisely, we use clustering algorithms to select relevant subsets of pre-trained maps whose weighted average is used to compute the A-OTF model akin to a mixture of experts. A series of numerical experiments validate that A-OTF achieves substantial computational savings during online inference while preserving the inherent flexibility and accuracy of OTF.",
+  "hit_queries": [
+   "all:\"amortized\" AND all:\"optimal transport\""
+  ]
+ },
+ {
+  "arxiv": "2503.06635",
+  "title": "Deep Cut-informed Graph Embedding and Clustering",
+  "authors": [
+   "Zhiyuan Ning",
+   "Zaitian Wang",
+   "Ran Zhang",
+   "Ping Xu",
+   "Kunpeng Liu",
+   "Pengyang Wang",
+   "Wei Ju",
+   "Pengfei Wang",
+   "Yuanchun Zhou",
+   "Erik Cambria",
+   "Chong Chen"
+  ],
+  "published": "2025-03-09",
+  "updated": "2025-04-25",
+  "comment": "",
+  "journal_ref": "",
+  "primary": "cs.LG",
+  "abstract": "Graph clustering aims to divide the graph into different clusters. The recently emerging deep graph clustering approaches are largely built on graph neural networks (GNN). However, GNN is designed for general graph encoding and there is a common issue of representation collapse in existing GNN-based deep graph clustering algorithms. We attribute two main reasons for such issues: (i) the inductive bias of GNN models: GNNs tend to generate similar representations for proximal nodes. Since graphs often contain a non-negligible amount of inter-cluster links, the bias results in error message passing and leads to biased clustering; (ii) the clustering guided loss function: most traditional approaches strive to make all samples closer to pre-learned cluster centers, which causes a degenerate solution assigning all data points to a single label thus making all samples similar and less discriminative. To address these challenges, we investigate graph clustering from a graph cut perspective and propose an innovative and non-GNN-based Deep Cut-informed Graph embedding and Clustering framework, namely DCGC. This framework includes two modules: (i) cut-informed graph encoding; (ii) self-supervised graph clustering via optimal transport. For the encoding module, we derive a cut-informed graph embedding objective to fuse graph structure and attributes by minimizing their joint normalized cut. For the clustering module, we utilize the optimal transport theory to obtain the clustering assignments, which can balance the guidance of \"proximity to the pre-learned cluster center\". With the above two tailored designs, DCGC is more suitable for the graph clustering task, which can effectively alleviate the problem of representation collapse and achieve better performance. We conduct extensive experiments to demonstrate that our method is simple but effective compared with benchmarks.",
+  "hit_queries": [
+   "all:\"optimal transport\" AND all:graphs AND all:\"neural\""
+  ]
+ },
+ {
+  "arxiv": "2502.16370",
+  "title": "Entropic Selection Principle for Monge's Optimal Transport",
+  "authors": [
+   "Shrey Aryan",
+   "Promit Ghosal"
+  ],
+  "published": "2025-02-22",
+  "updated": "2025-08-13",
+  "comment": "",
+  "journal_ref": "",
+  "primary": "math.PR",
+  "abstract": "We investigate the small regularization limit of entropic optimal transport when the cost function is the Euclidean distance in dimensions $d > 1$, and the marginal measures are absolutely continuous with respect to the Lebesgue measure. Our results establish that the limiting optimal transport plan is supported on transport rays. Furthermore, within each transport ray, the limiting transport plan uniquely minimizes a relative entropy functional with respect to specific reference measures supported on the rays. This provides a complete and unique characterization of the limiting transport plan. While similar results have been obtained for $d = 1$ in \\cite{Marino} and for discrete measures in \\cite{peyré2020computationaloptimaltransport}, this work resolves the previously open case in higher dimensions $d>1.$",
+  "hit_queries": [
+   "all:\"entropic optimal transport\" AND all:discrete"
+  ]
+ },
+ {
+  "arxiv": "2502.12013",
+  "title": "Unsupervised Structural-Counterfactual Generation under Domain Shift",
+  "authors": [
+   "Krishn Vishwas Kher",
+   "Lokesh Venkata Siva Maruthi Badisa",
+   "Saksham Mittal",
+   "Kusampudi Venkata Datta Sri Harsha",
+   "Chitneedi Geetha Sowmya",
+   "SakethaNath Jagarlapudi"
+  ],
+  "published": "2025-02-17",
+  "updated": "2025-09-22",
+  "comment": "Updated author ordering",
+  "journal_ref": "",
+  "primary": "cs.LG",
+  "abstract": "Motivated by the burgeoning interest in cross-domain learning, we present a novel generative modeling challenge: generating counterfactual samples in a target domain based on factual observations from a source domain. Our approach operates within an unsupervised paradigm devoid of parallel or joint datasets, relying exclusively on distinct observational samples and causal graphs for each domain. This setting presents challenges that surpass those of conventional counterfactual generation. Central to our methodology is the disambiguation of exogenous causes into effect-intrinsic and domain-intrinsic categories. This differentiation facilitates the integration of domain-specific causal graphs into a unified joint causal graph via shared effect-intrinsic exogenous variables. We propose leveraging Neural Causal models within this joint framework to enable accurate counterfactual generation under standard identifiability assumptions. Furthermore, we introduce a novel loss function that effectively segregates effect-intrinsic from domain-intrinsic variables during model training. Given a factual observation, our framework combines the posterior distribution of effect-intrinsic variables from the source domain with the prior distribution of domain-intrinsic variables from the target domain to synthesize the desired counterfactuals, adhering to Pearl's causal hierarchy. Intriguingly, when domain shifts are restricted to alterations in causal mechanisms without accompanying covariate shifts, our training regimen parallels the resolution of a conditional optimal transport problem. Empirical evaluations on a synthetic dataset show that our framework generates counterfactuals in the target domain that very closely resemble the ground truth.",
+  "hit_queries": [
+   "all:\"optimal transport\" AND all:graphs AND all:\"neural\""
+  ]
+ },
+ {
+  "arxiv": "2502.05683",
+  "title": "Localisation for the second-order Beckmann problem: bimartingale couplings and leaf decompositions",
+  "authors": [
+   "Krzysztof J. Ciosmak"
+  ],
+  "published": "2025-02-08",
+  "updated": "2026-07-18",
+  "comment": "50 pages; the paper has been substantially rewritten -- new theorems on the leaves of 1-Lipschitz derivative added, new theorem on the structure of solutions in the general case; comments are welcome",
+  "journal_ref": "",
+  "primary": "math.OC",
+  "abstract": "We develop a second-order localisation theory for optimal transport based on leaf decompositions and bimartingale couplings. It provides a second-order analogue of the classical decomposition of optimal transport into transport rays and monotone couplings: transport rays are replaced by the leaves of the $1$-Lipschitz derivative map $Du$ of an optimal dual potential $u\\in C^{1,1}(\\mathbb R^n)$, while monotone couplings are replaced by bimartingale couplings. We apply this framework to the three-marginal optimal transport problem introduced by Bolbotowski and Bouchitté, whose relaxation is the second-order Beckmann problem. We introduce bimartingale couplings and characterise their existence through a convex-concave order condition. This yields a generalisation of Strassen's theorem from convex order to the convex-concave setting. Equivalently, the dual problem associated with the second-order Beckmann problem admits an optimiser whose derivative is an isometry. For absolutely continuous measures with common barycentre, assuming the existence of an optimal plan with absolutely continuous third marginal, we prove that every optimal plan decomposes into a family of problems on the leaves of $Du$. On each leaf, all optimal plans are completely described by bimartingale couplings between the corresponding conditional measures. Without this absolute continuity assumption, we show that the leaf decomposition persists in a more general form: optimal plans are mixtures of plans concentrated on triples $(x,y,z)$ satisfying $x\\in \\mathcal{S}_1$, $y\\in \\mathcal{S}_2$, and $z\\in \\mathcal{S}_1\\cap \\mathcal{S}_2$, where $\\mathcal{S}_1$ and $\\mathcal{S}_2$ are neighbouring leaves of $Du$.",
+  "hit_queries": [
+   "all:Beckmann AND all:\"optimal transport\""
+  ]
+ },
+ {
+  "arxiv": "2502.00739",
+  "title": "An Efficient Orlicz-Sobolev Approach for Transporting Unbalanced Measures on a Graph",
+  "authors": [
+   "Tam Le",
+   "Truyen Nguyen",
+   "Hideitsu Hino",
+   "Kenji Fukumizu"
+  ],
+  "published": "2025-02-02",
+  "updated": "2025-10-24",
+  "comment": "to appear in Neural Information Processing Systems (NeurIPS), 2025. [spotlight]",
+  "journal_ref": "",
+  "primary": "stat.ML",
+  "abstract": "We investigate optimal transport (OT) for measures on graph metric spaces with different total masses. To mitigate the limitations of traditional $L^p$ geometry, Orlicz-Wasserstein (OW) and generalized Sobolev transport (GST) employ Orlicz geometric structure, leveraging convex functions to capture nuanced geometric relationships and remarkably contribute to advance certain machine learning approaches. However, both OW and GST are restricted to measures with equal total mass, limiting their applicability to real-world scenarios where mass variation is common, and input measures may have noisy supports, or outliers. To address unbalanced measures, OW can either incorporate mass constraints or marginal discrepancy penalization, but this leads to a more complex two-level optimization problem. Additionally, GST provides a scalable yet rigid framework, which poses significant challenges to extend GST to accommodate nonnegative measures. To tackle these challenges, in this work we revisit the entropy partial transport (EPT) problem. By exploiting Caffarelli & McCann (2010)'s insights, we develop a novel variant of EPT endowed with Orlicz geometric structure, called Orlicz-EPT. We establish theoretical background to solve Orlicz-EPT using a binary search algorithmic approach. Especially, by leveraging the dual EPT and the underlying graph structure, we formulate a novel regularization approach that leads to the proposed Orlicz-Sobolev transport (OST). Notably, we demonstrate that OST can be efficiently computed by simply solving a univariate optimization problem, in stark contrast to the intensive computation needed for Orlicz-EPT. Building on this, we derive geometric structures for OST and draw its connections to other transport distances. We empirically illustrate that OST is several-order faster than Orlicz-EPT.",
+  "hit_queries": [
+   "all:\"optimal transport\" AND all:graphs AND all:\"neural\""
+  ]
+ },
+ {
+  "arxiv": "2501.11057",
+  "title": "Machine Learning Surrogates for Optimizing Transportation Policies with Agent-Based Models",
+  "authors": [
+   "Elena Natterer",
+   "Roman Engelhardt",
+   "Sebastian Hörl",
+   "Klaus Bogenberger"
+  ],
+  "published": "2025-01-19",
+  "updated": "2025-02-17",
+  "comment": "",
+  "journal_ref": "",
+  "primary": "cs.CE",
+  "abstract": "Rapid urbanization and growing urban populations worldwide present significant challenges for cities, including increased traffic congestion and air pollution. Effective strategies are needed to manage traffic volumes and reduce emissions. In practice, traditional traffic flow simulations are used to test those strategies. However, high computational intensity usually limits their applicability in investigating a magnitude of different scenarios to evaluate best policies. This paper presents a first approach of using Graph Neural Networks (GNN) as surrogates for large-scale agent-based simulation models. In a case study using the MATSim model of Paris, the GNN effectively learned the impacts of capacity reduction policies on citywide traffic flow. Performance analysis across various road types and scenarios revealed that the GNN could accurately capture policy-induced effects on edge-based traffic volumes, particularly on roads directly affected by the policies and those with higher traffic volumes.",
+  "hit_queries": [
+   "all:\"optimal transport\" AND all:graphs AND all:\"neural\""
+  ]
+ }
+]

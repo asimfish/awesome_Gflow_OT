@@ -1,0 +1,19 @@
+{
+  "id": "T00",
+  "arxiv": "2106.04399",
+  "title": "Flow Network based Generative Models for Non-Iterative Diverse Candidate Generation",
+  "authors": ["Emmanuel Bengio", "Moksh Jain", "Maksym Korablyov", "Doina Precup", "Yoshua Bengio"],
+  "venue": "NeurIPS 2021 (Advances in Neural Information Processing Systems 34)",
+  "venue_type": "main",
+  "year": 2021,
+  "code_url": "https://github.com/bengioe/gflownet",
+  "one_line_en": "Introduces GFlowNet: casts sequential object construction as a DAG flow network, proves that any flow satisfying the local flow-matching conditions with terminal flow R(x) induces a policy with pi(x) = R(x)/Z (Prop. 2), fixes the n(x)R(x) path-count bias of tree/MaxEnt-RL views (Prop. 1c), and trains it with a log-domain TD-like objective (Eq. 12) that is provably off-policy under full support (Prop. 3).",
+  "one_line_zh": "提出 GFlowNet：把对象的逐步构造看成 DAG 上的流网络，证明满足局部流守恒且终端流为 R(x) 的流会诱导 pi(x)=R(x)/Z 的策略（Prop. 2），修掉树视角/MaxEnt RL 的 n(x)R(x) 路径数偏置（Prop. 1c），并用对数域的 TD 式目标（Eq. 12）训练，在全支撑下可离线优化（Prop. 3）。",
+  "tags": ["gflownet-foundation", "flow-matching-loss", "reward-matching", "path-count-bias", "off-policy-training", "internal-flow-nonuniqueness", "molecule-design", "active-learning", "hypergrid-benchmark", "prerequisite-for-OT-line"],
+  "priority": "P0",
+  "verification": {
+    "checked_on": "2026-09-02",
+    "sources": ["local PDF papers/2106.04399.pdf (arXiv v2, 2021-11-19); first-page footnote: 35th Conference on Neural Information Processing Systems (NeurIPS 2021)", "NeurIPS proceedings page paper/2021/hash/e614f646836aaed9f89ce58e837e2310: 'Advances in Neural Information Processing Systems 34 (NeurIPS 2021)', author list matches"],
+    "note": "Main conference, not workshop. Code URL given in Sec. 1 and Appendix A of the paper. The one-parameter family F(sA)=u, F(sB)=r-u, u in [0,r] stated after the proof of Prop. 3 (Appendix A.1) is the earliest explicit statement of internal-flow non-uniqueness in the GFlowNet literature; Appendix A.6 explicitly flags the choice of flow distribution as future work."
+  }
+}

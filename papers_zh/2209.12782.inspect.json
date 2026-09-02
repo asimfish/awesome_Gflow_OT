@@ -1,0 +1,17 @@
+{
+  "issue_count": 2,
+  "issues": [
+    {
+      "page": 12,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 12: paragraph still in English (16 words, 0 CJK chars) at x=54.9, y=437.2: Figure A.1. Additional results for hypergrid experiments"
+    },
+    {
+      "page": 12,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 12: paragraph still in English (39 words, 0 CJK chars) at x=55.4, y=451.4: distributions on the harder variants of 4-dimensional gr"
+    }
+  ]
+}

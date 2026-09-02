@@ -1,0 +1,23 @@
+{
+  "issue_count": 3,
+  "issues": [
+    {
+      "page": 5,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 5: block set at 8.56pt but the original at this position is 10.06pt (ratio 0.85 vs page median 0.92) at x=56.2, y=180.4: 注3.3 。重要的是，强调式（16 ）意味着对任意"
+    },
+    {
+      "page": 6,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 6: displayed equation at y=695 shifted horizontally by 41pt vs original"
+    },
+    {
+      "page": 14,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 14: paragraph still in English (4 words, 0 CJK chars) at x=75.0, y=196.0: where we used ut(x, x) = −P"
+    }
+  ]
+}
