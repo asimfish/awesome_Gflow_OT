@@ -15,7 +15,7 @@
 \begin{itemize}
 \item 引擎：SuperTranslate \texttt{pdf\_zh\_translator}，参数 \texttt{--preserve-graphics-text --skip-overflow}，DeepSeek 后端。
 \item 不重排页面：公式、图表、引用先冻结，正文按原坐标回填；每页 \texttt{inspect} 对象级比对。
-\item 17/18 完成；O01（Peyr\'e 讲义，百余页）因翻译 API 余额耗尽未译。
+\item 18/18 完成；O01（Peyr\'e 讲义，480 页）用 OpenRouter / Gemini 2.5 Flash 后端单独翻译，约 4 小时，QA 69 issues。
 \item 已知 issue 类型：\texttt{untranslated\_block}（附录证明的数学密集句保留英文）、\texttt{font\_size\_drift}（字号缩放）、\texttt{display\_formula\_misaligned}（行间公式横向偏移 $\le$25pt）。
 \end{itemize}
 \end{frame}

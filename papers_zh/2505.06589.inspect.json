@@ -1,0 +1,419 @@
+{
+  "issue_count": 69,
+  "issues": [
+    {
+      "page": 9,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 9: displayed equation at y=581 shifted horizontally by 20pt vs original"
+    },
+    {
+      "page": 15,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 15: paragraph still in English (12 words, 0 CJK chars) at x=79.1, y=646.6: Proof. Dual feasibility gives C𝑖,𝜏(𝑖) ⩾f𝑖+ g𝜏(𝑖) for eve"
+    },
+    {
+      "page": 20,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 20: paragraph still in English (12 words, 0 CJK chars) at x=74.3, y=492.3: for every Borel set 𝐴.We write ℳ+(𝒳) for finite positive"
+    },
+    {
+      "page": 30,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 30: block set at 7.97pt but the original at this position is 9.96pt (ratio 0.80 vs page median 0.92) at x=68.5, y=744.8: α 测度的博雷尔集上是一对一的。其在该集合的像上的逆为"
+    },
+    {
+      "page": 60,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 60: block set at 7.91pt but the original at this position is 9.93pt (ratio 0.80 vs page median 0.92) at x=78.8, y=744.0: 其条目ᵅ,ᵅis 是一个软祖先-后代质量，而不是同一细胞被观察两次的证据。"
+    },
+    {
+      "page": 66,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 66: displayed equation at y=191 shifted horizontally by 18pt vs original"
+    },
+    {
+      "page": 67,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 67: displayed equation at y=696 shifted horizontally by 165pt vs original"
+    },
+    {
+      "page": 71,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 71: block set at 8.36pt but the original at this position is 10.06pt (ratio 0.83 vs page median 0.92) at x=184.1, y=591.6: G上是单调的。布雷尼尔定理（Brenier’s theorem）补充道，当"
+    },
+    {
+      "page": 71,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 71: block set at 8.36pt but the original at this position is 10.06pt (ratio 0.83 vs page median 0.92) at x=80.0, y=602.7: d ⩾2 的情况下，反之不成立：正如蒙日（Monge）部分中的旋转示例所示，一个小的旋转是单调的"
+    },
+    {
+      "page": 71,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 71: paragraph still in English (16 words, 0 CJK chars) at x=94.3, y=134.9: Any permutation is a product of cycles, so it suffices t"
+    },
+    {
+      "page": 75,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 75: displayed equation at y=606 shifted horizontally by 190pt vs original"
+    },
+    {
+      "page": 75,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 75: paragraph still in English (20 words, 0 CJK chars) at x=79.4, y=509.9: ||𝑥−𝑦||𝑝d𝜋(𝑥, 𝑦))1/𝑝. Taking the infimum over 𝜋proves th"
+    },
+    {
+      "page": 84,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 84: block set at 8.14pt but the original at this position is 9.93pt (ratio 0.82 vs page median 0.92) at x=68.5, y=288.4: 命题4.28 (ᵎ∞robust 经验定律周围的包络）。设(ᵑ, ᵆ) 是一个波兰度量空间。设"
+    },
+    {
+      "page": 84,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 84: block set at 8.14pt but the original at this position is 9.93pt (ratio 0.82 vs page median 0.92) at x=170.3, y=305.1: B(z_{i},ρ) 是紧致的。重复的原子总是可以合并以符合此约定。对于任何实值上半连续损失"
+    },
+    {
+      "page": 86,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 86: block set at 8.47pt but the original at this position is 9.96pt (ratio 0.85 vs page median 0.92) at x=68.8, y=466.6: 命题4.34（赫尔德泛函的粒子多项式逼近）。令ᵏ⊂"
+    },
+    {
+      "page": 115,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 115: block set at 7.07pt but the original at this position is 9.86pt (ratio 0.72 vs page median 0.92) at x=180.5, y=566.3: bU^{-}^{1} 在概率上是一致的，所以函数式德尔塔方法"
+    },
+    {
+      "page": 116,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 116: block set at 8.34pt but the original at this position is 9.94pt (ratio 0.84 vs page median 0.92) at x=75.1, y=399.7: 定义6.16（利普希茨常数）。对于度量空间(ᵏ, ᵆ),上的函数ᵏ→R，其利普希茨常数为"
+    },
+    {
+      "page": 116,
+      "code": "preserved_ink_mismatch",
+      "severity": "error",
+      "message": "Page 116: preserved region at x=68, y=379 (213x14pt) renders with ink coverage 0.66 vs original"
+    },
+    {
+      "page": 118,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 118: displayed equation at y=343 shifted horizontally by 22pt vs original"
+    },
+    {
+      "page": 124,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 124: displayed equation at y=308 shifted horizontally by 19pt vs original"
+    },
+    {
+      "page": 125,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 125: block set at 6.67pt but the original at this position is 9.86pt (ratio 0.68 vs page median 0.92) at x=90.1, y=77.2: 示例7.14（双样本检验和生成模型评估）。"
+    },
+    {
+      "page": 147,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 147: block set at 8.17pt but the original at this position is 9.96pt (ratio 0.82 vs page median 0.92) at x=80.2, y=71.0: 命题8.20（连续熵对偶性）。设ᵏand ᵐbe 为紧度量空间，设∈ᵌ(ᵏ) 且∈ᵌ(ᵐ)，并设"
+    },
+    {
+      "page": 150,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 150: displayed equation at y=496 shifted horizontally by 37pt vs original"
+    },
+    {
+      "page": 150,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 150: paragraph still in English (30 words, 0 CJK chars) at x=68.0, y=612.3: For the scaling form, fix v > 0, set eK = K diag(v) and "
+    },
+    {
+      "page": 150,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Source prose remained verbatim at x=163.2, y=580.5: and"
+    },
+    {
+      "page": 150,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Source prose remained verbatim at x=251.9, y=580.5: and"
+    },
+    {
+      "page": 150,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Source prose remained verbatim at x=313.4, y=619.2: and"
+    },
+    {
+      "page": 167,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 167: paragraph still in English (18 words, 0 CJK chars) at x=79.0, y=186.3: Let (𝑍(𝑟))𝑟be the half-step sequence, so that 𝑍(2ℓ) = P("
+    },
+    {
+      "page": 175,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 175: paragraph still in English (15 words, 0 CJK chars) at x=79.4, y=691.1: hence 𝑑(𝑥, 𝑥★) ⩽𝑑(𝑥, 𝐹𝑥)/(1 −𝑞). Apply this with 𝑞= 𝜆2 t"
+    },
+    {
+      "page": 175,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 175: paragraph still in English (15 words, 0 CJK chars) at x=79.4, y=737.1: 𝑖,𝑗𝑒𝜉𝑖+𝜁𝑗= 1. Consequently min(𝜉⊕𝜁) ⩽0 ⩽max(𝜉⊕𝜁), and th"
+    },
+    {
+      "page": 183,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 183: paragraph still in English (12 words, 0 CJK chars) at x=173.8, y=72.7: 2 log det(Id−𝑆𝑆⊤). By von Neumann’s trace inequality, th"
+    },
+    {
+      "page": 188,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 188: block set at 6.99pt but the original at this position is 9.86pt (ratio 0.71 vs page median 0.92) at x=68.8, y=477.6: 对于每一个这样的，求解斯坦方程"
+    },
+    {
+      "page": 191,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 191: block set at 8.37pt but the original at this position is 9.96pt (ratio 0.84 vs page median 0.92) at x=272.2, y=669.5: 。每一步只移除共同的残余质量，因此所有测度都是正的，并且通过构造，"
+    },
+    {
+      "page": 196,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 196: block set at 7.06pt but the original at this position is 9.96pt (ratio 0.71 vs page median 0.92) at x=68.8, y=121.2: 以及独立的经验测度。那么，对于每个"
+    },
+    {
+      "page": 198,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 198: paragraph still in English (19 words, 0 CJK chars) at x=68.0, y=520.4: 𝑛,𝑚be an optimal coupling between ˆ𝛼𝑛and ˆ𝛽𝑚, with 𝜀= 𝜀𝑛"
+    },
+    {
+      "page": 205,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 205: displayed equation at y=253 shifted horizontally by 21pt vs original"
+    },
+    {
+      "page": 222,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 222: paragraph still in English (14 words, 0 CJK chars) at x=68.0, y=625.6: on S𝑑−1 × R. Its first marginal is 𝜎, so bℎ∈𝒫𝑝,𝜎(S𝑑−1 × "
+    },
+    {
+      "page": 231,
+      "code": "preserved_ink_mismatch",
+      "severity": "error",
+      "message": "Page 231: preserved region at x=152, y=443 (244x14pt) renders with ink coverage 0.55 vs original"
+    },
+    {
+      "page": 243,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 243: block set at 8.36pt but the original at this position is 9.96pt (ratio 0.84 vs page median 0.92) at x=80.1, y=572.2: 命题12.6（二次Wasserstein 重心的均值和支撑）。设∈ᵌ，设"
+    },
+    {
+      "page": 243,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 243: block set at 8.36pt but the original at this position is 9.96pt (ratio 0.84 vs page median 0.92) at x=86.6, y=585.1: ∈Σ，并设是平方欧几里得代价的重心。定义"
+    },
+    {
+      "page": 249,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 249: block set at 8.27pt but the original at this position is 9.96pt (ratio 0.83 vs page median 0.92) at x=80.2, y=504.5: 命题12.12（熵质心的对偶）。在上述正性假设下，(12.13) 中的最优尺度可以写成"
+    },
+    {
+      "page": 258,
+      "code": "preserved_ink_mismatch",
+      "severity": "error",
+      "message": "Page 258: preserved region at x=68, y=279 (448x14pt) renders with ink coverage 0.06 vs original"
+    },
+    {
+      "page": 263,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 263: paragraph still in English (13 words, 0 CJK chars) at x=85.6, y=261.8: (12.38)By convention, 𝑢≡+∞removes both the density bound"
+    },
+    {
+      "page": 268,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 268: block set at 7.70pt but the original at this position is 10.00pt (ratio 0.77 vs page median 0.92) at x=74.7, y=77.1: 定义12.29（正则化逆向最优传输损失）。令"
+    },
+    {
+      "page": 282,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 282: block set at 8.37pt but the original at this position is 9.96pt (ratio 0.84 vs page median 0.92) at x=78.8, y=486.3: 备注13.11（局部剖面作为瓦瑟斯坦-瓦瑟斯坦律）。给定一个度量-测度空间"
+    },
+    {
+      "page": 284,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 284: block set at 8.37pt but the original at this position is 9.96pt (ratio 0.84 vs page median 0.92) at x=68.8, y=715.2: 命题13.17（格罗莫夫-瓦瑟斯坦、瓦瑟斯坦-普罗克鲁斯特斯和瓦瑟斯坦）。设⩾1，设∈ᵌ(ᵏ) "
+    },
+    {
+      "page": 285,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 285: paragraph still in English (21 words, 0 CJK chars) at x=85.6, y=364.3: Definition 13.18 (Isometric metric-measure spaces). Two "
+    },
+    {
+      "page": 286,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 286: block set at 5.68pt but the original at this position is 9.89pt (ratio 0.57 vs page median 0.92) at x=78.5, y=496.2: 第一个启示是，当比较测度而非其刚体运动轨道时，这一结论是严格的。例如，令"
+    },
+    {
+      "page": 286,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 286: block set at 5.68pt but the original at this position is 10.06pt (ratio 0.56 vs page median 0.92) at x=78.5, y=523.7: Wasserstein 收敛的真正阻碍。第二个启示则更为微妙。在具有固定环境维度和均匀有界直径的"
+    },
+    {
+      "page": 286,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 286: block set at 5.68pt but the original at this position is 10.06pt (ratio 0.56 vs page median 0.92) at x=78.5, y=540.7: 和Sturm 的共同嵌入传输距离诱导相同的拓扑，而[374] 给出了在均匀有界欧几里得集上，后者"
+    },
+    {
+      "page": 304,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 304: displayed equation at y=321 shifted horizontally by 45pt vs original"
+    },
+    {
+      "page": 304,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 304: paragraph still in English (12 words, 0 CJK chars) at x=74.3, y=520.1: and they play the role of the two marginals of a classic"
+    },
+    {
+      "page": 306,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Source prose remained verbatim at x=504.6, y=82.5: be"
+    },
+    {
+      "page": 318,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 318: block set at 8.37pt but the original at this position is 9.96pt (ratio 0.84 vs page median 0.92) at x=75.1, y=596.6: 定义14.4（贝纳穆-布雷尼耶（Benamou–Brenier）作用量）。对于可接受的对"
+    },
+    {
+      "page": 318,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 318: block set at 8.07pt but the original at this position is 9.96pt (ratio 0.81 vs page median 0.92) at x=68.5, y=657.7: 定理14.5（贝纳穆-布雷尼耶（Benamou–Brenier））。对于概率测度"
+    },
+    {
+      "page": 355,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 355: paragraph still in English (22 words, 0 CJK chars) at x=79.4, y=715.7: Proof. Let 𝑄0, 𝑄1 be the quantile functions of 𝛼0, 𝛼1, a"
+    },
+    {
+      "page": 356,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 356: displayed equation at y=469 shifted horizontally by 20pt vs original"
+    },
+    {
+      "page": 357,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 357: paragraph still in English (16 words, 0 CJK chars) at x=79.4, y=582.1: Let 𝑇= ∇𝜑be the Brenier map from 𝛼0 = 𝜌0d𝑥to 𝛼1, set 𝑇𝑡="
+    },
+    {
+      "page": 360,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 360: displayed equation at y=584 shifted horizontally by 78pt vs original"
+    },
+    {
+      "page": 361,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 361: block set at 8.37pt but the original at this position is 9.96pt (ratio 0.84 vs page median 0.92) at x=80.2, y=70.9: 命题15.26（凸沃瑟斯坦流的能量衰减）。形式上假设是测地凸的，具"
+    },
+    {
+      "page": 361,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 361: block set at 8.37pt but the original at this position is 9.96pt (ratio 0.84 vs page median 0.92) at x=80.2, y=83.8: 有光滑的一阶变分，并且存在一个最小化器。设是沃瑟斯坦梯度流ᷗ"
+    },
+    {
+      "page": 368,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 368: block set at 8.17pt but the original at this position is 9.96pt (ratio 0.82 vs page median 0.92) at x=301.4, y=236.7: R^{d} 上的一个光滑概率测度。如果对于某个"
+    },
+    {
+      "page": 372,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 372: block set at 8.37pt but the original at this position is 9.86pt (ratio 0.85 vs page median 0.92) at x=222.0, y=665.1: _{2}(R^{d}) ，通过以下方式定义相对费舍尔信息："
+    },
+    {
+      "page": 377,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 377: paragraph still in English (16 words, 0 CJK chars) at x=85.3, y=229.2: Any continuous-time limit of its piecewise-constant inte"
+    },
+    {
+      "page": 398,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 398: displayed equation at y=372 shifted horizontally by 25pt vs original"
+    },
+    {
+      "page": 400,
+      "code": "formula_visible_ink_mismatch",
+      "severity": "error",
+      "message": "Page 400: inline formula sprite at x=237.2, y=330.0 (8x13pt) has no visible ink"
+    },
+    {
+      "page": 402,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 402: paragraph still in English (19 words, 0 CJK chars) at x=68.0, y=598.2: For 𝛼𝑡-a.e. 𝑥, let 𝜂𝑡,𝑥be the disintegration of the late"
+    },
+    {
+      "page": 419,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 419: displayed equation at y=274 shifted horizontally by 22pt vs original"
+    },
+    {
+      "page": 457,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 457: paragraph still in English (45 words, 0 CJK chars) at x=87.0, y=299.4: +(𝒳)Positive finite measures and probability measures.Se"
+    }
+  ]
+}

@@ -100,7 +100,7 @@
 <a id="ot-prereq"></a>
 ### 最优传输先修与图上 OT
 
-1. **Optimal Transport for Machine Learners.** lecture notes (arXiv preprint, v3 2026-08-08), 2025. [paper](https://arxiv.org/abs/2505.06589) [code](https://github.com/gpeyre/ot4ml) [解读](reports/O01_2505.06589.md) [原文PDF](papers/2505.06589.pdf)
+1. **Optimal Transport for Machine Learners.** lecture notes (arXiv preprint, v3 2026-08-08), 2025. [paper](https://arxiv.org/abs/2505.06589) [code](https://github.com/gpeyre/ot4ml) [解读](reports/O01_2505.06589.md) [中译PDF](papers_zh/2505.06589.zh.pdf) [原文PDF](papers/2505.06589.pdf)
 
     *Gabriel Peyre* · `P0`
 
@@ -405,7 +405,7 @@
 | T03 | Trajectory Balance: Improved Credit Assignment in GFlowNets | [T03_2201.13259.md](reports/T03_2201.13259.md) | [2201.13259.pdf](papers/2201.13259.pdf) | [2201.13259.zh.pdf](papers_zh/2201.13259.zh.pdf) | 1 issues |
 | T05 | Learning GFlowNets from Partial Episodes for Improved Convergence and  | [T05_2209.12782.md](reports/T05_2209.12782.md) | [2209.12782.pdf](papers/2209.12782.pdf) | [2209.12782.zh.pdf](papers_zh/2209.12782.zh.pdf) | 2 issues |
 | T10 | Towards Understanding and Improving GFlowNet Training | [T10_2305.07170.md](reports/T10_2305.07170.md) | [2305.07170.pdf](papers/2305.07170.pdf) | [2305.07170.zh.pdf](papers_zh/2305.07170.zh.pdf) | 3 issues |
-| O01 | Optimal Transport for Machine Learners | [O01_2505.06589.md](reports/O01_2505.06589.md) | [2505.06589.pdf](papers/2505.06589.pdf) | - | - |
+| O01 | Optimal Transport for Machine Learners | [O01_2505.06589.md](reports/O01_2505.06589.md) | [2505.06589.pdf](papers/2505.06589.pdf) | [2505.06589.zh.pdf](papers_zh/2505.06589.zh.pdf) | 69 issues |
 | O02 | Quadratically Regularized Optimal Transport on Graphs | [O02_1704.08200.md](reports/O02_1704.08200.md) | [1704.08200.pdf](papers/1704.08200.pdf) | [1704.08200.zh.pdf](papers_zh/1704.08200.zh.pdf) | 3 issues |
 | O03 | GeONet: a neural operator for learning the Wasserstein geodesic | [O03_2209.14440.md](reports/O03_2209.14440.md) | [2209.14440.pdf](papers/2209.14440.pdf) | [2209.14440.zh.pdf](papers_zh/2209.14440.zh.pdf) | 2 issues |
 | O04 | Schrodinger Bridge Flow for Unpaired Data Translation | [O04_2409.09347.md](reports/O04_2409.09347.md) | [2409.09347.pdf](papers/2409.09347.pdf) | [2409.09347.zh.pdf](papers_zh/2409.09347.zh.pdf) | 13 issues |

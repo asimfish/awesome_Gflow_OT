@@ -235,7 +235,7 @@ cost / 正则 & 线性最短路，$\varepsilon=0$ & 最短路 & 二次 FUGW & KL
 \begin{frame}{仓库里有什么}\framesubtitle{交付物}
 \begin{columns}[T]
 \begin{column}{0.235\textwidth}\begin{block}{18 篇深度解读}\footnotesize 严格 8 节模板；每个定理、数字带原文出处；末尾「编者注」记录自主决定的歧义。竞品矩阵、两份趋势扫描、INSIGHTS 综合\end{block}\end{column}
-\begin{column}{0.235\textwidth}\begin{block}{17 篇保版式中译 PDF}\footnotesize SuperTranslate：公式/图表/引用冻结，正文按原坐标回填；每篇附对象级 QA（inspect.json）。O01 讲义因 API 余额未译\end{block}\end{column}
+\begin{column}{0.235\textwidth}\begin{block}{18 篇保版式中译 PDF}\footnotesize SuperTranslate：公式/图表/引用冻结，正文按原坐标回填；每篇附对象级 QA（inspect.json）。O01 讲义 480 页用 Gemini 2.5 Flash 后端单独翻译\end{block}\end{column}
 \begin{column}{0.235\textwidth}\begin{block}{汇总报告 中/英}\footnotesize 由 \texttt{scripts/build\_report.py} 从解读报告拼装，pandoc + xelatex 编译：中文 91 页、英文 120 页（DeepSeek/Gemini 分块翻译，LaTeX 与引用逐字保留）\end{block}\end{column}
 \begin{column}{0.235\textwidth}\begin{block}{数据驱动 README}\footnotesize \texttt{data/meta/*.json} 一篇一卡 → \texttt{src/generator.py} 生成中英 README（awesome-ml4co 模式）；2026 增补自 \texttt{candidates\_*.csv}\end{block}\end{column}
 \end{columns}
@@ -276,7 +276,7 @@ cost / 正则 & 线性最短路，$\varepsilon=0$ & 最短路 & 二次 FUGW & KL
 \begin{itemize}
 \item 引擎：SuperTranslate \texttt{pdf\_zh\_translator}，参数 \texttt{--preserve-graphics-text --skip-overflow}，DeepSeek 后端。
 \item 不重排页面：公式、图表、引用先冻结，正文按原坐标回填；每页 \texttt{inspect} 对象级比对。
-\item 17/18 完成；O01（Peyr\'e 讲义，百余页）因翻译 API 余额耗尽未译。
+\item 18/18 完成；O01（Peyr\'e 讲义，480 页）用 OpenRouter / Gemini 2.5 Flash 后端单独翻译，约 4 小时，QA 69 issues。
 \item 已知 issue 类型：\texttt{untranslated\_block}（附录证明的数学密集句保留英文）、\texttt{font\_size\_drift}（字号缩放）、\texttt{display\_formula\_misaligned}（行间公式横向偏移 $\le$25pt）。
 \end{itemize}
 \end{frame}

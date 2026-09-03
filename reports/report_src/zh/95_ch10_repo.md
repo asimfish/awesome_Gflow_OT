@@ -19,7 +19,7 @@
 
 ## 10.3 翻译流水线与 QA
 
-翻译引擎为 SuperTranslate（`pdf_zh_translator`）：不重排页面，公式、图表、引用先冻结，正文翻译后按原坐标回填；参数 `--preserve-graphics-text --skip-overflow`，DeepSeek 后端。每篇译后运行 `inspect` 做逐页对象级比对，issue 数记入附录 A。已知限制：`--skip-overflow` 会让放不下的译文保留英文原句，附录证明页的数学密集段因此出现 `untranslated_block`；字号缩放会触发 `font_size_drift`。18 篇中 17 篇完成翻译；O01（Peyré 讲义，百余页）因翻译 API 余额耗尽未译，仅提供原文。
+翻译引擎为 SuperTranslate（`pdf_zh_translator`）：不重排页面，公式、图表、引用先冻结，正文翻译后按原坐标回填；参数 `--preserve-graphics-text --skip-overflow`，DeepSeek 后端。每篇译后运行 `inspect` 做逐页对象级比对，issue 数记入附录 A。已知限制：`--skip-overflow` 会让放不下的译文保留英文原句，附录证明页的数学密集段因此出现 `untranslated_block`；字号缩放会触发 `font_size_drift`。18 篇全部完成翻译。O01（Peyré 讲义，480 页）体量最大，用 OpenRouter 上的 Gemini 2.5 Flash 后端单独翻译（`scripts/translate_o01_openrouter.sh`），耗时约 4 小时，QA 报 69 个 issue（主要为字号漂移与附录数学密集段的英文残留）。
 
 ## 10.4 发表状态纪律
 

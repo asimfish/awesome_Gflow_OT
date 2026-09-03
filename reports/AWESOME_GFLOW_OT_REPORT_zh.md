@@ -3015,7 +3015,7 @@ O08/O07 在 \(\varepsilon=0\)（纯 LP，顶点解，有对偶证书）；GSBoG/
 
 ## 10.3 翻译流水线与 QA
 
-翻译引擎为 SuperTranslate（`pdf_zh_translator`）：不重排页面，公式、图表、引用先冻结，正文翻译后按原坐标回填；参数 `--preserve-graphics-text --skip-overflow`，DeepSeek 后端。每篇译后运行 `inspect` 做逐页对象级比对，issue 数记入附录 A。已知限制：`--skip-overflow` 会让放不下的译文保留英文原句，附录证明页的数学密集段因此出现 `untranslated_block`；字号缩放会触发 `font_size_drift`。18 篇中 17 篇完成翻译；O01（Peyré 讲义，百余页）因翻译 API 余额耗尽未译，仅提供原文。
+翻译引擎为 SuperTranslate（`pdf_zh_translator`）：不重排页面，公式、图表、引用先冻结，正文翻译后按原坐标回填；参数 `--preserve-graphics-text --skip-overflow`，DeepSeek 后端。每篇译后运行 `inspect` 做逐页对象级比对，issue 数记入附录 A。已知限制：`--skip-overflow` 会让放不下的译文保留英文原句，附录证明页的数学密集段因此出现 `untranslated_block`；字号缩放会触发 `font_size_drift`。18 篇全部完成翻译。O01（Peyré 讲义，480 页）体量最大，用 OpenRouter 上的 Gemini 2.5 Flash 后端单独翻译（`scripts/translate_o01_openrouter.sh`），耗时约 4 小时，QA 报 69 个 issue（主要为字号漂移与附录数学密集段的英文残留）。
 
 ## 10.4 发表状态纪律
 
@@ -3039,7 +3039,7 @@ O08/O07 在 \(\varepsilon=0\)（纯 LP，顶点解，有对偶证书）；GSBoG/
 | T03 | Trajectory Balance: Improved Credit Assignment in GFlowNets | NeurIPS 2022 (Advances in Neural Information Processing Systems 35) | main | `T03_2201.13259.md` | 1 issues |
 | T05 | Learning GFlowNets from Partial Episodes for Improved Convergence and Stability | ICML 2023 | main | `T05_2209.12782.md` | 2 issues |
 | T10 | Towards Understanding and Improving GFlowNet Training | ICML 2023 | main | `T10_2305.07170.md` | 3 issues |
-| O01 | Optimal Transport for Machine Learners | lecture notes (arXiv preprint, v3 2026-08-08) | lecture-notes | `O01_2505.06589.md` | ?? |
+| O01 | Optimal Transport for Machine Learners | lecture notes (arXiv preprint, v3 2026-08-08) | lecture-notes | `O01_2505.06589.md` | 69 issues |
 | O02 | Quadratically Regularized Optimal Transport on Graphs | SIAM Journal on Scientific Computing 40(4): A1961-A1986, 2018 | journal | `O02_1704.08200.md` | 3 issues |
 | O03 | GeONet: a neural operator for learning the Wasserstein geodesic | UAI 2024 | main | `O03_2209.14440.md` | 2 issues |
 | O04 | Schrodinger Bridge Flow for Unpaired Data Translation | NeurIPS 2024 (Spotlight) | main | `O04_2409.09347.md` | 13 issues |
