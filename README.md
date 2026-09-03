@@ -29,11 +29,12 @@ Venue discipline: main conference / journal / workshop / preprint are always lab
 4. [Optimal Transport Prerequisites and Graph OT](#ot-prereq)
 5. [Neural / Amortized OT and Schrodinger Bridges](#neural-ot)
 6. [Competing and Adjacent Works: OT and SB on Graphs](#competitors)
-7. [2026 Additions and Trends](#trends-2026)
-8. [Deep-Dive Reports and Translated PDFs](#deep-dive-reports)
-9. [Insights and Open Problems](#insights)
-10. [Reports and Slides](#deliverables)
-11. [Contributing and Citation](#contributing)
+7. [2026 Additions with Deep-Dive Reports](#new-2026)
+8. [2026 Additions and Trends](#trends-2026)
+9. [Deep-Dive Reports and Translated PDFs](#deep-dive-reports)
+10. [Insights and Open Problems](#insights)
+11. [Reports and Slides](#deliverables)
+12. [Contributing and Citation](#contributing)
 
 <a id="core"></a>
 ### GFlowNet x Optimal Transport (core)
@@ -167,228 +168,232 @@ Venue discipline: main conference / journal / workshop / preprint are always lab
     > DDSBM extends Iterative Markovian Fitting to CTMCs on finite state spaces with a proof of monotone convergence to the Schrodinger bridge, and shows that with node/edge-independent reference dynamics the induced entropic-OT cost is proportional to the graph edit distance, applied to molecular optimization on ZINC250K and Polymer.
 
 
+<a id="new-2026"></a>
+### 2026 Additions with Deep-Dive Reports
+
+1. **Minimum-Cost Network Flow with Dual Predictions.** AAAI 2026, 2026. [paper](https://arxiv.org/abs/2601.20203) [report](reports/N01_2601.20203.md) [zh-PDF](papers_zh/2601.20203.zh.pdf) [PDF](papers/2601.20203.pdf)
+
+    *Zhiyang Chen, Hailong Yao, Xia Yin* · `P1`
+
+    > First minimum-cost flow algorithm warm-started by a learned dual prediction: epsilon-relaxation runs in O(min{n^3 log||p_hat - p*||_inf, n^3 log(nC)}) (Theorem 2), consistent and robust, with PAC bounds for learning the prediction and 12.7x / 1.6x speedups on traffic and PCB routing.
+
+2. **Stop the Sampler! Classifier-Based Adaptive Stopping for Sampling Kernels.** ICML 2026 SPIGM Workshop, 2026. [paper](https://arxiv.org/abs/2606.16073) [report](reports/N02_2606.16073.md) [zh-PDF](papers_zh/2606.16073.zh.pdf) [PDF](papers/2606.16073.pdf)
+
+    *Kirill Korolev, Nikita Morozov, Stepan Pavlenko, Esmeralda S. Whitammer, Sergey Samsonov* · `P1`
+
+    > Puts MCMC inside continuous non-acyclic GFlowNet theory: a learned stopping classifier d_F(s) decides termination, detailed balance ties the optimal classifier to the target (Theorem 3.6), total flow is minimal iff the expected length hits a closed-form n_Q* (Corollary 3.7); trajectory lengths drop 1-2 orders of magnitude vs ULA (Table 1).
+
+3. **Stable GFlowNets with TV Monitoring and Probabilistic Guarantees.** arXiv preprint, 2026. [paper](https://arxiv.org/abs/2605.01729) [report](reports/N03_2605.01729.md) [zh-PDF](papers_zh/2605.01729.zh.pdf) [PDF](papers/2605.01729.pdf)
+
+    *Zengxiang Lei, Ananth Shreekumar, Jonathan Rosenthal, Ruoyu Song, Alvaro A. Cardenas, Daniel J. Fremont, Dongyan Xu, Satish Ukkusuri, Z. Berkay Celik* · `P0`
+
+    > Shows small TV does not bound GFlowNet loss (Prop. 3.3-3.4), then proves the converse certificate: per-trajectory TB loss <= c^2 implies TV <= 1 - e^{-2c} (Theorem 3.5) with a sampling-based probabilistic version independent of state-space size (Theorem 3.6); adaptive reference flows stabilize training at a computable fidelity cost (Theorem 3.10-3.11).
+
+4. **Generative Modeling on Metric Graphs via Neural Optimal Transport.** arXiv preprint, 2026. [paper](https://arxiv.org/abs/2606.16273) [report](reports/N04_2606.16273.md) [zh-PDF](papers_zh/2606.16273.zh.pdf) [PDF](papers/2606.16273.pdf)
+
+    *Alessandro Micheli, Yueqi Cao, Anthea Monod, Samir Bhatt* · `P2`
+
+    > First generative model for distributions supported on metric graphs: embed the graph (Euclidean or tropical Abel-Jacobi), solve entropic OT via a neural semidual, project samples back; the generator converges weakly to a valid graph coupling (Theorem 4.1); scales to 10^6 Uber pickups on the Manhattan road graph.
+
+5. **An Efficient Orlicz-Sobolev Approach for Transporting Unbalanced Measures on a Graph.** NeurIPS 2025 Spotlight, 2025. [paper](https://arxiv.org/abs/2502.00739) [report](reports/N05_2502.00739.md) [zh-PDF](papers_zh/2502.00739.zh.pdf) [PDF](papers/2502.00739.pdf)
+
+    *Tam Le, Truyen Nguyen, Hideitsu Hino, Kenji Fukumizu* · `P1`
+
+    > Unbalanced OT on graph metric spaces without a two-level problem: EPT is recast as a balanced OT with nonnegative cost (Prop. 3.1), endowed with Orlicz geometry, then regularized into Orlicz-Sobolev transport that reduces to a single univariate optimization (Theorem 4.2), 250-13800x faster than Orlicz-EPT.
+
+6. **Entering the Era of Discrete Diffusion Models: A Benchmark for Schrodinger Bridges and Entropic Optimal Transport.** ICLR 2026, 2026. [paper](https://arxiv.org/abs/2509.23348) [report](reports/N06_2509.23348.md) [zh-PDF](papers_zh/2509.23348.zh.pdf) [PDF](papers/2509.23348.pdf)
+
+    *Xavier Aramayo Carrasco, Grigoriy Ksenofontov, Aleksei Leonov, Iaroslav Sergeevich Koshelev* · `P1`
+
+    > First benchmark with analytically known solutions for discrete-space EOT/SB: any (p_0, v*) yields a pair (p_0, p_1) with closed-form optimal coupling (Theorem 3.1), made tractable in S^D via CP parameterization; by-product solvers DLightSB / DLightSB-M / alpha-CSBM, with DLightSB strongest across all settings.
+
+
 <a id="trends-2026"></a>
 ### 2026 Additions and Trends
 
 Papers found by the 2026 trend scan (relevance >= 4). Full analysis: [reports/TRENDS_GFN_2026.md](reports/TRENDS_GFN_2026.md), [reports/TRENDS_OT_2026.md](reports/TRENDS_OT_2026.md).
 
-1. **Stop the Sampler! Classifier-Based Adaptive Stopping for Sampling Kernels.** ICML 2026 SPIGM Workshop (Workshop, per arXiv comment), 2026. [paper](https://arxiv.org/abs/2606.16073) [code](unknown)
-
-    *Kirill Korolev, Nikita Morozov, Stepan Pavlenko, Esmeralda S. Whitammer, Sergey Samsonov*
-
-    > Learns a state-dependent stopping classifier inside the non-acyclic GFlowNet framework so MCMC-style trajectories terminate on their own, cutting average trajectory length.
-
-2. **Stable GFlowNets with TV Monitoring and Probabilistic Guarantees.** arXiv preprint (comment empty, unverified), 2026. [paper](https://arxiv.org/abs/2605.01729) [code](unknown)
-
-    *Zengxiang Lei, Ananth Shreekumar, Jonathan Rosenthal, Ruoyu Song, Alvaro A. Cardenas, et al.*
-
-    > Proves that a small total-variation gap does not bound the trajectory-balance loss, then derives converse loss-to-TV bounds and a Stable-GFlowNet training scheme with an adaptive reference flow.
-
-3. **Generative Modeling on Metric Graphs via Neural Optimal Transport.** arXiv preprint (comment empty, unverified), 2026. [paper](https://arxiv.org/abs/2606.16273) [code](unknown)
-
-    *Alessandro Micheli, Yueqi Cao, Anthea Monod, Samir Bhatt*
-
-    > First deep generative framework for measures supported on compact metric graphs: embeds the graph, solves an entropic Kantorovich problem with a neural semidual parameterization, projects back, and proves weak convergence to a valid coupling.
-
-4. **Minimum-Cost Network Flow with Dual Predictions.** AAAI 2026 (per arXiv comment), 2026. [paper](https://arxiv.org/abs/2601.20203) [code](unknown)
-
-    *Zhiyang Chen, Hailong Yao, Xia Yin*
-
-    > First minimum-cost network flow algorithm augmented with a learned dual prediction, built on epsilon-relaxation, with running-time bounds in the infinity-norm prediction error and PAC sample complexity for the predictor.
-
-5. **Learning fMRI activations dictionaries across individual geometries via optimal transport.** arXiv preprint (comment empty, unverified), 2026. [paper](https://arxiv.org/abs/2605.20883) [code](unknown)
+1. **Learning fMRI activations dictionaries across individual geometries via optimal transport.** arXiv preprint (comment empty, unverified), 2026. [paper](https://arxiv.org/abs/2605.20883) [code](unknown)
 
     *Sonia Mazelet, Remi Flamary, Bertrand Thirion*
 
     > Learns fMRI activation dictionaries across individual brain geometries by comparing graphs with the Fused Gromov-Wasserstein distance, using an amortized neural network to predict approximate transport plans and atoms that depend on the FGW tradeoff parameter.
 
-6. **An Efficient Orlicz-Sobolev Approach for Transporting Unbalanced Measures on a Graph.** NeurIPS 2025 Spotlight (per arXiv comment), 2025. [paper](https://arxiv.org/abs/2502.00739) [code](unknown)
-
-    *Tam Le, Truyen Nguyen, Hideitsu Hino, Kenji Fukumizu*
-
-    > Introduces Orlicz entropy partial transport and Orlicz-Sobolev transport for measures of different total mass on graph metric spaces, computable by solving a single univariate optimization problem.
-
-7. **Entering the Era of Discrete Diffusion Models: A Benchmark for Schrodinger Bridges and Entropic Optimal Transport.** arXiv preprint (comment empty, unverified), 2025. [paper](https://arxiv.org/abs/2509.23348) [code](https://github.com/gregkseno/catsbench)
-
-    *Xavier Aramayo Carrasco, Grigoriy Ksenofontov, Aleksei Leonov, Iaroslav Sergeevich Koshelev, Alexander Korotin*
-
-    > Builds the first benchmark for Schrodinger bridges on discrete spaces with analytically known solutions, and as a byproduct introduces the DLightSB, DLightSB-M and alpha-CSBM solvers.
-
-8. **Controlling Exploration-Exploitation in GFlowNets via Markov Chain Perspectives.** arXiv preprint (comment empty, unverified), 2026. [paper](https://arxiv.org/abs/2602.01749) [code](unknown)
+2. **Controlling Exploration-Exploitation in GFlowNets via Markov Chain Perspectives.** arXiv preprint (comment empty, unverified), 2026. [paper](https://arxiv.org/abs/2602.01749) [code](unknown)
 
     *Lin Chen, Samuel Drapeau, Fanghao Shao, Xuekai Zhu, Bo Xue, et al.*
 
     > Shows GFlowNet objectives are equivalent to reversibility of an induced Markov chain and introduces alpha-GFN, which tunes the forward/backward mixing ratio.
 
-9. **Proximal Policy Optimization for Amortized Discrete Sampling.** arXiv preprint (comment empty, unverified), 2026. [paper](https://arxiv.org/abs/2606.15793) [code](unknown)
+3. **Proximal Policy Optimization for Amortized Discrete Sampling.** arXiv preprint (comment empty, unverified), 2026. [paper](https://arxiv.org/abs/2606.15793) [code](unknown)
 
     *Anna Zykova-Myzina, Timofei Gritsaev, Daniil Tiapkin, Nikita Morozov*
 
     > Derives policy-gradient equivalents for GFlowNet training and is the first to apply proximal policy optimization, reporting faster convergence than standard GFlowNet objectives.
 
-10. **$f$-Trajectory Balance: A Loss Family for Tuning GFlowNets, Generative Models, and LLMs with Off- and On-Policy Data.** ICML 2026 (per arXiv comment), 2026. [paper](https://arxiv.org/abs/2605.15417) [code](unknown)
+4. **$f$-Trajectory Balance: A Loss Family for Tuning GFlowNets, Generative Models, and LLMs with Off- and On-Policy Data.** ICML 2026 (per arXiv comment), 2026. [paper](https://arxiv.org/abs/2605.15417) [code](unknown)
 
     *Jake Fawkes, Jason Hartford*
 
     > Extends the trajectory-balance surrogate to the whole family of f-divergences, so on-policy gradients match the chosen f-divergence while the off-policy global minimizer is unchanged.
 
-11. **Evaluating GFlowNet from partial episodes for stable and flexible policy-based training.** ICLR 2026 (per arXiv comment), 2026. [paper](https://arxiv.org/abs/2603.01047) [code](unknown)
+5. **Evaluating GFlowNet from partial episodes for stable and flexible policy-based training.** ICLR 2026 (per arXiv comment), 2026. [paper](https://arxiv.org/abs/2603.01047) [code](unknown)
 
     *Puhua Niu, Shili Wu, Xiaoning Qian*
 
     > Shows flow balance also yields a policy evaluator and proposes an evaluation-balance objective over partial episodes that supports parameterized backward policies and offline data.
 
-12. **Information-Geometric Forward Policy Training in GFlowNets.** arXiv preprint (comment has no venue, unverified), 2026. [paper](https://arxiv.org/abs/2608.03967) [code](unknown)
+6. **Information-Geometric Forward Policy Training in GFlowNets.** arXiv preprint (comment has no venue, unverified), 2026. [paper](https://arxiv.org/abs/2608.03967) [code](unknown)
 
     *Yordan Raykov, Rodrigo Veiga*
 
     > Treats the forward policy as a trajectory sampler, identifies its intrinsic geometry as the Fisher-Rao metric, and decomposes the trajectory Fisher into per-step conditional second moments.
 
-13. **GFlowRL: Scaling Distribution-Matching RL to Large Language Models.** arXiv preprint (comment has no venue, unverified), 2026. [paper](https://arxiv.org/abs/2607.13394) [code](https://github.com/microsoft/gflowrl)
+7. **GFlowRL: Scaling Distribution-Matching RL to Large Language Models.** arXiv preprint (comment has no venue, unverified), 2026. [paper](https://arxiv.org/abs/2607.13394) [code](https://github.com/microsoft/gflowrl)
 
     *Xiaodong Liu, Michael Xu, Jack W. Stokes, Paul Smolensky, Doug Burger, et al.*
 
     > Removes the learned partition network from GFlowNet-style LLM RL by using an in-batch Monte Carlo estimate, plus importance-sampling correction and asymmetric flow-gap clipping.
 
-14. **Regularity of Solutions to Beckmann's Parametric Optimal Transport.** arXiv preprint (comment has no venue, unverified), 2026. [paper](https://arxiv.org/abs/2603.19755) [code](unknown)
+8. **Regularity of Solutions to Beckmann's Parametric Optimal Transport.** arXiv preprint (comment has no venue, unverified), 2026. [paper](https://arxiv.org/abs/2603.19755) [code](unknown)
 
     *Hanno Gottschalk, Tobias J. Riedlinger*
 
     > Develops Holder regularity theory for Beckmann's problem through an unconstrained Lagrangian, showing the multiplier enforcing the divergence constraint solves a Poisson equation and the flux is its gradient, with joint parameter regularity for conditional targets.
 
-15. **Statistical Mechanics of the Sub-Optimal Transport.** arXiv preprint (comment has no venue, unverified), 2026. [paper](https://arxiv.org/abs/2602.04308) [code](unknown)
+9. **Statistical Mechanics of the Sub-Optimal Transport.** arXiv preprint (comment has no venue, unverified), 2026. [paper](https://arxiv.org/abs/2602.04308) [code](unknown)
 
     *Riccardo Piombo, Lorenzo Buffa, Dario Mazzilli, Aurelio Patelli*
 
     > Mean-field theory for the Sub-Optimal Transport model, an ensemble of weighted bipartite graphs where a coupling parameter interpolates between entropy-dominated dense couplings and cost-dominated sparse ones; the crossover is smooth, not a phase transition.
 
-16. **Exponential Convergence of the Sinkhorn Algorithm for the Schrodinger Bridge with Regime Switching.** arXiv preprint (comment empty, unverified), 2026. [paper](https://arxiv.org/abs/2607.19176) [code](unknown)
+10. **Exponential Convergence of the Sinkhorn Algorithm for the Schrodinger Bridge with Regime Switching.** arXiv preprint (comment empty, unverified), 2026. [paper](https://arxiv.org/abs/2607.19176) [code](unknown)
 
     *Katharina Eichinger, Anna Kazeykina, Zhenjie Ren, Hecheng Wang*
 
     > Proves exponential convergence in relative entropy of the Sinkhorn algorithm for the Schrodinger bridge with regime switching on a hybrid state space R^d times a finite set, including a partially observed terminal setting.
 
-17. **Amortized Optimal Transport from Sliced Potentials.** arXiv preprint (comment has no venue, unverified), 2026. [paper](https://arxiv.org/abs/2604.15114) [code](unknown)
+11. **Amortized Optimal Transport from Sliced Potentials.** arXiv preprint (comment has no venue, unverified), 2026. [paper](https://arxiv.org/abs/2604.15114) [code](unknown)
 
     *Minh-Phuc Truong, Khai Nguyen*
 
     > Predicts OT plans across many measure pairs by amortizing Kantorovich potentials from sliced OT, with a regression-based and an objective-based variant, then recovering the plan from the estimated potentials.
 
-18. **SinkSLOT: Sinkhorn via Sparse Lifted Optimal Transport.** arXiv preprint (comment empty, unverified), 2026. [paper](https://arxiv.org/abs/2608.28262) [code](https://github.com/cai4cai/SinkSLOT)
+12. **SinkSLOT: Sinkhorn via Sparse Lifted Optimal Transport.** arXiv preprint (comment empty, unverified), 2026. [paper](https://arxiv.org/abs/2608.28262) [code](https://github.com/cai4cai/SinkSLOT)
 
     *Ian Hsieh, Soumya Snigdha Kundu, Tom Vercauteren, Reuben Dorent*
 
     > SinkSLOT sparsifies the Gibbs kernel using an expected sliced lifted transport plan as a non-independent reference coupling, giving O(LN) per-iteration cost with a convergence proof and no debiasing needed.
 
-19. **Stability of Quadratically Regularized Optimal Transport.** arXiv preprint (comment empty, unverified), 2026. [paper](https://arxiv.org/abs/2605.27883) [code](unknown)
+13. **Stability of Quadratically Regularized Optimal Transport.** arXiv preprint (comment empty, unverified), 2026. [paper](https://arxiv.org/abs/2605.27883) [code](unknown)
 
     *Alberto Gonzalez-Sanz, Marcel Nutz*
 
     > Quantitative stability theory for quadratically regularized OT under perturbations of marginals, cost and regularization, centred on an L-infinity stability result for the dual potentials and yielding local Lipschitz stability of the optimal support.
 
-20. **Polyak-Lojasiewicz Inequality for Quadratically Regularized Optimal Transport.** SIAM Journal on Optimization, to appear (per arXiv comment), 2026. [paper](https://arxiv.org/abs/2605.27175) [code](unknown)
+14. **Polyak-Lojasiewicz Inequality for Quadratically Regularized Optimal Transport.** SIAM Journal on Optimization, to appear (per arXiv comment), 2026. [paper](https://arxiv.org/abs/2605.27175) [code](unknown)
 
     *Alberto Gonzalez-Sanz, Marcel Nutz, Andres Riveros Valdevenito*
 
     > Establishes a local error bound and a Polyak-Lojasiewicz inequality for the quadratically regularized OT dual with explicit constants, giving linear convergence rates for gradient and coordinate ascent.
 
-21. **Statistical Estimation of Monge Transport Maps via Brenier Potentials.** arXiv preprint (comment empty, unverified), 2026. [paper](https://arxiv.org/abs/2604.22366) [code](unknown)
+15. **Statistical Estimation of Monge Transport Maps via Brenier Potentials.** arXiv preprint (comment empty, unverified), 2026. [paper](https://arxiv.org/abs/2604.22366) [code](unknown)
 
     *Elsa Cazelles, Edouard Pauwels, Leo Portales*
 
     > Statistical estimator for Monge maps built from the dual solution of the discrete sampled problem, with convergence rates from a new error bound for quadratic OT and sharper rates in the semi-discrete case.
 
-22. **Uniform Statistical Convergence of Empirical Sinkhorn Potentials with Exponential and Polynomial Dependence on the Regularization Parameter.** arXiv preprint (comment empty, unverified), 2026. [paper](https://arxiv.org/abs/2608.29152) [code](unknown)
+16. **Uniform Statistical Convergence of Empirical Sinkhorn Potentials with Exponential and Polynomial Dependence on the Regularization Parameter.** arXiv preprint (comment empty, unverified), 2026. [paper](https://arxiv.org/abs/2608.29152) [code](unknown)
 
     *Denis Belomestny*
 
     > Non-asymptotic n^{-1/2} rates for empirical Sinkhorn potentials in the quotient supremum norm, with conditions under which the constant depends polynomially rather than exponentially on 1/epsilon, plus matching minimax lower bounds.
 
-23. **Reinforcement Learning via Value Gradient Flow.** ICLR 2026 (per arXiv comment), 2026. [paper](https://arxiv.org/abs/2604.14265) [code](https://ryanxhr.github.io/vgf)
+17. **Reinforcement Learning via Value Gradient Flow.** ICLR 2026 (per arXiv comment), 2026. [paper](https://arxiv.org/abs/2604.14265) [code](https://ryanxhr.github.io/vgf)
 
     *Haoran Xu, Kaiwen Hu, Somayeh Sojoudi, Amy Zhang*
 
     > Value Gradient Flow casts behavior-regularized RL as an optimal transport problem from the reference distribution to the value-induced optimal policy, solved by discrete gradient flow with regularization controlled by the transport budget.
 
-24. **Global Convergence of Wasserstein Policy Gradient for Entropy-Regularized Reinforcement Learning.** arXiv preprint (comment empty, unverified), 2026. [paper](https://arxiv.org/abs/2605.26078) [code](unknown)
+18. **Global Convergence of Wasserstein Policy Gradient for Entropy-Regularized Reinforcement Learning.** arXiv preprint (comment empty, unverified), 2026. [paper](https://arxiv.org/abs/2605.26078) [code](unknown)
 
     *Zhaoyu Zhu, Rui Gao, Shuang Li*
 
     > Proves global convergence of Wasserstein policy gradient for entropy-regularized RL by replacing convexity with a Bellman-based argument that yields a distributional Polyak-Lojasiewicz condition under a uniform log-Sobolev inequality.
 
-25. **Exploration through Generation: Applying GFlowNets to Structured Search.** arXiv preprint (comment has no venue, unverified), 2025. [paper](https://arxiv.org/abs/2510.21886) [code](unknown)
+19. **Exploration through Generation: Applying GFlowNets to Structured Search.** arXiv preprint (comment has no venue, unverified), 2025. [paper](https://arxiv.org/abs/2510.21886) [code](unknown)
 
     *Mark Phillip Matovic*
 
     > Applies trajectory-balance GFlowNets to shortest path, minimum spanning tree and TSP on small benchmark graphs and reports agreement with Dijkstra, Kruskal and exact solvers.
 
-26. **A Theory of Multi-Agent Generative Flow Networks.** Accepted at SPIGM Workshop NeurIPS 2025 (Workshop, per arXiv comment), 2025. [paper](https://arxiv.org/abs/2509.20408) [code](unknown)
+20. **A Theory of Multi-Agent Generative Flow Networks.** Accepted at SPIGM Workshop NeurIPS 2025 (Workshop, per arXiv comment), 2025. [paper](https://arxiv.org/abs/2509.20408) [code](unknown)
 
     *Leo Maxime Brunswic, Haozhi Wang, Shuang Luo, Jianye Hao, Amir Rasouli, et al.*
 
     > Builds a theory of multi-agent GFlowNets with centralized, independent, joint and conditional flow networks, proving that local flows can be trained as one global flow.
 
-27. **Ergodic Generative Flows.** ICML 2025 (per arXiv comment), 2025. [paper](https://arxiv.org/abs/2505.03561) [code](unknown)
+21. **Ergodic Generative Flows.** ICML 2025 (per arXiv comment), 2025. [paper](https://arxiv.org/abs/2505.03561) [code](unknown)
 
     *Leo Maxime Brunswic, Mateo Clemente, Rui Heng Yang, Adam Sigal, Amir Rasouli, et al.*
 
     > Ergodic Generative Flows use finitely many globally defined diffeomorphisms to make flow-matching loss tractable in continuous settings and add a KL-weak-FM loss for imitation learning.
 
-28. **Sampling Decisions: Exact Path-Space Control for Physics-Informed Generative Sampling.** arXiv preprint (comment has no venue, unverified), 2025. [paper](https://arxiv.org/abs/2503.14549) [code](unknown)
+22. **Sampling Decisions: Exact Path-Space Control for Physics-Informed Generative Sampling.** arXiv preprint (comment has no venue, unverified), 2025. [paper](https://arxiv.org/abs/2503.14549) [code](unknown)
 
     *Michael Chertkov, Hamidreza Behjoo, Sungsoo Ahn*
 
     > Frames sequential structured generation as an exact path-space control problem, with the corrected law given by a Doob h-transform and identified as a one-sided Schrodinger transport and an ideal GFlowNet flow function.
 
-29. **Relative Trajectory Balance is equivalent to Trust-PCL.** arXiv preprint (comment empty, unverified), 2025. [paper](https://arxiv.org/abs/2509.01632) [code](unknown)
+23. **Relative Trajectory Balance is equivalent to Trust-PCL.** arXiv preprint (comment empty, unverified), 2025. [paper](https://arxiv.org/abs/2509.01632) [code](unknown)
 
     *Tristan Deleu, Padideh Nouri, Yoshua Bengio, Doina Precup*
 
     > Proves Relative Trajectory Balance is equivalent to Trust-PCL, an off-policy KL-regularized RL method, and shows KL-regularized RL matches RTB on the paper's illustrative example.
 
-30. **From discrete-time policies to continuous-time diffusion samplers: Asymptotic equivalences and faster training.** TMLR (per arXiv comment/journal_ref), 2025. [paper](https://arxiv.org/abs/2501.06148) [code](https://github.com/GFNOrg/gfn-diffusion/tree/stagger)
+24. **From discrete-time policies to continuous-time diffusion samplers: Asymptotic equivalences and faster training.** TMLR (per arXiv comment/journal_ref), 2025. [paper](https://arxiv.org/abs/2501.06148) [code](https://github.com/GFNOrg/gfn-diffusion/tree/stagger)
 
     *Julius Berner, Lorenz Richter, Marcin Sendera, Jarrid Rector-Brooks, Nikolay Malkin*
 
     > Proves equivalences between discrete-time entropic RL objectives (GFlowNets) and continuous-time objects (PDEs, path-space measures) in the small-step limit, and shows coarse time discretization speeds up training.
 
-31. **Unrealized Expectations: Comparing AI Methods vs Classical Algorithms for Maximum Independent Set.** TMLR (per arXiv comment/journal_ref), 2025. [paper](https://arxiv.org/abs/2502.03669) [code](unknown)
+25. **Unrealized Expectations: Comparing AI Methods vs Classical Algorithms for Maximum Independent Set.** TMLR (per arXiv comment/journal_ref), 2025. [paper](https://arxiv.org/abs/2502.03669) [code](unknown)
 
     *Yikai Wu, Haoyu Zhao, Sanjeev Arora*
 
     > Compares AI methods against classical solvers on Maximum Independent Set and finds the classical KaMIS solver on one CPU beats leading GPU-based AI methods, with a serialization analysis showing the GFlowNet-based LTFT reasons like a degree-based greedy.
 
-32. **gfnx: Fast and Scalable Library for Generative Flow Networks in JAX.** arXiv preprint (comment has no venue, unverified), 2025. [paper](https://arxiv.org/abs/2511.16592) [code](https://github.com/d-tiapkin/gfnx)
+26. **gfnx: Fast and Scalable Library for Generative Flow Networks in JAX.** arXiv preprint (comment has no venue, unverified), 2025. [paper](https://arxiv.org/abs/2511.16592) [code](https://github.com/d-tiapkin/gfnx)
 
     *Daniil Tiapkin, Artem Agarkov, Nikita Morozov, Ian Maksimov, Askar Tsyganov, et al.*
 
     > gfnx is a JAX library with single-file implementations of core GFlowNet objectives plus hypergrid, sequence, molecular, phylogenetic and Ising environments, reporting up to 55x-80x speedups over PyTorch baselines.
 
-33. **A convex approach for Markov chain estimation from aggregate data via inverse optimal transport.** arXiv preprint (comment has no venue, unverified), 2025. [paper](https://arxiv.org/abs/2511.16458) [code](unknown)
+27. **A convex approach for Markov chain estimation from aggregate data via inverse optimal transport.** arXiv preprint (comment has no venue, unverified), 2025. [paper](https://arxiv.org/abs/2511.16458) [code](unknown)
 
     *Michele Mascherpa, Axel Ringh, Amirhossein Taghvaei, Johan Karlsson*
 
     > Estimates the transition matrix of a discrete-state Markov chain from aggregate distributions at successive times by jointly optimizing over the matrix and entropic transport plans, yielding a convex problem with a proximal algorithm.
 
-34. **Adjoint Schrodinger Bridge Sampler.** NeurIPS 2025 (per arXiv comment), 2025. [paper](https://arxiv.org/abs/2506.22565) [code](https://github.com/facebookresearch/adjoint_samplers)
+28. **Adjoint Schrodinger Bridge Sampler.** NeurIPS 2025 (per arXiv comment), 2025. [paper](https://arxiv.org/abs/2506.22565) [code](https://github.com/facebookresearch/adjoint_samplers)
 
     *Guan-Horng Liu, Jaemoo Choi, Yongxin Chen, Benjamin Kurt Miller, Ricky T. Q. Chen*
 
     > Adjoint Schrodinger Bridge Sampler learns to sample from unnormalized energies with a matching-based objective that needs no target samples, generalizing Adjoint Sampling to arbitrary source distributions by dropping the memoryless condition.
 
-35. **Efficient Transferable Optimal Transport via Min-Sliced Transport Plans.** arXiv preprint (comment empty, unverified), 2025. [paper](https://arxiv.org/abs/2511.19741) [code](unknown)
+29. **Efficient Transferable Optimal Transport via Min-Sliced Transport Plans.** arXiv preprint (comment empty, unverified), 2025. [paper](https://arxiv.org/abs/2511.19741) [code](unknown)
 
     *Xinran Liu, Elaheh Akbari, Rocio Diaz Martin, Navid NaderiAlizadeh, Soheil Kolouri*
 
     > Studies whether an optimized slicer in the min-Sliced Transport Plan framework transfers to new distribution pairs, proving stability under perturbations and adding a minibatch formulation with statistical guarantees.
 
-36. **An efficient algorithm for entropic optimal transport under martingale-type constraints.** arXiv preprint (comment empty, unverified), 2025. [paper](https://arxiv.org/abs/2508.17641) [code](unknown)
+30. **An efficient algorithm for entropic optimal transport under martingale-type constraints.** arXiv preprint (comment empty, unverified), 2025. [paper](https://arxiv.org/abs/2508.17641) [code](unknown)
 
     *Xun Tang, Michael Shavlovsky, Holakou Rahmanian, Tesi Xiao, Lexing Ying*
 
     > Entropic OT under martingale-type conditions, noting that these are row-wise equality or inequality constraints on the coupling, solved by Sinkhorn-type algorithms with sparse Newton iterations.
 
-37. **Weighted Conditional Flow Matching.** arXiv preprint (comment has no venue, unverified), 2025. [paper](https://arxiv.org/abs/2507.22270) [code](unknown)
+31. **Weighted Conditional Flow Matching.** arXiv preprint (comment has no venue, unverified), 2025. [paper](https://arxiv.org/abs/2507.22270) [code](unknown)
 
     *Sergio Calvo-Ordonez, Matthieu Meunier, Alvaro Cartea, Christoph Reisinger, Yarin Gal, et al.*
 
@@ -418,6 +423,12 @@ Papers found by the 2026 trend scan (relevance >= 4). Full analysis: [reports/TR
 | C01 | Unsupervised Learning for Optimal Transport plan prediction between un | [C01_2506.12025.md](reports/C01_2506.12025.md) | [2506.12025.pdf](papers/2506.12025.pdf) | [2506.12025.zh.pdf](papers_zh/2506.12025.zh.pdf) | 0 issues |
 | C02 | Generalized Schrodinger Bridge on Graphs | [C02_2602.04675.md](reports/C02_2602.04675.md) | [2602.04675.pdf](papers/2602.04675.pdf) | [2602.04675.zh.pdf](papers_zh/2602.04675.zh.pdf) | 3 issues |
 | C03 | Discrete Diffusion Schrodinger Bridge Matching for Graph Transformatio | [C03_2410.01500.md](reports/C03_2410.01500.md) | [2410.01500.pdf](papers/2410.01500.pdf) | [2410.01500.zh.pdf](papers_zh/2410.01500.zh.pdf) | 10 issues |
+| N01 | Minimum-Cost Network Flow with Dual Predictions | [N01_2601.20203.md](reports/N01_2601.20203.md) | [2601.20203.pdf](papers/2601.20203.pdf) | [2601.20203.zh.pdf](papers_zh/2601.20203.zh.pdf) | 7 issues |
+| N02 | Stop the Sampler! Classifier-Based Adaptive Stopping for Sampling Kern | [N02_2606.16073.md](reports/N02_2606.16073.md) | [2606.16073.pdf](papers/2606.16073.pdf) | [2606.16073.zh.pdf](papers_zh/2606.16073.zh.pdf) | 2 issues |
+| N03 | Stable GFlowNets with TV Monitoring and Probabilistic Guarantees | [N03_2605.01729.md](reports/N03_2605.01729.md) | [2605.01729.pdf](papers/2605.01729.pdf) | [2605.01729.zh.pdf](papers_zh/2605.01729.zh.pdf) | 6 issues |
+| N04 | Generative Modeling on Metric Graphs via Neural Optimal Transport | [N04_2606.16273.md](reports/N04_2606.16273.md) | [2606.16273.pdf](papers/2606.16273.pdf) | [2606.16273.zh.pdf](papers_zh/2606.16273.zh.pdf) | 6 issues |
+| N05 | An Efficient Orlicz-Sobolev Approach for Transporting Unbalanced Measu | [N05_2502.00739.md](reports/N05_2502.00739.md) | [2502.00739.pdf](papers/2502.00739.pdf) | [2502.00739.zh.pdf](papers_zh/2502.00739.zh.pdf) | 11 issues |
+| N06 | Entering the Era of Discrete Diffusion Models: A Benchmark for Schrodi | [N06_2509.23348.md](reports/N06_2509.23348.md) | [2509.23348.pdf](papers/2509.23348.pdf) | [2509.23348.zh.pdf](papers_zh/2509.23348.zh.pdf) | 5 issues |
 
 <a id="insights"></a>
 ### Insights and Open Problems

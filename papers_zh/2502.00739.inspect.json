@@ -1,0 +1,71 @@
+{
+  "issue_count": 11,
+  "issues": [
+    {
+      "page": 3,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 3: block set at 7.86pt but the original at this position is 10.06pt (ratio 0.78 vs page median 0.92) at x=330.6, y=357.4: L_{Φ}(G, ω) 是装备卢森堡范数的赋范空间，定义为"
+    },
+    {
+      "page": 6,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 6: block set at 8.27pt but the original at this position is 9.96pt (ratio 0.83 vs page median 0.92) at x=108.5, y=348.0: 定理4.2（OST 的单变量优化问题）。OST 可按如下方式计算"
+    },
+    {
+      "page": 7,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Source prose remained verbatim at x=184.0, y=257.5: For"
+    },
+    {
+      "page": 15,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 15: paragraph still in English (31 words, 0 CJK chars) at x=107.6, y=110.0: In this appendix, we provide further theoretical results"
+    },
+    {
+      "page": 16,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 16: displayed equation at y=568 shifted horizontally by 18pt vs original"
+    },
+    {
+      "page": 16,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 16: paragraph still in English (2 words, 0 CJK chars) at x=108.0, y=568.1: Let 0 < t1 ≤t2 < ∞, denote fγ∗"
+    },
+    {
+      "page": 17,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 17: paragraph still in English (4 words, 0 CJK chars) at x=108.0, y=121.0: More concretely, let 0 < t1 ≤t2 < ∞, denote fγ∗"
+    },
+    {
+      "page": 18,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 18: paragraph still in English (5 words, 0 CJK chars) at x=107.6, y=74.0: Additionally, for any ˜γ ∈Π(ˆµ, ˆν), we have"
+    },
+    {
+      "page": 21,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 21: displayed equation at y=536 shifted horizontally by 19pt vs original"
+    },
+    {
+      "page": 24,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 24: displayed equation at y=576 shifted horizontally by 46pt vs original"
+    },
+    {
+      "page": 28,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 28: block set at 6.75pt but the original at this position is 10.05pt (ratio 0.67 vs page median 0.92) at x=342.9, y=650.2: 上的非负博雷尔测度，且对于非平衡测度"
+    }
+  ]
+}

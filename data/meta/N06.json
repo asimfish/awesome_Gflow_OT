@@ -1,0 +1,25 @@
+{
+  "id": "N06",
+  "arxiv": "2509.23348",
+  "title": "Entering the Era of Discrete Diffusion Models: A Benchmark for Schrodinger Bridges and Entropic Optimal Transport",
+  "authors": [
+    "Xavier Aramayo Carrasco",
+    "Grigoriy Ksenofontov",
+    "Aleksei Leonov",
+    "Iaroslav Sergeevich Koshelev"
+  ],
+  "venue": "ICLR 2026",
+  "venue_type": "main",
+  "year": 2026,
+  "code_url": null,
+  "one_line_en": "First benchmark with analytically known solutions for discrete-space EOT/SB: any (p_0, v*) yields a pair (p_0, p_1) with closed-form optimal coupling (Theorem 3.1), made tractable in S^D via CP parameterization; by-product solvers DLightSB / DLightSB-M / alpha-CSBM, with DLightSB strongest across all settings.",
+  "one_line_zh": "离散空间 EOT/SB 第一个有解析解的基准：任意 (p_0, v*) 诱导出闭式最优耦合的基准对（Theorem 3.1），CP 参数化使它在 S^D 高维可算；副产品求解器 DLightSB 全设定最强；任何熵正则 GFN-OT 都必须在此报数。",
+  "tags": [
+    "discrete-sb",
+    "entropic-ot",
+    "benchmark",
+    "analytic-solution",
+    "solver"
+  ],
+  "priority": "P1"
+}

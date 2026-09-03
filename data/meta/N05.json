@@ -1,0 +1,25 @@
+{
+  "id": "N05",
+  "arxiv": "2502.00739",
+  "title": "An Efficient Orlicz-Sobolev Approach for Transporting Unbalanced Measures on a Graph",
+  "authors": [
+    "Tam Le",
+    "Truyen Nguyen",
+    "Hideitsu Hino",
+    "Kenji Fukumizu"
+  ],
+  "venue": "NeurIPS 2025 Spotlight",
+  "venue_type": "main",
+  "year": 2025,
+  "code_url": null,
+  "one_line_en": "Unbalanced OT on graph metric spaces without a two-level problem: EPT is recast as a balanced OT with nonnegative cost (Prop. 3.1), endowed with Orlicz geometry, then regularized into Orlicz-Sobolev transport that reduces to a single univariate optimization (Theorem 4.2), 250-13800x faster than Orlicz-EPT.",
+  "one_line_zh": "图上不平衡 OT 的非 KL 路线：把熵部分传输改写为带非负代价的平衡 OT（Prop. 3.1），赋予 Orlicz 几何，再正则化为只需一元优化的 Orlicz-Sobolev 传输（Theorem 4.2），比 Orlicz-EPT 快 250-13800 倍；质量差由一个线性项显式吸收。",
+  "tags": [
+    "graph-ot",
+    "unbalanced",
+    "orlicz",
+    "sobolev",
+    "closed-form"
+  ],
+  "priority": "P1"
+}

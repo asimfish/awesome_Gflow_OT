@@ -1,0 +1,24 @@
+{
+  "id": "N01",
+  "arxiv": "2601.20203",
+  "title": "Minimum-Cost Network Flow with Dual Predictions",
+  "authors": [
+    "Zhiyang Chen",
+    "Hailong Yao",
+    "Xia Yin"
+  ],
+  "venue": "AAAI 2026",
+  "venue_type": "main",
+  "year": 2026,
+  "code_url": null,
+  "one_line_en": "First minimum-cost flow algorithm warm-started by a learned dual prediction: epsilon-relaxation runs in O(min{n^3 log||p_hat - p*||_inf, n^3 log(nC)}) (Theorem 2), consistent and robust, with PAC bounds for learning the prediction and 12.7x / 1.6x speedups on traffic and PCB routing.",
+  "one_line_zh": "第一个用学到的对偶预测热启动的最小费用流算法：ε-relaxation 的时间变为 O(min{n^3 log||p_hat-p*||_inf, n^3 log(nC)})（Theorem 2），预测越准越快、全错也不差于经典；O08 的对偶势可直接充当这里的预测。",
+  "tags": [
+    "min-cost-flow",
+    "dual-prediction",
+    "learning-augmented",
+    "epsilon-relaxation",
+    "certificate"
+  ],
+  "priority": "P1"
+}

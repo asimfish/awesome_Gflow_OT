@@ -19,15 +19,15 @@
 
 ### 2.1 图上 OT 与最小费用流
 
-**Minimum-Cost Network Flow with Dual Predictions** · Chen, Yao, Yin · [2601.20203](https://arxiv.org/abs/2601.20203) · AAAI 2026（comment）
+**Minimum-Cost Network Flow with Dual Predictions** · Chen, Yao, Yin · [2601.20203](https://arxiv.org/abs/2601.20203) · AAAI 2026（comment）· **已配深度解读：`reports/N01_2601.20203.md`**
 第一个用「学习到的对偶预测」增强的最小费用流算法，基于经典 \(\varepsilon\)-relaxation；给出以预测误差无穷范数刻画的时间复杂度界（consistent 且 robust），并证明 PAC 学习该预测的样本复杂度界；交通网络与芯片逃逸布线上分别加速 12.74× 与 1.64×（摘要数字）。
 关系：**可借用 + 潜在竞争**。它证明「预测对偶势 → warm-start 经典求解器」在最小费用流上成立且有理论界。对 O08 的启示有两层：(i) O08 Thm 3.3 的对偶势 \(\pi\) 正是这里的「dual prediction」，GFlowNet 学出的状态流可以直接喂给 \(\varepsilon\)-relaxation 做带保证的精化——这是「GFN proposal + 经典修正」课题唯一还站得住的形态；(ii) 在显式图上，它比 GFN 更快更有界，GFN 只剩隐式图。
 
-**Generative Modeling on Metric Graphs via Neural Optimal Transport** · Micheli, Cao, Monod, Bhatt · [2606.16273](https://arxiv.org/abs/2606.16273) · arXiv 预印本（未核实）
+**Generative Modeling on Metric Graphs via Neural Optimal Transport** · Micheli, Cao, Monod, Bhatt · [2606.16273](https://arxiv.org/abs/2606.16273) · arXiv 预印本（未核实）· **已配深度解读：`reports/N04_2606.16273.md`**（读全文后把关系从「相邻竞争」下调为「互补」：对象是边上的连续测度、代价是测地距离、输出是采样器而非逐边策略）
 面向连续支撑在紧度量图上的分布：把图嵌入光滑环境空间，用神经半对偶参数化解熵 Kantorovich 问题，再把样本投影回图；证明神经表达力增大时生成器弱收敛到合法耦合；实验称匹配或优于基于离散图 OT 的启发式基线且扩展性更好。
 关系：**相邻竞争**。同样是「图上、两端边缘、输出可采样的传输」，但对象是连续度量图上的分布，用的是熵正则 + 半对偶，不给逐边策略。它和 O08 在「图」这个词上重合，在对象与输出上不重合。
 
-**An Efficient Orlicz-Sobolev Approach for Transporting Unbalanced Measures on a Graph** · Le, Nguyen, Hino, Fukumizu · [2502.00739](https://arxiv.org/abs/2502.00739) · NeurIPS 2025 Spotlight（comment）
+**An Efficient Orlicz-Sobolev Approach for Transporting Unbalanced Measures on a Graph** · Le, Nguyen, Hino, Fukumizu · [2502.00739](https://arxiv.org/abs/2502.00739) · NeurIPS 2025 Spotlight（comment）· **已配深度解读：`reports/N05_2502.00739.md`**
 把 Orlicz–Wasserstein / 广义 Sobolev 传输推到图上不等总质量的测度，避开两层优化。
 关系：**互补**。给「不平衡的图上 OT」提供了一个非 KL 罚的几何；O08 的 Assumption 3.1 要求 \(\sum L=\sum R\)，若要放开，这是候选的目标函数之一。
 
@@ -43,7 +43,7 @@
 
 ### 2.2 离散 / 图上 Schrödinger 桥与熵正则
 
-**Entering the Era of Discrete Diffusion Models: A Benchmark for Schrödinger Bridges and Entropic Optimal Transport** · Carrasco, Ksenofontov, Leonov, Koshelev et al. · [2509.23348](https://arxiv.org/abs/2509.23348) · arXiv 预印本（未核实）
+**Entering the Era of Discrete Diffusion Models: A Benchmark for Schrödinger Bridges and Entropic Optimal Transport** · Carrasco, Ksenofontov, Leonov, Koshelev et al. · [2509.23348](https://arxiv.org/abs/2509.23348) · **ICLR 2026 主会**（依据 PDF 页眉；arXiv comment 为空）· **已配深度解读：`reports/N06_2509.23348.md`**
 构造离散空间上有解析 SB 解的分布对，作为基准；附带得到两个新算法 DLightSB / DLightSB-M，并扩展出 \(\alpha\)-CSBM。
 关系：**必用基线**。任何「熵正则 GFN–OT」或「图上 SB」的实验都应在这个有解析解的基准上报数，否则无法说明自己解的是 SB 而不是别的东西。
 

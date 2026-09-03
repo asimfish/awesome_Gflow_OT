@@ -1,0 +1,25 @@
+{
+  "id": "N04",
+  "arxiv": "2606.16273",
+  "title": "Generative Modeling on Metric Graphs via Neural Optimal Transport",
+  "authors": [
+    "Alessandro Micheli",
+    "Yueqi Cao",
+    "Anthea Monod",
+    "Samir Bhatt"
+  ],
+  "venue": "arXiv preprint",
+  "venue_type": "preprint",
+  "year": 2026,
+  "code_url": null,
+  "one_line_en": "First generative model for distributions supported on metric graphs: embed the graph (Euclidean or tropical Abel-Jacobi), solve entropic OT via a neural semidual, project samples back; the generator converges weakly to a valid graph coupling (Theorem 4.1); scales to 10^6 Uber pickups on the Manhattan road graph.",
+  "one_line_zh": "度量图上连续分布的第一个深度生成模型：嵌入图（欧氏或 tropical Abel-Jacobi）、用神经半对偶解熵正则 OT、投影回图；生成器弱收敛到合法图上耦合（Theorem 4.1）；与 O08 是图上 OT 的连续边/离散顶点两个互补分支。",
+  "tags": [
+    "graph-ot",
+    "metric-graph",
+    "neural-ot",
+    "entropic",
+    "semidual"
+  ],
+  "priority": "P2"
+}

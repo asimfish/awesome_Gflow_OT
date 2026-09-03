@@ -1,0 +1,35 @@
+{
+  "issue_count": 5,
+  "issues": [
+    {
+      "page": 6,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 6: paragraph still in English (2 words, 0 CJK chars) at x=108.0, y=269.2: where ud"
+    },
+    {
+      "page": 8,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 8: displayed equation at y=116 shifted horizontally by 17pt vs original"
+    },
+    {
+      "page": 8,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 8: paragraph still in English (4 words, 0 CJK chars) at x=241.9, y=291.5: qSB ∈P(X N+2) such that ∃qSB"
+    },
+    {
+      "page": 9,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 9: block set at 5.07pt but the original at this position is 9.96pt (ratio 0.51 vs page median 0.92) at x=108.8, y=435.5: 此外，我们利用动态SB 及其马尔可夫性质，计算过程之间的前向和反向KL 发散，即和KL，分别为，"
+    },
+    {
+      "page": 19,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 19: displayed equation at y=82 shifted horizontally by 22pt vs original"
+    }
+  ]
+}

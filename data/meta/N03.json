@@ -1,0 +1,30 @@
+{
+  "id": "N03",
+  "arxiv": "2605.01729",
+  "title": "Stable GFlowNets with TV Monitoring and Probabilistic Guarantees",
+  "authors": [
+    "Zengxiang Lei",
+    "Ananth Shreekumar",
+    "Jonathan Rosenthal",
+    "Ruoyu Song",
+    "Alvaro A. Cardenas",
+    "Daniel J. Fremont",
+    "Dongyan Xu",
+    "Satish Ukkusuri",
+    "Z. Berkay Celik"
+  ],
+  "venue": "arXiv preprint",
+  "venue_type": "preprint",
+  "year": 2026,
+  "code_url": null,
+  "one_line_en": "Shows small TV does not bound GFlowNet loss (Prop. 3.3-3.4), then proves the converse certificate: per-trajectory TB loss <= c^2 implies TV <= 1 - e^{-2c} (Theorem 3.5) with a sampling-based probabilistic version independent of state-space size (Theorem 3.6); adaptive reference flows stabilize training at a computable fidelity cost (Theorem 3.10-3.11).",
+  "one_line_zh": "先证明小 TV 不排除无界损失（Prop. 3.3-3.4），再给出反向证书：逐轨迹 TB 损失 <= c^2 推出 TV <= 1-e^{-2c}（Theorem 3.5），并有与状态空间大小无关的抽样概率版（Theorem 3.6）；这是「残差→OT 误差界」课题已完成的一半。",
+  "tags": [
+    "certificate",
+    "tv-bound",
+    "trajectory-balance",
+    "stability",
+    "theory"
+  ],
+  "priority": "P0"
+}

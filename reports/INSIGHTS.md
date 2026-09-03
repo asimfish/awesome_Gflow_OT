@@ -12,7 +12,7 @@
 6. **在标准单源 DAG 设定下，「GFlowNet 学到 OT 计划」是空话。** 源边缘是 \(\delta_{s_0}\) 时耦合集是单点集（O01 Remark 3.2）。非平凡的 OT 结构必须同时放开初始流分布并加入外生准则，两者缺一不可。
 7. **主线放弃了 GFlowNet 的招牌能力。** O08 Assumption 3.1 要求 \(\sum L=\sum R=1\)，\(Z\) 已知；「只需未归一化奖励」在这条线上不成立（O08 §7.6）。
 8. **竞争格局：本方两篇是 Workshop，三篇竞品全是主会。** ULOT（NeurIPS 2025）、GSBoG（ICML 2026）、DDSBM（ICLR 2025）；GSBoG 与 O08 同象限、卖点句几乎相同、规模高四个数量级（COMPETITOR_MATRIX §0–§3）。
-9. **最不拥挤的后续课题是误差证书。** GFN 侧已有 loss→TV 界（TRENDS_GFN §2.2 的 2605.01729），OT 侧的误差理论全在对偶势上（TRENDS_OT §2.5）；把「balance 残差」映射到「OT cost gap + 边缘违反量」、以对偶势作证书，目前无人做。
+9. **最不拥挤的后续课题是误差证书，且配件已经齐了。** GFN 侧 N03（`reports/N03_2605.01729.md`）已把「逐轨迹 TB 损失 \(\le c^2\) ⇒ \(\mathrm{TV}\le1-e^{-2c}\)」（Thm. 3.5）与「抽样概率证书、与状态空间大小无关」（Thm. 3.6）做完；OT 侧 N01（AAAI 2026）给出「对偶预测误差 \(\|\hat p-p^\star\|_\infty\) → 运行时间」的界（Thm. 2），N06（ICLR 2026）给出构造有解析解基准的配方（Thm. 3.1）。缺的只有一段：把 N03 的右端从 TV 换成 OT cost gap 与边缘违反量，桥梁是 O08 Thm. 3.3 的对偶势与互补松弛。
 10. **两个课题已经拥挤：** 条件/摊销 GFN–OT（UNOT、ULOT、切片势摊销），熵正则 GFN–OT / 图上 SB（GSBoG、DDSBM、Sampling Decisions 已把 GFN 流函数写成单侧 Schrödinger 传输）。
 
 ## 2. 主线的逻辑链：每一环缺什么、下一环补什么
@@ -68,7 +68,7 @@
 
 | 课题 | 评级 | 理由（含 2026 趋势扫描后的更新） |
 |---|---|---|
-| **① Balance 残差 → OT 误差界，对偶势作证书** | **做。撞车风险低，配件齐全** | GFN 侧：Stable GFlowNets 已有 TB 残差 → TV 界（2605.01729），Evaluation Balance 把残差当评估器（2603.01047，ICLR 2026）。OT 侧：误差理论全在势上——对偶预测 → \(\varepsilon\)-relaxation 的运行时间界（2601.20203，AAAI 2026）、Sinkhorn 势统计率（2608.29152，O08 合作者 Belomestny）、QOT 的 PL 不等式（2605.27175）。**没有一篇把近似可行流的残差映射到 cost gap。** O08 Thm. 3.3 的互补松弛给出逐边证书 \(\mathcal F(s\to s')(\pi_{s'}-1-\pi_s)=0\)，直接可用 |
+| **① Balance 残差 → OT 误差界，对偶势作证书** | **做。撞车风险低，配件齐全（见 N01/N03/N06）** | GFN 侧：Stable GFlowNets 已有 TB 残差 → TV 界（2605.01729），Evaluation Balance 把残差当评估器（2603.01047，ICLR 2026）。OT 侧：误差理论全在势上——对偶预测 → \(\varepsilon\)-relaxation 的运行时间界（2601.20203，AAAI 2026）、Sinkhorn 势统计率（2608.29152，O08 合作者 Belomestny）、QOT 的 PL 不等式（2605.27175）。**没有一篇把近似可行流的残差映射到 cost gap。** O08 Thm. 3.3 的互补松弛给出逐边证书 \(\mathcal F(s\to s')(\pi_{s'}-1-\pi_s)=0\)，直接可用 |
 | ② 条件 GFN 摊销一族图上 OT | 不做（降为对照） | UNOT、ULOT 之后又来了切片势摊销（2604.15114）、min-sliced 计划（2511.19741）；唯一护城河是隐式图，但隐式图上「一族」怎么定义还没人说清 |
 | ③ 熵正则 GFN–OT / 图上 Schrödinger 桥 | 不做（作①的 \(\varepsilon>0\) 推广） | GSBoG 占了同象限主会位；Sampling Decisions（2503.14549）已把 GFN 流函数写成单侧 Schrödinger 传输；离散 SB 有了解析解基准（2509.23348）与收敛率（2607.19176）。新进入者没有定义问题的红利 |
 | ④ GFN proposal + 经典 OT 修正 | 改形态 | 模糊的「修正」已被 2601.20203 具体化为「对偶预测 → \(\varepsilon\)-relaxation，预测误差映射到运行时间」。可行形态：把 GFlowNet 学出的状态流当对偶预测喂给经典求解器，在显式图上报带保证的加速比——但这是①的一个应用，不是独立课题 |
@@ -113,7 +113,7 @@
 
 ## 8. 开放问题
 
-1. **残差 → cost gap 的界长什么样？** TB 残差 → TV 的界已有（2605.01729）；OT cost 是关于耦合的线性泛函，边缘违反量与 cost gap 的关系应比 TV 界更紧。来源：O08 §7.2。
+1. **残差 → cost gap 的界长什么样？** TB 残差 → TV 的界已有（N03 Thm. 3.5/3.6，注意其 DB/FM 分支依赖最大轨迹长度 \(L\)，在 O08 的非无环设定下失效，只有 TB 分支可迁移）；OT cost 是关于耦合的线性泛函，边缘违反量与 cost gap 的关系应比 TV 界更紧。来源：O08 §7.2。
 2. **带权图。** O08 只覆盖单位边长；带权时零权边会造零代价环，最小流原理是否仍选出无环解？来源：O07 报告 §7、O08 §5 第 5 条。
 3. **神经训练与 LP 最优之间的差距。** O08 用软罚 \(\lambda\) 逼近约束，Table 2 显示 \(\lambda\) 的定量权衡，但无理论。来源：O08 §5 第 7 条。
 4. **unbalanced 与未知 \(Z\)。** 放开 \(\sum L=\sum R\) 后 GFlowNet「只需未归一化奖励」的能力能否回来？Orlicz–Sobolev 图上不平衡传输（TRENDS_OT §2.1）是候选目标。来源：O08 §7.6。

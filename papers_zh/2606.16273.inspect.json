@@ -1,0 +1,41 @@
+{
+  "issue_count": 6,
+  "issues": [
+    {
+      "page": 5,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 5: block set at 7.07pt but the original at this position is 9.86pt (ratio 0.72 vs page median 0.92) at x=108.5, y=468.8: 这些测度支撑在嵌入图Ψ(Γ) 上，并且通常关于"
+    },
+    {
+      "page": 14,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Source prose remained verbatim at x=115.0, y=676.6: and"
+    },
+    {
+      "page": 16,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 16: paragraph still in English (7 words, 0 CJK chars) at x=164.7, y=240.6: Every π ∈Π(ePJ, eQJ) is concentrated on eΦp(Γ) × eΦp(Γ);"
+    },
+    {
+      "page": 23,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 23: block set at 6.42pt but the original at this position is 9.96pt (ratio 0.64 vs page median 0.92) at x=319.8, y=511.6: L^{1} 诊断。该参考与种子无关，因此所有（方法"
+    },
+    {
+      "page": 29,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 29: displayed equation at y=599 shifted horizontally by 15pt vs original"
+    },
+    {
+      "page": 29,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 29: paragraph still in English (5 words, 0 CJK chars) at x=108.0, y=443.9: Consequently, for any sequence tm ↓0,"
+    }
+  ]
+}

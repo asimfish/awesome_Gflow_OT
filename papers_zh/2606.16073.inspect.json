@@ -1,0 +1,17 @@
+{
+  "issue_count": 2,
+  "issues": [
+    {
+      "page": 1,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 1: paragraph still in English (18 words, 0 CJK chars) at x=54.9, y=688.1: Accepted to the Structured Probabilistic Inference & Gen"
+    },
+    {
+      "page": 20,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 20: displayed equation at y=542 shifted horizontally by 24pt vs original"
+    }
+  ]
+}

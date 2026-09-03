@@ -1,0 +1,47 @@
+{
+  "issue_count": 7,
+  "issues": [
+    {
+      "page": 4,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 4: block set at 5.27pt but the original at this position is 9.96pt (ratio 0.53 vs page median 0.92) at x=54.8, y=109.7: 为。特别地，如果输入是0/1 流实例，该界可以改进"
+    },
+    {
+      "page": 4,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 4: displayed equation at y=94 shifted horizontally by 34pt vs original"
+    },
+    {
+      "page": 4,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 4: paragraph still in English (5 words, 0 CJK chars) at x=104.4, y=367.4: H {dH(p) | H is a simple unblocked path w.r.t. x}."
+    },
+    {
+      "page": 4,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 4: paragraph still in English (3 words, 0 CJK chars) at x=121.9, y=420.1: x {D(p, x) | x is a feasible flow} ."
+    },
+    {
+      "page": 4,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 4: paragraph still in English (4 words, 0 CJK chars) at x=100.9, y=606.3: H {dH(ˆp) | H is unblocked in x∗}"
+    },
+    {
+      "page": 4,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 4: paragraph still in English (3 words, 0 CJK chars) at x=183.8, y=656.6: H is unblocked in x∗}."
+    },
+    {
+      "page": 10,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 10: block set at 7.97pt but the original at this position is 9.96pt (ratio 0.80 vs page median 0.92) at x=331.5, y=585.1: k 最小费用流实例特征。我们首先固定一个节点"
+    }
+  ]
+}

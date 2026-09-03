@@ -462,57 +462,56 @@ the number of terminal states in all experimental domains is **several orders of
 #### 6. Position in the GFlowNet × OT Main Thread
 
 - **Predecessors**: T00 (Flow Network based Generative Models, FM objective and hypergrid environment);
-  T02 (GFlowNet Foundations, DB condition and "unique global optimum if \(P_B\) is fixed");
-  T03 (Trajectory Balance, TB objective, and the fact that "expected TB gradient = gradient of trajectory distribution KL", cited in §4.1.1 from its §A.3).
+  T02 (GFlowNet Foundations, DB condition and "fixed \(P_B\) implies unique global optimum");
+  T03 (Trajectory Balance, TB objective, and the fact that "the expectation of the TB gradient = the gradient of the trajectory distribution KL", cited in §4.1.1 of this paper from its §A.3).
 - **Contemporaries/Competitors**: T10 (Shen et al., ICML 2023) tackles the same problem from another angle.
-  T05 believes that "the degrees of freedom of flow are a training dynamics problem, solved by better objectives";
-  T10 believes that "the degrees of freedom of flow are an inductive bias problem, solved by guiding distributions".
-  T10 §4 explicitly comments on T05: it parameterizes state flow and assumes that state flow generalization is beneficial, but **does not use learned state flow for decision-making**.
-  This comment is the dividing line between the two papers.
+  T05 believes that "the degrees of freedom of the flow are a training dynamics problem, to be solved with better objectives";
+  T10 believes that "the degrees of freedom of the flow are an inductive bias problem, to be solved with guiding distributions".
+  T10 §4 explicitly comments on T05: it parameterizes state flow and assumes that generalizing state flow is beneficial, but **does not use the learned state flow for decision-making**.
+  This comment marks the dividing line between the two papers.
   Footnote 4 of this paper also mentions contemporary Pan et al. (2023) (local credit / incomplete trajectories),
-  and Hu et al. (2023) applying incomplete trajectory settings to Bayesian posterior inference for combinatorial objects.
-- **Contribution to the main thread**: SubTB transforms "what is the internal flow \(F(s)\)" from an accounting variable into an object with operational meaning—
-  it is a **learned conditional expectation estimate** of the stochastic term in the TB loss (the paragraph around Eq. (12)(13)).
-  In OT language, this is precisely the role of Kantorovich dual potentials:
+  and Hu et al. (2023) which applies incomplete trajectories to Bayesian posterior inference for combinatorial objects.
+- **Contribution to the Main Thread**: SubTB transforms "what is the internal flow \(F(s)\)" from an accounting variable into an object with operational meaning—
+  it is the **learned conditional expectation estimate** of the stochastic term in the TB loss (the paragraph around Eq. (12)(13)).
+  In OT language, this is precisely the role of the Kantorovich dual potential:
   the potential function itself is not a transport plan; it is a **certificate** that decomposes the global balancing problem into locally verifiable conditions;
-  Prop. 5.3 of O01 (discrete complementary slackness) states the static version of the same thing.
-  To understand O08's statement "for a minimum flow GFlowNet with a fixed initial flow distribution, its optimal solution is a Kantorovich transport plan",
-  one must first accept the reading that "\(F(s)\) is a potential/value function", and T05 is the first training paper to clearly articulate this reading.
-- **Another implicit thread**: Eq. (8) states "local (edge-wise) consistency ⟺ global (arbitrary sub-segment) consistency", which is mechanistically isomorphic to O01 Prop. 6.23—
-  under graph geodesic distance, Lipschitz constraints for all pairs of points can be compressed into constraints **only on edges**, because summing along paths can recover constraints for any pair of points.
-  Both instances show "local conditions automatically globalized due to the graph's path structure".
+  Prop. 5.3 of O01 (discrete complementary slackness) describes the static version of the same thing.
+  To understand O08's statement that "for a minimal flow GFlowNet with a fixed initial flow distribution, its optimal solution is a Kantorovich transport plan",
+  one must first accept the interpretation of "\(F(s)\) as a potential/value function", and T05 is the first training paper to clearly articulate this interpretation.
+- **Another Implicit Thread**: Eq. (8) states that "local (edge-wise) consistency ⟺ global (arbitrary sub-segment) consistency", which is isomorphic to the mechanism in O01 Prop. 6.23—
+  under graph geodesic distance, the Lipschitz constraint for all pairs of points can be compressed to constraints **only on edges**, because summing along paths can recover the constraint for any pair of points.
+  Both instances show how "local conditions are automatically globalized due to the path structure of the graph".
 
 #### 7. Reusable Insights and Open Problems
 
-1.  **The optimal value of λ systematically falls near 1, not at the endpoints** (Fig. A.2 + tuning results for six tasks).
-    This suggests the existence of an optimal interpolation point determined by "trajectory length distribution × graph width".
-    Possible experiment: on a hypergrid, fix \(H\) and sweep dimension \(d\), observe if optimal λ monotonically changes with average trajectory length.
-    If so, a prior rule for λ could be fitted, saving a whole dimension of grid search.
+1.  **The optimal value of λ systematically falls near 1, not at the endpoints** (Fig. A.2 + hyperparameter tuning results for six tasks).
+    This suggests an optimal interpolation point determined by "trajectory length distribution × graph width".
+    Possible experiment: On a hypergrid, fix \(H\) and sweep dimension \(d\), observe if optimal λ changes monotonically with average trajectory length.
+    If so, a prior rule for λ could be fitted, saving an entire dimension of grid search.
 2.  **"Mini-batch SubTB gradients are more similar to full-batch TB gradients than mini-batch TB gradients" is a formalizable proposition** (Fig. 4 right).
-    Theorem draft: In a tabular setting, provide a bias-variance decomposition of
-    \(\mathbb E\|g_{\mathrm{SubTB}}^{(k)}(\lambda)-g_{\mathrm{TB}}^{(\infty)}\|^2\) with respect to λ,
+    Theorem draft: In a tabular setting, provide a bias-variance decomposition of \(\mathbb E\|g_{\mathrm{SubTB}}^{(k)}(\lambda)-g_{\mathrm{TB}}^{(\infty)}\|^2\) with respect to λ,
     and prove that there exists a finite \(\lambda^{*}>0\) such that it is strictly less than the value at \(\lambda\to\infty\). The original text only provides cosine similarity curves.
-3.  **Short sub-trajectory truncation causes almost no performance loss** (Fig. A.4, \(j-i\le 4\)).
-    This extends SubTB's applicability from "complete episodes" to "only observing fragments".
-    The counterpart on the OT side is the mechanism in O01 Prop. 6.23 of "compressing Lipschitz constraints for all point pairs to edge constraints".
-    It is worth writing a strict correspondence: SubTB's truncation length ↔ the maximum geodesic range that local constraints on a graph can generate.
+3.  **Truncating short sub-trajectories barely loses performance** (Fig. A.4, \(j-i\le 4\)).
+    This extends the applicability of SubTB from "complete episodes" to "only observing fragments".
+    The counterpart on the OT side is the mechanism in O01 Prop. 6.23 of "compressing Lipschitz constraints for all pairs of points to edge constraints".
+    It is worth writing a strict correspondence: SubTB's truncation length ↔ the maximum geodesic range that local constraints on the graph can generate.
 4.  **The generalization advantage of state flow has not been directly measured** (C6 is a hypothesis).
-    Possible experiment: on a hypergrid, artificially freeze \(\log F(s;\theta)\) to the analytical true value \(F_F\) (algorithm given in §A.2),
-    and compare the convergence curves with the learned flow version. If the difference is small, C6 is disproven, and all benefits of SubTB are attributed to variance.
+    Possible experiment: On a hypergrid, artificially freeze \(\log F(s;\theta)\) to the analytical ground truth \(F_F\) (algorithm given in §A.2),
+    and compare the convergence curves with the learned flow version. If the gap is small, C6 is disproven, and all benefits of SubTB are attributed to variance reduction.
 5.  **λ weighting is a geometric function of length, completely ignoring graph structure information**.
-    Open question: replacing \(\lambda^{j-i}\) with a weight dependent on the difference in endpoint flow values \(|\log F(s_i)-\log F(s_j)|\),
-    is this equivalent to some adaptive Bregman projection step size?
+    Open problem: Replacing \(\lambda^{j-i}\) with a weight dependent on the difference in endpoint flow values \(|\log F(s_i)-\log F(s_j)|\),
+    would this be equivalent to some adaptive Bregman projection step size?
     The original text lists "learnable sub-trajectory selection and weighting strategies" as the most interesting future direction in its conclusion.
-6.  **Connection to variational methods has not been empirically validated**. The original conclusion explicitly states "future work should empirically evaluate the connection between SubTB and
+6.  **The connection to variational methods has not been empirically validated**. The original conclusion explicitly states that "future work should empirically evaluate the connection between SubTB and
     the methods in Malkin et al. (2023) (GFlowNets and variational inference)".
     This is a clue marked by the authors themselves as incomplete, and it is also the shortest path to translating GFlowNet objectives into KL projection language, and then connecting to Sinkhorn alternating projections (O01 §9.1).
 
 ## 2.6 T10 · Training Diagnostics
 
-> **One sentence**: The true contribution of this paper is not its three training tricks, but a diagnostic—on enumerable biochemical benchmarks,
-> GFlowNets **systematically underfit the target distribution**, consistently assigning excessively high probabilities to low-reward objects, a fact that commonly used Spearman correlation cannot reveal.
-> Based on this, it proposes "quality of flow distribution = generalization ability" as an evaluation criterion, and uses guided trajectory balance to allow users to **specify** where the flow should go.
-> On the GFlowNet × OT map, it is the paper that elevates "internal flow's degrees of freedom" from a side effect to a **designable object**—
+> **One sentence summary**: The true contribution of this paper is not three training tricks, but a diagnostic—on enumerable biochemical benchmarks,
+> GFlowNet **systematically underfits the target distribution**, consistently assigning excessively high probabilities to low-reward objects over time, a fact that common Spearman correlation fails to reveal.
+> Building on this, it proposes "the quality of the flow distribution = generalization ability" as an evaluation criterion, and uses guided trajectory balance to allow users to **specify** where the flow should go.
+> On the GFlowNet × OT map, it is the paper that elevates "the degrees of freedom of the internal flow" from a side effect to a **designable object**—
 > and "using an exogenous criterion to select which of multiple solutions" is precisely the premise of OT.
 
 | Field | Content |
@@ -520,9 +519,8 @@ the number of terminal states in all experimental domains is **several orders of
 | arXiv | [2305.07170](https://arxiv.org/abs/2305.07170) (v1, 2023-05-11) |
 | Publication | ICML 2023 **Main Conference** (Proceedings of the 40th ICML, PMLR 202, 2023) |
 | Authors | Max W. Shen, Emmanuel Bengio, Ehsan Hajiramezanali, Andreas Loukas, Kyunghyun Cho, Tommaso Biancalani |
-| Code | <https://github.com/maxwshen/gflownet> (explicitly provided in original Appendix §B) |
-| PDF in this repo | `papers/2305.07170.pdf` · Chinese translation `papers_zh/2305.07170.zh.pdf` |
-| Reading Priority | P1 — Method section is optional reading, but §3 (evaluation metrics) and §5 (substructure credit assignment) are essential prerequisites for the main thread of this repository |
+| Code | <https://github.com/maxwshen/gflownet> (explicitly given in original Appendix §B) |
+| Reading Priority | P1 — The methods section is optional reading, but §3 (evaluation metrics) and §5 (substructure credit assignment) are essential prerequisites for the main thread of this repository |
 
 #### 2. Core Contributions (Numbered as in the Original Text)
 
@@ -768,23 +766,23 @@ Translated into DAG language: On a DAG, there are no directed cycles, so \(H^1_+
 
 | Task | Environment Setup (Source) | Baselines | Metrics | Results |
 |---|---|---|---|---|
-| Hypergrid, 2D, \(W=20\) | \(S^*=\{1,\dots,W\}^D\), transitions \(s\to s\pm e_i\) (bidirectional, thus cyclic), initial transition \(s_0\to a\), terminal transition \(\forall s:\ s\to s_f\); flow implemented with adjacency matrix + edge flow array (Sec. 5.1, Appendix C.1) | \(L_{\mathrm{FM}}\), \(L_{\mathrm{TB}}\) vs \(L_{\mathrm{FM},\Delta,f,g}\); Figure 3 also compares \(L_{\mathrm{FM},\chi^2,\nu}\) (\(f=(1-x)^2\)) and \(L_{\mathrm{FM},TV,\nu}\) (\(f=\lvert1-x\rvert\)), stable version uses \(f(x)=x^2\) | Average reward, average sampled path length | All losses converge, but \(L_{\mathrm{FM}}\) has exploding expected path length and path wandering; stable FM paths go "relatively straight" towards the reward region. TB paths wander but length does not explode, stabilizing at values significantly higher than stable losses, in some cases catching up after long training (Sec. 5.1; Figures 1, 3. Numerical values of curves not provided in original text) |
-| Cayley Graph, \(S_{20}\) | States are permutations, edges \(g\to g\sigma_i\); generators are one transposition, a 20-cycle and its inverse; \(R_1(\sigma)=c\,\mathbf 1_{\sigma\in S_1}\), \(S_1=\{\sigma\mid\sigma(i)=i,\,i\le k\}\), \(c=20,\ k=1\); \(\pi_f(s_0\to\cdot)\) fixed uniform; path truncation at 80 (Sec. 5.2, Figure 4) | Stable-GFlowNets vs GFlowNets vs Metropolis–Hastings | Average reward, average length | Optimal policy expected reward 20, expected length 5 (Figure 4 caption); flow grows uncontrollably under unstable loss, flow is bounded under stable loss (Sec. 5.2). Numerical values of curves not provided in original text |
-| Point-Robot-Sparse (continuous, CFlowNets framework) | Two targets \((10,10)\), \((0,0)\), start point \((5,5)\), max episode length 12; action angle range changed from \((0,90^\circ)\) to \((0,360^\circ)\) to create cycles; other settings same as Li et al. 2023d (Sec. 5.3) | Stable-CFlowNets (loss from Example 3) vs CFlowNets, DDPG, TD3, SAC, PPO | Number of valid and distinct trajectories in 5000 explorations; average reward | Stable loss does not lose exploration capability, reward "improves significantly" with smaller variance (Figure 5); trajectories are cyclic in early training, converge to targets in later stages (Figure 6). Specific numerical values not provided in original text |
+| Hypergrid, 2D, \(W=20\) | \(S^*=\{1,\dots,W\}^D\), transitions \(s\to s\pm e_i\) (bidirectional, thus cyclic), initial transition \(s_0\to a\), terminal transition \(\forall s:\ s\to s_f\); flow implemented with adjacency matrix + edge flow array (Sec. 5.1, Appendix C.1) | \(L_{\mathrm{FM}}\), \(L_{\mathrm{TB}}\) vs \(L_{\mathrm{FM},\Delta,f,g}\); Figure 3 additionally compares \(L_{\mathrm{FM},\chi^2,\nu}\) (\(f=(1-x)^2\)) and \(L_{\mathrm{FM},TV,\nu}\) (\(f=\lvert1-x\rvert\)), stable version uses \(f(x)=x^2\) | Average reward, average sampled path length | All losses converge, but \(L_{\mathrm{FM}}\) exhibits exploding expected path length and path wandering; stable FM paths go "relatively straight" towards the reward region. TB paths wander but length does not explode, stabilizing at values significantly higher than stable losses, in some cases catching up after long training (Sec. 5.1; Figures 1, 3. Numerical values for curves not provided in original text) |
+| Cayley Graph, \(S_{20}\) | States are permutations, edges \(g\to g\sigma_i\); generators are one transposition, a 20-cycle and its inverse; \(R_1(\sigma)=c\,\mathbf 1_{\sigma\in S_1}\), \(S_1=\{\sigma\mid\sigma(i)=i,\,i\le k\}\), \(c=20,\ k=1\); \(\pi_f(s_0\to\cdot)\) fixed uniform; path truncation 80 (Sec. 5.2, Figure 4) | Stable-GFlowNets vs GFlowNets vs Metropolis–Hastings | Average reward, average length | Optimal policy expected reward 20, expected length 5 (Figure 4 caption); flow grows uncontrollably under unstable loss, flow is bounded under stable loss (Sec. 5.2). Numerical values for curves not provided in original text |
+| Point-Robot-Sparse (continuous, CFlowNets framework) | Two targets \((10,10)\), \((0,0)\), starting point \((5,5)\), max episode length 12; action angle range changed from \((0,90^\circ)\) to \((0,360^\circ)\) to create cycles; other settings same as Li et al. 2023d (Sec. 5.3) | Stable-CFlowNets (loss from Example 3) vs CFlowNets, DDPG, TD3, SAC, PPO | Number of valid and distinct trajectories in 5000 explorations; average reward | Stable loss does not compromise exploration ability, reward "greatly improved" with smaller variance (Figure 5); trajectories are cyclic in early training, converging to targets in later stages (Figure 6). Specific numerical values not provided in original text |
 
 **Implementation Details (Appendix C).**
 
-- Hypergrid: TensorFlow 2.4.4, Adam, learning rate 0.01; "self-training" updates the training distribution \(\nu\) to \(\mu=F_{\mathrm{out}}+\delta\) every so often, \(\delta=0.001\), 200 gradient steps per epoch; various reward distributions "have little effect on the final results".
-- Evaluation: \(\hat R=\max(F(S\to\cdot)-F(\cdot\to S^*),0)\) estimates reward; \(F_{\mathrm{out}}\) approximated by power method, truncated at \(\lambda W\), \(\lambda\in\{4,10\}\); metrics \(E_F\) (sampling distribution error), \(E(\tau)=F_{\mathrm{out}}(S^*)/R(S^*)\), \(E_R\) (reward error), \(E_I\) (initial flow error).
-- Cayley: \(\rho(\sigma)=(\sigma(1),\dots,\sigma(p))\) embedding, MLP depth 3 width 32, LeakyReLU, learning rate 1e-2, path batch 64; initial flow \(F(s_0\to\cdot)=F_{\mathrm{init}}\,U(S^*)\), \(F_{\mathrm{init}}\) trainable; when sampling paths, ignore transitions to \(s_f\), run to truncation length, then weight by conditional probability for "\(t\le\tau\)".
-- Appendix C.2 observations on stable loss variants: hyperparameters are difficult to tune, "high stabilization regularization is useful"; when \(g\) is a power \(<1\), small flows "implode" to 0 but sampling properties are still good; non-imploding versions like \(g(x)=1+|x+y|^\beta\) with \(\beta=0\) or \(\beta>1\) do not explode but have suboptimal expected reward.
+- Hypergrid: TensorFlow 2.4.4, Adam, learning rate 0.01; "self-training" updates the training distribution \(\nu\) to \(\mu=F_{\mathrm{out}}+\delta\) every so often, \(\delta=0.001\), 200 gradient steps per epoch; various reward distributions "have little impact on the final results."
+- Evaluation: \(\hat R=\max(F(S\to\cdot)-F(\cdot\to S^*),0)\) estimates reward; \(F_{\mathrm{out}}\) approximated by power iteration, truncated at \(\lambda W\), \(\lambda\in\{4,10\}\); metrics \(E_F\) (sampling distribution error), \(E(\tau)=F_{\mathrm{out}}(S^*)/R(S^*)\), \(E_R\) (reward error), \(E_I\) (initial flow error).
+- Cayley: \(\rho(\sigma)=(\sigma(1),\dots,\sigma(p))\) embedding, MLP depth 3 width 32, LeakyReLU, learning rate 1e-2, path batch 64; initial flow \(F(s_0\to\cdot)=F_{\mathrm{init}}\,U(S^*)\), \(F_{\mathrm{init}}\) trainable; when sampling paths, transitions to \(s_f\) are ignored, paths run to truncation length, then weighted by conditional probability for "\(t\le\tau\)".
+- Appendix C.2 observations on stable loss variants: hyperparameters are difficult to tune, "high stabilization regularization is useful"; when \(g\) is a power \(<1\), small flows "implode" to 0 but sampling properties remain good; non-imploding versions like \(g(x)=1+|x+y|^\beta\) with \(\beta=0\) or \(\beta>1\) do not explode but have suboptimal expected rewards.
 
-**To what extent is the evidence supported.**
+**To what extent is the evidence supported?**
 
-- The experiments directly support only qualitative conclusions: unstable loss \(\Rightarrow\) flow/path length growth; stable loss \(\Rightarrow\) boundedness. None of the three environments provide reproducible numerical results.
-- The main metric is average reward, which does not measure the fitting accuracy of \(R/Z\) (criticism in T36 Sec. 4.1: learning the highest mode can yield high rewards).
-- Stable loss calculates error at the \(\Delta F\) scale, and T36 Table 1, Figure 2 later show that this type of loss significantly deviates in fitting the reward distribution on \(20^4\) hypergrid and \(S_{20}\).
-- The original text itself lists limitations in Sec. 6.2: assumptions of stable/unstable theorems are "not optimal"; TB is only partially studied, no stable variant; experimental scale is relatively small compared to theoretical coverage, no comparison of stable DB in continuous settings; exploration ergodicity is completely open; initial flow on Cayley graph failed to converge quickly to theoretical values; only the simplest feedforward architecture was used.
+- The experiments directly support only qualitative conclusions: unstable loss \(\Rightarrow\) flow/path length growth; stable loss \(\Rightarrow\) bounded. None of the three environments provide reproducible numerical results.
+- The main metric is average reward, which does not measure the accuracy of fitting \(R/Z\) (T36 Sec. 4.1 criticism: learning the highest mode can yield high rewards).
+- Stable loss calculates error on the \(\Delta F\) scale, and T36 Table 1, Figure 2 later show that such losses significantly deviate in fitting the reward distribution on a \(20^4\) hypergrid and \(S_{20}\).
+- The original text itself lists limitations in Sec. 6.2: assumptions of stable/unstable theorems are "not optimal"; TB is only partially studied, with no stable variant; experimental scale is relatively small compared to theoretical coverage, no comparison of stable DB in continuous settings; exploration ergodicity is completely open; initial flow on Cayley graph failed to converge quickly to theoretical values; only the simplest feedforward architecture was used.
 
 #### 5. Premise Assumptions and Applicable Boundaries
 
@@ -2760,228 +2758,243 @@ Two newly opened small windows: (a) **Minimum flow objective + policy gradient/P
 
 #### 3. Trend Assessment
 
-1.  **The theoretical focus of OT on graphs is on "potentials" rather than "plans."** Dual prediction accelerated minimum cost flow (2601.20203, AAAI 2026), statistical rates of Sinkhorn potentials (2608.29152), PL inequality for QOT duality (2605.27175, SIAM J. Optim.), Brenier potential estimation (2604.22366) – all four papers share dual variables as their common object. Implication: The state flow \(F(s)\) learned by GFlowNet in O08 is the primal variable counterpart of dual potentials. Connecting to this "potential theory" is more natural than connecting to "plan prediction."
+1.  **The theoretical focus of OT on graphs is on "potentials" rather than "plans."** Dual prediction accelerated minimum cost flow (2601.20203, AAAI 2026), statistical rates of Sinkhorn potentials (2608.29152), PL inequality for QOT duality (2605.27175, SIAM J. Optim.), Brenier potential estimation (2604.22366) – the common object of these four papers is dual variables. Implication: The state flow \(F(s)\) learned by GFlowNet in O08 is the primal variable counterpart of dual potentials. Connecting to this "potential theory" is more natural than connecting to "plan prediction."
 
-2.  **Discrete SB has completed a closed loop from method to benchmark.** Following DDSBM (C03, ICLR 2025) and GSBoG (C02, ICML 2026), discrete SB benchmarks with analytical solutions (2509.23348) and convergence rate results (2607.19176) have emerged. When a direction has benchmarks and convergence rates, it means new entrants must report their numbers under this established standard – entropy-regularized GFN–OT no longer has the "first to define the problem" advantage.
+2.  **Discrete SB has completed a closed loop from method to benchmark.** After DDSBM (C03, ICLR 2025) and GSBoG (C02, ICML 2026), discrete SB benchmarks with analytical solutions (2509.23348) and convergence rate results (2607.19176) emerged. When a direction has benchmarks and convergence rates, it means new entrants must report their numbers according to this standard – entropy-regularized GFN–OT no longer has the "define the problem first" advantage.
 
-3.  **Amortized OT continues to see increasing crowding.** After UNOT (O05) and ULOT (C01), sliced potential amortization (2604.15114), min-sliced transferable plans (2511.19741), and HyperTransport (2605.08254) appeared consecutively from November 2025 to May 2026. For conditional GFN–OT to establish itself, the only remaining moat is "implicit graphs, inability to instantiate cost matrices."
+3.  **Amortized OT continues to increase in crowding.** After UNOT (O05) and ULOT (C01), sliced potential amortization (2604.15114), min-sliced transferable plans (2511.19741), and HyperTransport (2605.08254) appeared consecutively from 2025-11 to 2026-05. If conditional GFN–OT is to establish itself, its only remaining moat is "implicit graphs, inability to instantiate cost matrices."
 
-4.  **Quadratic regularization is the only regularization direction not yet saturated.** Entropy regularization has an entire SB ecosystem, while quadratic regularization (the choice in O02) only has the González-Sanz–Nutz group working on optimization theory (2605.27175 / 2605.27883), and all in continuous/semi-discrete settings. Quadratic regularized flow on graphs + GFlowNet parameterization is currently unexplored.
+4.  **Quadratic regularization is the only regularization direction not yet saturated.** Entropy regularization has a whole ecosystem of SB, while quadratic regularization (the choice in O02) is only being explored for optimization theory by the González-Sanz–Nutz group (2605.27175 / 2605.27883), and all in continuous/semi-discrete settings. Quadratic regularized flow on graphs + GFlowNet parameterization is currently unexplored.
 
-5.  **"Which one to choose when not unique" has independent mathematical literature.** OT plans are not unique under distance costs; the entropy selection principle (2512.05282, 2502.16370) studies which plan is selected in the small regularization limit. O08 uses minimum total flow as the selection principle, which runs parallel to this literature but without mutual citation; connecting the two would be the scope of a short paper.
+5.  **"Which one to choose when not unique" has independent mathematical literature.** When the OT plan is not unique under a distance cost, the entropy selection principle (2512.05282, 2502.16370) studies which plan is selected in the small regularization limit. O08 uses the minimum total flow as the selection principle, which is parallel to this literature but without cross-citation; connecting the two would be the scope of a short paper.
 
-6.  **Neural OT on continuous graphs (metric graphs) has just appeared.** 2606.16273 is the first paper, using embedding + semi-duality + projection; it does not provide edge-wise policies, complementing rather than replacing O08's discrete, executable policies.
+6.  **Neural OT on continuous graphs (metric graphs) has just appeared.** 2606.16273 is the first paper, using embedding + semi-dual + projection; it does not provide edge-by-edge policies, complementing rather than replacing O08's discrete, executable policies.
 
-7.  **Main conference proportion.** Out of 93 papers, 12 could be identified as main conference/journal papers based on comments: NeurIPS 2025 ×2 (including Spotlight, Oral), AAAI 2026 ×2, ICML 2026 ×1, ICLR 2026 ×1, ICDM 2026, WACV 2026, SIAM J. Optim., L-CSS, VLDBJ, Globecom 2026. Theoretical work on OT on graphs primarily exists in preprint form.
+7.  **Main conference proportion.** Among 93 papers, 12 can be identified as main conference/journal papers based on comments: NeurIPS 2025 ×2 (including Spotlight, Oral), AAAI 2026 ×2, ICML 2026 ×1, ICLR 2026 ×1, ICDM 2026, WACV 2026, SIAM J. Optim., L-CSS, VLDBJ, Globecom 2026. Theoretical work on OT on graphs primarily exists in preprint form.
 
 #### 4. Implications for GFlowNet × OT Direction
 
-**Directly Usable Techniques**
+**Directly usable techniques**
 
-| Technique | Source | Where to Use |
+| Technique | Source | Where to use |
 |---|---|---|
-| Dual prediction → \(\varepsilon\)-relaxation refinement, including bounds from prediction error to runtime | 2601.20203 (AAAI 2026) | Treat GFlowNet-learned state flow as dual prediction, perform post-processing with guarantees; replace vague statements like "GFN proposal + classical correction" |
-| Statistical rates of Sinkhorn potentials and residual stability conditions | 2608.29152 | The statistical side of "dual potentials as certificates"; combines with O08 Thm 3.3's deterministic duality for a complete error decomposition |
+| Dual prediction → \(\varepsilon\)-relaxation refinement, including bounds from prediction error to runtime | 2601.20203 (AAAI 2026) | Treat GFlowNet-learned state flow as dual prediction, perform post-processing with guarantees; replace the vague statement of "GFN proposal + classical correction" |
+| Statistical rates of Sinkhorn potentials and residual stability conditions | 2608.29152 | The statistical side of "dual potentials as certificates"; combine with O08 Thm 3.3's deterministic duality for a complete error decomposition |
 | Local error bounds and PL inequality for QOT duality | 2605.27175 | Convergence rate proof template for quadratic regularized flow on graphs (O02 route) |
-| Discrete SB benchmark with analytical solution | 2509.23348 | Mandatory benchmark for any entropy-regularized GFN–OT experiment |
-| Sinkhorn exponential convergence proof for regime-switching SB | 2607.19176 | IPF convergence technique for discrete components |
+| Discrete SB benchmark with analytical solutions | 2509.23348 | A mandatory benchmark for any entropy-regularized GFN–OT experiment |
+| Proof of Sinkhorn exponential convergence for Regime-switching SB | 2607.19176 | IPF convergence technique on discrete components |
 | Hölder continuity of Beckmann solution with respect to parameters | 2603.19755 | The type of proposition needed for conditional GFN–OT generalization guarantees (continuous version) |
 | Entropy selection principle | 2512.05282, 2502.16370 | Compare "minimum total flow" with "small regularization limit" as selection principles |
 
-**Already Occupied Selling Points**
+**Already occupied selling points**
 
 -   "One model serving a family of source-target distributions": UNOT, ULOT, sliced potential amortization, min-sliced plans, four or more papers.
--   "Schrödinger bridge / entropy-regularized transport on graphs, outputting executable policies": GSBoG (ICML 2026 main conference) has used almost identical phrasing.
+-   "Schrödinger bridges / entropy-regularized transport on graphs, outputting executable policies": GSBoG (ICML 2026 main conference) has used almost identical phrasing.
 -   "Benchmarks and algorithms for discrete space SB": 2509.23348 has set the standard.
 
-**Conclusion**: The OT-side scan has further advanced the rating in `COMPETITOR_MATRIX.md` – Topic 1 (residual → error bounds + dual certificates) not only has the lowest collision risk, but the OT side also conveniently provides all the necessary components; the window for Topics 2 and 3 is narrower than judged by the old survey in August 2026.
+**Conclusion**: The OT-side scan has further advanced the rating in `COMPETITOR_MATRIX.md` – Topic 1 (residuals → error bounds + dual certificates) not only has the lowest risk of collision, but the OT side also happens to provide all the necessary components; the windows for Topics 2 and 3 are narrower than judged in the old survey of 2026-08.
 
 #### 5. Strong Baselines for GFN–OT Experiments
 
 | Method | Type | arXiv / Source | Code (according to comment/abstract) |
 |---|---|---|---|
-| Network simplex / \(\varepsilon\)-relaxation exact min-cost flow | Exact solver | Classic; dual prediction accelerated version 2601.20203 | Unknown |
+| Network simplex / \(\varepsilon\)-relaxation exact min-cost flow | Exact solver | Classical; dual prediction accelerated version 2601.20203 | Unknown |
 | Sinkhorn (entropy-regularized OT, including GPU version cuRegOT) | Regularized solver | 2605.08793 | Unknown |
 | Quadratic regularized graph OT (Essid & Solomon) | Regularized solver | This repository O02 | Unknown |
 | UNOT | Amortized neural OT | This repository O05 (ICML 2025) | Yes (see O05 report) |
 | ULOT | Inter-graph amortized OT plan | This repository C01 (NeurIPS 2025) | Yes |
-| GSBoG | Generalized SB on graphs, edge-wise policy | This repository C02 (ICML 2026) | Not public |
+| GSBoG | Generalized SB on graphs, edge-by-edge policy | This repository C02 (ICML 2026) | Not public |
 | DDSBM / DLightSB / \(\alpha\)-CSBM | Discrete SB | C03; 2509.23348 | DDSBM has; others unknown |
 | ASBS | SB sampler (continuous) | 2506.22565 (NeurIPS 2025 Oral) | Unknown |
 | min-flow GFlowNet (T36 code) | Our approach | This repository T36 / O07 | Yes |
 
 Principles for selecting baselines: For explicit small graphs, an exact solver must be included (otherwise, "learning OT" cannot be verified); for implicit large graphs, GSBoG or its reproduction must be included (the only competitor in the same quadrant); if entropy regularization is added, the analytical solution benchmark from 2509.23348 must be reported.
 
-## 8.3 Our assessment: Combined view of both sides
+## 8.3 Our assessment: Combining both sides
 
--   The GFN side's use of "residual as a metric" (Stable GFlowNets, Evaluation Balance) and the OT side's placement of "error theory on dual potentials" (dual prediction accelerated min-cost flow, Sinkhorn potential statistical rates, PL inequality for QOT) both matured simultaneously in 2026, yet no paper connects the two ends. This is the window for Topic ①.
--   All three application outlets for non-acyclic GFlowNets (shortest path, OT, MCMC termination) are stuck in Workshops; GSBoG, in the same quadrant, is in a main conference. The gap in narrative positioning is larger than the technical gap.
--   Both amortized OT and discrete SB directions have entered the "benchmarks available, convergence rates available" stage, meaning new entrants have no "define the problem" advantage.
+-   The GFN side's "residuals as metrics" (Stable GFlowNets, Evaluation Balance) and the OT side's "error theory based on dual potentials" (dual prediction accelerated minimum cost flow, Sinkhorn potential statistical rates, PL inequality for QOT) both matured in 2026, yet no paper has connected the two. This is the window for Topic ①.
+-   All three application outlets for non-acyclic GFlowNets (shortest path, OT, MCMC termination) are stuck at workshops; GSBoG in the same quadrant is at a main conference. The gap in narrative positioning is larger than the technical gap.
+-   Both amortized OT and discrete SB directions have entered the "with benchmarks, with convergence rates" stage, meaning new entrants no longer have the advantage of defining the problem.
+
+## 8.4 In-depth Analysis of Six Supplemental 2026 Papers
+
+The six papers with relevance=5 from the trend scan have been downloaded, translated, and provided with in-depth analyses. They are numbered N01–N06 (see `reports/N0*.md`, "2026 Supplement" section in README):
+
+| ID | Paper | Publication | Role in Main Thread |
+|---|---|---|---|
+| N01 | Minimum-Cost Network Flow with Dual Predictions | AAAI 2026 | The correct form for Topic ④: GFN state flow feeds dual predictions into ε-relaxation, error → time-bounded (Thm. 2) |
+| N02 | Stop the Sampler! | ICML 2026 SPIGM Workshop | The third exit for "expected length = total flow" (MCMC termination); provides closed-form optimal value for minimum flow in continuous space |
+| N03 | Stable GFlowNets with TV Monitoring | Preprint | Half of Topic ① completed: TB residual → TV bound (Thm. 3.5) + sampling probability certificate (Thm. 3.6) |
+| N04 | Generative Modeling on Metric Graphs | Preprint | Continuous edge branch of OT on graphs, complementary to O08; evaluation protocol including "noise floor" is worth adopting |
+| N05 | Orlicz-Sobolev Unbalanced Graph OT | NeurIPS 2025 Spotlight | Relaxes O08's \(\sum L=\sum R=1\) for non-KL candidates; mass difference absorbed by linear term (Thm. 4.2) |
+| N06 | Discrete SB / EOT Benchmark | ICLR 2026 | Essential benchmark for the entropy-regularized path; its construction recipe can be transplanted to an analytical benchmark for GFN–OT |
+
 
 # Chapter 9: Insights, Candidate Topic Ratings, and Decisive Experiments
 
-This chapter includes the entire content of the cross-paper synthesis document `reports/INSIGHTS.md`: a one-page conclusion, main logical chain, OT comparison table, competitive landscape, ratings for four topics, immediately executable decisive experiments, eight easily misinterpreted points, and open questions.
+This chapter includes the full content of the cross-paper synthesis document `reports/INSIGHTS.md`: a one-page conclusion, the main logical chain, an OT comparison table, competitive landscape, ratings for the four topics, immediately executable decisive experiments, and eight easily misinterpreted points and open questions.
+
 
 ### 1. One-Page Conclusion
 
-1.  **The internal flow of a GFlowNet is never unique, while the reward only pins down the boundary.** The terminating flow is determined by \(R\), and \(P_B\) on non-terminating edges is free (T02 Prop. 18, item 3; §2.6); on cyclic graphs, an additional degree of freedom is added by the cycle space \(H^1_+(G)\) (T19 Prop. 5). This is the starting point of the entire main thread.
-2.  **Minimum total flow is a legitimate selection principle and has precise behavioral implications.** On finite discrete non-acyclic graphs, \(\sum_{s}F(s)=Z\cdot\mathbb E[n_\tau]\) (identity near T36 Prop. 3.6, tightening "≤" in T19 Thm. 2 to "="), so "minimum total flow" = "shortest expected trajectory".
-3.  **Shortest expected trajectory ⇔ only taking shortest paths.** In the single-source case, the expected length is minimized if and only if the policy places all mass on the shortest paths (O07 Thm. 3.4, necessary and sufficient).
-4.  **With a fixed source distribution, minimum total flow = Kantorovich OT under graph shortest path costs.** \(\mathrm{GFlow}^\star=\mathrm{OT}^\star\), and the endpoint distribution of trajectories sampled by the optimal policy is the optimal coupling (O08 Thm. 3.2); the dual potential on terminating states equals the shortest path distance, and complementary slackness restricts the optimal flow to the shortest path subgraph (O08 Thm. 3.3).
-5.  **The equivalence is classic, the interface is new.** Shortest-path OT on graphs ≡ min-cost flow ≡ discrete Beckmann (O02 Eq. (1)⇔(3); O01 Prop. 6.23, Prop. 14.9). The contribution of O08 is that after translating it into GFlowNet language, the output is not a coupling matrix but a local routing policy executable on implicit graphs of size \(20!\) (O08 §4.2).
-6.  **In the standard single-source DAG setting, "GFlowNet learns an OT plan" is a vacuous statement.** When the source marginal is \(\delta_{s_0}\), the coupling set is a singleton (O01 Remark 3.2). Non-trivial OT structure requires simultaneously relaxing the initial flow distribution and adding an exogenous criterion; both are indispensable.
-7.  **The main thread abandons GFlowNet's signature capability.** O08 Assumption 3.1 requires \(\sum L=\sum R=1\) and \(Z\) to be known; "only unnormalized rewards needed" does not hold along this line (O08 §7.6).
-8.  **Competitive landscape: Our two papers are Workshop papers, while three competing products are main conference papers.** ULOT (NeurIPS 2025), GSBoG (ICML 2026), DDSBM (ICLR 2025); GSBoG is in the same quadrant as O08, has almost identical selling points, and is four orders of magnitude larger in scale (COMPETITOR_MATRIX §0–§3).
-9.  **The least crowded follow-up topic is error certificates.** On the GFN side, there are already loss→TV bounds (TRENDS_GFN §2.2 of 2605.01729), and error theory on the OT side is entirely based on dual potentials (TRENDS_OT §2.5); mapping "balance residual" to "OT cost gap + marginal violation" and using dual potentials as certificates has not been done by anyone yet.
-10. **Two topics are already crowded:** Conditional/amortized GFN–OT (UNOT, ULOT, sliced potential amortization), and entropy-regularized GFN–OT / SB on graphs (GSBoG, DDSBM, Sampling Decisions has written GFN flow functions as one-sided Schrödinger transport).
+1. **The internal flow of a GFlowNet is never unique, while the reward only fixes the boundary.** The terminating flow is determined by \(R\), and \(P_B\) on non-terminating edges is free (T02 Prop. 18, item 3; §2.6); on cyclic graphs, an additional degree of freedom is added by the cycle space \(H^1_+(G)\) (T19 Prop. 5). This is the starting point of the entire main thread.
+2. **Minimum total flow is a legitimate selection principle and has precise behavioral implications.** On finite discrete non-acyclic graphs, \(\sum_{s}F(s)=Z\cdot\mathbb E[n_\tau]\) (identity near T36 Prop. 3.6, tightening T19 Thm. 2's "≤" to "="), so "minimum total flow" = "minimum expected trajectory length".
+3. **Shortest expected trajectory ⇔ only taking shortest paths.** In the single-source case, the expected length is minimized if and only if the policy places all mass on the shortest path (O07 Thm. 3.4, necessary and sufficient).
+4. **After fixing the source distribution, minimum total flow = Kantorovich OT under graph shortest path costs.** \(\mathrm{GFlow}^\star=\mathrm{OT}^\star\), and the endpoint distribution of trajectories sampled by the optimal policy is the optimal coupling (O08 Thm. 3.2); the dual potential on terminating states equals the shortest path distance, and complementary slackness restricts the optimal flow to the shortest path subgraph (O08 Thm. 3.3).
+5. **The equivalence is classic, the interface is new.** Shortest-path OT on graphs ≡ min-cost flow ≡ discrete Beckmann (O02 Eq. (1)⇔(3); O01 Prop. 6.23, Prop. 14.9). O08's contribution is to translate it into GFlowNet language, where the output is not a coupling matrix but a local routing policy executable on implicit graphs of size \(20!\) (O08 §4.2).
+6. **In the standard single-source DAG setting, "GFlowNet learns an OT plan" is an empty statement.** When the source marginal is \(\delta_{s_0}\), the coupling set is a singleton (O01 Remark 3.2). Non-trivial OT structure requires simultaneously relaxing the initial flow distribution and adding an exogenous criterion, both of which are indispensable.
+7. **The main thread abandons GFlowNet's signature capability.** O08 Assumption 3.1 requires \(\sum L=\sum R=1\), \(Z\) is known; "only unnormalized rewards needed" does not hold on this line (O08 §7.6).
+8. **Competitive landscape: Our two papers are Workshop papers, while three competitors are Main Conference papers.** ULOT (NeurIPS 2025), GSBoG (ICML 2026), DDSBM (ICLR 2025); GSBoG is in the same quadrant as O08, with almost identical selling points, and is four orders of magnitude larger in scale (COMPETITOR_MATRIX §0–§3).
+9. **The least crowded subsequent topic is error certificates, and the components are already in place.** On the GFN side, N03 (`reports/N03_2605.01729.md`) has completed "per-trajectory TB loss \(\le c^2\) ⇒ \(\mathrm{TV}\le1-e^{-2c}\)" (Thm. 3.5) and "sampling probability certificate, independent of state space size" (Thm. 3.6); on the OT side, N01 (AAAI 2026) provides a bound for "dual prediction error \(\|\hat p-p^\star\|_\infty\) → runtime" (Thm. 2), and N06 (ICLR 2026) provides a recipe for constructing benchmarks with analytical solutions (Thm. 3.1). The only missing piece is to change the right-hand side of N03 from TV to OT cost gap and marginal violation, with the bridge being O08 Thm. 3.3's dual potential and complementary slackness.
+10. **Two topics are already crowded:** Conditional/amortized GFN–OT (UNOT, ULOT, sliced potential amortization), entropy-regularized GFN–OT / SB on graphs (GSBoG, DDSBM, Sampling Decisions has written GFN flow functions as one-sided Schrödinger transport).
 
-### 2. Logical Chain of the Main Thread: What Each Link Lacks, What the Next Link Supplies
+### 2. Main Logical Chain: What's Missing in Each Link, What the Next Link Adds
 
-| Link | Paper | What this link established | Gaps it left |
+| Link | Paper | What This Link Established | Gaps It Left |
 |---|---|---|---|
-| ① | T00 / T02 | Flow conservation + terminating flow = reward ⇒ \(P_T\propto R\) (T02 core correctness theorem); Markovian flow uniquely determined by terminating flow and \(P_B\) (Prop. 18, item 3), feasible set is linear (Prop. 19 / Eq. (22)) | Only on DAGs; \(P_B\) degrees of freedom treated as "engineering choices," no principle for which to choose. The only mention of "shortest" in the original text is a phrase in §2.6: "can prefer shorter paths" |
-| ② | T03 / T05 / T10 | TB moves constraints to the entire trajectory, \(\log Z\) becomes a learnable parameter; SubTB(\(\lambda\)) interpolates between DB and TB; T10 diagnoses training difficulties | All on DAGs, all about "how to reach a valid flow faster," not "which one to reach" |
-| ③ | T19 | With cycles, flow is a measure, trajectory set is infinite; 0-flow characterizes cycles; ratio-type loss pushes flow into cycles (Thm. 3), difference-type loss is stable (Thm. 4); R-flow = an acyclic flow + cycle space (Prop. 5); \(\mathbb E(\tau)\le F_{\mathrm{out}}(S^*)/R(S^*)\) (Thm. 2) | "Limit flow is acyclic" does not mean "solution is unique"—even on DAGs where cycle space is zero, R-flow is still not unique (T19 editor's note); only an inequality between total flow and length |
-| ④ | T36 | Taking \(P_B\) as the primary object, flow = expected visit count × terminating flow, one-to-one correspondence with \((P_B,F(s_f))\) (Prop. 3.7); \(\sum_sF(s)=Z\,\mathbb E[n_\tau]\) (equality); unique solution when \(P_B\) is fixed (Cor. 3.11); formulates "minimum total flow" constrained optimization Eq. (11) and approximate solution using DB + state flow regularization | Minimum falls on the boundary of the polytope, where parts of \(P_B\) are zero, exceeding T36's own positivity assumption, can only be approximated by \(\lambda\)-regularization; does not state "what" the minimum flow is |
-| ⑤ | O07 | Minimum expected length ⇔ only taking shortest paths (Thm. 3.4, necessary and sufficient); replaces \(P_B>0\) with Assumption 3.1 \(\mathbb E[n_\tau]<\infty\); reduces pathfinding to training a non-acyclic GFN with flow regularization | Single source; \(R\equiv1\) or single target; only answers "path" not "how quality is distributed" |
-| ⑥ | O08 | Pins down another constraint: first-step edge flow = source distribution \(L\). Objective bilinearized to LP (Appendix A.1), reduced to divergence constraint \(\operatorname{div}\mathcal F=L-R\) (Eq. (11)), squeezed from both sides to get \(\mathrm{GFlow}^\star=\mathrm{OT}^\star\) (Thm. 3.2); duality + complementary slackness (Thm. 3.3) | No bound between neural training and LP optimality; \(Z\) must be known; no unbalanced; hypergrid \(H\le20\), permutation \(n\le20\), for \(n=20\) no \(\mathrm{OT}^\star\) reference |
+| ① | T00 / T02 | Flow conservation + terminating flow = reward \(\Rightarrow P_T\propto R\) (T02 core correctness theorem); Markovian flow uniquely determined by terminating flow and \(P_B\) (Prop. 18, item 3); feasible set is linear (Prop. 19 / Eq. (22)) | Only on DAGs; \(P_B\)'s degrees of freedom treated as an "engineering choice," with no principle for selection. The only mention of "shortest" in the original text is a single sentence in §2.6: "can prefer shorter paths." |
+| ② | T03 / T05 / T10 | TB moves constraints to the entire trajectory, \(\log Z\) becomes a learnable parameter; SubTB(\(\lambda\)) interpolates between DB and TB; T10 diagnoses training difficulties | All on DAGs, all about "how to reach a valid flow faster," not "which one to reach." |
+| ③ | T19 | With cycles, flow is a measure, trajectory set is infinite; 0-flow characterizes cycles; ratio-type loss pushes flow into cycles (Thm. 3), difference-type loss is stable (Thm. 4); R-flow = an acyclic flow + cycle space (Prop. 5); \(\mathbb E(\tau)\le F_{\mathrm{out}}(S^*)/R(S^*)\) (Thm. 2) | "Limit flow is acyclic" does not mean "solution is unique"—even on DAGs where cycle space is zero, R-flow is still not unique (T19 report editor's note); only an inequality between total flow and length. |
+| ④ | T36 | Takes \(P_B\) as the primary object; flow = expected visit count × terminating flow, one-to-one correspondence with \((P_B,F(s_f))\) (Prop. 3.7); \(\sum_sF(s)=Z\,\mathbb E[n_\tau]\) (equality); unique solution when \(P_B\) is fixed (Cor. 3.11); formulates "minimum total flow" constrained optimization Eq. (11) and approximate solution using DB + state flow regularization | Minimum falls on the boundary of the polyhedron, where parts of \(P_B\) are zero, exceeding T36's own positivity assumption, can only be approximated by \(\lambda\) regularization; does not state what the minimum flow "is." |
+| ⑤ | O07 | Minimum expected length \(\Leftrightarrow\) only shortest paths are taken (Thm. 3.4, iff); replaces Assumption 3.1 \(\mathbb E[n_\tau]<\infty\) with \(P_B>0\); reduces pathfinding to training a non-acyclic GFN with flow regularization | Single source; \(R\equiv1\) or single objective; only answers "path" not "how to distribute quality." |
+| ⑥ | O08 | Adds another constraint: first-step edge flow = source distribution \(L\). Objective bilinearized into LP (Appendix A.1), reduced to divergence constraint \(\operatorname{div}\mathcal F=L-R\) (Eq. (11)); two-sided squeeze yields \(\mathrm{GFlow}^\star=\mathrm{OT}^\star\) (Thm. 3.2); duality + complementary slackness (Thm. 3.3) | No bound between neural training and LP optimality; \(Z\) must be known; no unbalanced; hypergrid \(H\le20\), permutation \(n\le20\), \(n=20\) no \(\mathrm{OT}^\star\) reference. |
 
-**Our assessment:** The true "turning point" in this chain is the equality \(\sum_sF(s)=Z\,\mathbb E[n_\tau]\) in ④. It pins a linear functional on a flow space (total flow) to a behavioral quantity (expected number of steps). After this, ⑤ and ⑥ are just two exercises in linear programming, minimizing this linear functional under different constraints. If ④ is understood, ⑤ and ⑥ are straightforward; if ④ is not understood, O08 might be read as "GFlowNet miraculously learns OT."
+**Our assessment:** The true "turning point" in this chain is the equality \(\sum_sF(s)=Z\,\mathbb E[n_\tau]\) in link ④. It ties a linear functional in flow space (total flow) to a behavioral quantity (expected number of steps). Links ⑤ and ⑥ are then just two exercises in linear programming, minimizing this linear functional under different constraints. Understanding ④ makes ⑤ and ⑥ straightforward; without understanding ④, one might misinterpret O08 as "GFlowNet miraculously learned OT."
 
-### 3. OT Side-by-Side Comparison: Equivalences vs. Analogies
+### 3. OT Side Comparison: What is Equivalent, What is Merely Analogous
 
-Extracted from the 16-line comparison table in O01 Report §7 (lecture chapter numbers per arXiv v3):
+Extracted from the 16-row comparison table in O01 report §7 (lecture chapter numbers according to arXiv v3):
 
 | OT Concept | GFlowNet Concept | Relationship | Source |
 |---|---|---|---|
-| Directed edge flow \(m_e\), objective \(\sum_e\ell_e\lvert m_e\rvert\) | Edge flow \(F(s\to t)\) and total flow | **Strict Equivalence** | O01 Def. 6.20, Prop. 6.23; O02 Eq. (1)⇔(3) |
-| Conservation law \(\operatorname{div}_G m=r\) | Flow matching (internal vertices \(r_i=0\)) | **Strict Equivalence** | O01 Prop. 6.23 |
-| Cost = graph shortest path \(d_G\) | Trajectory length / expected number of steps | **Conditional Equivalence** (path action sums edge lengths) | O01 Prop. 14.9; O08 Eq. (7)–(8) |
-| Marginal constraints \(\pi_1=\alpha,\pi_2=\beta\) | Reward matching \(F(x\to s_f)=R(x)\) + first-step edge flow = \(L\) | **Conditional Equivalence** (\(R\) must be normalized, \(Z=1\)) | O08 Assumption 3.1 |
-| Complementary slackness: support ⊂ contact set | Optimal flow is positive only on tight edges | **Strict** (under LP formulation) | O01 Prop. 5.3; O08 Thm. 3.3 |
-| Kantorovich dual potentials \(f_i\) | State flow \(\log F(s)\) / value function | **Analogy** (OT has inequality constraints, DB has equality) | O01 Def. 5.1, Prop. 6.23 |
-| Coupling \(\mathbf P\in\mathcal U(\mathbf a,\mathbf b)\) | End-point marginals of trajectory distribution | **Analogy**, degenerates to a single point for single source | O01 Remark 3.2 |
-| Entropic regularization \(\varepsilon\mathrm{KL}(\pi\|\alpha\otimes\beta)\) | Path entropy of MaxEnt GFN | **Analogy**, differs by a conditional term (endpoint entropy vs. path entropy) | O01 Def. 8.2, Eq. (8.8) |
-| Sinkhorn = alternating KL projection | Training with alternating enforced constraints | **Analogy** (OT half-steps have closed form, GFN only SGD) | O01 Prop. 9.4/9.5 |
-| Schrödinger bridge reference path law | Fixed \(P_B\) | **Conditional Equivalence** | O01 Prop. 14.11; O04 \(\mathrm{proj}_{\mathcal R}/\mathrm{proj}_{\mathcal M}\) isomorphism table |
-| Benamou–Brenier / JKO | "Flow × velocity" / training dynamics | **Atmospheric Analogy Only**, do not use as a theorem | O01 Thm. 14.5, Def. 15.1 |
+| Directed edge flow \(m_e\), objective \(\sum_e\ell_e\lvert m_e\rvert\) | Edge flow \(F(s\to t)\) and total flow | **Strictly equivalent** | O01 Def. 6.20, Prop. 6.23; O02 Eq. (1)⇔(3) |
+| Conservation law \(\operatorname{div}_G m=r\) | Flow matching (internal vertices \(r_i=0\)) | **Strictly equivalent** | O01 Prop. 6.23 |
+| Cost = graph shortest path \(d_G\) | Trajectory length / expected number of steps | **Conditionally equivalent** (path action sums edge lengths) | O01 Prop. 14.9; O08 Eq. (7)–(8) |
+| Marginal constraints \(\pi_1=\alpha,\pi_2=\beta\) | Reward matching \(F(x\to s_f)=R(x)\) + first-step edge flow = \(L\) | **Conditionally equivalent** (\(R\) must be normalized, \(Z=1\)) | O08 Assumption 3.1 |
+| Complementary slackness: support ⊂ contact set | Optimal flow is positive only on tight edges | **Strict** (in LP form) | O01 Prop. 5.3; O08 Thm. 3.3 |
+| Kantorovich dual potentials \(f_i\) | State flow \(\log F(s)\) / value function | **Analogous** (OT has inequality constraints, DB has equality) | O01 Def. 5.1, Prop. 6.23 |
+| Coupling \(\mathbf P\in\mathcal U(\mathbf a,\mathbf b)\) | Endpoint marginals of trajectory distribution | **Analogous**, degenerates to a single point for single source | O01 Remark 3.2 |
+| Entropy regularization \(\varepsilon\mathrm{KL}(\pi\|\alpha\otimes\beta)\) | Path entropy of MaxEnt GFN | **Analogous**, differs by a conditional term (endpoint entropy vs. path entropy) | O01 Def. 8.2, Eq. (8.8) |
+| Sinkhorn = alternating KL projection | Alternating constraint enforcement training | **Analogous** (OT has closed-form half-steps, GFN only SGD) | O01 Prop. 9.4/9.5 |
+| Schrödinger bridge reference path law | Fixed \(P_B\) | **Conditionally equivalent** | O01 Prop. 14.11; O04 \(\mathrm{proj}_{\mathcal R}/\mathrm{proj}_{\mathcal M}\) isomorphism table |
+| Benamou–Brenier / JKO | "Flow × velocity" / training dynamics | **Only atmospherically analogous**, not to be used as a theorem | O01 Thm. 14.5, Def. 15.1 |
 
 ### 4. Competitive Landscape
 
-Three dividing lines determine who truly competes with whom (COMPETITOR_MATRIX §2):
+Three dividing lines determine who is truly competing with whom (COMPETITOR_MATRIX §2):
 
-- **Is the graph "the object being transported" or "the place where transport occurs"?** ULOT (C01) and DDSBM (C03) belong to the former: transport is between graphs; O08, O07, GSBoG (C02) belong to the latter: transport is within a single graph. Comparing numbers across this line is meaningless.
-- **Explicit enumeration or implicit expansion.** GSBoG scales to \(10^6\) nodes, but requires \(\mu,\nu\) to be explicit vectors, enumerable neighborhoods, and fully known topology; O08's permutation environment with \(20!\) states has no explicit representation. This is the only structural advantage of GFNs that cannot be replicated.
-- **Temperature.** O08/O07 operate at \(\varepsilon=0\) (pure LP, vertex solutions, with dual certificates); GSBoG/DDSBM operate at \(\varepsilon>0\) (exponential family solutions, with IPF/IMF convergence mechanisms, no error bounds). Adding a KL term to O08 moves it into the quadrant where GSBoG already stands.
+- **Whether the graph is the "object being transported" or the "locus of transport."** ULOT (C01) and DDSBM (C03) belong to the former: transport occurs between graphs. O08, O07, and GSBoG (C02) belong to the latter: transport occurs within a single graph. Comparing numbers across these lines is meaningless.
+- **Explicit enumeration versus implicit expansion.** GSBoG scales to \(10^6\) nodes but requires \(\mu,\nu\) to be explicit vectors, neighborhood enumeration, and fully known topology; O08's permutation environment of \(20!\) states has no explicit representation. This is the only structural advantage of GFNs that cannot be replicated.
+- **Temperature.** O08/O07 operate at \(\varepsilon=0\) (pure LP, vertex solutions, with dual certificates); GSBoG/DDSBM operate at \(\varepsilon>0\) (exponential family solutions, with IPF/IMF convergence mechanisms, no error bounds). Adding a KL term to O08 would move it into the quadrant already occupied by GSBoG.
 
-Specific threats (incorporating conclusions from O04/O05 reports):
+Specific threats (absorbing conclusions from O04/O05 reports):
 
-| Source | What it threatens | Intensity | Counterpoint |
+| Source | What it threatens | Intensity | Counterpoints |
 |---|---|---|---|
-| **GSBoG** (C02, ICML 2026 Main) | O08's entire positioning narrative: "not static coupling but executable policy" almost verbatim | Highest | Implicit graph; indefinite time horizon (GSBoG must fix \(T\)); O08 has LP dual certificates while GSBoG has no error bounds; GSBoG is not open-source |
-| **UNOT** (O05, ICML 2025) | Amortization axis: cross-dataset/cross-resolution generalization, 1.3–2.8% relative error on unseen data (Table 4); it amortizes the dual potentials that are the continuous version of \(\pi_x\) in O08 Thm. 3.3 | High | Changing graph means changing cost (UNOT §6 admits it cannot do this); \(\lvert\mathcal S\rvert\) too large to store the cost matrix |
-| **ULOT** (C01, NeurIPS 2025) | "Conditional GFN learns a family of graph OT" topic | High | ULOT hard limit \(n\le10^4\), outputs plan not policy, zero theorems in the entire paper, cost is quadratic FUGW |
-| **α-DSBM** (O04, NeurIPS 2024 Spotlight) | Not a threat, but complementary: \(\mathrm{proj}_{\mathcal R}/\mathrm{proj}_{\mathcal M}\) is isomorphic to "fixed \(P_B\)" / "infer \(P_F\) from edge flow" point-by-point; Eq. (26) + Lemma D.2 is a ready-made proof template for "SB on graph = entropy-regularized min-flow GFN" | — | Use it, don't compete with it |
-| **DDSBM** (C03, ICLR 2025) | Application niche of "entropy-regularized GFN–OT for molecule editing" | Medium | DDSBM needs to solve QAP graph matching, GFN follows paths and does not; DDSBM does not condition |
+| **GSBoG** (C02, ICML 2026 Main) | O08's entire positioning narrative: "not static coupling but executable policy" is almost verbatim | Highest | Implicit graphs; indefinite time horizon (GSBoG requires fixed \(T\)); O08 has LP dual certificates while GSBoG has no error bounds; GSBoG is not open-source |
+| **UNOT** (O05, ICML 2025) | Amortization axis: cross-dataset/cross-resolution generalization, non-training set relative error 1.3–2.8% (Table 4); its amortized dual potentials are the continuous version of \(\pi_x\) in O08 Thm. 3.3 | High | Changing graphs means changing costs (UNOT §6 states it cannot do this); \(\lvert\mathcal S\rvert\) is too large to store the cost matrix |
+| **ULOT** (C01, NeurIPS 2025) | "Conditional GFNs learning a family of graph OT" topic | High | ULOT hard limit \(n\le10^4\), outputs plan not policy, zero theorems in the entire paper, cost is quadratic FUGW |
+| **α-DSBM** (O04, NeurIPS 2024 Spotlight) | Not a threat, but complementary: \(\mathrm{proj}_{\mathcal R}/\mathrm{proj}_{\mathcal M}\) is isomorphic to "fixed \(P_B\)"/"inferring \(P_F\) from edge flow" respectively, Eq. (26) + Lemma D.2 is a ready-made proof template for "SB on graphs = entropy-regularized min-flow GFN" | — | Use it, don't compete with it |
+| **DDSBM** (C03, ICLR 2025) | "Entropy-regularized GFN–OT for molecular editing" application niche | Medium | DDSBM needs to solve QAP graph matching, GFNs don't need to follow paths; DDSBM does not condition |
 
-### 5. Final Ratings for Four Candidate Topics
+### 5. Final Rating of Four Candidate Topics
 
-| Topic | Rating | Rationale (updated after 2026 trend scan) |
+| Topic | Rating | Rationale (including updates after 2026 trend scan) |
 |---|---|---|
-| **① Balance residual → OT error bound, dual potentials as certificates** | **Proceed. Low collision risk, complete components** | GFN side: Stable GFlowNets already have TB residual → TV bound (2605.01729), Evaluation Balance uses residual as an estimator (2603.01047, ICLR 2026). OT side: Error theory is entirely based on potentials—dual prediction → \(\varepsilon\)-relaxation runtime bounds (2601.20203, AAAI 2026), Sinkhorn potential statistical rates (2608.29152, O08 collaborator Belomestny), QOT's PL inequality (2605.27175). **No paper maps the residual of an approximately feasible flow to the cost gap.** O08 Thm. 3.3's complementary slackness provides edge-wise certificates \(\mathcal F(s\to s')(\pi_{s'}-1-\pi_s)=0\), directly usable. |
-| ② Conditional GFN amortizing a family of graphs for OT | Do not proceed (demoted to baseline) | After UNOT and ULOT, sliced potential amortization (2604.15114) and min-sliced plans (2511.19741) have emerged; the only moat is implicit graphs, but how to define "a family" on implicit graphs is still unclear. |
-| ③ Entropy-regularized GFN–OT / Schrödinger bridges on graphs | Do not proceed (as an \(\varepsilon>0\) generalization of ①) | GSBoG occupies a main conference slot in the same quadrant; Sampling Decisions (2503.14549) has already written GFN flow functions as one-sided Schrödinger transport; discrete SB has analytical solution benchmarks (2509.23348) and convergence rates (2607.19176). New entrants lack the benefit of problem definition. |
-| ④ GFN proposal + classical OT correction | Change form | The vague "correction" has been concretized by 2601.20203 as "dual prediction → \(\varepsilon\)-relaxation, prediction error mapped to runtime." Feasible form: use the state flow learned by GFlowNet as a dual prediction input to a classical solver, reporting guaranteed speedups on explicit graphs—but this is an application of ①, not an independent topic. |
+| **① Balance residual → OT error bound, dual potentials as certificates** | **Do it. Low collision risk, complete components (see N01/N03/N06)** | GFN side: Stable GFlowNets already have TB residual → TV bound (2605.01729), Evaluation Balance uses residual as an evaluator (2603.01047, ICLR 2026). OT side: error theory is all about potentials—dual prediction → \(\varepsilon\)-relaxation runtime bounds (2601.20203, AAAI 2026), Sinkhorn potential statistical rates (2608.29152, O08 collaborator Belomestny), QOT's PL inequality (2605.27175). **No paper maps the residual of an approximately feasible flow to the cost gap.** O08 Thm. 3.3's complementary slackness provides an edge-wise certificate \(\mathcal F(s\to s')(\pi_{s'}-1-\pi_s)=0\), directly usable |
+| ② Conditional GFN amortizes a family of graph OTs | Don't do it (demoted to baseline) | After UNOT and ULOT, sliced potential amortization (2604.15114) and min-sliced plans (2511.19741) have emerged; the only moat is implicit graphs, but how "a family" is defined on implicit graphs has not yet been clearly articulated |
+| ③ Entropy-regularized GFN–OT / Schrödinger bridges on graphs | Don't do it (as an \(\varepsilon>0\) generalization of ①) | GSBoG occupies the main conference slot in the same quadrant; Sampling Decisions (2503.14549) has already written GFN flow functions as one-sided Schrödinger transport; discrete SB has analytical solution benchmarks (2509.23348) and convergence rates (2607.19176). New entrants lack the benefit of problem definition |
+| ④ GFN proposal + classical OT correction | Change form | The vague "correction" has been concretized by 2601.20203 as "dual prediction → \(\varepsilon\)-relaxation, prediction error mapped to runtime." Feasible form: use the state flow learned by GFlowNet as a dual prediction to feed into a classical solver, reporting guaranteed speedups on explicit graphs—but this is an application of ①, not an independent topic |
 
-**Our assessment:** If only one thing is to be done, do ①; ②, ③, and ④ should all appear as baselines or generalizations in the experimental design for ①, rather than as independent papers.
+**Our assessment:** If only one thing is to be done, do ①; ②, ③, and ④ should all appear as baselines or generalizations in the experimental design of ①, rather than as independent papers.
 
 ### 6. An Immediately Executable Decisive Experiment
 
-Goal: Verify that "balance residual can certify OT error," and provide an honest positioning of GFN–OT relative to classical and neural OT. All environments and baselines have existing code or exact solutions.
+Objective: To verify that "balance residuals can certify OT error" and to provide an honest positioning of GFN-OT relative to classical and neural OT. All environments and baselines have existing code or exact solutions.
 
 **Environments** (three tiers, from enumerable to implicit):
 
-1. Hypergrid \(\{0,\dots,H-1\}^D\), \(H\in\{10,15,20\}\), \(D=2\), allowing \(\pm1\) transitions (with cycles). Source distribution \(L\) from O08's Ball/Moon, target \(R\) as corner multimodal and normalized—exact LP solution obtainable from `scipy.linprog` (as in O08 Figure 1), \(\mathrm{OT}^\star\) obtainable from network simplex.
-2. Cayley graph of the symmetric group \(S_n\) (adjacent transpositions), \(n\in\{4,8\}\) (with exact solutions), \(n=20\) (no exact solution, only certificates can be reported).
-3. A weighted variant: assign random weights \(\{1,2\}\) to hypergrid edges, check if certificates still hold beyond O08's unit edge length assumption.
+1. Hypergrid \(\{0,\dots,H-1\}^D\), \(H\in\{10,15,20\}\), \(D=2\), allowing \(\pm1\) transitions (with cycles). Source distribution \(L\) is Ball/Moon from O08, target \(R\) is a multimodal distribution in the corners and normalized—exact LP solutions can be obtained from `scipy.linprog` (as in O08 Figure 1), and \(\mathrm{OT}^\star\) can be obtained from network simplex.
+2. Cayley graph of the symmetric group \(S_n\) (adjacent transpositions), \(n\in\{4,8\}\) (with exact solutions), \(n=20\) (no exact solution, only certification).
+3. A weighted variant: Randomly assign weights \(\{1,2\}\) to the edges of the hypergrid, testing whether certificates still hold beyond O08's unit edge length assumption.
 
-**Method Groups**: min-flow GFN (T36 code, DB + state flow regularization, \(\lambda\in\{10^{-1},10^{-2},10^{-3}\}\)); same model with PPO trainer (2606.15793); same model with \(f\)-TB loss (2605.15417).
+**Method Groups**: min-flow GFN (T36 code, DB + state flow regularization, \(\lambda\in\{10^{-1},10^{-2},10^{-3}\}\)); the same model with PPO trainer (2606.15793); the same model with \(f\)-TB loss (2605.15417).
 
-**Baselines**: network simplex (exact); Sinkhorn (\(\varepsilon\in\{0.1,0.01\}\), including analytical solution verification from 2509.23348); UNOT port (using shortest path matrix as cost, potential predictor + one-step Sinkhorn, explicit tier only); GSBoG reproduction (if code is still unavailable, use discretization of α-DSBM as a proxy and note it).
+**Baselines**: network simplex (exact); Sinkhorn (\(\varepsilon\in\{0.1,0.01\}\), including analytical solution verification from 2509.23348); ported UNOT (using shortest path matrix as cost, potential predictor + one-step Sinkhorn, explicit tier only); GSBoG reproduction (if code is still unavailable, use discretization of \(\alpha\)-DSBM as a substitute and note it).
 
 **Metrics** (per tier, per method, 5 seeds):
 
-- Marginal error: Terminal distribution TV (exact enumeration for enumerable tier, T36's \(C(k)L^1\) diagnostic for implicit tier); source marginal violation \(\lVert \hat L-L\rVert_1\).
+- Marginal error: Terminal distribution TV (exact enumeration for enumerable tiers, T36's \(C(k)L^1\) diagnostic for implicit tiers); source marginal violation \(\lVert \hat L-L\rVert_1\).
 - Transport cost: Relative difference between \(\mathbb E\lvert\tau\rvert\) and \(\mathrm{OT}^\star\); coupling level \(\lVert\Pi_\theta-\Pi^\star\rVert_1\) (not reported in O08).
-- **Certificate**: Construct dual feasible \(\pi\) (dual potentials) from learned state flow, report primal–dual gap; then report mean and max of balance residual \(\sum_t\log\)-ratio for each trajectory. Core plot: \(x\)-axis residual, \(y\)-axis cost gap, check if it falls below a provable bound.
-- Cost: wall-clock time, memory, number of energy function calls.
+- **Certificate**: Construct dual feasible \(\pi\) (dual potentials) from learned state flows, report primal–dual gap; then report the mean and maximum of the balance residual \(\sum_t\log\)-ratio for each trajectory. Core plot: \(x\)-axis residual, \(y\)-axis cost gap, check if it falls below a provable bound.
+- Cost: Wall-clock time, memory, number of energy function calls.
 
-**Expected Results**: On small explicit graphs, exact solvers dominate in all metrics and costs (if not, experiment has a bug); on implicit tiers, GFN is the only method that can provide certificates; the residual-gap curve is monotonic and bounded.
+**Expected Results**: Exact solvers should outperform in all metrics and costs on small explicit graphs (if not, the experiment has a bug); GFN should be the only method capable of providing certificates in the implicit tier; the residual-gap curve should be monotonic and bounded.
 
-**Failure Criteria**: If primal–dual gap and balance residual are uncorrelated (Spearman \(<0.5\)) on \(n=20\), then "residual certifying cost gap" is invalid, and topic ① should pivot to certifying only marginal error; if certificates fail on the weighted variant, O08's unit edge length assumption is essential rather than technical.
+**Failure Criteria**: If the primal–dual gap and balance residual are uncorrelated (Spearman \(<0.5\)) for \(n=20\), then "residual certifies cost gap" is invalid, and research question ① should shift to certifying only marginal error; if the certificate fails on the weighted variant, O08's unit edge length assumption is not technical but essential.
 
-### 7. Eight Most Common Misinterpretations
+### 7. Eight Most Easily Misinterpreted Points
 
-1.  **"\(P_B\) can be freely chosen" \(\neq\) "DB is an empty constraint".** Once \(\hat P_B(s\mid s')=\hat P_F(s'\mid s)\hat F(s)/\hat F(s')\) is required, normalization \(\sum_s\hat P_B=1\) immediately implies flow matching (T02 Eq. (31)). Freedom exists on the manifold of "normalizing to the parent set for each state pair," and only holds in deterministic environments (Counterexample 50).
-2.  **T19 "acyclic limit flow" \(\neq\) "unique solution".** T19 eliminates infinitely scalable directed cycles; the actual selection of a point is done by the linear objective in T36 Eq. (11) and \(\ell^2\) tie-breaking in the sense of O02 Cor. 1.
-3.  **O08's \(\mathrm{GFlow}^\star\) is the reduced objective \(\sum_{E^\circ}\mathcal F\), not \(\sum_{s\in\mathcal I}\mathcal F(s)=\mathbb E[n_\tau]\); the two differ by 1** (the step \(s_0\to u\) is not part of the transport segment). The direct alignment of \(\mathbb E\lvert\tau\rvert\) with \(\mathrm{OT}^\star\) in Table 1 indicates that the transport segment length is reported.
-4.  **"Learning an OT plan" on a single-source DAG is a vacuous statement** (O01 Remark 3.2). The first non-trivial case is \(2\times2\), with \((n-1)(m-1)\) degrees of freedom.
-5.  **O04's \(\alpha\) is not a learning rate; it is an interpolation coefficient in the coupling space** (Eq. (22)), and the paper does not prove that \(\alpha<1\) is better—Appendix B states that \(\alpha=1\) is optimal when the single-step cost is constant.
-6.  **O06's "flow neural network" refers to the velocity field of a continuous normalizing flow, not a GFlowNet.**
-7.  **The local PDF of T02 is an expanded version of arXiv v5 (76 pages); proposition numbering may differ from the JMLR 2023 published version (24(210):1–55)**; T03 cites Foundations using earlier numbering (Prop. 3 / Cor. 1 / Prop. 6 / Prop. 10).
-8.  **O07/O08 are from the ICML 2026 SPIGM Workshop, not the main conference; GSBoG is from the ICML 2026 main conference.** Any statement equating their prestige is incorrect; our side is at a disadvantage in "narrative positioning," a fact that must be acknowledged when selecting topics.
+1. **"\(P_B\) can be freely chosen" \(\neq\) "DB is an empty constraint."** Once \(\hat P_B(s\mid s')=\hat P_F(s'\mid s)\hat F(s)/\hat F(s')\) is required, normalization \(\sum_s\hat P_B=1\) immediately implies flow matching (T02 Eq. (31)). Freedom exists on the manifold of "normalizing to the parent set at each state," and only holds in deterministic environments (Counterexample 50).
+2. **T19's "limit flow is acyclic" \(\neq\) "solution is unique."** T19 eliminates infinitely scalable directed cycles; what truly selects a point is T36 Eq. (11)'s linear objective and O02 Cor. 1's \(\ell^2\) tie-breaking.
+3. **O08's \(\mathrm{GFlow}^\star\) is the reduced objective \(\sum_{E^\circ}\mathcal F\), not \(\sum_{s\in\mathcal I}\mathcal F(s)=\mathbb E[n_\tau]\); the two differ by 1** (the \(s_0\to u\) step is not part of the transport segment). In Table 1, \(\mathbb E\lvert\tau\rvert\) and \(\mathrm{OT}^\star\) are directly aligned, indicating that the reported value is the length of the transport segment.
+4. **"Learning an OT plan" on a single-source DAG is meaningless** (O01 Remark 3.2). The first non-trivial case is \(2\times2\), with \((n-1)(m-1)\) degrees of freedom.
+5. **O04's \(\alpha\) is not a learning rate, but an interpolation coefficient in the coupling space** (Eq. (22)), and the paper does not prove that \(\alpha<1\) is better—Appendix B states that \(\alpha=1\) is optimal when the single-step cost is constant.
+6. **O06's "flow neural network" is the velocity field of a continuous normalizing flow, not a GFlowNet.**
+7. **T02's local PDF is an expanded version of arXiv v5 (76 pages), and proposition numbering may not match the JMLR 2023 published version (24(210):1–55)**; T03 cites Foundations using earlier numbering (Prop. 3 / Cor. 1 / Prop. 6 / Prop. 10).
+8. **O07/O08 are from the ICML 2026 SPIGM Workshop, not the main conference; GSBoG is from the ICML 2026 main conference.** Any statement equating the two in terms of prestige is incorrect; our side is at a disadvantage in "narrative positioning," which is a fact that must be faced when choosing the topic.
 
-### 8. Open Problems
+### 8. Open Questions
 
-1.  **What does the bound for residual \(\to\) cost gap look like?** Bounds for TB residual \(\to\) TV already exist (2605.01729); OT cost is a linear functional of the coupling, so the relationship between marginal violation and cost gap should be tighter than the TV bound. Source: O08 §7.2.
-2.  **Weighted graphs.** O08 only covers unit edge lengths; with weights, zero-weight edges can create zero-cost cycles. Does the minimum flow principle still select an acyclic solution? Source: O07 Report §7, O08 §5, item 5.
-3.  **Gap between neural training and LP optimality.** O08 approximates constraints with soft penalties \(\lambda\). Table 2 shows quantitative trade-offs for \(\lambda\), but lacks theory. Source: O08 §5, item 7.
-4.  **Unbalanced and unknown \(Z\).** Can GFlowNet's ability to "only need unnormalized rewards" return after relaxing \(\sum L=\sum R\)? Unbalanced transport on Orlicz–Sobolev graphs (TRENDS_OT §2.1) is a candidate objective. Source: O08 §7.6.
-5.  **What functional does minimum total flow correspond to in continuous state spaces?** Berner et al. provide discrete↔continuous equivalence tools (TRENDS_GFN §2.3), and Ergodic Generative Flows offer a continuous non-acyclic framework, but no one has written down a continuous version of Thm. 3.2.
-6.  **Are implicit regularization and minimum flow consistent?** To which internal flow does training converge without flow regularization (Secrets of GFlowNets' Learning Behavior, 2505.02035; Fisher geometry, 2608.03967)?
-7.  **Relationship between path multiplicity induced by symmetry and internal flow degrees of freedom.** Symmetry-Aware GFlowNets (2506.02685) and T02's \(P_B\) degrees of freedom are two sides of the same phenomenon; there is no OT-perspective analysis yet.
-8.  **Does short flow benefit generalization?** O08 §7.7 notes this is unverified and potentially negative: shortest path strategies concentrate mass on a few paths, contrary to GFlowNet's diversity selling point.
-9.  **Relationship between minimum flow and entropy selection principle.** When OT plans are not unique under distance costs, are the plans selected by the small regularization limit (TRENDS_OT §2.2) the same as those selected by minimum total flow?
-10. **Multi-objective combination.** Routing by Reaching (2602.21565) combines pre-trained GFlowNets during inference; in OT language, this corresponds to multi-marginal transport, for which no corresponding theorem exists yet.
+1.  **What does the bound of the residual → cost gap look like?** Bounds for TB residual → TV already exist (N03 Thm. 3.5/3.6; note that its DB/FM branches depend on the maximum trajectory length \(L\), which is invalid in O08's non-acyclic setting, so only the TB branch is transferable); OT cost is a linear functional of the coupling, and the relationship between marginal violation and cost gap should be tighter than the TV bound. Source: O08 §7.2.
+2.  **Weighted graphs.** O08 only covers unit edge lengths; when weighted, zero-weight edges can create zero-cost cycles. Does the minimum flow principle still select acyclic solutions? Source: O07 report §7, O08 §5 item 5.
+3.  **Gap between neural training and LP optimum.** O08 approximates constraints with soft penalty \(\lambda\). Table 2 shows a quantitative trade-off for \(\lambda\), but there is no theory. Source: O08 §5 item 7.
+4.  **Unbalanced and unknown \(Z\).** After relaxing \(\sum L=\sum R\), can GFlowNet's ability to "only need unnormalized rewards" return? Unbalanced transport on Orlicz–Sobolev graphs (TRENDS_OT §2.1) is a candidate target. Source: O08 §7.6.
+5.  **What functional corresponds to the minimum total flow in continuous state spaces?** Berner et al. provide discrete ↔ continuous equivalence tools (TRENDS_GFN §2.3), and Ergodic Generative Flows provide a continuous non-acyclic framework, but no one has written a continuous version of Thm. 3.2.
+6.  **Are implicit regularization and minimum flow consistent?** When no flow regularization is added, to which internal flow does training converge (Secrets of GFlowNets' Learning Behavior, 2505.02035; Fisher geometry, 2608.03967)?
+7.  **Relationship between path multiplicity induced by symmetry and internal flow degrees of freedom.** Symmetry-Aware GFlowNets (2506.02685) and T02's \(P_B\) degrees of freedom are two sides of the same phenomenon, and there is no OT-angle analysis yet.
+8.  **Does short flow benefit generalization?** O08 §7.7 points out that this has not been verified and may be negative: shortest path strategies concentrate mass on a few paths, which contradicts GFlowNet's selling point of diversity.
+9.  **Relationship between minimum flow and the entropy selection principle.** When the OT plan is not unique under distance cost, is the plan selected by the small regularization limit (TRENDS_OT §2.2) the same as the plan selected by the minimum total flow?
+10. **Multi-objective combination.** Routing by Reaching (2602.21565) combines pre-trained GFlowNets during inference; in OT language, this corresponds to multi-marginal transport, for which there is no corresponding theorem yet.
 
 ---
 
-*This document was compiled by the awesome_Gflow_OT project team based on 18 interpretation reports and two trend scans; evidence pointers for each judgment can be found in the parentheses (report ID and original theorem number).*
+*This document was compiled by the awesome_Gflow_OT project team based on 18 interpretation reports and two trend scans; evidence pointers for each judgment can be found in the parentheses, indicating the report number and original theorem number.*
 
-# Chapter 10: Repository Tour and Methodology
+# Chapter 10: Repository Guide and Methodology
 
 ## 10.1 Directory Structure
 
 | Path | Content |
 |---|---|
-| `papers/` | 18 original PDF papers (arXiv versions), filenames are arXiv IDs |
-| `papers_zh/` | SuperTranslate layout-preserving Chinese translated PDFs (`<arXiv>.zh.pdf`) and object-level QA results (`<arXiv>.inspect.json`) |
-| `reports/` | 18 in-depth interpretations (`<ID>_<arXiv>.md`), competitor matrix, two trend scans, INSIGHTS, this summary report and its PDF |
-| `data/meta/` | One JSON metadata card per paper (title, authors, venue, venue_type, code, one-sentence summary in English and Chinese) |
-| `data/papers.yaml`, `data/candidates_*.csv`, `data/scan_*.json` | Seed list, trend candidates, raw arXiv scans |
-| `src/generator.py` | Generates `README.md` / `README_zh.md` from `data/meta` and candidate CSVs (awesome-ml4co's data-driven model) |
+| `papers/` | 18 original PDF papers (arXiv version), filenames are arXiv numbers |
+| `papers_zh/` | SuperTranslate layout-preserved Chinese translated PDFs (`<arXiv>.zh.pdf`) and object-level QA results (`<arXiv>.inspect.json`) |
+| `reports/` | 18 in-depth interpretations (`<ID>_<arXiv>.md`), competitive matrix, two trend scans, INSIGHTS, this summary report and its PDF |
+| `data/meta/` | One JSON metadata card per paper (title, authors, venue, venue_type, code, one-sentence Chinese and English summary) |
+| `data/papers.yaml`、`data/candidates_*.csv`、`data/scan_*.json` | Seed list, trend candidates, raw arXiv scan |
+| `src/generator.py` | Generates `README.md` / `README_zh.md` from `data/meta` and candidate CSVs (data-driven mode of awesome-ml4co) |
 | `scripts/` | Download and ID parsing, translation batch processing, trend scanning, UTF-8 validation, report assembly, PDF building |
 | `slides/` | Summary slides (single-file HTML and Beamer PDF) |
 
 ## 10.2 Interpretation Report Template
 
-Each interpretation strictly follows 8 sections: one-sentence positioning and metadata table \(\to\) problem setting and notation \(\to\) core contributions (by original numbering) \(\to\) methods and derivation highlights \(\to\) experiments and evidence \(\to\) assumptions and applicability boundaries \(\to\) position in the main narrative \(\to\) reusable insights and open problems \(\to\) references; an "Editorial note" is appended at the end to record self-determined ambiguities. All numbers and theorem numbers include original sources; if not provided in the original, "not provided in original" is written.
+Each interpretation strictly follows 8 sections: one-sentence positioning and metadata table → problem setting and notation → core contributions (numbered as in the original text) → methods and derivation highlights → experiments and evidence → assumptions and applicability boundaries → position in the main storyline → reusable insights and open questions → references; "Editorial note" is appended at the end to record self-determined ambiguities. All numbers and theorem numbers include original sources; if not provided in the original text, "Original text not provided" is written.
 
 ## 10.3 Translation Pipeline and QA
 
-The translation engine is SuperTranslate (`pdf_zh_translator`): it does not re-layout pages; formulas, figures, and citations are frozen first, then the main text is translated and filled back according to original coordinates; parameters `--preserve-graphics-text --skip-overflow`, DeepSeek backend. After translation, `inspect` is run for each paper to perform page-by-page object-level comparison, and the number of issues is recorded in Appendix A. Known limitations: `--skip-overflow` will retain original English sentences for text that does not fit, leading to `untranslated_block` in math-intensive sections of appendix proof pages; font size scaling can trigger `font_size_drift`. All 18 papers have been translated. O01 (Peyré's lecture notes, 480 pages) is by far the largest; it was translated separately through the Gemini 2.5 Flash backend on OpenRouter (`scripts/translate_o01_openrouter.sh`), taking about four hours, with 69 QA issues reported (mostly font-size drift and residual English in math-dense appendix passages).
+The translation engine is SuperTranslate (`pdf_zh_translator`): it does not re-layout pages; formulas, figures, and citations are frozen first, then the main text is translated and backfilled according to original coordinates; parameters `--preserve-graphics-text --skip-overflow`, DeepSeek backend. After translation, `inspect` is run for each paper to perform page-by-page object-level comparison, and the number of issues is recorded in Appendix A. Known limitations: `--skip-overflow` will keep untranslated text in English if it doesn't fit, leading to `untranslated_block` in math-intensive sections of the appendix proof pages; font size scaling can trigger `font_size_drift`. All 18 papers have been translated. O01 (Peyré's lecture notes, 480 pages) is the largest, translated separately using the Gemini 2.5 Flash backend on OpenRouter (`scripts/translate_o01_openrouter.sh`), taking about 4 hours, and QA reported 69 issues (mainly font size drift and English remnants in math-intensive sections of the appendix).
 
 ## 10.4 Publication Status Discipline
 
-Main conference / Journal / Workshop / Preprint should be marked separately; arXiv comments often lag. For any verifiable information from OpenReview, dblp, or official proceedings, the latter shall prevail (e.g., three competing papers were thus identified as GSBoG being an ICML 2026 main conference paper). The trend scanning section only relies on the comment field and each entry is marked "unverified".
+Main conference / journal / workshop / preprint are marked separately; arXiv comments are often delayed, so if OpenReview, dblp, or official proceedings can be verified, the latter takes precedence (e.g., three competitive papers were thus verified as GSBoG being a main conference paper at ICML 2026); the trend scanning section only relies on the comment field and marks each item as "unverified".
 
 ## 10.5 How to Contribute
 
 Add a JSON card in `data/meta/`, optionally add an interpretation in `reports/`, then run `python3 src/generator.py` to regenerate README; translate new papers using `scripts/translate_batch.sh <arXiv>`; rebuild this report using `python3 scripts/build_report.py zh && bash scripts/build_pdf.sh zh`.
 
-# Appendix A Paper List and Chinese Translation QA
+# Appendix A Paper List and Chinese-English QA
 
-| ID | Title | Venue | Type | File | QA |
+| ID | Title | Venue | Type | File Path | QA Issues |
 |---|---|---|---|---|---|
 | O08 | Your GFlowNet Secretly Learns an Optimal Transport Plan | ICML 2026 SPIGM Workshop | workshop | `O08_2606.06272.md` | 3 issues |
 | O07 | Learning Shortest Paths with Generative Flow Networks | ICML 2026 SPIGM Workshop | workshop | `O07_2603.01786.md` | 0 issues |
@@ -2992,7 +3005,7 @@ Add a JSON card in `data/meta/`, optionally add an interpretation in `reports/`,
 | T03 | Trajectory Balance: Improved Credit Assignment in GFlowNets | NeurIPS 2022 (Advances in Neural Information Processing Systems 35) | main | `T03_2201.13259.md` | 1 issues |
 | T05 | Learning GFlowNets from Partial Episodes for Improved Convergence and Stability | ICML 2023 | main | `T05_2209.12782.md` | 2 issues |
 | T10 | Towards Understanding and Improving GFlowNet Training | ICML 2023 | main | `T10_2305.07170.md` | 3 issues |
-| O01 | Optimal Transport for Machine Learners | lecture notes (arXiv preprint, v3 2026-08-08) | lecture-notes | `O01_2505.06589.md` | Our assessment: |
+| O01 | Optimal Transport for Machine Learners | lecture notes (arXiv preprint, v3 2026-08-08) | lecture-notes | `O01_2505.06589.md` | 69 issues |
 | O02 | Quadratically Regularized Optimal Transport on Graphs | SIAM Journal on Scientific Computing 40(4): A1961-A1986, 2018 | journal | `O02_1704.08200.md` | 3 issues |
 | O03 | GeONet: a neural operator for learning the Wasserstein geodesic | UAI 2024 | main | `O03_2209.14440.md` | 2 issues |
 | O04 | Schrodinger Bridge Flow for Unpaired Data Translation | NeurIPS 2024 (Spotlight) | main | `O04_2409.09347.md` | 13 issues |

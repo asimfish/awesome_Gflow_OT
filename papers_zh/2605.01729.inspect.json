@@ -1,0 +1,41 @@
+{
+  "issue_count": 6,
+  "issues": [
+    {
+      "page": 3,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 3: paragraph still in English (4 words, 0 CJK chars) at x=116.1, y=396.5: where s →s′ ∈A, s′ ̸= sf, and F(s′) := R(x) when s′ = x "
+    },
+    {
+      "page": 4,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 4: block set at 7.36pt but the original at this position is 10.06pt (ratio 0.73 vs page median 0.92) at x=108.8, y=659.0: 命题3.3（任意状态图上增量模式覆盖的全变差界）。设子集"
+    },
+    {
+      "page": 5,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 5: block set at 7.84pt but the original at this position is 9.93pt (ratio 0.79 vs page median 0.92) at x=108.8, y=687.9: 推论3.7.（通过轨迹采样的子图认证）。设"
+    },
+    {
+      "page": 9,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 9: block set at 8.06pt but the original at this position is 10.06pt (ratio 0.80 vs page median 0.92) at x=108.8, y=499.3: ・超网格（Hypergrid）：由Bengio 等人提出的基于网格的环境[2021]。它由维度"
+    },
+    {
+      "page": 19,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 19: block set at 8.41pt but the original at this position is 10.01pt (ratio 0.84 vs page median 0.92) at x=108.8, y=249.7: 推论3.7.（通过轨迹采样的子图认证）。设"
+    },
+    {
+      "page": 23,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 23: displayed equation at y=418 shifted horizontally by 15pt vs original"
+    }
+  ]
+}

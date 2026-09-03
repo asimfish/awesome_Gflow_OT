@@ -22,6 +22,7 @@ SECTIONS = [
     ("ot-prereq", "Optimal Transport Prerequisites and Graph OT", "最优传输先修与图上 OT", ["O01", "O02"]),
     ("neural-ot", "Neural / Amortized OT and Schrodinger Bridges", "神经·摊销 OT 与 Schrödinger 桥", ["O03", "O04", "O05", "O06"]),
     ("competitors", "Competing and Adjacent Works: OT and SB on Graphs", "竞品与相邻工作：图上 OT 与 SB", ["C01", "C02", "C03"]),
+    ("new-2026", "2026 Additions with Deep-Dive Reports", "2026 增补（已配解读）", ["N01", "N02", "N03", "N04", "N05", "N06"]),
 ]
 
 VENUE_BADGE = {"main": "", "journal": "", "workshop": " (Workshop)", "preprint": " (preprint)", "lecture-notes": " (lecture notes)"}
@@ -134,8 +135,9 @@ def build(lang):
                  "[reports/TRENDS_GFN_2026.md](reports/TRENDS_GFN_2026.md)、[reports/TRENDS_OT_2026.md](reports/TRENDS_OT_2026.md)。")
         out += [intro, ""]
         n = 0
+        covered = {m.get("arxiv") for m in metas.values()}
         for r in cands:
-            if r["_rel"] < 4:
+            if r["_rel"] < 4 or (r.get("arxiv") or "").strip() in covered:
                 continue
             n += 1
             arxiv = (r.get("arxiv") or "").strip()

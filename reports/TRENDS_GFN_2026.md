@@ -31,7 +31,7 @@
 用遍历性（ergodicity）构造只含有限个全局定义微分同胚的生成流，给出普适性保证和可计算的 flow-matching 损失；另提出 KL-weakFM 损失做无需独立奖励模型的模仿学习。摘要点名「非无环训练的测试仍然有限」是它要解决的问题之一。
 与主线的关系：T19 作者的续作，把非无环流理论推进到连续/微分同胚设定。它不谈 OT，但把「有环流的可计算 FM 损失」这个 T19 留下的缺口补上了一部分；若要把 O08 的最小流目标推到连续状态空间，这是最近的现成框架。
 
-**Stop the Sampler! Classifier-Based Adaptive Stopping for Sampling Kernels** · Korolev, Morozov et al. · [2606.16073](https://arxiv.org/abs/2606.16073) · ICML 2026 SPIGM Workshop（comment）
+**Stop the Sampler! Classifier-Based Adaptive Stopping for Sampling Kernels** · Korolev, Morozov et al. · [2606.16073](https://arxiv.org/abs/2606.16073) · ICML 2026 SPIGM Workshop（comment）· **已配深度解读：`reports/N02_2606.16073.md`**
 把 MCMC 放进非无环 GFlowNet 理论里，训练与状态相关的神经分类器决定轨迹何时终止；用 detailed balance 条件把最优分类器与目标密度联系起来，并用多层级训练方案处理复杂几何。实验称平均轨迹长度显著缩短、模式覆盖与混合改善。
 与主线的关系：与 O07/O08 同一 HSE 团队。它把「轨迹长度」当成可学习的量，而 O07/O08 把「期望轨迹长度 = 总流」当成目标函数——两者是同一个量的两种用法。它也说明非无环 GFlowNet 理论正在成为该团队的统一语言，OT 只是其中一个出口。
 
@@ -43,7 +43,7 @@
 
 ### 2.2 训练目标 · 稳定性 · 误差证书
 
-**Stable GFlowNets with TV Monitoring and Probabilistic Guarantees** · Lei et al. · [2605.01729](https://arxiv.org/abs/2605.01729) · arXiv 预印本（comment 为空，未核实）
+**Stable GFlowNets with TV Monitoring and Probabilistic Guarantees** · Lei et al. · [2605.01729](https://arxiv.org/abs/2605.01729) · arXiv 预印本（comment 为空，未核实）· **已配深度解读：`reports/N03_2605.01729.md`**
 先证明学到的分布与目标分布之间的 TV 距离很小并不排除训练损失无界；再反过来给出 loss→TV 界：有界的 trajectory balance 损失可以认证全局保真度；最后用自适应参考流做稳定训练。
 与主线的关系：**这是 GFN 侧与「Balance 残差 → OT 误差界」课题最近的一篇**。它已经把 TB 残差和 TV 距离连起来；OT 课题要做的是把右端换成 OT cost gap 与边缘违反量。做该课题必须引用并区分。
 

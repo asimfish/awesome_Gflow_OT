@@ -1,0 +1,26 @@
+{
+  "id": "N02",
+  "arxiv": "2606.16073",
+  "title": "Stop the Sampler! Classifier-Based Adaptive Stopping for Sampling Kernels",
+  "authors": [
+    "Kirill Korolev",
+    "Nikita Morozov",
+    "Stepan Pavlenko",
+    "Esmeralda S. Whitammer",
+    "Sergey Samsonov"
+  ],
+  "venue": "ICML 2026 SPIGM Workshop",
+  "venue_type": "workshop",
+  "year": 2026,
+  "code_url": null,
+  "one_line_en": "Puts MCMC inside continuous non-acyclic GFlowNet theory: a learned stopping classifier d_F(s) decides termination, detailed balance ties the optimal classifier to the target (Theorem 3.6), total flow is minimal iff the expected length hits a closed-form n_Q* (Corollary 3.7); trajectory lengths drop 1-2 orders of magnitude vs ULA (Table 1).",
+  "one_line_zh": "把 MCMC 装进连续非无环 GFlowNet：学一个停止分类器 d_F(s) 决定何时终止，detailed balance 把最优分类器钉在目标密度上（Theorem 3.6），总流最小当且仅当期望长度取到闭式 n_Q*（Corollary 3.7）；与 O07/O08 是同一恒等式的第三个出口。",
+  "tags": [
+    "non-acyclic",
+    "min-flow",
+    "mcmc",
+    "adaptive-stopping",
+    "continuous"
+  ],
+  "priority": "P1"
+}
