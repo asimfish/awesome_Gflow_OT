@@ -8,7 +8,7 @@
       "kicker": "awesome_Gflow_OT · 2026-09",
       "title": "GFlowNet × 最优传输",
       "subtitle": "从流守恒到 Kantorovich 计划：18 篇论文、两条趋势线、一个可开工的课题",
-      "note": "18 篇深度解读 · 18 篇保版式中译 · 2 份趋势扫描（199 篇 arXiv）· 中英汇总报告 91 / 120 页"
+      "note": "24 篇深度解读（18 核心 + 6 篇 2026 增补）· 24 篇保版式中译 · 2 份趋势扫描（199 篇 arXiv）· 中英汇总报告 92 / 121 页"
     },
     {
       "type": "bullets",
@@ -19,7 +19,7 @@
         "**最小总流是一个合法的选择原则**，因为 \\(\\sum_s F(s)=Z\\,\\mathbb E[n_\\tau]\\)（T36）：总流最小 = 期望轨迹最短",
         "**固定源分布后，最小总流 = 图最短路代价下的 Kantorovich OT**（O08 Thm. 3.2），对偶势 + 互补松弛给出证书（Thm. 3.3）",
         "**等价是经典的（Beckmann / 最小费用流），接口是新的**：输出不是耦合矩阵，而是能在 \\(20!\\) 规模隐式图上执行的局部策略",
-        "**该做什么**：[hl]balance 残差 → OT 误差界 + 对偶势证书[/hl]。撞车风险最低，OT 侧配件刚好齐了；摊销与熵正则两条路已经拥挤"
+        "**该做什么**：[hl]balance 残差 → OT 误差界 + 对偶势证书[/hl]。配件已齐：N03 给了 TB 残差 → TV 的证书（Thm. 3.5/3.6），N01 给了对偶预测误差 → 运行时间的界（Thm. 2），N06 给了解析基准的构造配方（Thm. 3.1）；缺的只是把 N03 的右端换成 cost gap"
       ]
     },
     {
@@ -446,6 +446,56 @@
     },
     {
       "type": "table",
+      "kicker": "2026 增补 · 六篇 relevance=5 的新论文已配深度解读（N01–N06）",
+      "title": "六篇增补各补了主线的哪一块",
+      "header": [
+        "编号",
+        "论文",
+        "发表",
+        "对主线的作用"
+      ],
+      "rows": [
+        [
+          "N01",
+          "Minimum-Cost Network Flow with Dual Predictions",
+          "AAAI 2026",
+          "课题④的正确形态：GFN 状态流当对偶预测喂 ε-relaxation，\\(O(\\min\\{n^3\\log\\|\\hat p-p^\\star\\|_\\infty,\\ n^3\\log(nC)\\})\\)（Thm. 2）"
+        ],
+        [
+          "N02",
+          "Stop the Sampler!",
+          "ICML 2026 Workshop",
+          "「期望长度 = 总流」的第三个出口（MCMC 终止）；固定核下最小流有闭式最优值 \\(n_Q^\\star\\)（Cor. 3.7）"
+        ],
+        [
+          "N03",
+          "Stable GFlowNets with TV Monitoring",
+          "预印本",
+          "[ok]课题①已完成的一半[/ok]：TB 残差 \\(\\le c^2\\) ⇒ TV \\(\\le1-e^{-2c}\\)（Thm. 3.5）；抽样证书与状态空间大小无关（Thm. 3.6）"
+        ],
+        [
+          "N04",
+          "Neural OT on Metric Graphs",
+          "预印本",
+          "图上 OT 的连续边分支，与 O08 互补（对象、代价、输出全不同）；「评估噪声底」协议值得照搬"
+        ],
+        [
+          "N05",
+          "Orlicz-Sobolev Unbalanced Graph OT",
+          "NeurIPS 2025 Spotlight",
+          "放开 \\(\\sum L=\\sum R=1\\) 的非 KL 候选：质量差由线性项吸收，一元优化可算（Thm. 4.2）"
+        ],
+        [
+          "N06",
+          "Discrete SB / EOT Benchmark",
+          "[bad]ICLR 2026 主会[/bad]",
+          "熵正则路线的必报基准（Thm. 3.1 解析解构造）；课题③窗口关闭的强证据；配方可移植成 GFN–OT 解析基准"
+        ]
+      ],
+      "note": "六篇均已下载、DeepSeek 保版式中译（QA 2–11 issues）并写入 reports/N0*.md；N06 的发表状态由 PDF 页眉核实，趋势扫描阶段仅凭 arXiv comment 记为预印本是错的。"
+    },
+    {
+      "type": "table",
       "kicker": "四个候选课题",
       "title": "窗口状态与最终评级",
       "header": [
@@ -457,7 +507,7 @@
         [
           "**① Balance 残差 → OT 误差界 + 对偶势证书**",
           "[ok]做[/ok]",
-          "GFN 侧有 loss→TV 界；OT 侧误差理论全在势上；O08 Thm. 3.3 的互补松弛给逐边证书；**没有一篇把近似可行流的残差映射到 cost gap**"
+          "GFN 侧：N03 已证 TB 残差 → TV 界（Thm. 3.5）与抽样证书（Thm. 3.6）；OT 侧：N01 对偶预测误差 → 运行时间（Thm. 2）、Sinkhorn 势统计率、QOT 的 PL 不等式；O08 Thm. 3.3 互补松弛给逐边证书；**没有一篇把近似可行流的残差映射到 cost gap**"
         ],
         [
           "② 条件 GFN 摊销一族图上 OT",
@@ -467,12 +517,12 @@
         [
           "③ 熵正则 GFN–OT / 图上 SB",
           "[bad]不做[/bad]（作①的 ε>0 推广）",
-          "GSBoG 占同象限主会位；Sampling Decisions 已把 GFN 流函数写成单侧 Schrödinger 传输；离散 SB 有基准与收敛率"
+          "GSBoG 占同象限主会位；Sampling Decisions 已把 GFN 流函数写成单侧 Schrödinger 传输；N06（ICLR 2026）给了离散 SB 的解析解基准，新进入者只能在既定口径下比数"
         ],
         [
           "④ GFN proposal + 经典 OT 修正",
           "改形态",
-          "已被「对偶预测 → ε-relaxation」具体化（AAAI 2026）；可作①的应用：把学到的状态流当对偶预测喂经典求解器"
+          "已被 N01 具体化为「对偶预测 → ε-relaxation，预测误差映射到运行时间」（Thm. 2）；可作①的应用：把学到的状态流当对偶预测喂经典求解器——但只在显式图上有意义"
         ]
       ],
       "note": "如果只做一件事，做①；②③④作为①的基线或推广出现，而不是独立论文。"
@@ -494,7 +544,7 @@
           "head": "指标 · 判据",
           "items": [
             "边缘：终止分布 TV、源边缘违反量；代价：\\(\\mathbb E|\\tau|\\) vs OT*、\\(\\|\\Pi_\\theta-\\Pi^\\star\\|_1\\)",
-            "**证书**：由状态流构造对偶可行 \\(\\pi\\)，报 primal–dual gap；核心图：x = balance 残差，y = cost gap",
+            "**证书**：由状态流构造对偶可行 \\(\\pi\\)，报 primal–dual gap；同时按 N03 Thm. 3.6 的格式报抽样 TV 证书（\\(m\\) 条目标轨迹 + \\(n\\) 条模型轨迹取最大损失）；核心图：x = balance 残差，y = cost gap",
             "预期：显式小图精确求解器全面占优；隐式图上 GFN 是唯一能给证书的方法",
             "[bad]失败判据[/bad]：\\(n=20\\) 上 gap 与残差 Spearman < 0.5 → 只认证边缘误差；带权变体证书失效 → 单位边长假设是本质的"
           ]
@@ -513,16 +563,16 @@
       "title": "仓库里有什么",
       "cards": [
         {
-          "head": "18 篇深度解读",
-          "text": "严格 8 节模板；每个定理、数字带原文出处；末尾「编者注」记录自主决定的歧义。竞品矩阵、两份趋势扫描、INSIGHTS 综合"
+          "head": "24 篇深度解读",
+          "text": "18 篇核心 + 6 篇 2026 增补（N01–N06）；严格 8 节模板，每个定理、数字带原文出处，末尾「编者注」记录自主决定的歧义。另有竞品矩阵、两份趋势扫描、INSIGHTS 综合"
         },
         {
-          "head": "18 篇保版式中译 PDF",
-          "text": "SuperTranslate：公式/图表/引用冻结，正文按原坐标回填；每篇附对象级 QA（inspect.json）。O01 讲义 480 页用 Gemini 2.5 Flash 后端单独翻译"
+          "head": "24 篇保版式中译 PDF",
+          "text": "SuperTranslate：公式/图表/引用冻结，正文按原坐标回填；每篇附对象级 QA（inspect.json）。O01 讲义 480 页用 Gemini 2.5 Flash 后端，其余用 DeepSeek 后端"
         },
         {
           "head": "汇总报告 中/英",
-          "text": "由 `scripts/build_report.py` 从解读报告拼装，pandoc + xelatex 编译：中文 91 页、英文 120 页（DeepSeek/Gemini 分块翻译，LaTeX 与引用逐字保留）"
+          "text": "由 `scripts/build_report.py` 从解读报告拼装，pandoc + xelatex 编译：中文 92 页、英文 121 页（Gemini 分块翻译，LaTeX 与引用逐字保留）"
         },
         {
           "head": "数据驱动 README",

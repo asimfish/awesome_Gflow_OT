@@ -14,10 +14,10 @@ The cross-paper synthesis lives in [reports/INSIGHTS.md](reports/INSIGHTS.md) an
 
 | Deliverable | Path |
 |---|---|
-| Consolidated report, Chinese (91 pages) | [PDF](reports/pdf/awesome_gflow_ot_report_zh.pdf) · [Markdown](reports/AWESOME_GFLOW_OT_REPORT_zh.md) |
-| Consolidated report, English (120 pages) | [PDF](reports/pdf/awesome_gflow_ot_report_en.pdf) · [Markdown](reports/AWESOME_GFLOW_OT_REPORT_en.md) |
-| Summary slides (single-file HTML, 23 slides; keyboard / wheel / touch) | [slides/awesome_gflow_ot_slides.html](slides/awesome_gflow_ot_slides.html) |
-| Summary slides (Beamer PDF, 28 pages incl. backup) | [slides/awesome_gflow_ot_slides.pdf](slides/awesome_gflow_ot_slides.pdf) |
+| Consolidated report, Chinese (98 pages) | [PDF](reports/pdf/awesome_gflow_ot_report_zh.pdf) · [Markdown](reports/AWESOME_GFLOW_OT_REPORT_zh.md) |
+| Consolidated report, English (129 pages) | [PDF](reports/pdf/awesome_gflow_ot_report_en.pdf) · [Markdown](reports/AWESOME_GFLOW_OT_REPORT_en.md) |
+| Summary slides (single-file HTML, 24 slides; keyboard / wheel / touch) | [slides/awesome_gflow_ot_slides.html](slides/awesome_gflow_ot_slides.html) |
+| Summary slides (Beamer PDF, 29 pages incl. backup) | [slides/awesome_gflow_ot_slides.pdf](slides/awesome_gflow_ot_slides.pdf) |
 | Cross-paper synthesis | [reports/INSIGHTS.md](reports/INSIGHTS.md) |
 | Competitor matrix | [reports/COMPETITOR_MATRIX.md](reports/COMPETITOR_MATRIX.md) |
 | 2026 trend scans | `reports/TRENDS_GFN_2026.md`, `reports/TRENDS_OT_2026.md` |

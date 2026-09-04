@@ -2862,18 +2862,264 @@ O08/O07 在 \(\varepsilon=0\)（纯 LP，顶点解，有对偶证书）；GSBoG/
 - 非无环 GFlowNet 的三个应用出口（最短路、OT、MCMC 终止）全部停在 Workshop；同象限的 GSBoG 在主会。叙事占位的差距比技术差距大。
 - 摊销 OT 与离散 SB 两个方向都已进入「有基准、有收敛率」阶段，新进入者没有定义问题的红利。
 
-## 8.4 六篇 2026 增补的深度解读
+## 8.4 六篇 2026 增补的深度解读（N01–N06）
 
-趋势扫描中 relevance=5 的六篇已补下载、翻译并配深度解读，编号 N01–N06（见 `reports/N0*.md`，README 的「2026 增补」板块）：
+趋势扫描中 relevance=5 的六篇已补下载、翻译并配深度解读。下面收录各篇解读的核心贡献、前提假设、主线位置与 insight 四节（记号与推导细节见 `reports/N0*.md`）。
 
-| 编号 | 论文 | 发表 | 对主线的作用 |
-|---|---|---|---|
-| N01 | Minimum-Cost Network Flow with Dual Predictions | AAAI 2026 | 课题④的正确形态：GFN 状态流当对偶预测喂 ε-relaxation，误差→时间有界（Thm. 2） |
-| N02 | Stop the Sampler! | ICML 2026 SPIGM Workshop | 「期望长度 = 总流」的第三个出口（MCMC 终止）；连续空间上给出最小流的闭式最优值 |
-| N03 | Stable GFlowNets with TV Monitoring | 预印本 | 课题①已完成的一半：TB 残差 → TV 界（Thm. 3.5）+ 抽样概率证书（Thm. 3.6） |
-| N04 | Generative Modeling on Metric Graphs | 预印本 | 图上 OT 的连续边分支，与 O08 互补；评估协议含「噪声底」值得照搬 |
-| N05 | Orlicz-Sobolev Unbalanced Graph OT | NeurIPS 2025 Spotlight | 放开 O08 的 \(\sum L=\sum R=1\) 的非 KL 候选；质量差由线性项吸收（Thm. 4.2） |
-| N06 | Discrete SB / EOT Benchmark | ICLR 2026 | 熵正则路线的必报基准；其构造配方可移植成 GFN–OT 的解析基准 |
+### 8.4.1 N01 · Minimum-Cost Network Flow with Dual Predictions（AAAI 2026）
+
+> **一句话**：第一个「带对偶预测」的最小费用流算法。把经典 ε-relaxation 用一个预测的对偶解 \(\hat p\) 热启动，运行时间从最坏情形的 \(O(n^3\log(nC))\) 变成 \(O(\min\{n^3\log\|\hat p-p^\star\|_\infty,\ n^3\log(nC)\})\)（Theorem 2）：预测越准越快，预测全错也不比经典差。对本仓库主线的意义在于：O08 Thm. 3.3 的对偶势 \(\pi\) 就是这里的 \(\hat p\)，「GFlowNet 学状态流 → 喂给经典求解器精化」这条路第一次有了带保证的接口。
+
+| 字段 | 内容 |
+|---|---|
+| arXiv | [2601.20203](https://arxiv.org/abs/2601.20203)（v1，2026-01-28） |
+| 发表 | **AAAI 2026**（arXiv comment "accepted by AAAI 2026"；PDF 版权页为 AAAI 2026） |
+| 作者 | Zhiyang Chen（清华）、Hailong Yao（北京科技大学，通讯）、Xia Yin（清华） |
+| 代码 | 原文未给出链接 |
+| 本仓库 PDF | `papers/2601.20203.pdf` · 中译 `papers_zh/2601.20203.zh.pdf`（QA 7 issues） |
+| 阅读优先级 | P1：课题④「GFN proposal + 经典 OT 修正」唯一站得住的具体形态 |
+
+##### 2. 核心贡献（按原文编号）
+
+**理论。** 给 \(\hat p\) 做预处理（平移使 \(\min\hat p=0\)，再裁剪到 \([0,(n-1)C]\)，Algorithm 1 第 1–2 行；Lemma 1 保证存在落在该区间内的最优对偶，所以裁剪不放大误差），然后热启动 ε-relaxation：
+
+- **Theorem 1**：Algorithm 1 复杂度 \(O(\min\{n^3+n^2\varepsilon^{-1}\|\hat p-p^\star\|_\infty,\ n^3\varepsilon^{-1}C\})\)；0/1 流（\(b=0,c=1\)，如二分匹配）改进为 \(O(\min\{mn+m\varepsilon^{-1}\|\hat p-p^\star\|_\infty,\ mn\varepsilon^{-1}C\})\)。
+- **Theorem 2**：加 cost-scaling（Algorithm 2）后 \(O(\min\{n^3\log\|\hat p-p^\star\|_\infty,\ n^3\log(nC)\})\)；0/1 流 \(O(\min\{mn\log\|\hat p-p^\star\|_\infty,\ mn\log(nC)\})\)。第一项是 **consistency**（预测准则快），第二项是 **robustness**（预测全错退回经典界）。
+- **Theorem 3 / Theorem 4**：PAC 样本复杂度。固定拓扑、边代价随机时学一个固定 \(\hat p\) 需 \(\tilde O(n/\varepsilon^2)\) 样本（Theorem 3）；学一个特征到对偶的神经预测器需 \(k=\Omega\big(\tfrac{H^2}{\varepsilon^2}(n\,d_{NN}\log(nC)+\log\tfrac1\delta)\big)\)（Theorem 4，\(d_{NN}\) 为网络伪维度，Lemma 4）。
+
+**实验。** 交通网络（固定拓扑、随机代价，学固定 \(\hat p\)）加速 6.2–21.4×，平均 12.74×；PCB 逃逸布线（UNet 式 CNN 预测网格对偶）加速 1.1–2.3×，平均 1.64×（Abstract、Contributions、Experiments）。
+
+##### 5. 前提假设与适用边界
+
+适用于：整数容量与供给（Assumption 1）；显式图（需要枚举节点做 ε-relaxation 迭代）；有一族相似实例可学（固定拓扑随机代价，或有可提特征的实例分布）。界是关于 ε-relaxation 的，不迁移到 network simplex。
+
+##### 6. 在 GFlowNet × OT 主线中的位置
+
+- 与 O08 的接口：O08 Thm. 3.3 给出 LP 对偶 \(\max_\pi\sum_xR(x)\pi_x\) s.t. \(\pi_{s_0}=0,\ \pi_{s'}-\pi_s\le1\)，最优 \(\pi^\star_x=d(x)\)。GFlowNet 训练出的 \(\log F(s)\) 或由边流反解的势，就是一个近似对偶 \(\hat p\)；本篇 Theorem 2 说明把它喂给 ε-relaxation 能得到**带运行时间保证**的精确解。
+- 竞争面：在**显式图**上，本篇 + 经典求解器比 GFlowNet 更快且自带最优性证书。GFlowNet 只剩隐式图（无法枚举节点，ε-relaxation 根本跑不起来）。
+- 与趋势报告的关系：`TRENDS_OT_2026.md` §2.1 把它列为「可借用 + 潜在竞争」，本文确认这一判断。
+
+##### 7. 可复用的 insight 与开放问题
+
+1. **课题④的正确形态**：不是模糊的「GFN proposal + 修正」，而是「GFN 状态流 → 对偶预测 → ε-relaxation」，误差到时间的映射由 Theorem 2 给出；实验只需报 \(\|\hat p-p^\star\|_\infty\) 与加速比。
+2. **误差度量的启示**：运行时间只依赖 \(\|\hat p-p^\star\|_\infty\)。若要证明「balance 残差 → 对偶势误差」，目标应是无穷范数界而不是 \(\ell_2\)。
+3. **隐式图上的对偶预测无用武之地**：ε-relaxation 每轮扫所有节点；\(20!\) 个状态下不可能。本篇因此反过来给 GFN–OT 划定了边界：显式图别做，隐式图才是空位。
+4. 开放：能否把 Theorem 2 的分析迁到「用近似对偶做 warm-start 的 Sinkhorn / 熵正则求解器」？原文只做零温 LP。
+5. 开放：本篇的 PAC 界要求实例分布固定；GFlowNet 的隐式图「一族实例」如何定义，仍无答案（与课题②同一障碍）。
+
+### 8.4.2 N02 · Stop the Sampler!（ICML 2026 SPIGM Workshop）
+
+> **一句话**：把 MCMC 装进连续状态空间的非无环 GFlowNet 框架：每一步用一个学到的分类器 \(d_F(s)\) 决定「停不停」，用 detailed balance 把最优分类器和目标密度钉在一起（Theorem 3.6），并证明总流最小当且仅当期望轨迹长度取到一个由 Markov 链定义的下界（Corollary 3.7）。它与 O07/O08 出自同一 HSE 团队，是「期望轨迹长度 = 总流」这条恒等式的第三个出口——前两个是最短路（O07）和最优传输（O08），这一个是 MCMC 的自适应终止。
+
+| 字段 | 内容 |
+|---|---|
+| arXiv | [2606.16073](https://arxiv.org/abs/2606.16073)（v2，2026-07-17；本仓库 PDF 为 v2，23 页） |
+| 发表 | **ICML 2026 SPIGM Workshop（非主会）**，arXiv comment |
+| 作者 | Kirill Korolev、Nikita Morozov、Stepan Pavlenko、Esmeralda S. Whitammer、Sergey Samsonov（HSE University 等） |
+| 代码 | 原文未给出链接 |
+| 本仓库 PDF | `papers/2606.16073.pdf` · 中译 `papers_zh/2606.16073.zh.pdf`（QA 2 issues） |
+| 阅读优先级 | P1：非无环 GFlowNet 理论在连续空间的落地，与 O08 共享 Prop. 3.5 恒等式 |
+
+##### 2. 核心贡献（按原文编号）
+
+- **Proposition 3.3**：Def. 3.2 的流测度与 \(P_F\) 满足流匹配条件 (6)。
+- **Theorem 3.4**：流匹配 + 奖励匹配 ⇒ 采样分布 \(P_T(A)=\pi(A)\)。
+- **Proposition 3.5（Eq. (14)）**：\(\mathbb E_{\tau\sim P}[n_\tau]=F(\mathcal S)/F(\{s_0\})\)。原文明说这是把 Brunswic et al.（T19）的不等式 (12) 收紧为等式——与 T36 在离散情形做的事相同，这里是连续版。
+- **Theorem 3.6**：固定转移核 \(Q_F\)（密度 \(q_F\)，全支撑、一致几何遍历，平稳分布 \(\pi_Q\)），则 \((f,q_F,d_F,q_B,d_B)\) 满足 detailed balance (8) **当且仅当**：(1) 流测度 \(F(A)=Z\,(U(A)+n_Q\pi_Q(A))\)（Eq. (18)），其中 \(U(A)=\sum_{n\ge0}(p_0Q_F^n-\pi_QQ_F^{n+1})(A)\)（Eq. (19)）是「注入质量与移除质量的累积差」，\(n_Q\ge n_Q^\star:=\sup_s\frac{\max\{\pi(s),p_0(s)\}-u(s)}{\pi_Q(s)}\)；(2) 分类器与后向核由 Eq. (20) 给出：\(d_F(s)=r(s)/f(s)\)，\(d_B(s)=Zp_0(s)/f(s)\)，\(q_B(s\mid s')=\frac{f(s)-r(s)}{f(s')-Zp_0(s')}q_F(s'\mid s)\)。
+- **Corollary 3.7**：常数 \(n_Q\) 就是期望轨迹长度 \(\mathbb E[n_\tau]\)；**总流 \(F(\mathcal S)\) 最小当且仅当 \(n_Q=n_Q^\star\)**。
+- **Proposition 3.8** + 多层级方案：把状态扩成 \((s,\ell)\)，\(\ell\in\{1,\dots,L\}\)，中间奖励 \(r(s,\ell)\) 按 \(\beta_\ell\) 退火插值（Eq. (24)），逐层满足奖励匹配则终止分布仍为 \(\pi\)。
+- 训练目标：前缀 TB（Morozov et al. 2026 的 prefix trajectory balance，Eq. (21)）+ 流正则（由分类器经 Eq. (16) 直接算出）+ 按停止概率加权（stopgrad）。原文报告 DB 在连续环境表现差、SubTB 项数二次增长，故选前缀 TB。
+
+##### 5. 前提假设与适用边界
+
+一致几何遍历的固定核 \(Q_F\)（Theorem 3.6 前提）；\(\mathbb E[n_\tau]<\infty\)（Assumption 3.1）；连续状态空间上需要 \(\pi,p_0\) 相对 Lebesgue 绝对连续；多层级方案要求可定义退火中间奖励。学到的 \(q_F\) 作为 ULA 核的修正时，理论只覆盖固定核情形。
+
+##### 6. 在 GFlowNet × OT 主线中的位置
+
+- 与 O07/O08 是**同一个量的三种用法**：三篇都从 \(\mathbb E[n_\tau]\propto\) 总流出发。O07 最小化它得到最短路；O08 固定源分布后最小化它得到 OT；本篇把它当 MCMC 的「什么时候停」并给出 \(n_Q^\star\) 的闭式。
+- 对主线的启示：Theorem 3.6 的「特解 + \(n_Q\pi_Q\)」分解，是连续空间上的「无环流 + 环空间」；若要把 O08 推到连续状态空间，这里已经给出了流空间的结构。
+- 与 Berner 等（TRENDS_GFN §2.3，离散↔连续等价）互补：那篇是极限等价，这篇是直接在连续空间构造非无环流。
+
+##### 7. 可复用的 insight 与开放问题
+
+1. **停止概率 = 状态流的倒数**（Eq. (16)）：一个可迁移的参数化技巧，O08 类模型可以用同样方式省掉状态流网络。
+2. **最小流有闭式最优值** \(n_Q^\star\)：在 O08 的离散设定里最小流是 LP 的解；这里因为核固定，最小值可以显式写出，是一个可作 sanity check 的解析基准。
+3. 前缀 TB + 流正则 + 停止概率加权：非无环连续训练的一套可直接复用的配方，O08 若做连续版实验应从这里起步。
+4. 开放：把 Theorem 3.6 中的固定核换成 O08 式的「学一个使总流最小的核」，是否得到连续空间上的 OT 表述？原文未讨论。
+5. 开放：\(n_Q^\star\) 的定义含 \(\sup_s\)，高维时如何估计；原文用学习替代，没有给估计误差。
+
+### 8.4.3 N03 · Stable GFlowNets with TV Monitoring and Probabilistic Guarantees（预印本）
+
+> **一句话**：先证明「学到的分布与目标的 TV 距离很小」并不排除「训练损失无界」（Prop. 3.3–3.4：TV 由聚合对比度 \(1-\Lambda_{\mathcal X}\) 控制，损失上确界由最坏局部对比度 \((\log\min\Lambda_{\{x\}})^2\) 控制，两者可以相差任意多），再反过来给出**损失 → TV 的证书**：逐轨迹 \(\mathcal L_{TB}(\tau)\le c^2\) ⇒ \(\mathrm{TV}\le1-e^{-2c}\)（Theorem 3.5），并把「逐轨迹」这一不可验证的条件换成「抽 \(m+n\) 条轨迹取最大损失」的概率证书（Theorem 3.6）。最后用自适应参考流 \(\delta(\tau)\) 稳定训练，代价是一个可算的保真度折损因子 \((1+\Delta/Z^\star)\)（Theorem 3.10–3.11）。**这是 GFlowNet 侧与本仓库首选课题「balance 残差 → OT 误差界」最近的一篇**：它把「残差 → 边缘误差」这一半做完了。
+
+| 字段 | 内容 |
+|---|---|
+| arXiv | [2605.01729](https://arxiv.org/abs/2605.01729)（v3，2026-08-09；本仓库 PDF 为 v3，32 页） |
+| 发表 | arXiv 预印本（comment 为空；PDF 无会议页眉；截至 2026-09 未见接收信息） |
+| 作者 | Zengxiang Lei、Ananth Shreekumar、Jonathan Rosenthal、Ruoyu Song、Alvaro A. Cardenas、Daniel J. Fremont、Dongyan Xu、Satish Ukkusuri（通讯）、Z. Berkay Celik（通讯）——Purdue / UC Santa Cruz |
+| 代码 | 原文未给出链接 |
+| 本仓库 PDF | `papers/2605.01729.pdf` · 中译 `papers_zh/2605.01729.zh.pdf`（QA 6 issues） |
+| 阅读优先级 | **P0**（对课题①而言）：TB→TV 界与概率证书可直接迁移 |
+
+##### 2. 核心贡献（按原文编号）
+
+- **Prop. 3.3（TV 双侧界）**：\(\frac{Z^\star-Z^\star_{\mathcal X_{\text{sub}}}}{Z^\star}(1-\Lambda_{\mathcal X})\le\mathrm{TV}(P_T,\pi_{\text{target}})\le1-\Lambda_{\mathcal X}\)（Eq. (5)）。
+- **Prop. 3.4（损失尺度）**：\(\sup|\mathcal L_{GFN}|=\big(\log\min_{\{x\}\subseteq\mathcal X_{\text{sub}}}\Lambda_{\{x\}}\big)^2\)（Eq. (6)），对 FM/DB/TB/SubTB 都成立。**结论**：新模式奖励质量小（TV 小）但相对增幅大（局部对比度小）时，「目标微变、优化信号巨大」——这就是 loss spike 的机理。
+- **Theorem 3.5（损失 → TV）**：轨迹级：\(\mathcal L_{TB}(\tau)\le c^2\ \forall\tau\) ⇒ \(\mathrm{TV}\le1-e^{-2c}\)（Eq. (7)），与轨迹长度无关；转移级：\(\mathcal L_{DB}\) 或 \(\mathcal L_{FM}\le c^2\) ⇒ \(\mathrm{TV}\le1-e^{-2Lc}\)（Eq. (8)），\(L\) 为最大轨迹长度，误差在对数域随深度线性退化。
+- **Theorem 3.6（概率证书）**：从 \(\hat\pi(\tau)=\pi_{\text{target}}(x_\tau)P_B(\tau\mid x_\tau)\) 抽 \(m\) 条、从 \(P_F\) 抽 \(n\) 条，令 \(c=\max_i\mathcal L_{TB}(\tau_i)\)，则以置信 \(1-2\alpha\)：\(\mathrm{TV}\le e^{2c}+1-\alpha^{1/m}-\alpha^{1/n}\le e^{2c}-1+\frac{\log(1/\alpha)}{m}+\frac{\log(1/\alpha)}{n}\)（Eq. (9)）。**与状态空间大小无关**。
+- **Cor. 3.7**：把目标限制到子集 \(\mathcal X_{\text{sub}}\) 得子图证书。
+- **Def. 3.8 / Remark 3.9（参考流）**：\(F_{\text{aug}}(\tau)=ZP_F(\tau)+\delta(\tau)\)，\(R_{\text{aug}}(\tau)=R(\tau)+\delta(\tau)\)；增广损失 \(\mathcal L_{\text{aug}}=\gamma^{-2}\mathcal L_{TB}\)，\(\gamma>1\)（Eq. (12)）；使 \(\mathcal L_{\text{aug}}\le c^2\) 的最小参考流有闭式（Eq. (13)）。
+- **Theorem 3.10（保真度折损）**：\(\Delta=\sum_\tau\delta(\tau)\)，若 \(\mathcal L_{\text{aug}}\le c^2\) 则 \(\mathrm{TV}\le\frac{(1-e^{-2c})(1+\Delta/Z^\star)}{1+(1-e^{-c})\Delta/Z^\star}\le(1-e^{-2c})(1+\Delta/Z^\star)\)（Eq. (14)）；\(\Delta/Z^\star\) 可写成 \(\hat\pi\) 下 \(\delta(\tau)/R(\tau)\) 的期望，Monte Carlo 估计 \(M_{TV}\)（Eq. (15)）。
+- **Theorem 3.11**：对所有 \(c\in\mathcal C\) 同时成立的概率界（Eq. (16)），允许在训练中**优化阈值 \(c\)**。
+- **Algorithm 1（Stable GFlowNets）**：按 Theorem 3.11 自适应注入 \(\delta(\tau)\)，配 top-\(K\) 高奖励缓冲区。
+
+##### 3. 方法与理论推导要点
+
+Theorem 3.5 的证明思路（Appendix B）：\(\mathcal L_{TB}(\tau)\le c^2\) 等价于 \(e^{-c}\le ZP_F(\tau)/R(\tau)\le e^{c}\)，逐轨迹的比值夹在 \([e^{-c},e^c]\)；对所有轨迹求和得 \(Z/Z^\star\in[e^{-c},e^c]\)，再把两个比值相乘得终止概率比 \(P_T(x)/\pi(x)\in[e^{-2c},e^{2c}]\)；TV 是 \(\frac12\sum|P_T-\pi|\)，由比值界得 \(1-e^{-2c}\)。DB/FM 的版本把逐边比值沿长度 \(L\) 的轨迹累乘，指数变成 \(2Lc\)。
+
+Theorem 3.6 把「所有轨迹」换成「抽样的最大值」：从 \(\hat\pi\) 抽的 \(m\) 条覆盖目标质量、从 \(P_F\) 抽的 \(n\) 条覆盖模型质量，未被抽到的部分用 \(\alpha^{1/m}\)、\(\alpha^{1/n}\) 形式的尾概率控制——这就是「与状态空间大小无关」的来源。
+
+**本报告判断：**这套证明只用到两件事——(i) 残差是 \(\log\) 比值的平方，(ii) TV 是比值偏离 1 的线性泛函。O08 的 OT cost gap \(\sum_e\mathcal F(e)-\mathrm{OT}^\star\) 也是流的线性泛函，边缘违反量 \(\|\hat L-L\|_1\) 同样是。把 Theorem 3.5 的右端换成这两个量，缺的只是「逐轨迹比值界 ⇒ 每条边流的比值界」这一步（在 O08 的 LP 里流 = 轨迹分布的边缘化，是线性的），以及零温 LP 下最优解在多面体顶点、比值界不直接给 cost gap（需要对偶势做桥）。
+
+##### 5. 前提假设与适用边界
+
+DAG（Theorem 3.5 的 DB/FM 版本用到最大长度 \(L\)，有环时失效——这一点对 O08 的非无环设定很关键：只有 TB 版本 \(1-e^{-2c}\) 与长度无关，可迁移）；能从 \(\pi_{\text{target}}\) 抽样（Theorem 3.6 的 \(m\) 条需要目标样本，实践中用 top-\(K\) 缓冲区近似）；参考流 \(\delta>0\) 要求缓冲区中有目标样本。
+
+##### 6. 在 GFlowNet × OT 主线中的位置
+
+- 与 Stable-GFN（Kwon 等，ICML 2026 Spotlight，成对比较消 \(Z\)）**不是同一篇**，名字相近但问题不同：这篇是证书，那篇是红队训练稳定性。
+- 与 INSIGHTS §5 课题①的关系：本篇 = 「残差 → 边缘误差」；缺的是「残差 → cost gap」。O08 Thm. 3.3 的对偶势 \(\pi\) 与互补松弛 \(\mathcal F(s\to s')(\pi_{s'}-1-\pi_s)=0\) 提供了另一半：一个近似可行流 \(\hat{\mathcal F}\) 与一个对偶可行 \(\hat\pi\) 之间的 primal–dual gap 就是 cost gap 的上界。
+- 与 Evaluation Balance（ICLR 2026，TRENDS_GFN §2.2）同向：两篇都把 balance 残差从「损失」升格为「度量」。
+
+##### 7. 可复用的 insight 与开放问题
+
+1. **可直接复用**：Theorem 3.5 的轨迹级界与 Theorem 3.6 的抽样证书（含 \(\alpha^{1/m}\) 尾项）。O08 的实验若报 primal–dual gap，可以同一格式报 TV 证书。
+2. **必须改的**：O08 是非无环图，DB 版本的 \(L\) 依赖失效；O08 训练目标是 DB + 流正则（Eq. (20)），所以直接套 Theorem 3.5 的 DB 分支会得到无穷界。要么改用 TB/前缀 TB（N02 的做法），要么给非无环 DB 单独证一个以期望长度 \(\mathbb E[n_\tau]\) 替代 \(L\) 的界——后者正是 T36 恒等式能接上的地方。
+3. **参考流 = 对偶正则**：\(\delta(\tau)\) 把目标和模型同时加一个正项，等价于 OT 里给两个边缘加相同质量——与 unbalanced OT 的 KL 罚是不同的松弛，值得对照。
+4. 开放：Theorem 3.6 要求从目标抽样，在 O08 设定里目标耦合 \(\Pi^\star\) 未知——但目标**边缘** \(L,R\) 已知，能否只用边缘样本给证书？
+5. 开放：损失集中比值（Figure 3）在 O08 的排列环境里是否同样出现？若是，流正则 \(\lambda\) 的作用可能主要是压这个比值。
+
+### 8.4.4 N04 · Generative Modeling on Metric Graphs via Neural OT（预印本）
+
+> **一句话**：第一篇在**度量图**（连续支撑在边上的分布，如路网上的上车点）上做深度生成建模的工作：把图嵌进光滑环境空间（欧氏实现，或 tropical Abel–Jacobi 嵌入到 Jacobian 环面），在嵌入空间解熵正则 Kantorovich 问题的神经半对偶形式，再把生成样本最近投影回图上；证明神经表达力增大时生成器弱收敛到合法的图上传输耦合（Theorem 4.1）。它与 O08 在「图」这个词上重合，在对象与输出上不重合：这里的分布是边上的连续测度、代价是图测地距离、输出是采样器而不是逐边策略。
+
+| 字段 | 内容 |
+|---|---|
+| arXiv | [2606.16273](https://arxiv.org/abs/2606.16273)（v1，2026-06-15，31 页） |
+| 发表 | arXiv 预印本（comment 为空；PDF 无会议页眉；截至 2026-09 未见接收信息） |
+| 作者 | Alessandro Micheli、Yueqi Cao（共同一作）、Anthea Monod、Samir Bhatt（共同通讯）——Imperial College London / KTH / Statens Serum Institut |
+| 代码 | 原文未给出链接 |
+| 本仓库 PDF | `papers/2606.16273.pdf` · 中译 `papers_zh/2606.16273.zh.pdf`（QA 6 issues） |
+| 阅读优先级 | P1：图上 OT 的「连续边」分支，与 O08 的「离散顶点」分支互补 |
+
+##### 2. 核心贡献（按原文编号）
+
+- 三步方法（§3）：嵌入 → 在嵌入空间用神经势解熵 OT 半对偶 → 由 Gibbs 条件律采样并**最近投影**回 \(\Gamma\)（projection–pullback 生成器）。
+- **Theorem 4.1（Graph-supported recovery）**：若神经函数族 \(\mathcal F\) 在 \(C(\mathbb R^n,\mathbb R)\) 中按 ucc 拓扑稠密，且嵌入 \(\varphi_\Psi\) 连续单射，则存在神经势序列 \(g_m\)，其诱导的嵌入 Gibbs 律满足 \(\|\pi^\varepsilon_{m,\Psi}-\pi^\star_{\varepsilon,\Psi}\|_{TV}\to0\)；并存在 \(m_k\to\infty,t_k\downarrow0\)（热核平滑参数）使投影–回拉生成器弱收敛到原图上的合法传输耦合。
+- 实验（§5）：合成度量图（theta、wheel、grid、road），对比两个「源感知推前」启发式基线——节点插值（顶点级离散图 OT 再沿边插值）与环境推前；指标为图上 \(W_1^\Gamma,W_2^\Gamma\)、密度 \(L_1\)、边 CDF \(L_1\)。真实数据：曼哈顿路网上 \(10^6\) 个 Uber 上车点。
+
+##### 5. 前提假设与适用边界
+
+度量图有限、边长已知、可显式嵌入；\(\varepsilon>0\)（熵正则，零温不在框架内）；需要源与目标的**样本**（不是未归一化密度）；Theorem 4.1 是存在性 + 极限陈述，无速率。
+
+##### 6. 在 GFlowNet × OT 主线中的位置
+
+- **不是竞品，是互补分支**。O08：离散顶点上的概率质量、单位跳数代价、零温 LP、输出逐边策略、隐式图。N04：边上的连续测度、测地距离代价、熵正则、输出采样器、显式且需要嵌入的图。两者唯一的公共部分是「图上 OT 的目标分布」。
+- 对 O08 的有用参照：N04 的评估协议（图上 \(W_1/W_2\) + 密度 \(L_1\) + **评估噪声底**）比 O08 的 TV + \(\mathbb E|\tau|\) 更完整，尤其「噪声底」这一行是 O08 实验缺的。
+- 在 `TRENDS_OT_2026.md` §2.1 记为「相邻竞争」；读完全文后本报告把它下调为「互补」。
+
+##### 7. 可复用的 insight 与开放问题
+
+1. **评估噪声底**：用两份独立测试子样本互比给出任何方法都达不到的下界——O08 类实验应加这一行。
+2. **内在 vs 外在嵌入**的对照设计可迁移：O08 的排列图 Cayley 结构也有「内在」（群距离）与「外在」（某个特征嵌入）两种表示。
+3. 开放：把 N04 的 \(\varepsilon\to0\) 极限与 O08 的零温 LP 接起来——在度量图上，最短路代价的 \(W_1\) 有 Beckmann 形式（O01 §6.5），N04 没有利用这一点。
+4. 开放：N04 需要样本，O08 需要未归一化密度；「从密度到图上 OT 采样器」的中间形态无人做。
+
+### 8.4.5 N05 · Orlicz-Sobolev Transport for Unbalanced Measures on a Graph（NeurIPS 2025 Spotlight）
+
+> **一句话**：处理图度量空间上**总质量不等**的两个测度之间的传输。先用 Caffarelli–McCann 的思路把熵部分传输（EPT）改写成一个带非负地面代价 \(\hat c\) 的标准（平衡）OT（Prop. 3.1，加一个虚拟点 \(\hat s\) 吸收多余质量），再赋予 Orlicz 几何得到 Orlicz-EPT（Eq. (8)）；发现它仍是两层优化、超立方复杂度，于是借对偶 EPT 与图结构构造正则化版本 **Orlicz-Sobolev 传输（OST，Def. 4.1）**，并证明 OST 可归结为**一个一元优化问题**（Theorem 4.2），离散情形有显式表达（Cor. 4.3），实测比 Orlicz-EPT 快 250–13800 倍。对主线的意义：O08 要求 \(\sum L=\sum R=1\)；若放开成 unbalanced，这篇给出了一个不靠 KL 罚、有闭式计算、且天然定义在图上的候选目标。
+
+| 字段 | 内容 |
+|---|---|
+| arXiv | [2502.00739](https://arxiv.org/abs/2502.00739)（v2，2025-10-24，42 页） |
+| 发表 | **NeurIPS 2025 Spotlight**（arXiv comment "to appear in Neural Information Processing Systems (NeurIPS), 2025. [spotlight]"） |
+| 作者 | Tam Le、Truyen Nguyen（共同一作）、Hideitsu Hino、Kenji Fukumizu——统计数理研究所（ISM）/ University of Akron |
+| 代码 | 原文未给出链接 |
+| 本仓库 PDF | `papers/2502.00739.pdf` · 中译 `papers_zh/2502.00739.zh.pdf`（QA 11 issues） |
+| 阅读优先级 | P1：unbalanced 图上 OT 的非 KL 路线 |
+
+##### 2. 核心贡献（按原文编号）
+
+- **Prop. 3.1（EPT ⇔ 标准 OT）**：EPT 等于概率测度 \(\hat\mu,\hat\nu\)（原测度归一化并加虚拟点 \(\hat s\)）之间以 \(\hat c\)（Eq. (5)）为代价的标准 OT；**Remark 3.2**：与既有做法不同，\(\hat c\ge0\) 有保证，这是后面能套 Orlicz-Wasserstein 框架的关键校准。
+- **Orlicz-EPT（Eq. (8)）**：\(OE_\Phi(\mu,\nu)=(\mu(G)+\nu(G))(W_\Phi(\hat\mu,\hat\nu)-b\lambda)\)；**Prop. 3.3** 单调性；**Prop. 3.4/3.5** 熵正则版本 \(A_\varepsilon\) 的单调性与上下界，二分搜索求解（Eq. (11)，二次复杂度的内层替代超立方的 (9)），但两层结构仍重。
+- **Def. 4.1（OST）**：\(OS_{\Phi,\alpha}(\mu,\nu)=\sup_{f\in U_{\Psi,\alpha}}\big(\int f\,d\mu-\int f\,d\nu\big)\)（Eq. (14)），\(U_{\Psi,\alpha}\) 是图上 Orlicz–Sobolev 空间 \(WL^\Psi(G,\omega)\) 中导数 Orlicz 范数 \(\le b\)、根值落在区间 \(I_\alpha\) 的函数——OST 是一个积分概率度量（IPM）。
+- **Theorem 4.2（一元优化）**：\(OS_{\Phi,\alpha}(\mu,\nu)=\Theta\,|\mu(G)-\nu(G)|+\inf_{k>0}\frac1k\Big(1+\int_G\Phi\big(kb\,|\mu(\Lambda(x))-\nu(\Lambda(x))|\big)\omega(dx)\Big)\)（Eq. (16)），\(\Theta\) 由 Eq. (15) 按哪边质量大取值，\(\Lambda(x)\) 是 \(x\) 的「子树」（经 \(x\) 的路径所达的点集）。质量差被一个线性项 \(\Theta|\mu(G)-\nu(G)|\) 显式吸收。
+- **Cor. 4.3（离散情形）**：测度支撑在顶点时积分变成对边的求和（Eq. (17)），配合 Dijkstra 预处理 \(O(|E|+|V|\log|V|)\) 与「只对 \(E_{\mu,\nu}\) 中的边求和」的稀疏性。
+- **Prop. 5.5/5.6**：极限 \(N\)-函数 \(\Phi_0\) 下 OST 有闭式，Orlicz-EPT 退化为图上 EPT。
+
+##### 5. 前提假设与适用边界
+
+图为物理图且路径 \([z_0,x]\) 唯一（树状；非物理图见 Remark 4.4 的处理）；测度非负有限；\(\Phi\) 为 \(N\)-函数；OST 是 IPM 而非 EPT 本身——它是 EPT 的正则化替代，不是等价物。
+
+##### 6. 在 GFlowNet × OT 主线中的位置
+
+- O08 Assumption 3.1 第 4 条要求两边缘归一化。放开它有两条路：KL 罚（ULOT/C01、GSBoG 一系的做法）或本篇的「虚拟点 + 线性质量差项」。后者的好处：目标仍是线性/一元的，与 O08 的 LP 结构兼容；坏处：需要根 \(z_0\) 与树状路径，O08 的有环组合图不直接满足。
+- 与 O02（Essid & Solomon 图上二次正则 OT）同属「图上 OT 的正则化」，但正则对象不同：O02 正则边流，本篇正则对偶势的导数。
+- `TRENDS_OT_2026.md` §2.1 记为「互补」，本报告维持。
+
+##### 7. 可复用的 insight 与开放问题
+
+1. **质量差可以线性吸收**（Theorem 4.2 首项）：给 O08 加 unbalanced 时，不必上 KL 罚，先试「虚拟汇点 + 线性项」。
+2. **树上的 Beckmann 解是显式的**：O08 若在树状（或近似树状）状态图上做 sanity check，OST 给出闭式参考值。
+3. 开放：O08 的状态图有环，\([z_0,x]\) 不唯一；OST 的 Remark 4.4 处理非物理图的方式能否推到一般有向图？
+4. 开放：把 OST 的对偶势 \(f\)（Orlicz–Sobolev 类）与 O08 Thm. 3.3 的对偶势 \(\pi\)（1-Lipschitz 于跳数距离）并列——两者是同一对偶变量在不同函数类下的版本，尚无人比较。
+
+### 8.4.6 N06 · A Benchmark for Discrete Schrödinger Bridges and EOT（ICLR 2026）
+
+> **一句话**：离散空间上的熵正则 OT / Schrödinger 桥（SB）第一次有了**有解析解的基准**。核心是 Theorem 3.1：给定初始分布 \(p_0\) 与任意标量函数 \(v^\star\)，令 \(q^\star(x_1\mid x_0)\propto v^\star(x_1)q^{\text{ref}}(x_1\mid x_0)\)，则 \((p_0,\ p_1:=q^\star\text{ 的第二边缘})\) 之间以 \(q^{\text{ref}}\) 为参考的 EOT/SB 解就是 \(q^\star\)；用 CP 分解参数化让它在 \(|\mathcal X|=S^D\) 的高维空间可算（Prop. 3.1/3.2）。副产品是三个求解器 DLightSB、DLightSB-M、\(\alpha\)-CSBM，其中 DLightSB 在全部设定下最强。对主线的意义：任何「熵正则 GFN–OT」若声称在解 SB，就必须在这个基准上报数，而它同时是课题③窗口关闭的证据——离散 SB 已从「方法」进入「基准」阶段。
+
+| 字段 | 内容 |
+|---|---|
+| arXiv | [2509.23348](https://arxiv.org/abs/2509.23348)（v2；本仓库 PDF 24 页） |
+| 发表 | **ICLR 2026 主会**（依据：PDF 页眉 "Published as a conference paper at ICLR 2026"；arXiv comment 为空，本仓库 CSV 已据此修正） |
+| 作者 | Xavier Aramayo Carrasco、Grigoriy Ksenofontov（共同一作）、Aleksei Leonov、Iaroslav Koshelev 等——Applied AI Institute / MIRAI（莫斯科） |
+| 代码 | 原文未给出链接（正文提到基准与求解器实现，未见 URL） |
+| 本仓库 PDF | `papers/2509.23348.pdf` · 中译 `papers_zh/2509.23348.zh.pdf`（QA 5 issues） |
+| 阅读优先级 | P1：熵正则路线的必报基准 |
+
+##### 2. 核心贡献（按原文编号）
+
+- **M3.1 / Theorem 3.1（基准对构造）**：任意 \((p_0,v^\star)\) 诱导基准对 \((p_0,p_1)\)，其 EOT/SB 解 \(q^\star(x_1\mid x_0)=\frac{1}{c^\star(x_0)}v^\star(x_1)q^{\text{ref}}(x_1\mid x_0)\)（Eq. (7)）闭式已知。原文指出这是 Gushchin et al. (2023b) 连续空间构造的离散版。
+- **M3.2 / Prop. 3.1、3.2（可算参数化）**：高维下 \(c^\star(x_0)\) 与 \(q^\star\) 的求和有 \(S^D\) 项；把 \(v^\star\) 取成 CP 分解形式（混合分量 \(k\)、维度 \(d\) 各一非负向量 \(r_{kd}\in\mathbb R_+^S\)），归一化与条件分布都分解成一维求和的乘积，可精确计算（Prop. 3.1 针对条件分布，Prop. 3.2 针对 SB 转移分布）。
+- **M3.3**：据此构造高维高斯混合基准，覆盖 \(q^{\text{gauss}}\)（\(\gamma=0.02\)）与 \(q^{\text{unif}}\)（\(\gamma=0.005\)）两种参考过程、不同 \(D\)。
+- **M4 求解器**：CSBM（Ksenofontov & Korotin 2025，既有）；**\(\alpha\)-CSBM**（M4.2，把 \(\alpha\)-DSBM/O04 的在线更新并入 CSBM）；**DLightSB**（M4.3，LightSB 的离散版，直接来自基准构造）；**DLightSB-M**（M4.4，动态扩展）。
+- **评估指标**：条件 Shape Score 与 Trend Score（Table 1a/b）、轨迹 KL 与反向 KL（Table 3/4）、C2ST（Table 2，作者说明其数值「不具信息量」——所有方法都接近）。
+
+##### 5. 前提假设与适用边界
+
+离散时间、因子化（逐维独立）参考过程；\(v^\star\) 为 CP 形式；\(\varepsilon>0\)（熵正则是 SB 的定义本身）。零温 LP（O08 的设定）不在基准范围内，但作为 \(\varepsilon\to0\) 的极限可以对照。
+
+##### 6. 在 GFlowNet × OT 主线中的位置
+
+- 对课题③（熵正则 GFN–OT / 图上 SB）：**必报基准**。GSBoG（C02）、DDSBM（C03）之后，N06 定了口径；任何新的离散 SB 求解器若不在此基准上报 Shape/Trend Score 与轨迹 KL，就无法说明自己解的是 SB。
+- 对课题③窗口关闭的证据强度：**强**。一个方向有了解析基准 + 多个求解器 + 明确的失效模式分析，新进入者没有「先定义问题」的红利，只能在既定口径下比数。
+- 对课题①的间接价值：N06 的 \(\alpha\)-CSBM 把 O04 的 \(\alpha\) 在线更新移植到离散空间，说明「固定 \(P_B\) / 由边流反解 \(P_F\)」的投影同构（O04 报告 §6）在离散空间成立。
+
+##### 7. 可复用的 insight 与开放问题
+
+1. **构造有解析解的基准的通用配方**：固定参考动力学 + 任选势函数 + 定义边缘。O08 的零温设定可以照做——固定 \(L\)、任选 1-Lipschitz 势 \(\pi\)、由互补松弛构造最优流再定义 \(R\)——得到有解析最优流的 GFN–OT 基准。**这是 O08 实验缺的东西，配方现成。**
+2. C2ST「不具信息量」的教训：分布级二分类指标在高维基准上区分力差，应优先条件指标（Shape/Trend）与轨迹 KL。
+3. 开放：把 N06 的基准 \(\varepsilon\to0\) 后与 O08 的 LP 解对照，验证熵选择原理在离散图上选出的计划是否等于最小总流计划。
+4. 开放：基准只覆盖因子化参考过程；图上（非乘积结构）的参考链没有解析构造。
+
+### 8.4.7 六篇合看：对四个候选课题评级的影响
+
+| 课题 | 六篇带来的变化 |
+|---|---|
+| ① 残差 → OT 误差界 + 对偶势证书 | 从「配件在别处」变成「配件在手」：N03 Thm. 3.5/3.6 是残差 → 边缘误差的现成证书，N01 Thm. 2 是对偶误差 → 运行时间的界，N06 Thm. 3.1 是构造解析基准的配方。评级维持**做**，且可开工的程度提高 |
+| ② 条件 GFN 摊销图上 OT | 无新证据改变「不做」 |
+| ③ 熵正则 GFN–OT / 图上 SB | N06 以 ICLR 2026 主会身份定下离散 SB 的评测口径，窗口关闭的证据更强；N02 说明连续非无环 GFN 的团队自己也在往采样器方向走，而不是 SB |
+| ④ GFN proposal + 经典 OT 修正 | N01 把它具体化为「对偶预测 → ε-relaxation」，但只在显式图上成立；N04 说明显式连续图上另有神经 OT 路线。评级维持「降为①的应用」 |
 
 # 第 9 章 Insight、候选课题评级与决定性实验
 
@@ -3012,9 +3258,9 @@ O08/O07 在 \(\varepsilon=0\)（纯 LP，顶点解，有对偶证书）；GSBoG/
 
 | 路径 | 内容 |
 |---|---|
-| `papers/` | 18 篇原文 PDF（arXiv 版），文件名为 arXiv 号 |
+| `papers/` | 24 篇原文 PDF（18 核心 + 6 篇 2026 增补）（arXiv 版），文件名为 arXiv 号 |
 | `papers_zh/` | SuperTranslate 保版式中译 PDF（`<arXiv>.zh.pdf`）与对象级 QA 结果（`<arXiv>.inspect.json`） |
-| `reports/` | 18 篇深度解读（`<ID>_<arXiv>.md`）、竞品矩阵、两份趋势扫描、INSIGHTS、本汇总报告及其 PDF |
+| `reports/` | 24 篇深度解读（`<ID>_<arXiv>.md`）、竞品矩阵、两份趋势扫描、INSIGHTS、本汇总报告及其 PDF |
 | `data/meta/` | 每篇一张 JSON 元数据卡（标题、作者、venue、venue_type、代码、一句话中英） |
 | `data/papers.yaml`、`data/candidates_*.csv`、`data/scan_*.json` | 种子清单、趋势候选、arXiv 原始扫描 |
 | `src/generator.py` | 从 `data/meta` 与候选 CSV 生成 `README.md` / `README_zh.md`（awesome-ml4co 的数据驱动模式） |
@@ -3027,7 +3273,7 @@ O08/O07 在 \(\varepsilon=0\)（纯 LP，顶点解，有对偶证书）；GSBoG/
 
 ## 10.3 翻译流水线与 QA
 
-翻译引擎为 SuperTranslate（`pdf_zh_translator`）：不重排页面，公式、图表、引用先冻结，正文翻译后按原坐标回填；参数 `--preserve-graphics-text --skip-overflow`，DeepSeek 后端。每篇译后运行 `inspect` 做逐页对象级比对，issue 数记入附录 A。已知限制：`--skip-overflow` 会让放不下的译文保留英文原句，附录证明页的数学密集段因此出现 `untranslated_block`；字号缩放会触发 `font_size_drift`。18 篇全部完成翻译。O01（Peyré 讲义，480 页）体量最大，用 OpenRouter 上的 Gemini 2.5 Flash 后端单独翻译（`scripts/translate_o01_openrouter.sh`），耗时约 4 小时，QA 报 69 个 issue（主要为字号漂移与附录数学密集段的英文残留）。
+翻译引擎为 SuperTranslate（`pdf_zh_translator`）：不重排页面，公式、图表、引用先冻结，正文翻译后按原坐标回填；参数 `--preserve-graphics-text --skip-overflow`，DeepSeek 后端。每篇译后运行 `inspect` 做逐页对象级比对，issue 数记入附录 A。已知限制：`--skip-overflow` 会让放不下的译文保留英文原句，附录证明页的数学密集段因此出现 `untranslated_block`；字号缩放会触发 `font_size_drift`。24 篇全部完成翻译。O01（Peyré 讲义，480 页）体量最大，用 OpenRouter 上的 Gemini 2.5 Flash 后端单独翻译（`scripts/translate_o01_openrouter.sh`），耗时约 4 小时，QA 报 69 个 issue（主要为字号漂移与附录数学密集段的英文残留）。
 
 ## 10.4 发表状态纪律
 
