@@ -29,3 +29,6 @@
 
 在 `data/meta/` 增加一张 JSON 卡，可选地在 `reports/` 增加解读，运行 `python3 src/generator.py` 重新生成 README；翻译新论文用 `scripts/translate_batch.sh <arXiv>`；重建本报告用 `python3 scripts/build_report.py zh && bash scripts/build_pdf.sh zh`。
 
+## 10.6 外部审稿与修订记录
+
+本报告的综合部分（INSIGHTS、摘要与第 1 章、六篇 2026 增补解读）经本地 Codex CLI（模型 `gpt-6-astra`，推理档位 max，只读沙箱）以「ICML 领域主席级读者」提示词逐份审稿（脚本 `scripts/codex_review.sh`，结构化 JSON 输出存于 `reviews/codex/`）。四份审稿共提出 78 条事实风险、35 条逻辑缺口。已按审稿修正的实质性问题包括：O08 Eq. (20) 的训练目标是带源分布项的正则化 TB（原误写为 DB + 流正则）；T36 恒等式的编号是 Prop. 3.12 / Eq. (10)（原误写 Prop. 3.6）；N03 Thm. 3.6 中 \(c\) 是最大损失的平方根；N02 Eq. (19) 第二项用目标分布 \(\pi\) 而非核的平稳分布；O08 Thm. 3.3 只针对去掉首步约束的单源问题，固定双边缘须用 Appendix A.4；N01 原文确与 network simplex 比过且组均值快 12 倍；N02/N05/N06 的代码链接原文均有给出；INSIGHTS §6b 命题 D「机械组合即成立」的判断撤回（零残差不蕴含 OT 最优、端点代价不等于路径代价两个反例）；O07 的 Workshop 状态降为待核实。凡审稿指出而本报告无法独立核验的条目，均在正文改为限定表述或标注「待核实」。

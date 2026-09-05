@@ -8,7 +8,7 @@
     "Daniil Tiapkin",
     "Sergey Samsonov"
   ],
-  "venue": "ICML 2026 SPIGM Workshop",
+  "venue": "ICML 2026 SPIGM Workshop (unverified: arXiv comment empty, no header in PDF; label inherited from prior survey)",
   "venue_type": "workshop",
   "year": 2026,
   "code_url": "https://github.com/GreatDrake/gfn-pathfinding",
@@ -53,8 +53,14 @@
     "every vertex of the input graph can reach the goal vertex v_g",
     "theory characterizes exact minimizers; training uses the soft lambda penalty and beam search absorbs the approximation gap"
   ],
-  "prerequisites": ["T36", "T19", "T03"],
-  "successors": ["O08"],
+  "prerequisites": [
+    "T36",
+    "T19",
+    "T03"
+  ],
+  "successors": [
+    "O08"
+  ],
   "bridge_to_O08": "single-source (s0) shortest path with cost l(x) = d(s0, x); O08 adds F(s0->u) = L(u) to lift it to multi-source Kantorovich OT with cost d(u,x). Lemma 3.2 corresponds to O08 Eq. (18); Lemma 3.3 corresponds to O08 Theorem 3.2 Part 1; O08 Theorem 3.3 re-derives this claim through LP duality.",
   "not_in_paper": [
     "numeric table for the Swap Puzzle (only Figure 2 curves)",

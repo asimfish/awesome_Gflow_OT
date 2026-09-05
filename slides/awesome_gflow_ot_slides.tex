@@ -65,7 +65,7 @@
 {\footnotesize\begin{itemize}
 \item 以 $P_B$ 为第一性对象，流 = 期望访问次数 × 终止流（Prop. 3.7 一一对应）
 \item 不等式收紧为等式 $\sum_s F(s)=Z\,\mathbb E[n_\tau]$
-\item 写出「最小总流」约束优化 Eq. (11)；近似解法 DB + 状态流正则
+\item 写出「最小总流」约束优化 Eq. (11)；恒等式 $\sum_s F(s)=Z\,\mathbb E[n_\tau]$ 见 Prop. 3.12；近似解法 DB + 状态流正则
 \item 最小值落在多面体边界，超出自身正性假设，只能 $\lambda$ 正则逼近
 \end{itemize}}\end{column}
 \end{columns}
@@ -112,7 +112,7 @@ Moon & 20 & 0.032 & 0.040 & 9.001 & 9.059 \\\bottomrule\end{tabular}}
 \begin{column}{0.235\textwidth}\begin{block}{图结构}\footnotesize 有限有向图，\textbf{允许有环}（无环分层图上路径等长，最小流退化为常数）；$s_0$ 只出到 $U$，$s_f$ 只从 $\mathcal X$ 入；全对可达\end{block}\end{column}
 \begin{column}{0.235\textwidth}\begin{block}{边缘与代价}\footnotesize 两个边缘都归一化：$\sum L=\sum R=1$，$Z$ 已知；代价是\textbf{单位边长}的最短路跳数，带权图不在覆盖范围\end{block}\end{column}
 \begin{column}{0.235\textwidth}\begin{block}{吸收性}\footnotesize 反向链是吸收链 / $\mathbb E[n_\tau]<\infty$（T36 Lemma 3.4；O07 Assumption 3.1）；正文未重述但 Eq. (3) 良定义依赖它\end{block}\end{column}
-\begin{column}{0.235\textwidth}\begin{block}{精确 vs 训练}\footnotesize 定理是关于 \textbf{LP 最优解} 的；神经训练用软罚 $\lambda$（Eq. (20)），训练完的模型是否 OT 最优靠数值接近程度支撑，不由定理保证\end{block}\end{column}
+\begin{column}{0.235\textwidth}\begin{block}{精确 vs 训练}\footnotesize 定理是关于 \textbf{LP 最优解} 的；神经训练用带源分布项的正则化 TB 加软罚 $\lambda$（Eq. (20)），训练完的模型是否 OT 最优靠数值接近程度支撑，不由定理保证\end{block}\end{column}
 \end{columns}
 \vfill\hrule\vspace{2pt}{\footnotesize\textcolor{neutral}{适用范围一句话：状态空间无法枚举、代价矩阵无法构造、但局部合法动作明确且允许回退的组合图上的均衡 OT。不适合显式小图（network simplex 更快更准且自带证书）。}}
 \end{frame}
