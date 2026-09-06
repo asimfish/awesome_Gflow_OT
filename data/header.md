@@ -5,7 +5,7 @@
 [![Papers](https://img.shields.io/badge/papers-18%20core%20%2B%206%20additions-orange.svg)](#content)
 [![Reports](https://img.shields.io/badge/deep--dive%20reports-24-green.svg)](#deep-dive-reports)
 [![Translated](https://img.shields.io/badge/zh%20PDFs-24%2F24-blueviolet.svg)](#deep-dive-reports)
-[![Report](https://img.shields.io/badge/report-zh%20104p%20%7C%20en%20137p-informational.svg)](#deliverables)
+[![Report](https://img.shields.io/badge/report-zh%20105p%20%7C%20en%20142p-informational.svg)](#deliverables)
 
 [English](README.md) | [中文](README_zh.md)
 

@@ -1,0 +1,42 @@
+{
+  "H": 20,
+  "D": 2,
+  "source": "ball",
+  "n_states": 400,
+  "n_edges": 1520,
+  "mass_check": 1.1102230246251565e-16,
+  "GFlow_star": 10.53588551434252,
+  "OT_star": 10.535885514342478,
+  "abs_diff": 4.085620730620576e-14,
+  "exact_solution_certificate": {
+    "primal": 10.53588551434251,
+    "dual": 10.535885514342509,
+    "gap": 1.7763568394002505e-15,
+    "max_dual_violation": 0.0,
+    "div_residual": 6.145190151012059e-16,
+    "complementary_slackness_max": 0.0
+  },
+  "pi_range": [
+    -16.0,
+    5.0
+  ],
+  "counterexample_crossed": {
+    "executed_cost": 18.467160983812036,
+    "endpoint_cost": 18.467160983812036,
+    "primal": 18.467160983812036,
+    "dual": 10.535885514342509,
+    "gap": 7.9312754694695276,
+    "max_dual_violation": 0.0,
+    "div_residual": 3.1553264775302514e-15
+  },
+  "counterexample_detour": {
+    "executed_cost": 36.85747734038115,
+    "endpoint_cost": 10.535885514342478,
+    "primal": 36.85747734038115,
+    "dual": 10.535885514342509,
+    "gap": 26.32159182603864,
+    "max_dual_violation": 0.0,
+    "div_residual": 1.1643362326802659e-14
+  },
+  "seconds": 6.66
+}

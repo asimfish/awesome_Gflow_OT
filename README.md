@@ -5,7 +5,7 @@
 [![Papers](https://img.shields.io/badge/papers-18%20core%20%2B%206%20additions-orange.svg)](#content)
 [![Reports](https://img.shields.io/badge/deep--dive%20reports-24-green.svg)](#deep-dive-reports)
 [![Translated](https://img.shields.io/badge/zh%20PDFs-24%2F24-blueviolet.svg)](#deep-dive-reports)
-[![Report](https://img.shields.io/badge/report-zh%20104p%20%7C%20en%20137p-informational.svg)](#deliverables)
+[![Report](https://img.shields.io/badge/report-zh%20105p%20%7C%20en%20142p-informational.svg)](#deliverables)
 
 [English](README.md) | [中文](README_zh.md)
 
@@ -446,8 +446,8 @@ The cross-paper synthesis lives in [reports/INSIGHTS.md](reports/INSIGHTS.md) an
 
 | Deliverable | Path |
 |---|---|
-| Consolidated report, Chinese (104 pages) | [PDF](reports/pdf/awesome_gflow_ot_report_zh.pdf) · [Markdown](reports/AWESOME_GFLOW_OT_REPORT_zh.md) |
-| Consolidated report, English (137 pages) | [PDF](reports/pdf/awesome_gflow_ot_report_en.pdf) · [Markdown](reports/AWESOME_GFLOW_OT_REPORT_en.md) |
+| Consolidated report, Chinese (105 pages) | [PDF](reports/pdf/awesome_gflow_ot_report_zh.pdf) · [Markdown](reports/AWESOME_GFLOW_OT_REPORT_zh.md) |
+| Consolidated report, English (142 pages) | [PDF](reports/pdf/awesome_gflow_ot_report_en.pdf) · [Markdown](reports/AWESOME_GFLOW_OT_REPORT_en.md) |
 | Summary slides (single-file HTML, 24 slides; keyboard / wheel / touch) | [slides/awesome_gflow_ot_slides.html](slides/awesome_gflow_ot_slides.html) |
 | Summary slides (Beamer PDF, 29 pages incl. backup) | [slides/awesome_gflow_ot_slides.pdf](slides/awesome_gflow_ot_slides.pdf) |
 | Cross-paper synthesis | [reports/INSIGHTS.md](reports/INSIGHTS.md) |

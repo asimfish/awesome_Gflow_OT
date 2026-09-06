@@ -442,8 +442,8 @@
 
 | 交付物 | 路径 |
 |---|---|
-| 汇总报告 · 中文（104 页） | [PDF](reports/pdf/awesome_gflow_ot_report_zh.pdf) · [Markdown](reports/AWESOME_GFLOW_OT_REPORT_zh.md) |
-| 汇总报告 · 英文（137 页） | [PDF](reports/pdf/awesome_gflow_ot_report_en.pdf) · [Markdown](reports/AWESOME_GFLOW_OT_REPORT_en.md) |
+| 汇总报告 · 中文（105 页） | [PDF](reports/pdf/awesome_gflow_ot_report_zh.pdf) · [Markdown](reports/AWESOME_GFLOW_OT_REPORT_zh.md) |
+| 汇总报告 · 英文（142 页） | [PDF](reports/pdf/awesome_gflow_ot_report_en.pdf) · [Markdown](reports/AWESOME_GFLOW_OT_REPORT_en.md) |
 | 汇总幻灯（单文件 HTML，24 页；键盘 / 滚轮 / 触摸） | [slides/awesome_gflow_ot_slides.html](slides/awesome_gflow_ot_slides.html) |
 | 汇总幻灯（Beamer PDF，29 页含备份页） | [slides/awesome_gflow_ot_slides.pdf](slides/awesome_gflow_ot_slides.pdf) |
 | 跨论文综合 | [reports/INSIGHTS.md](reports/INSIGHTS.md) |

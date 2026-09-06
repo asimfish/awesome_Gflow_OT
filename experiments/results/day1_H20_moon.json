@@ -1,0 +1,42 @@
+{
+  "H": 20,
+  "D": 2,
+  "source": "moon",
+  "n_states": 400,
+  "n_edges": 1520,
+  "mass_check": 1.1102230246251565e-16,
+  "GFlow_star": 11.083909286832386,
+  "OT_star": 11.083909286832359,
+  "abs_diff": 2.6645352591003757e-14,
+  "exact_solution_certificate": {
+    "primal": 11.08390928683238,
+    "dual": 11.08390928683238,
+    "gap": 0.0,
+    "max_dual_violation": 0.0,
+    "div_residual": 7.23664292552606e-16,
+    "complementary_slackness_max": 0.0
+  },
+  "pi_range": [
+    -15.0,
+    7.0
+  ],
+  "counterexample_crossed": {
+    "executed_cost": 17.716755861258477,
+    "endpoint_cost": 17.716755861258477,
+    "primal": 17.716755861258477,
+    "dual": 11.08390928683238,
+    "gap": 6.632846574426097,
+    "max_dual_violation": 0.0,
+    "div_residual": 2.2104239554184002e-15
+  },
+  "counterexample_detour": {
+    "executed_cost": 35.515517549438876,
+    "endpoint_cost": 11.083909286832359,
+    "primal": 35.515517549438876,
+    "dual": 11.08390928683238,
+    "gap": 24.431608262606495,
+    "max_dual_violation": 0.0,
+    "div_residual": 9.939633480431781e-15
+  },
+  "seconds": 5.21
+}
